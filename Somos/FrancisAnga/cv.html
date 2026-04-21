@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Francisco Angamarca</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="scanlines"></div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" id="hamburger">
+        <span></span><span></span><span></span>
+    </label>
+
+    <aside id="sidebar">
+        <br><br>
+        <h2 class="sidebar-title">Navegación</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="cv.html" class="nav-link active-link" style="border-left-color: var(--accent-purple); color: #fff;">CV</a></li>
+                <li><a href="carta.html" class="nav-link">Carta</a></li>
+                <li><a href="index.html#practicas" class="nav-link">Prácticas</a></li>
+                <li><a href="index.html#temario" class="nav-link">Temario</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div id="page-content">
+        <div class="cv-wrapper">
+            
+            <div class="cv-actions-bar">
+                <a href="index.html" class="btn-tab btn-tab-outline">&larr; VOLVER</a>
+                <a href="#" class="btn-tab btn-tab-solid" onclick="alert('Descargando PDF...')">DESCARGAR PDF ⇩</a>
+            </div>
+
+            <div class="tactical-border-wrapper">
+                <div class="cv-container tactical-content">
+                    
+                    <aside class="cv-left">
+                        <div class="cv-profile-box">
+                            <div class="avatar-container-hero" style="width: 150px; height: 150px;">
+                                <img src="images/cv2.png" alt="Francisco Angamarca" class="avatar-hero" style="border-color: var(--accent-purple); box-shadow: 0 0 20px rgba(188,19,254,0.4);">
+                            </div>
+                            
+                            <h1 class="cv-name hero-title-gradient glitch" data-text="Francisco Angamarca" style="font-size: 1.6rem; margin-top: 1.5rem; background: linear-gradient(90deg, #fff, var(--accent-purple)); -webkit-text-fill-color: transparent; -webkit-background-clip: text;">
+                                Francisco<br>Angamarca
+                            </h1>
+                            <h2 class="cv-role" style="color: var(--accent-purple); letter-spacing: 2px; font-size: 0.9rem; margin-top: 5px;">[ WEB DEVELOPER ]</h2>
+                            
+                            <div class="status-badge" style="margin-top: 1rem; border-radius: 0; border-color: var(--accent-cyan); color: var(--accent-cyan); clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);">● ACTIVO</div>
+                        </div>
+
+                        <div class="cv-block">
+                            <h3 class="cv-title-sm" style="border-color: var(--accent-purple); color: #fff;">Datos de Contacto</h3>
+                            <ul class="contact-list">
+                                <li><span class="icon" style="color: var(--accent-purple);">►</span><div><strong>Ubicación</strong><p>Fuenlabrada, Madrid</p></div></li>
+                                <li><span class="icon" style="color: var(--accent-purple);">►</span><div><strong>Email</strong><p>rafaangamarca@gmail.com</p></div></li>
+                                <li><span class="icon" style="color: var(--accent-purple);">►</span><div><strong>Móvil</strong><p>+34 650 96 36 34</p></div></li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-block">
+                            <h3 class="cv-title-sm" style="border-color: var(--accent-purple); color: #fff;">Stack Hard Skills</h3>
+                            <div class="skill-tags">
+                                <span class="tech-chip purple-chip">Java</span>
+                                <span class="tech-chip purple-chip">HTML5</span>
+                                <span class="tech-chip purple-chip">CSS3</span>
+                                <span class="tech-chip purple-chip">JavaScript</span>
+                                <span class="tech-chip purple-chip">MySQL</span>
+                                <span class="tech-chip purple-chip">Git / GitHub</span>
+                                <span class="tech-chip purple-chip">VS Code</span>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <main class="cv-right cyber-paper-bg">
+                        <section class="cv-section-main">
+                            <h3 class="cv-title-lg" style="border-bottom-color: var(--accent-purple);">Resumen de Perfil</h3>
+                            <p class="cv-text" style="color: #ccc; border-left: 3px solid var(--accent-purple); padding-left: 1rem; font-family: 'Courier New', monospace; line-height: 1.6;">
+                                >> INICIANDO LECTURA DE PERFIL...<br>
+                                Estudiante de 17 años cursando el Grado Superior en <strong>Desarrollo de Aplicaciones Multiplataforma (DAM)</strong>. Mentalidad analítica orientada a la eficiencia del código. Comprometido con la creación de software robusto y escalable.
+                            </p>
+                        </section>
+
+                        <section class="cv-section-main">
+                            <h3 class="cv-title-lg" style="border-bottom-color: var(--accent-purple);">Historial Laboral</h3>
+                            
+                            <div class="timeline-item purple-timeline">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2024 - ACTUALIDAD</div>
+                                <h4 class="timeline-role">Desarrollador Web Junior (Freelance)</h4>
+                                <p class="timeline-company">Proyectos Personales & Académicos</p>
+                                <p class="timeline-desc">Desarrollo de sitios web responsivos utilizando HTML5 semántico, CSS3 moderno (Grid/Flexbox) y lógica en JavaScript. Implementación de buenas prácticas SEO.</p>
+                            </div>
+
+                            <div class="timeline-item purple-timeline">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2023 - 2024</div>
+                                <h4 class="timeline-role">Asistente de Programación</h4>
+                                <p class="timeline-company">Tech Solutions Madrid (Prácticas)</p>
+                                <p class="timeline-desc">Apoyo en mantenimiento de bases de datos SQL, refactorización de código Java y soporte técnico.</p>
+                            </div>
+                        </section>
+
+                        <section class="cv-section-main">
+                            <h3 class="cv-title-lg" style="border-bottom-color: var(--accent-purple);">Historial Académico</h3>
+                            
+                            <div class="timeline-item purple-timeline">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2025 - PRESENTE</div>
+                                <h4 class="timeline-role">Técnico Superior en D.A.M.</h4>
+                                <p class="timeline-company">CES Juan Pablo II, Madrid</p>
+                                <p class="timeline-desc">Especialización en desarrollo backend Java y arquitectura multiplataforma.</p>
+                            </div>
+
+                            <div class="timeline-item purple-timeline">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2012 - 2025</div>
+                                <h4 class="timeline-role">Bachillerato (Homologado)</h4>
+                                <p class="timeline-company">Academia Militar "San Diego", Ecuador</p>
+                                <p class="timeline-desc">Formación en disciplina y ciencias exactas.</p>
+                            </div>
+                        </section>
+                    </main>
+                </div> 
+            </div> 
+            
+            <footer class="cv-footer" style="text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.8rem; font-family: monospace;">
+                <p>SYSTEM_ID: 2026 // FRANCISCO_R_ANGAMARCA</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

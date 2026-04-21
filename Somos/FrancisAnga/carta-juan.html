@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Reifs - Creative Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ESTILOS ESPECÍFICOS PARA JUAN (THEME: CREATIVE PURPLE) */
+        
+        /* 1. Layout Invertido: Sidebar a la derecha */
+        .letter-grid-reverse {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            background: var(--bg-primary);
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        /* 2. Sidebar Púrpura */
+        .letter-sidebar-right {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 4rem 2.5rem;
+            border-left: 1px solid var(--border-soft);
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            position: relative;
+        }
+
+        /* Decoración "IA / Neural" */
+        .letter-sidebar-right::before {
+            content: 'AI_SYNTHESIS_ACTIVE';
+            position: absolute; top: 15px; right: 20px;
+            font-family: monospace; font-size: 0.6rem; 
+            color: var(--accent-purple); opacity: 0.7; letter-spacing: 2px;
+        }
+
+        /* Override de colores para este archivo específico */
+        .letter-title {
+            background: linear-gradient(90deg, #fff, var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .prop-icon {
+            border-color: var(--accent-purple);
+            background: rgba(188, 19, 254, 0.1);
+            color: var(--accent-purple);
+            box-shadow: 0 0 10px rgba(188, 19, 254, 0.2);
+        }
+
+        .highlight-text {
+            color: var(--accent-purple);
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 850px) {
+            .letter-grid-reverse { grid-template-columns: 1fr; }
+            .letter-sidebar-right { border-left: none; border-top: 1px solid var(--border-soft); order: -1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="scanlines"></div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" id="hamburger">
+        <span></span><span></span><span></span>
+    </label>
+
+    <aside id="sidebar">
+        <br><br>
+        <h2 class="sidebar-title">Navegación</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="#" class="nav-link active-link" style="border-left-color: var(--accent-purple); color: #fff;">Carta (Juan)</a></li>
+                <li><a href="index.html#practicas" class="nav-link">Prácticas</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div id="page-content">
+        <section class="section letter-section">
+            <div class="letter-card-container" style="background: linear-gradient(45deg, var(--accent-purple), #fff);">
+                <div class="letter-grid-reverse">
+                    
+                    <article class="letter-content">
+                        <header class="letter-header">
+                            <div>
+                                <h1 class="letter-title glitch" data-text="Un paso más allá.">Un paso más allá.</h1>
+                                <p class="letter-subtitle">Código, Estrategia e Innovación.</p>
+                            </div>
+                            <div class="letter-date" style="border-color: var(--accent-purple); color: var(--accent-purple);">2026</div>
+                        </header>
+                        
+                        <div class="letter-body">
+                            <p>Hola, soy <strong>Juan Reifs García</strong>.</p>
+                            
+                            <p>Actualmente curso el Grado Superior en <strong>Desarrollo de Aplicaciones Multiplataforma (DAM)</strong>, pero mi visión va mucho más allá de simplemente "picar código". Me fascina crear soluciones digitales que no solo funcionen, sino que sean eficientes y tengan un propósito estratégico.</p>
+
+                            <p>Mi perfil técnico se asienta sobre una base sólida en <strong>Java, JavaScript y SQL</strong>, pero mi curiosidad es el verdadero motor. De forma autodidacta, me he adentrado en:</p>
+                            
+                            <ul>
+                                <li><strong>Desarrollo de Videojuegos:</strong> Explorando la lógica compleja con C# y C++ en motores como Unity y Unreal.</li>
+                                <li><strong>Automatización de Sistemas:</strong> Uso avanzado de Shell y CMD para optimizar procesos y hacernos la vida más fácil.</li>
+                                <li><strong>Inteligencia Artificial & SEO:</strong> Me formo continuamente en IA para crear flujos de trabajo automatizados, entendiendo el software como un producto que debe ser visible y escalable.</li>
+                            </ul>
+
+                            <p>Pero lo que realmente me diferencia es mi enfoque humano. He dedicado dos años a certificar habilidades en <span class="highlight-text">creatividad, empatía y comunicación</span>. Entiendo el desarrollo como un deporte de equipo, donde saber escuchar es tan vital como una buena base de datos.</p>
+
+                            <p>Estoy listo para dar el salto a mis primeras 500 horas de prácticas con una actitud resolutiva, buscando desafíos reales donde pueda aplicar esta mezcla de tecnología y estrategia.</p>
+                            
+                            <br>
+                            <p class="signature">Juan Reifs García</p>
+                            <a href="#" class="email-link" style="color: var(--accent-purple); border-color: var(--accent-purple);">juan.reifs@email.com</a>
+                        </div>
+                    </article>
+
+                    <aside class="letter-sidebar-right">
+                        <div class="sidebar-header">
+                            <div style="font-size: 3rem; text-shadow: 0 0 20px var(--accent-purple);">🚀</div>
+                            <div>
+                                <h3 style="margin-bottom:0;">Perfil Creativo</h3>
+                                <small style="color: var(--accent-purple);">Dev & Strategist</small>
+                            </div>
+                        </div>
+                        
+                        <div class="value-prop">
+                            <div class="prop-item">
+                                <span class="prop-icon">🧠</span>
+                                <div><h4 style="color: var(--accent-purple);">Estrategia AI</h4><p>Automatización y flujos de trabajo inteligentes.</p></div>
+                            </div>
+                            <div class="prop-item">
+                                <span class="prop-icon">🎮</span>
+                                <div><h4 style="color: var(--accent-purple);">Game Dev</h4><p>Lógica compleja con C# y Unreal Engine.</p></div>
+                            </div>
+                            <div class="prop-item">
+                                <span class="prop-icon">🤝</span>
+                                <div><h4 style="color: var(--accent-purple);">Soft Skills</h4><p>Certificado en Empatía y Comunicación.</p></div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack-mini">
+                            <p style="color: #ccc; font-size: 0.8rem; margin-bottom: 10px;">Stack Destacado:</p>
+                            <div class="skill-tags">
+                                <span style="border-color: var(--accent-purple); color: var(--accent-purple);">C# / C++</span>
+                                <span style="border-color: var(--accent-purple); color: var(--accent-purple);">Java</span>
+                                <span style="border-color: var(--accent-purple); color: var(--accent-purple);">SEO / IA</span>
+                                <span style="border-color: var(--accent-purple); color: var(--accent-purple);">Shell</span>
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+
+            <div class="letter-actions">
+                <a href="index.html#practicas" class="btn btn-outline">← Volver al Equipo</a>
+            </div>
+        </section>
+        
+        <footer id="footer">
+            <p>&copy; 2026 Francisco Rafael Angamarca Campués · Desarrollador Web</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

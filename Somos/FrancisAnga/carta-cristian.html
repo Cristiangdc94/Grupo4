@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristian García - Fullstack Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ESTILOS ESPECÍFICOS PARA CRISTIAN (OVERRIDES) */
+        
+        /* 1. Layout Invertido: Sidebar a la derecha */
+        .letter-grid-reverse {
+            display: grid;
+            grid-template-columns: 1fr 350px; /* Contenido | Sidebar */
+            background: var(--bg-primary);
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        /* 2. Ajuste de bordes para el layout invertido */
+        .letter-sidebar-right {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 4rem 2.5rem;
+            border-left: 1px solid var(--border-soft); /* Borde a la izquierda ahora */
+            border-right: none;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            position: relative;
+        }
+
+        /* Decoración Técnica "Industrial" */
+        .letter-sidebar-right::before {
+            content: 'MAINTENANCE_LOG_V.2.4';
+            position: absolute; top: 15px; right: 20px;
+            font-family: monospace; font-size: 0.6rem; 
+            color: var(--accent-cyan); opacity: 0.5; letter-spacing: 2px;
+        }
+
+        /* Responsive para móvil */
+        @media (max-width: 850px) {
+            .letter-grid-reverse { grid-template-columns: 1fr; }
+            .letter-sidebar-right { border-left: none; border-top: 1px solid var(--border-soft); order: -1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="scanlines"></div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" id="hamburger">
+        <span></span><span></span><span></span>
+    </label>
+
+    <aside id="sidebar">
+        <br><br>
+        <h2 class="sidebar-title">Navegación</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="#" class="nav-link active-link">Carta (Cristian)</a></li>
+                <li><a href="index.html#practicas" class="nav-link">Prácticas</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div id="page-content">
+        <section class="section letter-section">
+            <div class="letter-card-container">
+                <div class="letter-grid-reverse">
+                    
+                    <article class="letter-content">
+                        <header class="letter-header">
+                            <div>
+                                <h1 class="letter-title glitch" data-text="Hola, soy Cristian.">Hola, soy Cristian.</h1>
+                                <p class="letter-subtitle">Ingeniería de software con disciplina industrial.</p>
+                            </div>
+                            <div class="letter-date">2026</div>
+                        </header>
+                        
+                        <div class="letter-body">
+                            <p>Estimado/a Responsable de Tecnología,</p>
+                            
+                            <p>Me dirijo a usted como <strong>Desarrollador Fullstack</strong> con una trayectoria poco convencional pero altamente efectiva. Mi background no empieza en el código, sino en la <strong>electromecánica y el mantenimiento industrial</strong>. ¿Qué significa esto para su equipo? Que mi cerebro está entrenado para diagnosticar el origen real de los fallos (<em>troubleshooting</em>) y entender los sistemas complejos desde sus cimientos.</p>
+
+                            <p>No solo escribo código; construyo soluciones robustas aplicando la disciplina y los protocolos técnicos que aprendí reparando maquinaria crítica:</p>
+                            
+                            <ul>
+                                <li><strong>Lógica de Sistemas:</strong> Mi experiencia en montaje industrial me permite visualizar la arquitectura de software (Backend Spring Boot + Frontend) como un engranaje donde cada pieza es vital.</li>
+                                <li><strong>Gestión de Datos:</strong> He trasladado mi capacidad de gestión de inventarios físicos a la persistencia de datos eficiente con <strong>MySQL y MongoDB</strong>.</li>
+                                <li><strong>Temple bajo Presión:</strong> Años de cara al público y resolución de incidencias en tiempo real me han dotado de una paciencia y capacidad de comunicación que son oro en los equipos de desarrollo ágil.</li>
+                            </ul>
+
+                            <p>Busco un entorno donde la "curiosidad proactiva" sea la norma. No me limito a que el código funcione; necesito entender el <em>porqué</em> y optimizar el <em>cómo</em>. Estoy listo para aportar esta visión analítica y mi energía a sus próximos desafíos.</p>
+                            
+                            <br>
+                            <p class="signature">Cristian García</p>
+                            <a href="#" class="email-link">cristian.dev@email.com</a>
+                        </div>
+                    </article>
+
+                    <aside class="letter-sidebar-right">
+                        <div class="sidebar-header">
+                            <div style="font-size: 3rem; text-shadow: 0 0 20px var(--accent-cyan);">👻</div>
+                            <div>
+                                <h3 style="margin-bottom:0;">Perfil Técnico</h3>
+                                <small style="color: var(--accent-cyan);">Fullstack Dev</small>
+                            </div>
+                        </div>
+                        
+                        <div class="value-prop">
+                            <div class="prop-item">
+                                <span class="prop-icon">⚙️</span>
+                                <div><h4>Mentalidad Analítica</h4><p>Enfoque de ingeniería aplicado al código.</p></div>
+                            </div>
+                            <div class="prop-item">
+                                <span class="prop-icon">🔧</span>
+                                <div><h4>Troubleshooting</h4><p>Diagnóstico rápido de errores y bugs.</p></div>
+                            </div>
+                            <div class="prop-item">
+                                <span class="prop-icon">🛡️</span>
+                                <div><h4>Disciplina</h4><p>Protocolos estrictos y buenas prácticas.</p></div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack-mini">
+                            <p>Stack Principal:</p>
+                            <div class="tags">
+                                <span>Java</span>
+                                <span>Spring Boot</span>
+                                <span>MySQL</span>
+                                <span>Python</span>
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+
+            <div class="letter-actions">
+                <a href="index.html#practicas" class="btn btn-outline">← Volver al Equipo</a>
+            </div>
+        </section>
+        
+        <footer id="footer">
+            <p>&copy; 2026 Francisco Rafael Angamarca Campués · Desarrollador Web</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Presentación - Francisco Angamarca</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="scanlines"></div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" id="hamburger">
+        <span></span><span></span><span></span>
+    </label>
+
+    <aside id="sidebar">
+        <br><br>
+        <h2 class="sidebar-title">Navegación</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="cv.html" class="nav-link">CV</a></li>
+                <li><a href="#" class="nav-link active-link" style="border-left-color: var(--accent-pink); color: #fff;">Carta (Francisco)</a></li>
+                <li><a href="index.html#practicas" class="nav-link">Prácticas</a></li>
+                <li><a href="index.html#temario" class="nav-link">Temario</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div id="page-content">
+        <section class="section letter-section">
+            <div class="letter-card-container" style="padding: 2px; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));">
+                
+                <div class="letter-grid" style="grid-template-columns: 320px 1fr;"> 
+                    
+                    <aside class="letter-sidebar-hero" id="sidebar-container">
+                        <canvas id="neural-canvas"></canvas>
+
+                        <div class="sidebar-header" style="display: block; text-align: center;">
+                            <div class="avatar-container-hero">
+                                <img src="images/cv2.png" alt="Francisco" class="avatar-hero">
+                            </div>
+                            <div class="status-badge">● DISPONIBLE</div>
+                            <h3 style="margin-top: 1.5rem; color: #fff; font-size: 1.2rem;">Perfil Técnico</h3>
+                        </div>
+
+                        <div class="stat-group">
+                            <div class="stat-label"><span>Aprendizaje</span><span>95%</span></div>
+                            <div class="stat-bar-bg"><div class="stat-bar-fill fill-cyan"></div></div>
+                        </div>
+                        <div class="stat-group">
+                            <div class="stat-label"><span>Adaptabilidad</span><span>90%</span></div>
+                            <div class="stat-bar-bg"><div class="stat-bar-fill fill-purple"></div></div>
+                        </div>
+                        <div class="stat-group">
+                            <div class="stat-label"><span>Motivación</span><span>100%</span></div>
+                            <div class="stat-bar-bg"><div class="stat-bar-fill fill-pink"></div></div>
+                        </div>
+
+                        <div class="tech-stack-mini" style="margin-top: 2rem; position: relative; z-index: 2;">
+                            <p style="text-align: center; color: var(--text-muted); margin-bottom: 10px; font-size: 0.8rem;">ARSENAL:</p>
+                            <div class="skill-tags" style="justify-content: center;">
+                                <span style="border-color: var(--accent-cyan); color: var(--accent-cyan);">Java</span>
+                                <span style="border-color: #fff; color: #fff;">HTML5</span>
+                                <span style="border-color: var(--accent-pink); color: var(--accent-pink);">CSS3</span>
+                                <span>Git</span>
+                            </div>
+                        </div>
+
+                        <div class="social-network-hub" style="margin-top: 2rem;">
+                            <div class="hub-line"></div>
+                            <a href="https://github.com/rafaangamarca" target="_blank" class="social-node node-github" title="GitHub Repo">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="social-node node-linkedin" title="LinkedIn Profile">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+
+                    </aside>
+
+                    <article class="letter-content cyber-paper-bg">
+                        <header class="letter-header">
+                            <div>
+                                <h1 class="hero-title-gradient glitch" data-text="Hola, soy Francisco.">Hola, soy Francisco.</h1>
+                                <p class="letter-subtitle">Y quiero construir el futuro web con vosotros.</p>
+                            </div>
+                            <div class="letter-date" style="border-color: var(--accent-cyan); color: var(--accent-cyan); box-shadow: 0 0 10px rgba(0,243,255,0.2);">HOY</div>
+                        </header>
+                        
+                        <div class="letter-body">
+                            <p>Estimado Responsable de Selección,</p>
+                            <p>Le escribo con gran entusiasmo para presentar mi candidatura al puesto de <strong>Desarrollador Web Junior</strong>. Actualmente estoy finalizando mis estudios en Desarrollo de Aplicaciones Multiplataforma (DAM) y, aunque mi carrera profesional apenas comienza, mi pasión por la tecnología y la resolución de problemas viene de lejos.</p>
+                            <p>Durante mi formación, no me he limitado a cumplir con el currículo académico. He buscado proactivamente desafíos reales que pusieran a prueba mis conocimientos:</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 1rem; display: flex; gap: 10px;">
+                                    <span style="color: var(--accent-cyan);">►</span>
+                                    <span><strong>Dominio Técnico:</strong> He consolidado una base sólida en Java y tecnologías web (HTML5, CSS3), aplicándolas en proyectos que van desde la lógica algorítmica compleja hasta el diseño de interfaces responsivas y accesibles.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; display: flex; gap: 10px;">
+                                    <span style="color: var(--accent-purple);">►</span>
+                                    <span><strong>Mentalidad de Crecimiento:</strong> Entiendo que en este sector el aprendizaje nunca termina. Soy una persona curiosa, autodidacta y con una gran capacidad para adaptarme a nuevas herramientas y metodologías de trabajo ágiles.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; display: flex; gap: 10px;">
+                                    <span style="color: var(--accent-pink);">►</span>
+                                    <span><strong>Compromiso y Calidad:</strong> Me tomo muy en serio la calidad del código. Busco siempre escribir soluciones limpias, mantenibles y eficientes, pensando no solo en que "funcione", sino en que sea escalable.</span>
+                                </li>
+                            </ul>
+                            <p>Lo que me diferencia es mi actitud. No busco solo un empleo, sino un equipo donde pueda aportar mi energía y visión fresca, a la vez que absorbo las mejores prácticas de compañeros más experimentados. Estoy convencido de que mi perfil encaja con la cultura de innovación y excelencia de su empresa.</p>
+                            <p>Agradezco de antemano su tiempo y consideración. Quedo a su entera disposición para concertar una entrevista y poder conversar sobre cómo mi perfil puede sumar valor a su equipo.</p>
+                            <br>
+                            <p>Atentamente,</p>
+                            <p class="signature" style="font-size: 2rem; background: linear-gradient(90deg, #fff, var(--text-muted)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Francisco R. Angamarca</p>
+                            <a href="mailto:rafaangamarca@gmail.com" class="email-link" style="color: var(--accent-pink); border-bottom-color: var(--accent-pink);">rafaangamarca@gmail.com</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="letter-actions">
+                <a href="cv.html" class="btn btn-outline">← Ver mi CV</a>
+                <a href="index.html" class="btn btn-primary">Volver al Inicio</a>
+            </div>
+        </section>
+        
+        <footer id="footer">
+            <p>&copy; 2026 Francisco Rafael Angamarca Campués · Desarrollador Web</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

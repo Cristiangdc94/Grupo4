@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco Angamarca - Portafolio Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="scanlines"></div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" id="hamburger">
+        <span></span><span></span><span></span>
+    </label>
+
+    <aside id="sidebar">
+        <br><br>
+        <h2 class="sidebar-title">Navegación</h2>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link">Inicio</a></li>
+                <li><a href="cv.html" class="nav-link">CV</a></li>
+                <li><a href="carta.html" class="nav-link">Carta</a></li>
+                <li><a href="#practicas" class="nav-link">Prácticas</a></li>
+                <li><a href="#temario" class="nav-link">Temario</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div id="page-content">
+        <header id="home">
+            <div class="hero reveal rgb-border">
+                <div class="hero-visual">
+                    <div class="hero-avatar">
+                        <img src="images/cv2.png" alt="Francisco Angamarca" class="standing-img">
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="page-title glitch" data-text="Portafolio Profesional">Portafolio Profesional</h1>
+                    <div class="hero-identity">
+                        <p class="hero-name">Francisco Rafael Angamarca Campués</p>
+                        <span class="hero-badge">Desarrollador Web Junior</span>
+                    </div>
+                    <p class="hero-sub">
+                        <span class="typewriter"></span><span class="cursor">|</span>
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="cv.html" class="btn btn-primary">Ver CV</a>
+                        <a href="carta.html" class="btn btn-outline">Carta</a>
+                        <a href="javascript:void(0)" class="btn btn-outline" onclick="openModal(event, 'modal-memoria')">Memoria Técnica</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="parallax-1" class="parallax-section reveal">
+            <div class="parallax-content">
+                <h2 class="glitch" data-text="Proyectos del Curso">Proyectos del Curso</h2>
+                <p>Una selección de prácticas destacadas realizadas durante el primer año.</p>
+            </div>
+        </section>
+
+        <main>
+            <section id="practicas" class="section">
+                <h2 class="reveal">Portfolio de Prácticas <span class="badge-section">Recientes</span></h2>
+                <div class="stack-area">
+                    
+                    <article class="stack-card reveal" id="card-1">
+                        <div class="stack-card-content">
+                            <div class="card-left">
+                                <span class="card-number">01</span>
+                                <h3>Proyecto Bingo</h3>
+                                <p>Juego de Bingo realizado en lenguaje de programación JAVA. Lógica de sorteo y validación de cartones.</p>
+                                <ul class="project-meta"><li>Arrays</li><li>Java</li></ul>
+                                <div class="card-buttons">
+                                    <a href="javascript:void(0)" class="btn-card" onclick="openModal(event, 'modal-1')">Ver Caso &rarr;</a>
+                                    <a href="https://github.com/rafaangamarca/Bingo" target="_blank" class="btn-card btn-secondary">Código &lt;/&gt;</a>
+                                    <a href="descargas/bingo.zip" download class="btn-card btn-secondary">Descargar ZIP ⇩</a>
+                                </div>
+                            </div>
+                            <div class="card-right">
+                                <img src="images/bingo.png" alt="Captura del Proyecto Bingo" class="project-img">
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="stack-card reveal" id="card-2">
+                        <div class="stack-card-content">
+                            <div class="card-left">
+                                <span class="card-number">02</span>
+                                <h3>Web: Maxim Dondyuk</h3>
+                                <p>Sitio web multipágina para portafolio de fotografía. Estructura semántica y navegación interconectada.</p>
+                                <ul class="project-meta"><li>HTML5</li></ul>
+                                <div class="team-section">
+                                    <h4>Equipo de Desarrollo:</h4>
+                                    <div class="team-grid">
+                                        <a href="carta.html" class="team-member"><span class="member-avatar">🎨</span><span>Francisco A.</span></a>
+                                        <a href="carta-cristian.html" class="team-member"><span class="member-avatar">👻</span><span>Cristian G.</span></a>
+                                        <a href="carta-vitalii.html" class="team-member"><span class="member-avatar">🚩</span><span>Vitali S.</span></a>
+                                    </div>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="javascript:void(0)" class="btn-card" onclick="openModal(event, 'modal-2')">Ver Caso &rarr;</a>
+                                    <a href="https://github.com/rafaangamarca/portafolio-MaximDondyuk" target="_blank" class="btn-card btn-secondary">Código &lt;/&gt;</a>
+                                    <a href="descargas/maxim.zip" download class="btn-card btn-secondary">Descargar ZIP ⇩</a>
+                                </div>
+                            </div>
+                            <div class="card-right">
+                                <img src="images/maxim.png" alt="Maxim Dondyuk Web" class="project-img">
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="stack-card reveal" id="card-3">
+                        <div class="stack-card-content">
+                            <div class="card-left">
+                                <span class="card-number">03</span>
+                                <h3>Portal Navideño Global</h3>
+                                <p>Plataforma web multilingüe con arquitectura de carpetas para internacionalización (i18n) y contenido educativo.</p>
+                                <ul class="project-meta"><li>Idiomas</li><li>Navegación</li><li>HTML puro</li></ul>
+                                <div class="team-section">
+                                    <h4>Desarrollador:</h4>
+                                    <div class="team-grid">
+                                        <a href="carta.html" class="team-member"><span class="member-avatar">🎄</span><span>Francisco A.</span></a>
+                                        <a href="carta-juan.html" class="team-member"><span class="member-avatar">🚩</span><span>Juan R.</span></a>
+                                        <a href="carta-vitalii.html" class="team-member"><span class="member-avatar">🍷</span><span>Vitali S.</span></a>
+                                        <a href="carta-ivan.html" class="team-member"><span class="member-avatar">👻</span><span>Ivan R.</span></a>
+                                    </div>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="javascript:void(0)" class="btn-card" onclick="openModal(event, 'modal-3')">Ver Caso &rarr;</a>
+                                    <a href="https://github.com/rafaangamarca/web-navidad" target="_blank" class="btn-card btn-secondary">Código &lt;/&gt;</a>
+                                    <a href="descargas/navidad.zip" download class="btn-card btn-secondary">Descargar ZIP ⇩</a>
+                                </div>
+                            </div>
+                            <div class="card-right">
+                                <img src="images/navidad.jpeg" alt="Portal Navideño Global" class="project-img">
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="parallax-2" class="parallax-section parallax-alt reveal">
+                <div class="parallax-content">
+                    <h2 class="glitch" data-text="Temario Resumido">Temario Resumido</h2>
+                    <p>Conceptos clave explicados de forma clara, visual e interactiva.</p>
+                </div>
+            </section>
+
+            <section id="temario" class="section reveal">
+                <h2>Temario de Sistemas y Programación</h2>
+                <div class="temario-slider-layout">
+                    <div class="temario-col">
+                        <h3 class="temario-titulo">Sistemas Informáticos</h3>
+                        <input type="radio" name="si-slider" id="si-slide-1" checked>
+                        <input type="radio" name="si-slider" id="si-slide-2">
+                        <input type="radio" name="si-slider" id="si-slide-3">
+                        <div class="temario-slider-card">
+                            <div class="temario-slide si-slide-1">
+                                <h4>Arquitectura de Ordenadores</h4>
+                                <p>Componentes principales de un PC: CPU, GPU, placa base, memoria y almacenamiento.</p>
+                            </div>
+                            <div class="temario-slide si-slide-2">
+                                <h4>Puertas Lógicas</h4>
+                                <p>Fundamentos de lógica digital. Puertas AND, OR, NOT y circuitos combinacionales.</p>
+                            </div>
+                            <div class="temario-slide si-slide-3">
+                                <h4>Sistemas de Numeración</h4>
+                                <p>Representación binaria, octal y hexadecimal y operaciones aritméticas.</p>
+                            </div>
+                        </div>
+                        <div class="temario-arrows">
+                            <label for="si-slide-1" class="arrow">&lt;</label><label for="si-slide-2" class="arrow">&gt;</label>
+                            <label for="si-slide-2" class="dot"></label><label for="si-slide-3" class="dot"></label>
+                        </div>
+                    </div>
+                    <div class="temario-col">
+                        <h3 class="temario-titulo">Programación Java</h3>
+                        <input type="radio" name="prog-slider" id="prog-slide-1" checked>
+                        <input type="radio" name="prog-slider" id="prog-slide-2">
+                        <input type="radio" name="prog-slider" id="prog-slide-3">
+                        <div class="temario-slider-card">
+                            <div class="temario-slide prog-slide-1">
+                                <h4>POO: Herencia</h4>
+                                <p>Reutilización de código mediante 'extends' y flexibilidad con polimorfismo.</p>
+                            </div>
+                            <div class="temario-slide prog-slide-2">
+                                <h4>Interfaces</h4>
+                                <p>Diseño de contratos de software para sistemas desacoplados.</p>
+                            </div>
+                            <div class="temario-slide prog-slide-3">
+                                <h4>Excepciones</h4>
+                                <p>Control de errores robusto con bloques try-catch-finally.</p>
+                            </div>
+                        </div>
+                        <div class="temario-arrows">
+                            <label for="prog-slide-1" class="arrow">&lt;</label><label for="prog-slide-2" class="arrow">&gt;</label>
+                            <label for="prog-slide-2" class="dot"></label><label for="prog-slide-3" class="dot"></label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer">
+            <p>&copy; 2026 Francisco Rafael Angamarca Campués · Desarrollador Web</p>
+        </footer>
+    </div>
+
+    <div id="modal-1" class="modal-overlay" onclick="closeModal(event, 'modal-1')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModalBtn('modal-1')">&times;</button>
+            <div class="modal-header">
+                <h2>Proyecto Bingo Java</h2>
+                <span class="hero-badge">Java Puro</span>
+            </div>
+            <div class="modal-split">
+                <div class="modal-text-scroll" data-lenis-prevent>
+                    <p>Simulación completa de un juego de Bingo por consola desarrollado en <strong>Java</strong>.</p>
+                    <h3>Desafíos Técnicos:</h3>
+                    <ul class="modal-list">
+                        <li><strong>Gestión de Matrices:</strong> Cartón de 5x5 mediante arrays 2D.</li>
+                        <li><strong>Algoritmo de Unicidad:</strong> Lógica para evitar números repetidos.</li>
+                        <li><strong>Validación:</strong> Verificación automática de "Línea" y "Bingo".</li>
+                    </ul>
+                </div>
+                <div class="modal-gallery" data-lenis-prevent>
+                    <img src="images/bingo2.png" width="300px" height="270px" alt="Cartón del bingo" class="gallery-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-2" class="modal-overlay" onclick="closeModal(event, 'modal-2')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModalBtn('modal-2')">&times;</button>
+            <div class="modal-header">
+                <h2>Portafolio: Maxim Dondyuk</h2>
+                <span class="hero-badge">HTML5 & CSS3</span>
+            </div>
+            <div class="modal-split">
+                <div class="modal-text-scroll" data-lenis-prevent>
+                    <p>Desarrollo de un sitio web multipágina para un portafolio de fotografía profesional.</p>
+                    <h3>Estructura del Proyecto:</h3>
+                    <ul class="modal-list">
+                        <li><strong>Navegación Compleja:</strong> Enlaces internos entre <em>Galería</em>, <em>Sobre Mí</em> y <em>Contacto</em>.</li>
+                        <li><strong>Semántica HTML5:</strong> Uso de <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code> y <code>&lt;footer&gt;</code>.</li>
+                        <li><strong>Formularios:</strong> Página de contacto funcional.</li>
+                    </ul>
+                </div>
+                <div class="modal-gallery" data-lenis-prevent>
+                    <img src="images/maxim1.jpeg" alt="galeria" class="gallery-img">
+                    <img src="images/maxim2.jpeg" alt="contacto" class="gallery-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-3" class="modal-overlay" onclick="closeModal(event, 'modal-3')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModalBtn('modal-3')">&times;</button>
+            <div class="modal-header">
+                <h2>Portal Navideño Global</h2>
+                <span class="hero-badge">Internacionalización (i18n)</span>
+            </div>
+            <div class="modal-split">
+                <div class="modal-text-scroll" data-lenis-prevent>
+                    <p>Un ambicioso proyecto web que simula un portal navideño internacional multilingüe.</p>
+                    <h3>Características Clave:</h3>
+                    <ul class="modal-list">
+                        <li><strong>Estructura i18n:</strong> Carpetas <code>/idiomas/es</code>, <code>/en</code> y <code>/uk</code>.</li>
+                        <li><strong>Contenido Extenso:</strong> Páginas temáticas de múltiples países.</li>
+                        <li><strong>Interactividad:</strong> Calendario de Adviento y Carta a Papá Noel.</li>
+                    </ul>
+                </div>
+                <div class="modal-gallery" data-lenis-prevent>
+                    <div class="gallery-placeholder"><img src="images/navidad1.jpeg" width="3500px" height="200px" class="gallery-img" alt="calendario"></div>
+                    <div class="gallery-placeholder"><img src="images/navidad2.jpeg" width="350px" height="200px" class="gallery-img" alt="tradiciones"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-memoria" class="modal-overlay" onclick="closeModal(event, 'modal-memoria')">
+        <div class="modal-content dossier-style">
+            <button class="modal-close" onclick="closeModalBtn('modal-memoria')">&times;</button>
+            <div class="modal-header dossier-header">
+                <div>
+                    <span class="doc-id">DOC_REF: 2026-FACP</span>
+                    <h2>Memoria del Proyecto</h2>
+                </div>
+                <span class="hero-badge" style="border-color: var(--text-main); color: var(--text-main);">Lectura</span>
+            </div>
+            
+            <div class="modal-split">
+                <div class="modal-text-scroll" data-lenis-prevent>
+                    <div class="doc-section">
+                        <h3>1. Resumen Ejecutivo</h3>
+                        <p>Este proyecto consiste en el diseño y desarrollo de un portafolio web personal bajo una estética "Cyber-Industrial". El objetivo es diferenciar el perfil profesional mediante una identidad visual única, demostrando dominio del código nativo.</p>
+                    </div>
+                    <div class="doc-section">
+                        <h3>2. Objetivos Técnicos</h3>
+                        <ul class="doc-list">
+                            <li><strong>Interfaz Inmersiva:</strong> Atmósfera reactiva con luces ambientales y efectos glitch.</li>
+                            <li><strong>Rendimiento:</strong> Carga optimizada mediante código limpio (Vanilla JS).</li>
+                            <li><strong>Escalabilidad:</strong> Arquitectura CSS modular y variables globales.</li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h3>3. Implementación Destacada</h3>
+                        <p>Retos técnicos superados durante el desarrollo:</p>
+                        <ul class="doc-list">
+                            <li><strong>Motor "Cyber-HUD":</strong> Combinación de <code>clip-path</code> y filtros <code>drop-shadow</code> para geometrías complejas.</li>
+                            <li><strong>Spotlight FX:</strong> Sistema de inyección de variables CSS desde JS para seguimiento del mouse.</li>
+                            <li><strong>Navegación:</strong> Menú lateral con lógica de auto-cierre y scroll inercial (Lenis).</li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h3>4. Conclusiones</h3>
+                        <p>El resultado es una plataforma progresiva que cumple estándares de accesibilidad y diseño responsivo, actuando como prueba técnica de las capacidades del desarrollador.</p>
+                    </div>
+                </div>
+
+                <div class="dossier-sidebar">
+                    <div class="file-preview">
+                        <img src="images/memoria.jpeg" width="200px" height="270px"  alt="Memoria" class="doc-cover-img">
+        
+                        <p style="margin-top: 1rem;">Versión Completa</p>
+                        <small>5 Páginas · Formato Académico</small>
+                    </div>
+    
+                    <a href="MemoriaProyectoHTML.pdf" target="_blank" download class="btn-card" style="width:100%; text-align:center; background: var(--text-main); color: var(--bg-primary); border: none;">
+                        Descargar PDF Original ⇩
+                    </a>
+
+                    <div style="margin-top: 2rem; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid #333; padding-top: 1rem;">
+                        <p>Autor: Francisco Angamarca</p>
+                        <p>Centro: CES Juan Pablo I I</p>
+                        <p>Fecha: Febrero 2026</p>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
