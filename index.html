@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404: Humanity | Proyecto DAM 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted loop id="bg-video">
+            <source src="video/background.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <main class="menu-container">
+        <div class="glitch-wrapper">
+            <h1 id="main-title" class="game-title" data-text="Error 404: Humanity">
+                Error 404: Humanity
+            </h1>
+        </div>
+        
+        <nav class="menu-options">
+            <button class="menu-btn" data-text="INICIAR HISTORIA">INICIAR HISTORIA</button>
+            <button class="menu-btn" data-text="CARGAR PARTIDA">CARGAR PARTIDA</button>
+            <button class="menu-btn" data-text="CONFIGURACIÓN" onclick="openConfig()">CONFIGURACIÓN</button>
+            <button class="menu-btn" data-text="SALIR" onclick="abrirModalSalida()">SALIR</button>
+        </nav>
+    </main>
+
+    <script src="script.js"></script>
+
+    <audio id="bg-music" loop>
+    <source src="assets/music-main-theme.mp3" type="audio/mpeg">
+</audio>
+
+<div id="config-modal" class="modal">
+    <div class="modal-content">
+        <h2 class="glitch-text" data-text="CONFIGURACIÓN">CONFIGURACIÓN</h2>
+        
+        <div class="config-item">
+            <span>MÚSICA DE FONDO</span>
+            <label class="switch">
+                <input type="checkbox" id="music-toggle" onchange="toggleMusic()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="config-item">
+            <span>VOLUMEN GLOBAL</span>
+            <input type="range" min="0" max="1" step="0.1" value="0.5" id="volume-control" oninput="updateVolume()">
+        </div>
+
+        <button class="menu-btn close-btn" onclick="closeConfig()">VOLVER AL SISTEMA</button>
+    </div>
+</div>
+
+<div id="exit-modal" class="modal">
+    <div class="modal-content exit-box">
+        <h2 class="glitch-text" data-text="¿ABORTAR CONEXIÓN?">¿ABORTAR CONEXIÓN?</h2>
+        <p style="color: rgba(255,255,255,0.5); margin: 20px 0;">Se perderá la sincronización con la unidad 404.</p>
+        
+        <div class="exit-options">
+            <button class="menu-btn btn-confirm" onclick="confirmarSalida()">SÍ, SALIR</button>
+            <button class="menu-btn btn-cancel" onclick="cerrarModalSalida()">CANCELAR</button>
+        </div>
+    </div>
+</div>
+
+<button id="btn-info" class="menu-btn" data-text="¿Quienes somos?" onclick="toggleMenu()">¿Quiénes somos?</button>
+
+<div id="panel-quienes-somos" class="oculto">
+    <h3>Créditos</h3>
+    <button class="menu-btn" data-text="Francisco Angamarca" onclick="window.open('URL', '_blank')">Francisco Angamarca</button>
+    <button class="menu-btn" data-text="Cristian García" onclick="window.open('URL', '_blank')">Cristian García</button>
+    <button class="menu-btn" data-text="Pablo Sandoval" onclick="window.open('URL', '_blank')">Pablo Sandoval</button>
+</div>
+
+</body>
+</html>

@@ -1,125 +1,191 @@
-// --- ESTADO DE AUDIO Y SISTEMA ---
-let masterVol = 0.5, musicVol = 0.4;
-let masterMuted = false, musicMuted = false;
-let prevMasterVol = 0.5, prevMusicVol = 0.4;
+const titulo = document.getElementById('main-title');
 
-let isTyping = false;
-const typeSound = new Audio('imagenes/mecanico.mp3'); 
+// Intensidades: Cuanto más alto, más frecuente
+const INTENSIDAD_GLITCH = 0.4; 
+const INTENSIDAD_SHAKE = 0.2;  
 
-// --- SELECTORES ---
-const masterSlider = document.getElementById('input-master');
-const musicSlider = document.getElementById('input-music');
-const masterIcon = document.getElementById('volume-icon');
-const musicIcon = document.getElementById('music-icon');
-const menuControl = document.getElementById('menu-control');
-const menuOverlay = document.getElementById('menu-overlay');
+function bucleDeCaos() {
+    const RNG_Visual = Math.random();
+    const RNG_Shake = Math.random();
 
-// --- MOTOR DE ESCRITURA CON CALLBACK ---
-function typeWriter(elementId, text, speed, callback = null) {
-    const element = document.getElementById(elementId);
-    if(!element) return;
-    element.innerHTML = ""; 
-    let i = 0;
-    isTyping = true;
-
-    function typing() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            
-            if (text.charAt(i) !== " " && !masterMuted) {
-                const soundClone = typeSound.cloneNode();
-                soundClone.volume = masterVol; 
-                soundClone.play().catch(() => {}); 
-            }
-
-            i++;
-            setTimeout(typing, speed);
-        } else {
-            if (callback) {
-                callback(); 
-            } else {
-                isTyping = false; 
-            }
-        }
-    }
-    typing();
-}
-
-// --- SECUENCIA: ETIQUETA -> TÍTULO -> DESCRIPCIÓN ---
-function handleChoice(etiqueta, titulo, textoDesc, logDesc) {
-    if (isTyping) return; 
-
-    typeWriter('choice-label', etiqueta, 60, () => {
-        typeWriter('choice-title', titulo, 60, () => {
-            typeWriter('choice-desc', textoDesc, 80, () => {
-                isTyping = false; 
-            });
-        });
-    });
-
-    const log = document.getElementById('decision-log');
-    if(log){
-        const empty = log.querySelector('.empty-msg');
-        if (empty) empty.remove();
+    // Fallo visual del título
+    if (RNG_Visual < INTENSIDAD_GLITCH) {
+        titulo.classList.add('visual-glitch');
         
-        const entry = document.createElement('div');
-        entry.className = 'log-entry';
-        entry.innerHTML = `<strong>${titulo}</strong><p>${logDesc}</p>`;
-        log.prepend(entry);
+        setTimeout(() => {
+            titulo.classList.remove('visual-glitch');
+        }, Math.random() * 60 + 20);
+    }
+
+    // Sacudida del título
+    if (RNG_Shake < INTENSIDAD_SHAKE) {
+        titulo.classList.add('shake-glitch');
+
+        setTimeout(() => {
+            titulo.classList.remove('shake-glitch');
+        }, Math.random() * 80 + 40);
     }
 }
 
-// --- CIERRE AUTOMÁTICO DE MENÚ ---
-// Escuchamos el clic en el overlay invisible
-menuOverlay.addEventListener('click', (e) => {
-    menuControl.checked = false;
-});
-
-// --- LÓGICA DE VOLUMEN ---
-function updateMasterUI(val) {
-    masterVol = parseFloat(val);
-    masterMuted = masterVol === 0;
-    masterIcon.className = masterVol === 0 ? "fa-solid fa-volume-xmark" : (masterVol < 0.5 ? "fa-solid fa-volume-low" : "fa-solid fa-volume-high");
-}
-
-function updateMusicUI(val) {
-    musicVol = parseFloat(val);
-    musicMuted = musicVol === 0;
-    musicIcon.style.color = musicMuted ? "#555" : "#FF0000";
-}
-
-masterSlider.addEventListener('input', (e) => updateMasterUI(e.target.value));
-musicSlider.addEventListener('input', (e) => updateMusicUI(e.target.value));
-
-document.getElementById('btn-mute-master').addEventListener('click', () => {
-    if (!masterMuted) { prevMasterVol = masterVol; masterSlider.value = 0; updateMasterUI(0); }
-    else { let r = prevMasterVol > 0 ? prevMasterVol : 0.5; masterSlider.value = r; updateMasterUI(r); }
-});
-
-document.getElementById('btn-mute-music').addEventListener('click', () => {
-    if (!musicMuted) { prevMusicVol = musicVol; musicSlider.value = 0; updateMusicUI(0); }
-    else { let r = prevMusicVol > 0 ? prevMusicVol : 0.4; musicSlider.value = r; updateMusicUI(r); }
-});
-
-// Eventos de botones
-document.getElementById('opt-1').addEventListener('click', (e) => {
-    e.preventDefault();
-    handleChoice('LOG_DATA_ERROR', 'Fragmentación', 'Has decidido romper el tejido de la realidad. Las chispas de datos saltan a tu alrededor.', 'Elegiste el camino del caos absoluto.');
-});
-
-document.getElementById('opt-2').addEventListener('click', (e) => {
-    e.preventDefault();
-    handleChoice('SYSTEM_STABLE', 'Resistencia', 'Te mantienes firme. El código se estabiliza momentáneamente bajo tu voluntad.', 'Decidiste resistir la influencia del rojo.');
-});
-
-document.getElementById('btn-reset').addEventListener('click', (e) => {
-    e.preventDefault();
-    if(confirm("¿Reiniciar el caos?")) location.reload();
-});
-
-// Lanzar texto inicial
+// Ejecución constante cada 60ms para fluidez
 window.onload = () => {
-    setTimeout(() => {
-        handleChoice('PROTOCOLO_INICIO', 'Punto Cero', 'La realidad se fragmenta ante ti. Elige tu camino o deja que el caos decida.', 'Inicio de la sesión.');
-    }, 500);
+    console.log("Error 404: Humanity - Sistema de Interfaz Cargado");
+    setInterval(bucleDeCaos, 60); 
 };
+
+// Función base para el botón
+function startGame() {
+    alert("Iniciando conexión con la red neuronal...");
+    // Aquí iría tu lógica para cambiar a la primera escena del juego
+}
+
+const modal = document.getElementById('config-modal');
+const bgMusic = document.getElementById('bg-music');
+const musicToggle = document.getElementById('music-toggle');
+const volumeControl = document.getElementById('volume-control');
+
+// Abrir y cerrar menú
+function openConfig() {
+    modal.style.display = "flex";
+}
+
+function closeConfig() {
+    modal.style.display = "none";
+}
+
+// Control de Música
+function toggleMusic() {
+    if (musicToggle.checked) {
+        bgMusic.play().catch(error => {
+            console.log("Error: El usuario debe interactuar primero.");
+        });
+    } else {
+        bgMusic.pause();
+    }
+}
+
+// Control de Volumen
+function updateVolume() {
+    bgMusic.volume = volumeControl.value;
+}
+
+// Guardar preferencia
+localStorage.setItem('musicEnabled', musicToggle.checked);
+
+// Leer preferencia al cargar
+window.onload = () => {
+    const savedMusic = localStorage.getItem('musicEnabled') === 'true';
+    musicToggle.checked = savedMusic;
+    if(savedMusic) { /* reproducir */ }
+    // ... tu bucleDeCaos() aquí ...
+};
+
+// --- FUNCIONES DE NAVEGACIÓN DEL MENÚ ---
+
+function openConfig() {
+    console.log("Abriendo configuración..."); // Esto saldrá en la consola (F12) para debuguear
+    const modal = document.getElementById('config-modal');
+    if (modal) {
+        modal.style.display = "flex";
+    } else {
+        console.error("No se encontró el elemento config-modal");
+    }
+}
+
+function closeConfig() {
+    const modal = document.getElementById('config-modal');
+    
+    if (modal) {
+        console.log("Iniciando animación de cierre...");
+        
+        // 1. Añadimos la clase que dispara la animación CSS
+        modal.classList.add('modal-closing');
+
+        // 2. IMPORTANTE: Esperamos el tiempo exacto de la animación (0.5s = 500ms)
+        // antes de poner el display: none
+        setTimeout(() => {
+            modal.style.display = "none";
+            
+            // 3. Quitamos la clase para que al volver a abrirlo esté "limpio"
+            modal.classList.remove('modal-closing');
+            console.log("Menú cerrado y limpiado.");
+        }, 500); 
+    }
+}
+
+// --- LÓGICA DE AUDIO ---
+
+function toggleMusic() {
+    const bgMusic = document.getElementById('bg-music');
+    const musicToggle = document.getElementById('music-toggle');
+    
+    if (musicToggle.checked) {
+        bgMusic.play().catch(e => console.warn("Interacción requerida para audio"));
+    } else {
+        bgMusic.pause();
+    }
+}
+
+function updateVolume() {
+    const bgMusic = document.getElementById('bg-music');
+    const volumeControl = document.getElementById('volume-control');
+    bgMusic.volume = volumeControl.value;
+}
+
+// --- LÓGICA DEL MENÚ DE SALIDA ---
+
+function abrirModalSalida() {
+    const modalSalida = document.getElementById('exit-modal');
+    if (modalSalida) {
+        modalSalida.style.display = "flex";
+        console.log("Sistema: Solicitud de desconexión detectada.");
+    }
+}
+
+function cerrarModalSalida() {
+    const modalSalida = document.getElementById('exit-modal');
+    if (modalSalida) {
+        modalSalida.classList.add('modal-closing');
+        
+        setTimeout(() => {
+            modalSalida.style.display = "none";
+            modalSalida.classList.remove('modal-closing');
+        }, 500); // Mismo tiempo que configuramos para el otro menú
+    }
+}
+
+function confirmarSalida() {
+    console.log("Desconectando...");
+    
+    // Efecto visual de fundido a negro antes de intentar cerrar
+    document.body.style.transition = "all 0.5s ease";
+    document.body.style.opacity = "0";
+    document.body.style.background = "black";
+
+    setTimeout(() => {
+        // Intento de cerrar la pestaña
+        window.close();
+
+        // Nota realista: Los navegadores bloquean window.close() si no se abrió por script.
+        // Si no se cierra, avisamos al usuario o redirigimos.
+        setTimeout(() => {
+            alert("Acceso denegado por el navegador. Por favor, cierra la pestaña manualmente.");
+            window.location.href = "about:blank";
+        }, 300);
+    }, 500);
+}
+
+function toggleMenu() {
+    const menu = document.getElementById('menu-desplegable');
+    // Alterna la clase 'oculto' para mostrar/esconder
+    menu.classList.toggle('oculto');
+}
+
+function toggleMenu() {
+    const panel = document.getElementById('panel-quienes-somos');
+    panel.classList.toggle('oculto');
+}
+
+// IMPORTANTE: Modifica el botón de CONFIGURACIÓN en tu HTML 
+// para que llame a openConfig():
+// <button class="menu-btn" onclick="openConfig()">CONFIGURACIÓN</button>

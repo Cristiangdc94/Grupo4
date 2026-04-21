@@ -1,139 +1,410 @@
-/* RESET GENERAL */
-* {
-    margin: 0; padding: 0; box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
-}
-
+/* --- ESTILOS GENERALES --- */
 body, html {
-    height: 100%; width: 100%; overflow: hidden;
-    background: transparent; 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    overflow: hidden;
     color: white;
 }
 
-/* FONDO */
-.background-image {
+.video-container {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), 
-                url('images/Bunker.png') no-repeat center center;
-    background-size: cover;
+    width: 100%;
+    height: 100%;
     z-index: -1;
+    filter: brightness(30%);    
 }
 
-/* MENÚ LATERAL */
-.menu-checkbox { display: none; }
-
-.side-menu {
-    position: fixed; top: 0; left: -320px; width: 300px; height: 100%;
-    background: rgba(10, 0, 0, 0.05); 
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    transition: 0.4s cubic-bezier(0.9, 0, 0.1, 1);
-    z-index: 100; /* Siempre arriba del overlay */
-    padding: 80px 20px 20px;
-    border-right: 3px solid #FF0000;
-    box-shadow: 10px 0 30px rgba(255, 0, 0, 0.5);
-    display: flex; flex-direction: column;
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.menu-checkbox:checked ~ .side-menu { left: 0; }
-
-.menu-items a {
-    display: block; color: #FF0000; padding: 15px;
-    text-decoration: none; border-bottom: 1px solid #300;
-    transition: 0.2s; text-transform: uppercase; font-weight: bold;
+/* --- TÍTULO PRINCIPAL (CAOS) --- */
+.game-title {
+    font-size: 5rem;
+    font-weight: 900;
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    /* Damos una sombra más fuerte para que se separe del video colorido */
+    text-shadow: 2px 2px 0px #000, 0 0 15px rgba(255, 0, 0, 0.8);
+    user-select: none;
+    z-index: 1;
+    margin-bottom: 50px;
 }
 
-/* CAPA DE CIERRE (OVERLAY) */
-.menu-overlay {
-    position: fixed;
+.game-title::before, .game-title::after {
+    content: attr(data-text);
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: transparent;
-    z-index: 80; /* Entre el menú (100) y el UI (1) */
-    display: none;
-    pointer-events: none; /* No bloquea clics cuando está oculto */
+    background: black;
+    opacity: 0;
 }
 
-/* Activar solo al abrir menú */
-.menu-checkbox:checked ~ .menu-overlay {
+.game-title::before { color: #ff0000; z-index: -1; text-shadow: 0 0 5px #ff0000; }
+.game-title::after { color: #00ffff; z-index: -2; opacity: 0.0; filter: blur(1px); }
+
+/* Clases activadas por JS para el Título */
+.visual-glitch::before {
+    opacity: 1;
+    animation: glitch-switch 0.1s infinite;
+}
+.visual-glitch::after {
+    opacity: 0.3;
+    animation: glitch-switch 0.1s infinite reverse;
+    transform: translate(3px, -2px);
+}
+.shake-glitch {
+    animation: shake-violent 0.08s infinite;
+}
+
+/* --- BOTONES REDONDEADOS CON GLITCH SUAVE --- */
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-btn {
+    position: relative;
+    /* Fondo oscuro semitransparente para que siempre se lea el texto */
+    background: rgba(0, 0, 0, 0.4); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 15px 60px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    /* Un desenfoque más fuerte para aislar el botón del video */
+    backdrop-filter: blur(10px);
+}
+
+.menu-btn:hover {
+    background: rgba(255, 0, 0, 0.6); /* Rojo más opaco al pasar el ratón */
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    transform: scale(1.05);
+}
+
+/* Efecto de glitch sutil al pasar el ratón */
+.menu-btn::before, .menu-btn::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.menu-btn:hover {
+    background: rgba(255, 0, 0, 0.15);
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+.menu-btn:hover::before {
+    opacity: 1;
+    color: #ff0000;
+    z-index: -1;
+    left: 2px;
+    animation: btn-glitch-1 0.3s infinite;
+}
+
+.menu-btn:hover::after {
+    opacity: 1;
+    color: #00ffff;
+    z-index: -2;
+    left: -2px;
+    animation: btn-glitch-2 0.3s infinite reverse;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes glitch-switch {
+    0% { clip-path: inset(10% 0 80% 0); transform: translate(-5px, 2px); }
+    40% { clip-path: inset(30% 0 50% 0); transform: translate(-3px, 5px) skewX(5deg); }
+    80% { clip-path: inset(50% 0 30% 0); transform: translate(-10px, 0px) scaleY(1.1); }
+    100% { clip-path: inset(5% 0 90% 0); transform: translate(0); }
+}
+
+@keyframes shake-violent {
+    0% { transform: translate(0); }
+    50% { transform: translate(-4px, -4px) skew(3deg); }
+    100% { transform: translate(0); }
+}
+
+/* Glitch sutil para botones */
+@keyframes btn-glitch-1 {
+    0% { clip-path: inset(0 0 70% 0); }
+    50% { clip-path: inset(30% 0 30% 0); }
+    100% { clip-path: inset(70% 0 0 0); }
+}
+
+@keyframes btn-glitch-2 {
+    0% { clip-path: inset(70% 0 0 0); }
+    50% { clip-path: inset(30% 0 30% 0); }
+    100% { clip-path: inset(0 0 70% 0); }
+}
+
+/* --- MODAL DE CONFIGURACIÓN --- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: rgba(20, 20, 20, 0.9);
+    border: 2px solid #ff0000;
+    padding: 40px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.2);
+    animation: slideIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    transition: opacity 0.3s ease;
+}
+
+.modal[style*="display: flex"] .modal-content {
+    animation: menuIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.modal-closing {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+.modal-closing .modal-content {
+    animation: menuOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards !important;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+        filter: brightness(5);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: brightness(1);
+    }
+}
+
+@keyframes menuIn {
+    0% { transform: scale(0.7); opacity: 0; filter: brightness(3) blur(10px); }
+    100% { transform: scale(1); opacity: 1; filter: brightness(1) blur(0); }
+}
+
+@keyframes menuOut {
+    0% { transform: scale(1); opacity: 1; filter: brightness(1); }
+    100% { transform: scale(1.2); opacity: 0; filter: brightness(0) blur(20px); }
+}
+
+.config-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* El Switch (Toggle) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #333;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; width: 16px;
+    left: 4px; bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider { background-color: #ff0000; }
+input:checked + .slider:before { transform: translateX(26px); }
+
+/* Input Range (Volumen) */
+input[type=range] {
+    cursor: pointer;
+    accent-color: #ff0000;
+}
+
+.close-btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 0.9rem;
+}
+
+.modal-content::before {
+    content: " ";
     display: block;
-    pointer-events: auto; /* Captura el clic para cerrar */
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    border-radius: 20px;
 }
 
-/* ANIMACIÓN CAOS */
-.chaos-hover:hover {
-    color: #fff !important;
-    text-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000;
-    background: rgba(255, 0, 0, 0.2);
-    animation: chaos-loop 0.15s infinite;
+/* Contenedor para poner los botones uno al lado del otro */
+.exit-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-@keyframes chaos-loop {
-    0% { transform: translate(0,0) skew(0deg); }
-    25% { transform: translate(-2px, 1px) skew(1deg); }
-    50% { transform: translate(2px, -1px) skew(-1deg); }
-    75% { transform: translate(-1px, -1px) skew(0.5deg); }
-    100% { transform: translate(1px, 2px) skew(-0.5deg); }
+/* Caja de salida un poco más pequeña que la de configuración */
+.exit-box {
+    max-width: 450px;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.3);
 }
 
-/* HAMBURGUESA */
-.hamburger-btn {
-    position: fixed; top: 25px; left: 25px; z-index: 110;
-    background: #000; border: 2px solid #FF0000; padding: 12px;
-    cursor: pointer; display: flex; flex-direction: column; gap: 5px;
+/* Estilo para el botón de confirmar (Rojo) */
+.btn-confirm:hover {
+    background: #ff0000 !important;
+    color: black !important;
+    box-shadow: 0 0 25px #ff0000;
 }
 
-.hamburger-btn .line { display: block; width: 25px; height: 2px; background: #FF0000; transition: 0.3s; }
-
-.menu-checkbox:checked ~ .main-ui .hamburger-btn .line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.menu-checkbox:checked ~ .main-ui .hamburger-btn .line:nth-child(2) { opacity: 0; transform: translateX(-20px); }
-.menu-checkbox:checked ~ .main-ui .hamburger-btn .line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* VOLUMEN Y LOG */
-.volume-container {
-    display: flex; align-items: center; background: rgba(255, 0, 0, 0.1);
-    padding: 10px; border-radius: 5px; width: 50px; overflow: hidden;
-    transition: 0.3s; border: 1px solid #600;
-}
-.volume-container:hover { width: 200px; border-color: #FF0000; }
-.volume-container button { background: none; border: none; color: #FF0000; cursor: pointer; min-width: 30px; }
-.slider-wrapper { margin-left: 15px; opacity: 0; transition: 0.3s; }
-.volume-container:hover .slider-wrapper { opacity: 1; }
-input[type="range"] { accent-color: #FF0000; cursor: pointer; }
-
-.log-container { flex-grow: 1; border-top: 2px solid #FF0000; margin-top: 20px; padding-top: 15px; display: flex; flex-direction: column; overflow: hidden;}
-.log-entry { border-left: 3px solid #FF0000; background: rgba(255, 0, 0, 0.05); padding: 10px; margin-bottom: 8px; font-size: 0.85rem; }
-.decision-log { overflow-y: auto; }
-
-/* MAIN UI */
-.main-ui { 
-    height: 100vh; display: flex; flex-direction: column; 
-    justify-content: flex-start; padding: 100px 50px; z-index: 1; 
+/* Estilo para el botón de cancelar (Gris/Blanco) */
+.btn-cancel:hover {
+    background: #ffffff !important;
+    color: black !important;
+    box-shadow: 0 0 20px #ffffff;
 }
 
-.info-box {
-    max-width: 850px; margin: 0 auto; 
-    background: rgba(0, 0, 0, 0.05);
-    padding: 40px; border: 1px solid #FF0000; border-radius: 25px;
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
-    backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);
-    position: relative; top: 0px; left: 0px;
+.video-container {
+    position: fixed; /* Lo fija en la pantalla, no se mueve al hacer scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Lo envía detrás de todo el contenido */
+    overflow: hidden;
 }
 
-.info-box hr { border: 0; height: 1px; background: linear-gradient(to right, transparent, #FF0000, transparent); margin: 20px 0; }
-
-.bottom-buttons { 
-    display: flex; justify-content: center; border-radius: 25px;
-    gap: 500px; margin-top: auto; padding-bottom: 10px; 
+#bg-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Esto es CLAVE: hace que el video llene toda la pantalla sin deformarse, recortando los bordes si es necesario */
 }
 
-.game-option {
-    border: 2px solid #FF0000; color: #FF0000; padding: 25px 60px;
-    border-radius: 25px; background: rgba(0, 0, 0, 0.5); 
-    text-decoration: none; font-weight: bold; font-size: 1.3rem;
-    text-transform: uppercase; transition: 0.3s;
+/* Opcional: Una capa oscura extra para que el texto resalte mejor sobre el video */
+.video-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.0); /* Ajusta este valor (0.5) para más o menos oscuridad */
+    z-index: 1;
 }
-.game-option:hover { background: rgba(255, 0, 0, 0.3); color: white; transform: translateY(-5px); }
+
+/* Asegura que los botones del menú hereden todo */
+.boton-juego {
+    /* Tu código actual de diseño y efecto glitch */
+    transition: all 0.3s ease;
+}
+
+/* Ajuste específico para el contenedor del menú para que no se vea "pegado" */
+
+#btn-info {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* Usa aquí los mismos colores/bordes que tus otros botones */
+}
+
+#panel-quienes-somos {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 400px;
+    background: rgba(0, 0, 0, 0.85); /* Fondo oscuro estilo sistema */
+    border: 2px solid #ff0000;
+    border-radius: 15px;
+     /* Borde estilo neón/glitch */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+
+    box-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #FFFFFF;
+    animation: panel-glitch 2s infinite alternate;
+}
+
+@keyframes panel-glitch {
+    0% { transform: translate(0); border-color: #33ff00; }
+    20% { transform: translate(-2px, 2px); border-color: #ff00ff; }
+    40% { transform: translate(2px, -2px); border-color: #00ffff; }
+    60% { transform: translate(-1px, 1px); }
+    100% { transform: translate(0); border-color: #33ff00; }
+}
+
+#panel-quienes-somos h3 {
+    color: #fff;
+    font-family: monospace;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#panel-quienes-somos.oculto {
+    display: none;
+}
