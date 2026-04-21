@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Curriculum</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="sidebar-nav">
+        <div class="sidebar-track"></div>
+        <div class="sidebar-progress"></div>
+        
+        <div class="sidebar-dots">
+            <a href="#inicio" class="nav-dot active" data-section="inicio">
+                <span class="nav-label">Inicio</span>
+            </a>
+            <a href="#sobre-mi" class="nav-dot" data-section="sobre-mi">
+                <span class="nav-label">Sobre Mí</span>
+            </a>
+            <a href="#portafolio" class="nav-dot" data-section="portafolio">
+                <span class="nav-label">Portafolio</span>
+            </a>
+            <a href="#contacto" class="nav-dot" data-section="contacto">
+                <span class="nav-label">Contacto</span>
+            </a>
+        </div>
+    </div>
+
+    <header id="encabezado" class="encabezado">
+        <div class="logo">
+            <h2>Cristian</h2> 
+        </div>
+        
+        <nav class="menu-navegacion">
+            <ul>
+                <li class="activo" data-objetivo="inicio">Inicio</li>
+                <li data-objetivo="sobre-mi">Sobre mí</li>
+                <li data-objetivo="portafolio">Portafolio</li>
+                <li data-objetivo="contacto">Contacto</li>
+            </ul>
+        </nav>
+
+        <div class="iconos-sociales">
+            <a href="https://www.linkedin.com/in/cristian-garc%C3%ADa-de-castro-a3564a10b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/Cristiangdc94" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> 
+            <a href="mailto:cristian.garciad@cesjuanpablosegundo.es"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <section id="inicio" class="seccion seccion-inicio">
+        <div class="contenedor-contenido">
+            <div class="grid-tres-columnas">
+                <div class="columna-imagenes">
+                    <div class="contenedor-img">
+                        <img src="img/fotopropia.jpg" alt="Yo" class="img-circular foto-mia">
+                    </div>
+                    <div class="contenedor-img">
+                        <img src="img/juanpablo.webp" alt="Centro" class="img-circular foto-escuela">
+                    </div>
+                </div>
+
+                <div class="columna-texto">
+                    <div class="hero-text-container">
+                      <h1 class="nombre-impacto">Cristian García</h1>
+                       <div class="wrapper-typing">
+                     <p class="typing-text">Desarrollador Fullstack</p>
+                    </div>
+                    </div>
+                    <br>
+                    <p class="desc-azul">
+                        Desarrollador Fullstack con mentalidad analítica y creativa. Me dedico a diseñar <strong>arquitecturas digitales</strong> completas, desde la base de datos hasta el píxel final en pantalla.<br><br>
+                        
+                        Comprometido con la creación de software de alto impacto, priorizando siempre la <strong>escalabilidad</strong> y la <strong>experiencia de usuario</strong>.<br><br>
+                        
+                        <strong>Stack Tecnológico en expansión:</strong><br> 
+                        • <strong>Backend:</strong> Especialización en ecosistema Java (Spring Boot).<br> 
+                        • <strong>Frontend:</strong> Desarrollo de SPA con React.<br> 
+                        • <strong>Data:</strong> Versatilidad en SQL (PostgreSQL) y NoSQL (MongoDB).<br>
+                    </p>
+                    <div class="botones-inicio">
+                        <a href="memoria.html" class="btn btn-primario">Ver Memoria</a>
+                        <a href="#portafolio" class="btn btn-borde">Ver Proyectos</a>
+                    </div>
+                </div>
+
+                <div class="columna-habilidades">
+                    <h3 class="titulo-habilidad">Tecnologías</h3>
+                    <div class="item-habilidad">
+                        <div class="info-habilidad"><span>HTML & CSS</span><span>70%</span></div>
+                        <div class="barra-progreso"><div class="relleno-progreso bar-html" data-ancho="70%"></div></div>
+                    </div>
+                    <div class="item-habilidad">
+                        <div class="info-habilidad"><span>JavaScript</span><span>60%</span></div>
+                        <div class="barra-progreso"><div class="relleno-progreso bar-js" data-ancho="60%"></div></div>
+                    </div>
+                    <div class="item-habilidad">
+                        <div class="info-habilidad"><span>Java</span><span>60%</span></div>
+                        <div class="barra-progreso"><div class="relleno-progreso bar-java" data-ancho="60%"></div></div>
+                    </div>
+                    <div class="item-habilidad">
+                        <div class="info-habilidad"><span>MongoDB y PostgreSQL</span><span>25%</span></div>
+                        <div class="barra-progreso"><div class="relleno-progreso bar-db" data-ancho="25%"></div></div>
+                    </div>
+                    <div class="item-habilidad">
+                        <div class="info-habilidad"><span>Spring Boot</span><span>20%</span></div>
+                        <div class="barra-progreso"><div class="relleno-progreso bar-spring" data-ancho="20%"></div></div>
+                    </div>
+                    <div class="separador-habilidad"></div>
+                    <h3 class="titulo-habilidad">Sociales</h3>
+                    <div class="item-habilidad">
+                        <div class="info-habilidad"><span>Trabajo en Equipo</span><span>100%</span></div>
+                        <div class="barra-progreso"><div class="relleno-progreso bar-social" data-ancho="100%"></div></div>
+                    </div>
+                    <div class="item-habilidad">
+                        <div class="info-habilidad"><span>Comunicación</span><span>85%</span></div>
+                        <div class="barra-progreso"><div class="relleno-progreso bar-social" data-ancho="85%"></div></div>
+                    </div>
+                    <div class="item-habilidad">
+                        <div class="info-habilidad"><span>Empatía</span><span>95%</span></div>
+                        <div class="barra-progreso"><div class="relleno-progreso bar-social" data-ancho="95%"></div></div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <div class="separador-parallax fondo-img-1">
+        <span class="texto-parallax">SOBRE MÍ</span>
+    </div>
+
+    <section id="sobre-mi" class="seccion">
+        <div class="contenedor-contenido">            
+            <div class="intro-personal">
+                <div class="tarjeta-info">
+                    <div class="cabecera-tarjeta">
+                        <div class="icono-tarjeta"><i class="fas fa-user-astronaut"></i></div>
+                        <h3 class="nombre-impacto">Más allá del código</h3>
+                    </div>
+                    <p>Me considero una persona <strong>curiosa y proactiva</strong>. No me limito a escribir líneas de código; me gusta entender el <em>porqué</em> de las cosas.</p>
+                    <p>Fuera de la pantalla, aplico mi lógica en <strong>cualquier ámbito</strong> y mantengo la disciplina, lo que me ayuda a tener la mente despejada para resolver problemas complejos.</p>
+                </div>
+                <div class="tarjeta-info">
+                    <div class="cabecera-tarjeta">
+                        <div class="icono-tarjeta"><i class="fas fa-rocket"></i></div>
+                        <h3 class="nombre-impacto">Visión Profesional</h3>
+                    </div>
+                    <p>Busco formar parte de un equipo donde la <strong>innovación tecnológica</strong> sea el motor. Me motiva el sector tecnológico por su constante evolución.</p>
+                    <p>Mi objetivo es consolidarme como <strong>Desarrollador Full Stack</strong>, con especial predilección por arquitecturas backend robustas (Java/Spring) sin descuidar el frontend.</p>
+                </div>
+                <div class="tarjeta-info">
+                    <div class="cabecera-tarjeta">
+                        <div class="icono-tarjeta"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h3 class="nombre-impacto">Lo que aporto</h3>
+                    </div>
+                    <p>Más allá de mis habilidades técnicas, valoro la <strong>comunicación transparente</strong> y el compañerismo.</p>
+                    <ul class="lista-valores">
+                        <li><i class="fas fa-check"></i> Capacidad de adaptación a nuevas tecnologías.</li>
+                        <li><i class="fas fa-check"></i> Mentalidad orientada a soluciones.</li>
+                        <li><i class="fas fa-check"></i> Compromiso con la puntualidad.</li>
+                        <li><i class="fas fa-check"></i> Compromiso con la calidad del código.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h1 class="titulo-rosa" style="margin-top: 50px;">Mi Trayectoria Profesional</h1>
+            <p style="margin-bottom: 40px;">Un breve resumen de mi experiencia laboral y formación académica.</p>
+
+            <div class="contenedor-linea-tiempo">
+                
+                <div class="linea-progreso"></div>
+
+                <div class="item-linea-tiempo izquierda">
+                    <div class="punto-linea"></div>
+                    <a href="https://cesjuanpablosegundo.es/" target="_blank" class="logo-referencia" title="Ver web del CES">
+                        <img src="img/juanpablo.webp" alt="Logo CES">
+                    </a>
+                    <div class="contenido-linea">
+                        <div class="fecha">2025 - Actualidad</div>
+                        <h3>Grado Superior DAM</h3>
+                        <h4>CES Juan Pablo II</h4>
+                        <p>Desarrollo de aplicaciones utilizando: <br> • HTML, CSS, JS, JAVA, Python y Spring Boot.
+                         <br>Gestión de bases de datos con mySQL.</p>
+                    </div>
+                </div>
+
+                <div class="item-linea-tiempo derecha">
+                    <div class="punto-linea"></div>
+                    <a href="https://www.recreativospozuelo.es/" target="_blank" class="logo-referencia" title="Recreativos Pozuelo">
+                        <img src="img/logoRecreativos.png" alt="Logo Recreativos">
+                    </a>
+                    <div class="contenido-linea">
+                        <div class="fecha">2022 - 2023</div>
+                        <h3>Técnico de Mantenimiento</h3>
+                        <h4>Recreativos Pozuelo</h4>
+                        <p>Mantenimiento y transporte de máquinas recreativas.</p>
+                    </div>
+                </div>
+
+                <div class="item-linea-tiempo izquierda">
+                    <div class="punto-linea"></div>
+                    <a href="https://diamondesportscenter.com/" target="_blank" class="logo-referencia">
+                        <img src="img/logoElite.png" alt="Elite">
+                    </a>
+                    <div class="contenido-linea">
+                        <div class="fecha">2017 - 2019</div>
+                        <h3>Encargado de tienda</h3>
+                        <h4>Palatium GAME S.L</h4>
+                        <p>Mantenimiento de la Flota de PCs. <br>
+                           Soporte técnico a usuarios. <br>
+                           Gestión de inventario y ventas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="item-linea-tiempo derecha">
+                    <div class="punto-linea"></div>
+                    <a href="https://www.piratasrock.com/" target="_blank" class="logo-referencia">
+                        <img src="img/logoPiratas.png" alt="Logo Piratas">
+                    </a>
+                    <div class="contenido-linea">
+                        <div class="fecha">2015 - 2017 y 2021-2022</div>
+                        <h3>Camarero/Cajero</h3>
+                        <h4>Piratas Rock&Wey</h4>
+                        <p>Camarero de barra y cajero de salón.</p>
+                    </div>
+                </div>
+                
+                <div class="item-linea-tiempo izquierda">
+                    <div class="punto-linea"></div>
+                    <a href="https://ies-pnegras.centros.castillalamancha.es/" target="_blank" class="logo-referencia" title="IES Peñas Negras">
+                        <i class="fas fa-graduation-cap" style="font-size: 26px; color: var(--color-primario);"></i>
+                    </a>
+                    <div class="contenido-linea">
+                        <div class="fecha">2013 - 2015</div>
+                        <h3>Grado Medio Mant. Electromecánica</h3>
+                        <h4>IES Peñas Negras</h4>
+                        <p>Técnico de mantenimiento electromecánico en instalaciones industriales. <br>
+                           Soldadura y montaje de estructuras metálicas. <br>
+                           Mantenimiento hidráulico y neumático. <br>
+                           Tornero fresador y manejo de CNC.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="separador-parallax fondo-img-2">
+        <span class="texto-parallax">PORTAFOLIO</span>
+    </div>
+
+    <section id="portafolio" class="seccion">
+        <div class="contenedor-contenido">
+            <div class="filtros-container">
+                <button class="filtro-btn activo" data-filter="todos">Todos</button>
+                <button class="filtro-btn" data-filter="java">Java / Spring</button>
+                <button class="filtro-btn" data-filter="html">HTML / CSS</button>
+                <button class="filtro-btn" data-filter="javascript">JavaScript</button>
+                <button class="filtro-btn" data-filter="grupal">Trabajo en Equipo</button>
+            </div>
+
+            <div class="carousel-wrapper">
+                <div class="carousel-escenario">
+                    <div class="carousel-track" id="track">
+                        
+                        <div class="proyecto-card" 
+                             data-tech="java spring mysql" 
+                             data-repo="https://github.com/Cristiangdc94/CristianGarcia_PRO1/tree/main/CODIGOS/ProyectoVideojuego"
+                             data-download="#" >
+                            <div class="proyecto-img">
+                                <img src="img/Juego-rol-img.jpg" alt="FotoJuegoRol.png">
+                                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                            <div class="proyecto-info">
+                                <h3>Juego de Rol</h3>
+                                <p>Sistema backend robusto para la gestión de un juego de rol inventado por el profesor.</p>
+                                <div class="tecnologias-tags">
+                                    <span>Java</span><span>Spring Boot</span><span>MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="proyecto-card" 
+                             data-tech="html css grupal"
+                             data-repo="src/ProyectoT1 HTML.rar"
+                             data-download="src/ProyectoT1 HTML.rar"
+                             data-team="true">
+                            <div class="proyecto-img">
+                                <img src="img/proyecto2.png" alt="Proyecto 2">
+                                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                            <div class="proyecto-info">
+                                <h3>Página web Maxim Dondyuk</h3>
+                                <h4 style="color: #b8c1ec; margin-bottom: 10px; font-weight:400;">Desarrollo Grupal con HTML puro</h4>
+                                <p>Plataforma web documental sobre el trabajo del fotógrafo en zonas de conflicto.</p>
+                                <div class="tecnologias-tags">
+                                    <span>HTML</span><span>TRABAJO EN EQUIPO</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="proyecto-card" 
+                             data-tech="java"
+                             data-repo="https://github.com/Cristiangdc94/CristianGarcia_PRO1/tree/main/CODIGOS/ProyectoBingo"
+                             data-download="src/ProyectoBingo.rar">
+                            <div class="proyecto-img">
+                                <img src="img/fotografia-bingo.png" alt="Proyecto Bingo">
+                                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                            <div class="proyecto-info">
+                                <h3>Bingo</h3>
+                                <p>Implementación de un sistema backend para bingo. Generación de números aleatorios y gestión de jugadores.</p>
+                                <div class="tecnologias-tags">
+                                    <span>JAVA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="proyecto-card proyecto-futuro" data-tech="java">
+                            <div class="contenido-futuro">
+                                <i class="fas fa-hammer icono-futuro"></i>
+                                <h3>Próximamente</h3>
+                                <p>Nueva API REST en desarrollo</p>
+                                <div class="tecnologias-tags"><span>JAVA</span></div>
+                            </div>
+                        </div>
+
+                        <div class="proyecto-card proyecto-futuro" data-tech="html css javascript">
+                            <div class="contenido-futuro">
+                                <i class="fas fa-laptop-code icono-futuro"></i>
+                                <h3>En Construcción</h3>
+                                <p>Proyecto CSS, JavaScript</p>
+                                <div class="tecnologias-tags"><span>CSS</span><span>JavaScript</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="separador-parallax fondo-img-3">
+        <span class="texto-parallax">CONTACTO</span>
+    </div>
+
+    <section id="contacto" class="seccion">
+        <div class="contenedor-contenido">            
+            <div class="contacto-wrapper">
+                
+                <div class="contacto-info">
+                    <h3>¿Tienes una idea?</h3>
+                    <p>Estoy disponible para proyectos freelance y oportunidades laborales a tiempo completo. ¡Conectemos!</p>
+                    
+                    <div class="botones-contacto-grid">
+                        <a href="mailto:cristian.garciad@cesjuanpablosegundo.es" class="card-contacto mail">
+                            <div class="icono-con"><i class="fas fa-paper-plane"></i></div>
+                            <div class="texto-con">
+                                <span>Envíame un correo</span>
+                                <small>Respuesta en 24h</small>
+                            </div>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/cristian-garc%C3%ADa-de-castro-a3564a10b/" target="_blank" class="card-contacto linkedin">
+                            <div class="icono-con"><i class="fab fa-linkedin-in"></i></div>
+                            <div class="texto-con">
+                                <span>LinkedIn</span>
+                                <small>Conectemos profesionalmente</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contacto-form">
+                    <form action="https://formspree.io/f/mbdkzgqp" method="POST">
+                        <div class="grupo-input">
+                            <input type="text" name="nombre" required>
+                            <label>Tu Nombre</label>
+                            <span class="barra-neon"></span>
+                        </div>
+
+                        <div class="grupo-input">
+                            <input type="email" name="email" required>
+                            <label>Tu Email</label>
+                            <span class="barra-neon"></span>
+                        </div>
+
+                        <div class="grupo-input">
+                            <textarea name="mensaje" rows="4" required></textarea>
+                            <label>Tu Mensaje</label>
+                            <span class="barra-neon"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primario btn-enviar">
+                            Enviar Mensaje <i class="fas fa-rocket"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-equipo" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-equipo">&times;</span>
+            <h2 class="titulo-modal">Integrantes del Proyecto</h2>
+            <div class="contenedor-equipo">
+                
+                <div class="lista-miembros">
+                    <div class="miembro-tab activo" onclick="mostrarMiembro('miembro1', this)">
+                        <i class="fas fa-user-circle"></i> Cristian García
+                    </div>
+                    <div class="miembro-tab" onclick="mostrarMiembro('miembro2', this)">
+                        <i class="fas fa-user-circle"></i> Francisco Angamarca
+                    </div>
+                    <div class="miembro-tab" onclick="mostrarMiembro('miembro3', this)">
+                        <i class="fas fa-user-circle"></i> Vitalii Zhdanskyi
+                    </div>
+                </div>
+
+                <div class="detalle-miembro">
+                    
+                    <div id="miembro1" class="info-content activo">
+                        <div class="foto-miembro"><img src="img/fotopropia.jpg" alt="Cristian"></div>
+                        <h3>Cristian García</h3>
+                        <span class="rol">Líder de Maquetación</span>
+                        <div class="bio-scroll">
+                            <p>Encargado de la estructura semántica del HTML y la adaptación responsive del sitio. Coordinación del repositorio.</p>
+                        </div>
+                        <div class="contenedor-btn-bio">
+                            <a href="#contacto" class="btn-sm btn-demo">
+                                <i class="fas fa-envelope"></i> Contactar conmigo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="miembro2" class="info-content">
+                        <div class="foto-miembro">
+                            <img src="img/FotoPaco.jpeg" alt="Francisco R. Angamarca">
+                        </div>
+                        <h3>Francisco R. Angamarca</h3>
+                        <span class="rol">Desarrollador Web Junior</span>
+                        
+                        <div class="bio-scroll">
+                            <p class="bio-intro">"Hola, soy Francisco. Y quiero construir el futuro web con vosotros."</p>
+                            <p>Actualmente finalizando mis estudios en Desarrollo de Aplicaciones Multiplataforma (DAM). Aunque mi carrera profesional apenas comienza, mi pasión por la tecnología y la resolución de problemas viene de lejos.</p>
+                            <p>Durante mi formación, he buscado proactivamente desafíos reales:</p>
+                            <ul class="lista-bio">
+                                <li><strong>Dominio Técnico:</strong> Base sólida en Java y tecnologías web (HTML5, CSS3), desde lógica algorítmica hasta interfaces responsivas.</li>
+                                <li><strong>Mentalidad de Crecimiento:</strong> Curioso y autodidacta. Gran capacidad para adaptarme a nuevas herramientas y metodologías ágiles.</li>
+                                <li><strong>Compromiso y Calidad:</strong> Busco escribir soluciones limpias, mantenibles y eficientes. Código escalable, no solo funcional.</li>
+                            </ul>
+                            <br>
+                            <p style="font-style: italic; color: #a0a0a0;">"No busco solo un empleo, sino un equipo donde aportar mi energía y visión fresca."</p>
+                        </div> 
+
+                        <div class="contenedor-btn-bio">
+                            <a href="mailto:rafaangamarca@gmail.com" class="btn-sm btn-demo">
+                                <i class="fas fa-envelope"></i> Contactar con Francisco
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="miembro3" class="info-content">
+                        <div class="foto-miembro">
+                            <img src="img/fotoVitaly.png" alt="Vitalii Zhdanskyi">
+                        </div>
+                        <h3>Vitalii Zhdanskyi</h3>
+                        <span class="rol">Desarrollador Full Stack (Backend Focus)</span>
+                        
+                        <div class="bio-scroll">
+                            <p class="bio-intro">"Ingeniería de software, precisión en el Backend y arquitecturas escalables."</p>
+                            
+                            <p>Desarrollador en formación (Grado Superior DAM 2025-2027) con una sólida base en ingeniería de software y certificación intensiva en Python. Mi perfil se distingue por una especialización temprana en Backend, Microservicios y Arquitecturas Distribuidas.</p>
+                            
+                            <ul class="lista-bio">
+                                <li>
+                                    <strong>Stack Tecnológico Potente:</strong>
+                                    Domino el ecosistema Java 21 (Spring Boot, Hibernate, Kafka) para sistemas empresariales, sumado a la agilidad de Python (Django, FastAPI, Pandas) para automatización y datos.
+                                </li>
+                                <li>
+                                    <strong>Integración y Despliegue:</strong>
+                                    Trabajo con Angular y React en frontend, asegurando una integración completa mediante Docker y gestión avanzada de bases de datos (SQL y MongoDB).
+                                </li>
+                                <li>
+                                    <strong>Soft Skills de Alto Rendimiento:</strong>
+                                    Aplico <em>Extreme Ownership</em> (responsabilidad total sobre el código), resolución analítica de problemas y una adaptabilidad rápida a nuevas tecnologías.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="contenedor-btn-bio">
+                            <a href="mailto:vitalii@zhdanskyi.com" class="btn-sm btn-demo">
+                                <i class="fas fa-envelope"></i> Contactar con Vitalii
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-proyecto" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-proyecto">&times;</span>
+            <div id="contenido-modal-dinamico"></div>
+        </div>
+    </div>
+
+    <script src="js/jscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+body {
+    margin: 0;
+    padding-top: 80px;
+}
+
+/* Panel Desplegable */
+
+.panel-desplegable {
+    position: fixed;
+    top: 0;
+    left: -260px;               
+    width: 260px;               
+    height: 100vh;              
+    background-color: rgb(194, 189, 252);
+    box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    padding-top: 100px;         
+    transition: left 0.4s ease;
+    z-index: 999;
+}
+
+.panel-desplegable a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 18px;
+}
+
+/* Video de presentacion */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* ocupa casi toda la pantalla */
+    overflow: hidden;
+}
+
+
+.hero-video {
+    position: absolute;
+    width: 100%;
+    height: 110%;
+    object-fit: cover;
+    transform: translateY(-50%);
+    z-index: -1;
+    will-change: transform;
+}
+
+/* Texto encima del vídeo */
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.hero-overlay p {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+
+/* Efecto hover */
+.panel-desplegable a:hover {
+    background-color: #f0f4ff;
+}
+
+.barra-superior {
+    background-color: #007BFF; /* Azul */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.titulo{
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "MiFuente1";
+}
+
+.titulo-2 {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "MiFuente2";
+}
+
+.titulo-3 {
+    font-size: 128px;
+    font-weight: bold;
+    font-family: "MiFuente3";
+}
+
+.menu-icono {
+    width: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-icono span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+/* Carta de Presentación */
+
+.carta-presentacion {
+    max-width: 900px;
+    margin: 60px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.carta-presentacion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nombre {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.datos-contenedor {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.datos-personales,
+.datos-contacto {
+    width: 50%;
+}
+
+.datos-personales p,
+.datos-contacto p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.linea-separadora {
+    margin: 30px 0;
+    height: 3px;
+    width: 100%;
+    background-color: #007BFF;
+}
+
+.texto-presentacion {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Separador de Sección */
+
+.separador-seccion {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 80px auto;
+    max-width: 900px;
+}
+
+.separador-seccion::before,
+.separador-seccion::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background-color: #007BFF;
+}
+
+.separador-seccion span {
+    margin: 0 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #007BFF;
+    white-space: nowrap;
+}
+
+/* Curriculum Vitae */
+
+.cv-imagen {
+    max-width: 900px;
+    margin: 0 auto 100px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.cv-imagen.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cv-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+
+.bloque-descarga {
+    display: block;
+    width: fit-content;
+    margin: 60px auto;
+
+    padding: 20px 40px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bloque-descarga:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* Tipos de Letras y sus Fuentes */
+
+@font-face { /* Personaliza y guarda una fuente que tengas descargada */
+    font-family: "MiFuente1";
+    src: url("Fuentes/Bristle\ Radiant\ DEMO\ VERSION.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { /* Personaliza y guarda una fuente que tengas descargada */
+    font-family: "MiFuente2";
+    src: url("Fuentes/Permanent_Marker/PermanentMarker-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { /* Personaliza y guarda una fuente que tengas descargada */
+    font-family: "MiFuente3";
+    src: url("Fuentes/Patrick_Hand/PatrickHand-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    padding-top: 10px;
+}
+
+/* --- Video con efecto Parallax Scrolling --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* altura casi completa de pantalla */
+    overflow: hidden;
+}
+
+/* Vídeo ocupa todo el fondo */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;  /* un poco más grande para efecto parallax */
+    object-fit: cover;
+    transform: translateY(0);
+    z-index: -1;
+    will-change: transform;
+}
+
+.panel-desplegable {
+    position: fixed;
+    top: 0;
+    left: -260px;               /* Empieza fuera de la pantalla */
+    width: 260px;               /* Ancho del panel */
+    height: 100vh;              /* Altura completa de la pantalla */
+    background-color: rgb(194, 189, 252);
+    box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    padding-top: 100px;         /* Para que no choque con la barra superior */
+    transition: left 0.4s ease; /* ANIMACIÓN SUAVE */
+    z-index: 999;
+}
+
+/* Enlaces dentro de la tabla desplegable */
+.panel-desplegable a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 18px;
+}
+
+.panel-desplegable a:hover {
+    background-color: #f0f4ff;
+}
+
+/* Capa de texto encima del vídeo */
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay h1 {
+    font-size: 50px;
+    margin: 0;
+    color: #ffffff;
+}
+
+.hero-overlay p {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.barra-superior {
+    background-color: #007BFF; /* Azul */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px; /* modifica el margen de los lados, en el texto */
+
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.titulo{
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "MiFuente1";
+}
+
+.titulo-2 {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "MiFuente2";
+}
+
+.titulo-3 {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "MiFuente3";
+}
+
+.menu-icono {
+    width: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-icono span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+/* Texto superior */
+
+.practicas-header {
+    max-width: 1000px;
+    margin: 60px auto 60px auto;
+    text-align: center;
+}
+
+.practicas-header h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.practicas-header p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* --- Tablas de 2 filas x 3 columnas --- */
+.grid-practicas {
+    max-width: 1000px;
+    margin: 0 auto 100px auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* --- Cada caja --- */
+.card {
+    background-color: white;
+    border-radius: 12px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    overflow: hidden; /* para que la imagen respete bordes redondeados */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+}
+
+.card-link:hover .card {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+
+/* Imagen ocupa 75% de caja */
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Texto ocupa 25% de caja */
+.card-texto {
+    text-align: center;
+    padding: 20px;
+    min-height: 50px;
+    color: #333; /* color normal de texto */
+    font-weight: bold;
+}
+
+
+/* Tipos de Letras y sus Fuentes */
+
+@font-face { /* Personaliza y guarda una fuente que tengas descargada */
+    font-family: "MiFuente1";
+    src: url("Fuentes/Bristle\ Radiant\ DEMO\ VERSION.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { /* Personaliza y guarda una fuente que tengas descargada */
+    font-family: "MiFuente2";
+    src: url("Fuentes/Permanent_Marker/PermanentMarker-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { /* Personaliza y guarda una fuente que tengas descargada */
+    font-family: "MiFuente3";
+    src: url("Fuentes/Patrick_Hand/PatrickHand-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria del Proyecto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="body-memoria">
+
+    <a href="index.html" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver al Portfolio</a>
+
+    <div class="memoria-container">
+        
+        <header class="memoria-header">
+            <h1 class="titulo-rosa">Memoria del Proyecto</h1>
+            <h2 class="subtitulo-memoria">Portfolio Web Personal</h2>
+            <div class="datos-autor">
+                <p><strong>Autor:</strong> Cristian García</p>
+                <p><strong>Centro:</strong> CES Juan Pablo II</p>
+                <p><strong>Fecha:</strong> Febrero 2025</p>
+            </div>
+            <div style="margin-top: 30px;">
+               <a href="src/MemoriaPDF.pdf" target="_blank" class="btn btn-primario">
+                <i class="fas fa-eye"></i> Ver PDF Oficial
+            </a>
+            </div>
+        </header>
+
+        <hr class="separador-neon">
+
+        <section class="seccion-memoria">
+            <h3>2. Resumen</h3>
+            <p>EEste proyecto consiste en el diseño y desarrollo de una aplicación web
+personal tipo que se quiera, en mí caso seria un estilo "Portfolio One Page".
+El objetivo principal es mostrar mis competencias como desarrollador
+Fullstack, presentando mi trayectoria académica, experiencia laboral y
+proyectos realizados.
+Se ha optado por una estética moderna ("Cyberpunk/Neón") para
+demostrar CSS y animaciones, asegurando a su vez una navegación fluida e
+intuitiva mediante JavaScript.
+</p>
+        </section>
+
+        <section class="seccion-memoria">
+            <h3>3. Índice</h3>
+            <ul class="indice-lista">
+                <li>1. Portada</li>
+                <li>2. Resumen</li>
+                <li>4. Introducción</li>
+                <li>5. Metodología</li>
+                <li>6. Desarrollo e Implementación</li>
+                <li>7. Resultados</li>
+                <li>8. Discusión</li>
+                <li>9. Conclusiones</li>
+                <li>10. Bibliografía</li>
+            </ul>
+        </section>
+
+        <section class="seccion-memoria">
+            <h3>4. Introducción</h3>
+            <p>En el competitivo mundo del desarrollo web, destacar es crucial. Este proyecto aborda la necesidad de tener una presencia online que no solo informe, sino que demuestre capacidades técnicas.</p>
+            <p><strong>Objetivo General:</strong> Crear una web responsive, interactiva y moderna.</p>
+            <p><strong>Objetivos Específicos:</strong> Implementar animaciones CSS avanzadas, manipulación de JS y un diseño adaptable a móviles.</p>
+        </section>
+
+        <section class="seccion-memoria">
+            <h3>5. Metodología</h3>
+            <p>Se ha utilizado una metodología de desarrollo incremental. Las tecnologías empleadas han sido:</p>
+            <ul class="lista-metodologia">
+                <li><strong>HTML5:</strong> Para la estructura semántica.</li>
+                <li><strong>CSS3:</strong> Variables CSS, Flexbox, Grid y animaciones Keyframes.</li>
+                <li><strong>JavaScript (ES6):</strong> Lógica de carrusel, observadores de intersección y eventos táctiles.</li>
+            </ul>
+        </section>
+
+        <section class="seccion-memoria">
+            <h3>6. Desarrollo e Implementación</h3>
+            <p>El desarrollo se dividió en bloques: Header, Hero, Timeline, Carrusel y Contacto. A continuación se detallan las propiedades CSS clave:</p>
+
+            <div class="tabla-css">
+                <div class="fila-css">
+                    <div class="col-codigo">
+                        <h4>Fondo Neón y Variables</h4>
+                        <code>:root { --color-primario: #3a86ff; }</code>
+                        <p>Uso de variables para mantener la coherencia de color en toda la web.</p>
+                    </div>
+                    <div class="col-imagen">
+                        <img src="img/Inicio.png" alt="Contacto">
+                        <img src="img/Proyectos2.png" alt="">
+                    </div>
+                </div>
+
+                <div class="fila-css">
+                    <div class="col-codigo">
+                        <h4>Efecto Glassmorphism</h4>
+                        <code>backdrop-filter: blur(10px); background: rgba(...);</code>
+                        <p>Aplicado en las tarjetas del portafolio y el formulario de contacto.</p>
+                    </div>
+                    <div class="col-imagen">
+                        <img src="img/Proyectos.png" alt="">
+                        <img src="img/Contacto.png" alt="Contacto">
+                    </div>
+                </div>
+
+                <div class="fila-css">
+                    <div class="col-codigo">
+                        <h4>Animación Timeline</h4>
+                        <code>transform: translateY(0); transition: all 0.8s;</code>
+                        <p>Usado junto a IntersectionObserver en JS para animar la entrada de elementos.</p>
+                    </div>
+                    <div class="col-imagen">
+                        <img src="img/Timeline.png" alt="img/Timeline">
+                        <img src="img/Timeline2.png" alt="img/Timeline2">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-memoria">
+            <h3>7. Resultados</h3>
+            <p>El resultado final es una aplicación web SPA (Single Page Application) totalmente funcional.</p>
+            <br>
+            <div class="galeria-resultados">
+                <img src="img/GifWeb.gif" alt="Vista Escritorio">
+                <img src="img/GifMovil.gif" alt="Vista Móvil">
+            </div>
+        </section>
+         <section class="seccion-memoria">
+            <h3>8. Discusión</h3>
+            <p>El mayor desafío fue lograr que la animación de la línea de tiempo fuera
+reversible sin romper la maquetación. Se solucionó cambiando las
+transformaciones laterales (translateX) por verticales (translateY) y usando
+opacidad, lo que estabilizó el diseño en todas las resoluciones.</p>
+        </section>
+        <section class="seccion-memoria">
+            <h3>9. Conclusiones</h3>
+            <p>Se ha logrado crear una interfaz inmersiva. He aprendido a manejar en JavaScript sin librerías externas y a estructurar CSS moderno mediante variables.</p>
+        </section>
+
+        <section class="seccion-memoria">
+            <h3>10. Bibliografía</h3>
+            <ul>
+                <li>Font Awesome para iconografía.</li>
+                <li>Google Fonts (Poppins & Open Sans).</li>
+                <li>Unsplash (Imágenes de recurso).</li>
+                <li>Gemini (Consultas puntuales de lógica JS).</li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+</html>

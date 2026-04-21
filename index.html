@@ -9,7 +9,7 @@
 <body>
     <div class="video-container">
         <video autoplay muted loop id="bg-video">
-            <source src="video/background.mp4" type="video/mp4">
+            <source src="Game/video/background.mp4" type="video/mp4">
         </video>
     </div>
 
@@ -21,7 +21,7 @@
         </div>
         
         <nav class="menu-options">
-            <button class="menu-btn" data-text="INICIAR HISTORIA">INICIAR HISTORIA</button>
+            <a href="Game/Base.html"><button class="menu-btn" data-text="INICIAR HISTORIA">INICIAR HISTORIA</button></a>
             <button class="menu-btn" data-text="CARGAR PARTIDA">CARGAR PARTIDA</button>
             <button class="menu-btn" data-text="CONFIGURACIÓN" onclick="openConfig()">CONFIGURACIÓN</button>
             <button class="menu-btn" data-text="SALIR" onclick="abrirModalSalida()">SALIR</button>
@@ -71,9 +71,9 @@
 
 <div id="panel-quienes-somos" class="oculto">
     <h3>Créditos</h3>
-    <button class="menu-btn" data-text="Francisco Angamarca" onclick="window.open('URL', '_blank')">Francisco Angamarca</button>
-    <button class="menu-btn" data-text="Cristian García" onclick="window.open('URL', '_blank')">Cristian García</button>
-    <button class="menu-btn" data-text="Pablo Sandoval" onclick="window.open('URL', '_blank')">Pablo Sandoval</button>
+    <button class="menu-btn" data-text="Francisco Angamarca" onclick="window.open('Somos/FranciscoAngamarca/index.html', '_blank')">Francisco Angamarca</button>
+    <button class="menu-btn" data-text="Cristian García" onclick="window.open('Somos/CristianGarcia/index.html', '_blank')">Cristian García</button>
+    <button class="menu-btn" data-text="Pablo Sandoval" onclick="window.open('Somos/PabloSandoval/index.html', '_blank')">Pablo Sandoval</button>
 </div>
 
 </body>
