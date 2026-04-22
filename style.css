@@ -386,10 +386,6 @@ input[type=range] {
     gap: 10px;
     z-index: 1000;
 
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 1;
-    transform: translateY(0);
-
     box-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #FFFFFF;
     animation: panel-glitch 2s infinite alternate;
 }
@@ -410,7 +406,6 @@ input[type=range] {
 }
 
 #panel-quienes-somos.oculto {
-<<<<<<< HEAD
     display: none;
 }
 
@@ -583,9 +578,4 @@ input[type=range] {
 #slider-lateral::-webkit-scrollbar-thumb {
     background: #ff0000;
     border-radius: 10px;
-=======
-    opacity: 0;
-    transform: translateY(20px); /* Se desliza un poco hacia abajo al cerrarse */
-    pointer-events: none;
->>>>>>> ae573aedd82443e6bd2c6360520bea3c5a3103d2
 }
