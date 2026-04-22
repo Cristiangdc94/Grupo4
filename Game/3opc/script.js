@@ -4,7 +4,7 @@ let masterMuted = false, musicMuted = false;
 let prevMasterVol = 0.5, prevMusicVol = 0.4;
 
 let isTyping = false;
-const typeSound = new Audio('imagenes/mecanico.mp3'); 
+const typeSound = new Audio('../imagenes/mecanico.mp3'); // Ajustada la ruta si estás en subcarpeta
 
 // --- SELECTORES ---
 const masterSlider = document.getElementById('input-master');
@@ -70,8 +70,7 @@ function handleChoice(etiqueta, titulo, textoDesc, logDesc) {
 }
 
 // --- CIERRE AUTOMÁTICO DE MENÚ ---
-// Escuchamos el clic en el overlay invisible
-menuOverlay.addEventListener('click', (e) => {
+menuOverlay.addEventListener('click', () => {
     menuControl.checked = false;
 });
 
@@ -101,25 +100,30 @@ document.getElementById('btn-mute-music').addEventListener('click', () => {
     else { let r = prevMusicVol > 0 ? prevMusicVol : 0.4; musicSlider.value = r; updateMusicUI(r); }
 });
 
-// Eventos de botones
+// Eventos de botones (AHORA CON 3)
 document.getElementById('opt-1').addEventListener('click', (e) => {
     e.preventDefault();
-    handleChoice('LOG_DATA_ERROR', 'Fragmentación', 'Has decidido romper el tejido de la realidad. Las chispas de datos saltan a tu alrededor.', 'Elegiste el camino del caos absoluto.');
+    handleChoice('LOG_01', 'Fragmentación', 'Has decidido romper el tejido de la realidad.', 'Elegiste fragmentar.');
 });
 
 document.getElementById('opt-2').addEventListener('click', (e) => {
     e.preventDefault();
-    handleChoice('SYSTEM_STABLE', 'Resistencia', 'Te mantienes firme. El código se estabiliza momentáneamente bajo tu voluntad.', 'Decidiste resistir la influencia del rojo.');
+    handleChoice('LOG_02', 'Resistencia', 'Te mantienes firme ante el caos.', 'Elegiste resistir.');
 });
 
-document.getElementById('btn-reset').addEventListener('click', (e) => {
+document.getElementById('opt-3').addEventListener('click', (e) => {
     e.preventDefault();
-    if(confirm("¿Reiniciar el caos?")) location.reload();
+    handleChoice('LOG_03', 'Neutralidad', 'Observas el vacío sin intervenir.', 'Elegiste observar.');
+});
+
+// Reset
+document.getElementById('btn-reset').addEventListener('click', (e) => {
+    if(!confirm("¿Reiniciar el caos?")) e.preventDefault();
 });
 
 // Lanzar texto inicial
 window.onload = () => {
     setTimeout(() => {
-        handleChoice('PROTOCOLO_INICIO', 'Punto Cero', 'La realidad se fragmenta ante ti. Elige tu camino o deja que el caos decida.', 'Inicio de la sesión.');
+        handleChoice('PROTOCOLO_INICIO', 'Punto Cero', 'La realidad se fragmenta ante ti. Elige tu camino.', 'Inicio.');
     }, 500);
 };

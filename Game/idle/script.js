@@ -4,7 +4,7 @@ let masterMuted = false, musicMuted = false;
 let prevMasterVol = 0.5, prevMusicVol = 0.4;
 
 let isTyping = false;
-const typeSound = new Audio('imagenes/mecanico.mp3'); 
+const typeSound = new Audio('../imagenes/mecanico.mp3'); 
 
 // --- SELECTORES ---
 const masterSlider = document.getElementById('input-master');
@@ -46,7 +46,7 @@ function typeWriter(elementId, text, speed, callback = null) {
 }
 
 // --- SECUENCIA: ETIQUETA -> TÍTULO -> DESCRIPCIÓN ---
-function handleChoice(etiqueta, titulo, textoDesc, logDesc) {
+function handleNarrative(etiqueta, titulo, textoDesc) {
     if (isTyping) return; 
 
     typeWriter('choice-label', etiqueta, 60, () => {
@@ -56,22 +56,10 @@ function handleChoice(etiqueta, titulo, textoDesc, logDesc) {
             });
         });
     });
-
-    const log = document.getElementById('decision-log');
-    if(log){
-        const empty = log.querySelector('.empty-msg');
-        if (empty) empty.remove();
-        
-        const entry = document.createElement('div');
-        entry.className = 'log-entry';
-        entry.innerHTML = `<strong>${titulo}</strong><p>${logDesc}</p>`;
-        log.prepend(entry);
-    }
 }
 
 // --- CIERRE AUTOMÁTICO DE MENÚ ---
-// Escuchamos el clic en el overlay invisible
-menuOverlay.addEventListener('click', (e) => {
+menuOverlay.addEventListener('click', () => {
     menuControl.checked = false;
 });
 
@@ -101,25 +89,14 @@ document.getElementById('btn-mute-music').addEventListener('click', () => {
     else { let r = prevMusicVol > 0 ? prevMusicVol : 0.4; musicSlider.value = r; updateMusicUI(r); }
 });
 
-// Eventos de botones
-document.getElementById('opt-1').addEventListener('click', (e) => {
-    e.preventDefault();
-    handleChoice('LOG_DATA_ERROR', 'Fragmentación', 'Has decidido romper el tejido de la realidad. Las chispas de datos saltan a tu alrededor.', 'Elegiste el camino del caos absoluto.');
-});
-
-document.getElementById('opt-2').addEventListener('click', (e) => {
-    e.preventDefault();
-    handleChoice('SYSTEM_STABLE', 'Resistencia', 'Te mantienes firme. El código se estabiliza momentáneamente bajo tu voluntad.', 'Decidiste resistir la influencia del rojo.');
-});
-
+// Reset
 document.getElementById('btn-reset').addEventListener('click', (e) => {
-    e.preventDefault();
-    if(confirm("¿Reiniciar el caos?")) location.reload();
+    if(!confirm("¿Reiniciar el caos?")) e.preventDefault();
 });
 
 // Lanzar texto inicial
 window.onload = () => {
     setTimeout(() => {
-        handleChoice('PROTOCOLO_INICIO', 'Punto Cero', 'La realidad se fragmenta ante ti. Elige tu camino o deja que el caos decida.', 'Inicio de la sesión.');
+        handleNarrative('TRANSMISION_ENTRANTE', 'Zona de Paso', 'Observas los pasillos del búnker. Todo parece estar en calma, pero el aire se siente denso. Desliza hacia la derecha para avanzar.');
     }, 500);
 };

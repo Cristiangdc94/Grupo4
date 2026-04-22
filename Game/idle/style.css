@@ -29,7 +29,7 @@ body, html {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     transition: 0.4s cubic-bezier(0.9, 0, 0.1, 1);
-    z-index: 100; /* Siempre arriba del overlay */
+    z-index: 100;
     padding: 80px 20px 20px;
     border-right: 3px solid #FF0000;
     box-shadow: 10px 0 30px rgba(255, 0, 0, 0.5);
@@ -44,23 +44,54 @@ body, html {
     transition: 0.2s; text-transform: uppercase; font-weight: bold;
 }
 
-/* CAPA DE CIERRE (OVERLAY) */
+/* OVERLAY CIERRE */
 .menu-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     background: transparent;
-    z-index: 80; /* Entre el menú (100) y el UI (1) */
+    z-index: 80;
     display: none;
-    pointer-events: none; /* No bloquea clics cuando está oculto */
+    pointer-events: none;
 }
 
-/* Activar solo al abrir menú */
 .menu-checkbox:checked ~ .menu-overlay {
     display: block;
-    pointer-events: auto; /* Captura el clic para cerrar */
+    pointer-events: auto;
+}
+
+/* BOTÓN LATERAL QUE OCUPA TODO EL ALTO */
+.nav-side-btn {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh; /* De arriba abajo */
+    width: 100px;  /* Ancho de la franja */
+    z-index: 10;
+    color: #FF0000;
+    font-size: 3rem;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.1); /* Muy sutil al inicio */
+    border-left: 1px solid rgba(255, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+    transition: all 0.4s ease;
+}
+
+.nav-side-btn:hover {
+    opacity: 1;
+    background: rgba(255, 0, 0, 0.05);
+    border-left: 2px solid #FF0000;
+    box-shadow: -10px 0 30px rgba(255, 0, 0, 0.2);
+}
+
+.nav-side-btn i {
+    transition: transform 0.3s ease;
+}
+
+.nav-side-btn:hover i {
+    transform: translateX(10px); /* Pequeña animación de la flecha */
 }
 
 /* ANIMACIÓN CAOS */
@@ -111,7 +142,8 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
 /* MAIN UI */
 .main-ui { 
     height: 100vh; display: flex; flex-direction: column; 
-    justify-content: flex-start; padding: 100px 50px; z-index: 1; 
+    justify-content: flex-start; padding: 100px 150px 100px 100px; /* Padding derecho mayor para no pisar el botón lateral */
+    z-index: 1; 
 }
 
 .info-box {
@@ -124,16 +156,3 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
 }
 
 .info-box hr { border: 0; height: 1px; background: linear-gradient(to right, transparent, #FF0000, transparent); margin: 20px 0; }
-
-.bottom-buttons { 
-    display: flex; justify-content: center; border-radius: 25px;
-    gap: 500px; margin-top: auto; padding-bottom: 10px; 
-}
-
-.game-option {
-    border: 2px solid #FF0000; color: #FF0000; padding: 25px 60px;
-    border-radius: 25px; background: rgba(0, 0, 0, 0.5); 
-    text-decoration: none; font-weight: bold; font-size: 1.3rem;
-    text-transform: uppercase; transition: 0.3s;
-}
-.game-option:hover { background: rgba(255, 0, 0, 0.3); color: white; transform: translateY(-5px); }
