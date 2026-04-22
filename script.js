@@ -1,3 +1,91 @@
+// --- 1. MOTOR DE HISTORIA ---
+let nodoActual = "inicio";
+
+function procesarDecision(proximoNodo, url = null) {
+    if (url) {
+        window.open(url, '_blank');
+        return;
+    }
+    nodoActual = proximoNodo;
+    actualizarPantalla();
+}
+
+function actualizarPantalla() {
+    const datos = historia[nodoActual];
+    const textoElement = document.getElementById('texto-historia');
+    const contenedorTexto = document.getElementById('pantalla-juego'); // El padre que posicionas
+    const contenedorBotones = document.getElementById('botones-historia');
+
+    // 1. Gestionar el texto
+    if (textoElement) textoElement.innerText = datos.texto;
+
+    // 2. Gestionar la POSICIÓN (Añade/Quita clases CSS)
+    // Asumimos que tienes una clase base "pantalla-juego" y las del JSON añaden diseño
+    contenedorTexto.className = 'pantalla-juego'; // Resetea a la clase base
+    if (datos.posicion) {
+        contenedorTexto.classList.add(datos.posicion);
+    }
+
+    // 3. Gestionar los BOTONES
+    if (contenedorBotones) {
+        contenedorBotones.innerHTML = '';
+
+        datos.opciones.forEach(opcion => {
+            const btn = document.createElement('button');
+            
+            // Si hay "tipo" usa esa clase, si no, usa el botón normal
+            btn.className = opcion.tipo || "menu-btn";
+            
+            btn.innerText = opcion.texto;
+            btn.onclick = () => procesarDecision(opcion.siguiente, opcion.url);
+            contenedorBotones.appendChild(btn);
+        });
+
+        // Parche de seguridad
+        if (datos.opciones.length === 0) {
+            const btnContinuar = document.createElement('button');
+            btnContinuar.className = "menu-btn";
+            btnContinuar.innerText = "FIN";
+            btnContinuar.onclick = () => alert("Historia terminada.");
+            contenedorBotones.appendChild(btnContinuar);
+        }
+    }
+}
+
+// --- 2. INICIALIZACIÓN AUTOMÁTICA ---
+window.onload = () => {
+    if (document.getElementById('pantalla-juego')) {
+        console.log("Iniciando motor narrativo...");
+        actualizarPantalla();
+    }
+
+    const musicToggle = document.getElementById('music-toggle');
+    if (musicToggle) {
+        musicToggle.checked = localStorage.getItem('musicEnabled') === 'true';
+    }
+    
+    // Asegúrate de que bucleDeCaos exista o elimínalo si no lo usas en esta página
+    if (typeof bucleDeCaos === 'function') {
+        setInterval(bucleDeCaos, 60); 
+    }
+};
+
+// --- 3. FUNCIONES DE APOYO ---
+function toggleMenu(event) {
+    if (event) event.stopPropagation();
+    const panel = document.getElementById('panel-quienes-somos');
+    panel.classList.toggle('oculto');
+}
+
+document.addEventListener('click', function(event) {
+    const panel = document.getElementById('panel-quienes-somos');
+    const btnInfo = document.getElementById('btn-info');
+    if (panel && btnInfo && !panel.classList.contains('oculto') && 
+        !panel.contains(event.target) && !btnInfo.contains(event.target)) {
+        panel.classList.add('oculto');
+    }
+});
+
 const titulo = document.getElementById('main-title');
 
 // Intensidades: Cuanto más alto, más frecuente
