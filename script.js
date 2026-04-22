@@ -186,6 +186,63 @@ function toggleMenu() {
     panel.classList.toggle('oculto');
 }
 
-// IMPORTANTE: Modifica el botón de CONFIGURACIÓN en tu HTML 
-// para que llame a openConfig():
-// <button class="menu-btn" onclick="openConfig()">CONFIGURACIÓN</button>
+/* --- LÓGICA DEL SLIDER VERTICAL --- */
+function toggleVerticalSlider() {
+    const slider = document.getElementById('slider-lateral');
+    const overlay = document.getElementById('slider-overlay');
+    
+    slider.classList.toggle('active');
+    overlay.classList.toggle('active');
+
+    if (slider.classList.contains('active')) {
+        console.log("Slider: Conexión establecida.");
+    } else {
+        console.log("Slider: Conexión finalizada.");
+    }
+}
+
+// Cerrar el slider si se pulsa la tecla ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        const slider = document.getElementById('slider-lateral');
+        if (slider.classList.contains('active')) {
+            toggleVerticalSlider();
+        }
+    }
+});
+
+// Nota: He mantenido tus funciones anteriores intactas. 
+// Asegúrate de que el window.onload no sobrescriba el anterior.
+// Puedes añadir la inicialización aquí:
+const originalOnload = window.onload;
+window.onload = () => {
+    if (originalOnload) originalOnload();
+    console.log("Módulo de Slider Vertical Inyectado.");
+};
+
+/* --- CONTROL DEL SLIDER INFORMATIVO --- */
+function toggleVerticalSlider() {
+    const slider = document.getElementById('slider-lateral');
+    const overlay = document.getElementById('slider-overlay');
+    
+    // Alternamos las clases active para mostrar/ocultar
+    if (!slider.classList.contains('active')) {
+        slider.classList.add('active');
+        overlay.classList.add('active');
+        console.log("Terminal de información: Acceso concedido.");
+    } else {
+        slider.classList.remove('active');
+        overlay.classList.remove('active');
+        console.log("Terminal de información: Desconexión.");
+    }
+}
+
+// Cerrar con tecla Escape por accesibilidad
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        const slider = document.getElementById('slider-lateral');
+        if (slider.classList.contains('active')) {
+            toggleVerticalSlider();
+        }
+    }
+});

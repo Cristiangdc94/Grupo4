@@ -408,3 +408,174 @@ input[type=range] {
 #panel-quienes-somos.oculto {
     display: none;
 }
+
+/* --- NUEVO SLIDER VERTICAL --- */
+#slider-lateral {
+    position: fixed;
+    top: -110%; /* Empieza fuera de la pantalla (arriba) */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    background: rgba(10, 10, 10, 0.95);
+    border: 2px solid #ff0000;
+    border-top: none;
+    border-radius: 0 0 30px 30px;
+    padding: 40px 20px;
+    z-index: 2000;
+    transition: top 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4), inset 0 0 15px rgba(255, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Cuando el slider está activo */
+#slider-lateral.active {
+    top: 0;
+}
+
+/* Estética interna del slider */
+#slider-lateral h2 {
+    font-size: 1.5rem;
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+    margin-bottom: 10px;
+}
+
+#slider-lateral .slider-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Botón fijo para abrir el slider */
+.btn-open-slider {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1900;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    /* Reutiliza tu estética de menu-btn */
+}
+
+/* Overlay para detectar clic fuera */
+#slider-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    z-index: 1999;
+    display: none;
+}
+
+#slider-overlay.active {
+    display: block;
+}
+
+/* --- NUEVO SLIDER VERTICAL INFORMATIVO --- */
+#slider-lateral {
+    position: fixed;
+    top: -110%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px; /* Un poco más ancho para albergar texto e imágenes */
+    max-height: 85vh;
+    background: rgba(10, 10, 10, 0.95);
+    border: 2px solid #ff0000;
+    border-top: none;
+    border-radius: 0 0 30px 30px;
+    padding: 30px;
+    z-index: 2000;
+    transition: top 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    overflow-y: auto; /* Permite scroll si el texto es muy largo */
+}
+
+#slider-lateral.active {
+    top: 0;
+}
+
+/* Contenedor de Imágenes Redondas */
+.centro-imagenes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.img-centro {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ff0000;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.img-centro:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Bloques de Texto Informativo */
+.info-section {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+}
+
+.info-section h2 {
+    color: #ff0000;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+    padding-bottom: 5px;
+}
+
+.info-section p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.data-label {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* Overlay para cerrar al hacer clic fuera */
+#slider-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1999;
+    display: none;
+    backdrop-filter: blur(2px);
+}
+
+#slider-overlay.active {
+    display: block;
+}
+
+/* Estilización de la barra de scroll del slider */
+#slider-lateral::-webkit-scrollbar {
+    width: 5px;
+}
+#slider-lateral::-webkit-scrollbar-thumb {
+    background: #ff0000;
+    border-radius: 10px;
+}
