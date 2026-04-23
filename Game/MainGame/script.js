@@ -3,7 +3,10 @@ let masterVol = 0.5, musicVol = 0.4;
 let masterMuted = false, musicMuted = false;
 let prevMasterVol = 0.5, prevMusicVol = 0.4;
 let isTyping = false;
+
 const typeSound = new Audio('../imagenes/mecanico.mp3');
+// Referencia al elemento audio del HTML
+const bgMusic = document.getElementById('bg-music');
 
 // --- SELECTORES ---
 const masterSlider = document.getElementById('input-master');
@@ -18,12 +21,9 @@ let nodoActual = "inicio";
 
 // Función unificada: Maneja tanto la interfaz como la secuencia de escritura
 function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
-    // 1. FORZAR desbloqueo: si está bloqueado por el error de sonido, lo reseteamos
     isTyping = false; 
-    
-    console.log("Navegando forzadamente a:", nodoSiguiente);
+    console.log("Navegando a:", nodoSiguiente);
 
-    // 2. Registro en el log (Tu código original)
     const log = document.getElementById('decision-log');
     if (log && logDesc) {
         const empty = log.querySelector('.empty-msg');
@@ -34,7 +34,6 @@ function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
         log.prepend(entry);
     }
 
-    // 3. Cambiar nodo y actualizar
     nodoActual = nodoSiguiente;
     actualizarInterfaz();
 }
@@ -48,14 +47,12 @@ function actualizarInterfaz() {
         return;
     }
     
-    // Posicionamiento
     const infoBox = document.querySelector('.info-box');
     if (infoBox) {
         infoBox.className = 'info-box';
         if (datos.posicion) infoBox.classList.add(datos.posicion);
     }
 
-    // Fondo y Personaje (NUEVO)
     const bg = document.querySelector('.background-image');
     if (bg && datos.fondo) bg.style.backgroundImage = `url('${datos.fondo}')`;
     
@@ -69,11 +66,9 @@ function actualizarInterfaz() {
         }
     }
 
-    // Título y contenido
     document.getElementById('choice-title').innerText = datos.titulo;
     typeWriter('choice-desc', datos.descripcion, 20);
 
-    // Generación dinámica de botones
     const contenedorBotones = document.getElementById('bottom-buttons');
     if (contenedorBotones) {
         contenedorBotones.innerHTML = '';
@@ -84,7 +79,6 @@ function actualizarInterfaz() {
             btn.className = (opcion.tipo === 'flecha') ? 'flecha-contexto' : 'game-option chaos-hover';
             btn.onclick = (e) => {
                 e.preventDefault();
-                console.log("Flecha pulsada, navegando a:", opcion.siguiente);
                 handleChoice(opcion.siguiente, opcion.etiqueta, opcion.titulo, opcion.descripcion, opcion.log);
             };
             contenedorBotones.appendChild(btn);
@@ -92,7 +86,7 @@ function actualizarInterfaz() {
     }
 }
 
-// --- MOTOR DE ESCRITURA CON CAMBIO DE IMAGEN MANUAL ---
+// --- MOTOR DE ESCRITURA ---
 function typeWriter(elementId, text, speed, callback = null) {
     const element = document.getElementById(elementId);
     const charImg = document.getElementById('character-img');
@@ -106,7 +100,6 @@ function typeWriter(elementId, text, speed, callback = null) {
         if (i < text.length) {
             let char = text.charAt(i);
 
-            // Detección de cambio manual: |ruta/imagen.png|
             if (char === '|') {
                 let end = text.indexOf('|', i + 1);
                 if (end !== -1 && charImg) {
@@ -139,17 +132,27 @@ masterSlider.addEventListener('input', (e) => updateMasterUI(e.target.value));
 musicSlider.addEventListener('input', (e) => updateMusicUI(e.target.value));
 
 document.getElementById('btn-mute-master').addEventListener('click', () => {
-    if (!masterMuted) { prevMasterVol = masterVol; masterSlider.value = 0; updateMasterUI(0); }
-    else { let r = prevMasterVol > 0 ? prevMasterVol : 0.5; masterSlider.value = r; updateMasterUI(r); }
+    if (!masterMuted) { 
+        prevMasterVol = masterVol; 
+        masterSlider.value = 0; 
+        updateMasterUI(0); 
+    } else { 
+        let r = prevMasterVol > 0 ? prevMasterVol : 0.5; 
+        masterSlider.value = r; 
+        updateMasterUI(r); 
+    }
 });
 
 document.getElementById('btn-mute-music').addEventListener('click', () => {
-    if (!musicMuted) { prevMusicVol = musicVol; musicSlider.value = 0; updateMusicUI(0); }
-    else { let r = prevMusicVol > 0 ? prevMusicVol : 0.4; musicSlider.value = r; updateMusicUI(r); }
-});
-
-document.getElementById('btn-reset').addEventListener('click', (e) => {
-    if(!confirm("¿Reiniciar el caos?")) e.preventDefault();
+    if (!musicMuted) { 
+        prevMusicVol = musicVol; 
+        musicSlider.value = 0; 
+        updateMusicUI(0); 
+    } else { 
+        let r = prevMusicVol > 0 ? prevMusicVol : 0.4; 
+        musicSlider.value = r; 
+        updateMusicUI(r); 
+    }
 });
 
 function updateMasterUI(val) {
@@ -161,8 +164,31 @@ function updateMasterUI(val) {
 function updateMusicUI(val) {
     musicVol = parseFloat(val);
     musicMuted = musicVol === 0;
+    
+    // Actualizamos el volumen real del objeto de música
+    if (bgMusic) {
+        bgMusic.volume = musicVol;
+    }
+    
     musicIcon.style.color = musicMuted ? "#555" : "#FF0000";
 }
+
+document.getElementById('btn-reset').addEventListener('click', (e) => {
+    if(!confirm("¿Reiniciar el caos?")) e.preventDefault();
+});
+
+// --- SISTEMA DE ARRANQUE (Bypass de Autoplay) ---
+function iniciarMusica() {
+    if (bgMusic) {
+        bgMusic.volume = musicVol;
+        bgMusic.play().catch(error => console.log("Audio bloqueado temporalmente..."));
+        // Removemos el evento para que solo se active una vez
+        document.removeEventListener('click', iniciarMusica);
+    }
+}
+
+// Escuchar el primer clic en el documento para activar el sonido
+document.addEventListener('click', iniciarMusica);
 
 // --- INICIALIZACIÓN ---
 window.onload = () => {
