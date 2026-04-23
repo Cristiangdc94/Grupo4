@@ -1,12 +1,12 @@
 // --- ESTADO DE AUDIO Y SISTEMA ---
-let masterVol = 0.5, musicVol = 0.4;
+let masterVol = 0.25, musicVol = 0.25; // Inicializados al 25%
 let masterMuted = false, musicMuted = false;
-let prevMasterVol = 0.5, prevMusicVol = 0.4;
+let prevMasterVol = 0.25, prevMusicVol = 0.25;
 let isTyping = false;
 
 const typeSound = new Audio('../Sound/undertale-text.mp3');
-// Referencia al elemento audio del HTML
 const bgMusic = document.getElementById('bg-music');
+const hoverSound = document.getElementById('hover-sound');
 
 // --- SELECTORES ---
 const masterSlider = document.getElementById('input-master');
@@ -19,7 +19,6 @@ const menuOverlay = document.getElementById('menu-overlay');
 // --- MOTOR DE HISTORIA ---
 let nodoActual = "inicio";
 
-// Función unificada: Maneja tanto la interfaz como la secuencia de escritura
 function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
     isTyping = false; 
     console.log("Navegando a:", nodoSiguiente);
@@ -49,13 +48,13 @@ function actualizarInterfaz() {
 
     // Personajes
     const charContainer = document.getElementById('character-container');
-    charContainer.innerHTML = ''; // Limpiamos escenario
+    charContainer.innerHTML = ''; 
 
     if (datos.personajes) {
         datos.personajes.forEach(p => {
             const img = document.createElement('img');
             img.src = p.src;
-            img.setAttribute('data-id', p.id); // Guardamos el ID aquí
+            img.setAttribute('data-id', p.id);
             img.style.cssText = `position: absolute; bottom: 0; ${p.pos} height: 85%; transition: left 0.5s ease;`;
             charContainer.appendChild(img);
         });
@@ -65,7 +64,7 @@ function actualizarInterfaz() {
     document.getElementById('choice-title').innerText = datos.titulo;
     typeWriter('choice-desc', datos.descripcion, 20);
 
-    // Generación de botones (Grid)
+    // Generación de botones
     const contenedorBotones = document.getElementById('bottom-buttons');
     contenedorBotones.innerHTML = '';
     const centro = document.createElement('div');
@@ -76,12 +75,29 @@ function actualizarInterfaz() {
         const btn = document.createElement('a');
         btn.href = "#";
         btn.innerText = opcion.texto;
-        btn.className = (opcion.tipo === 'flecha') ? 'flecha-contexto' : 'game-option chaos-hover';
+        btn.className = (opcion.tipo === 'flecha') ? 'flecha-contexto chaos-hover' : 'game-option chaos-hover';
         btn.onclick = (e) => {
             e.preventDefault();
             handleChoice(opcion.siguiente, opcion.etiqueta, opcion.titulo, opcion.descripcion, opcion.log);
         };
         (opcion.tipo === 'flecha') ? contenedorBotones.appendChild(btn) : centro.appendChild(btn);
+    });
+
+    // Re-vincular sonidos hover a los nuevos botones
+    initHoverSounds();
+}
+
+// --- SONIDOS HOVER ---
+function initHoverSounds() {
+    const targets = document.querySelectorAll('.chaos-hover');
+    targets.forEach(target => {
+        target.onmouseenter = () => {
+            if (!masterMuted && masterVol > 0 && hoverSound) {
+                const hSound = hoverSound.cloneNode();
+                hSound.volume = masterVol;
+                hSound.play().catch(() => {});
+            }
+        };
     });
 }
 
@@ -94,6 +110,7 @@ function typeWriter(elementId, text, speed, callback = null) {
     isTyping = true;
 
     function typing() {
+        if (!isTyping) return;
         if (i < text.length) {
             let char = text.charAt(i);
             if (char === '|') {
@@ -107,6 +124,12 @@ function typeWriter(elementId, text, speed, callback = null) {
                 }
             } else {
                 element.innerHTML += char;
+                // Sonido de teclas sincronizado con Master
+                if (char !== " " && !masterMuted && masterVol > 0) {
+                    const soundClone = typeSound.cloneNode();
+                    soundClone.volume = masterVol;
+                    soundClone.play().catch(() => {});
+                }
                 i++;
             }
             setTimeout(typing, speed);
@@ -118,72 +141,46 @@ function typeWriter(elementId, text, speed, callback = null) {
     typing();
 }
 
-// --- LÓGICA DE VOLUMEN Y MENÚ ---
-menuOverlay.addEventListener('click', () => menuControl.checked = false);
-
+// --- LÓGICA DE VOLUMEN ---
 masterSlider.addEventListener('input', (e) => updateMasterUI(e.target.value));
 musicSlider.addEventListener('input', (e) => updateMusicUI(e.target.value));
-
-document.getElementById('btn-mute-master').addEventListener('click', () => {
-    if (!masterMuted) { 
-        prevMasterVol = masterVol; 
-        masterSlider.value = 0; 
-        updateMasterUI(0); 
-    } else { 
-        let r = prevMasterVol > 0 ? prevMasterVol : 0.5; 
-        masterSlider.value = r; 
-        updateMasterUI(r); 
-    }
-});
-
-document.getElementById('btn-mute-music').addEventListener('click', () => {
-    if (!musicMuted) { 
-        prevMusicVol = musicVol; 
-        musicSlider.value = 0; 
-        updateMusicUI(0); 
-    } else { 
-        let r = prevMusicVol > 0 ? prevMusicVol : 0.4; 
-        musicSlider.value = r; 
-        updateMusicUI(r); 
-    }
-});
 
 function updateMasterUI(val) {
     masterVol = parseFloat(val);
     masterMuted = masterVol === 0;
-    masterIcon.className = masterVol === 0 ? "fa-solid fa-volume-xmark" : (masterVol < 0.5 ? "fa-solid fa-volume-low" : "fa-solid fa-volume-high");
+    masterIcon.className = masterMuted ? "fa-solid fa-volume-xmark" : (masterVol < 0.5 ? "fa-solid fa-volume-low" : "fa-solid fa-volume-high");
 }
 
 function updateMusicUI(val) {
     musicVol = parseFloat(val);
     musicMuted = musicVol === 0;
-    
-    // Actualizamos el volumen real del objeto de música
-    if (bgMusic) {
-        bgMusic.volume = musicVol;
-    }
-    
+    if (bgMusic) bgMusic.volume = musicVol;
     musicIcon.style.color = musicMuted ? "#555" : "#FF0000";
 }
 
-document.getElementById('btn-reset').addEventListener('click', (e) => {
-    if(!confirm("¿Reiniciar el caos?")) e.preventDefault();
+// Mutes
+document.getElementById('btn-mute-master').addEventListener('click', () => {
+    if (!masterMuted) { prevMasterVol = masterVol; updateMasterUI(0); masterSlider.value = 0; }
+    else { let r = prevMasterVol > 0 ? prevMasterVol : 0.25; updateMasterUI(r); masterSlider.value = r; }
 });
 
-// --- SISTEMA DE ARRANQUE (Bypass de Autoplay) ---
-function iniciarMusica() {
+document.getElementById('btn-mute-music').addEventListener('click', () => {
+    if (!musicMuted) { prevMusicVol = musicVol; updateMusicUI(0); musicSlider.value = 0; }
+    else { let r = prevMusicVol > 0 ? prevMusicVol : 0.25; updateMusicUI(r); musicSlider.value = r; }
+});
+
+// --- SISTEMA DE ARRANQUE ---
+function iniciarAudio() {
     if (bgMusic) {
         bgMusic.volume = musicVol;
-        bgMusic.play().catch(error => console.log("Audio bloqueado temporalmente..."));
-        // Removemos el evento para que solo se active una vez
-        document.removeEventListener('click', iniciarMusica);
+        bgMusic.play().catch(() => {});
+        document.removeEventListener('click', iniciarAudio);
     }
 }
+document.addEventListener('click', iniciarAudio);
 
-// Escuchar el primer clic en el documento para activar el sonido
-document.addEventListener('click', iniciarMusica);
-
-// --- INICIALIZACIÓN ---
 window.onload = () => {
+    // Forzar volúmenes iniciales en los objetos de audio
+    if (bgMusic) bgMusic.volume = musicVol;
     actualizarInterfaz();
 };

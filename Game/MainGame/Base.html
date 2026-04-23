@@ -24,7 +24,7 @@
                         <i id="volume-icon" class="fa-solid fa-volume-high"></i>
                     </button>
                     <div class="slider-wrapper">
-                        <input type="range" id="input-master" min="0" max="1" step="0.1" value="0.5">
+                        <input type="range" id="input-master" min="0" max="1" step="0.1" value="0.25">
                     </div>
                 </div>
             </li>
@@ -35,7 +35,7 @@
                         <i id="music-icon" class="fa-solid fa-music"></i>
                     </button>
                     <div class="slider-wrapper">
-                        <input type="range" id="input-music" min="0" max="1" step="0.1" value="0.4">
+                        <input type="range" id="input-music" min="0" max="1" step="0.1" value="0.25">
                     </div>
                 </div>
             </li>
@@ -73,10 +73,11 @@
 
         <div class="bottom-buttons" id="bottom-buttons"></div>
     </div>
+
     <audio id="bg-music" src="../Music/fondo-juego.mp3.mp3" loop></audio>
+    <audio id="hover-sound" src="../Sound/menu-text-sound.mp3" preload="auto"></audio>
 
     <script src="propierties.js"></script>
-
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
