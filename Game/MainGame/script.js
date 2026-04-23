@@ -47,16 +47,14 @@ function actualizarInterfaz() {
         return;
     }
     
+    // Posicionamiento
     const infoBox = document.querySelector('.info-box');
     if (infoBox) {
         infoBox.className = 'info-box';
         if (datos.posicion) infoBox.classList.add(datos.posicion);
     }
 
-<<<<<<< Updated upstream
-=======
     // Fondo y Personaje
->>>>>>> Stashed changes
     const bg = document.querySelector('.background-image');
     if (bg && datos.fondo) bg.style.backgroundImage = `url('${datos.fondo}')`;
     
@@ -70,9 +68,11 @@ function actualizarInterfaz() {
         }
     }
 
+    // Título y contenido
     document.getElementById('choice-title').innerText = datos.titulo;
     typeWriter('choice-desc', datos.descripcion, 20);
 
+    // Generación dinámica de botones
     const contenedorBotones = document.getElementById('bottom-buttons');
     if (contenedorBotones) {
         contenedorBotones.innerHTML = ''; // Limpiamos todo
@@ -98,10 +98,7 @@ function actualizarInterfaz() {
 
             btn.onclick = (e) => {
                 e.preventDefault();
-<<<<<<< Updated upstream
-=======
                 console.log("Navegando a:", opcion.siguiente);
->>>>>>> Stashed changes
                 handleChoice(opcion.siguiente, opcion.etiqueta, opcion.titulo, opcion.descripcion, opcion.log);
             };
         });
