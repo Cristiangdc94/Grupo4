@@ -9,10 +9,29 @@
 </head>
 <body>
 
+    <div class="audio-master-controls">
+        <div class="volume-group">
+            <button id="btn-mute-master" title="Mute Teclas y Efectos">
+                <i id="master-icon" class="fa-solid fa-volume-high"></i>
+            </button>
+            <input type="range" id="volume-master" min="0" max="1" step="0.05" value="0.4">
+        </div>
+
+        <div class="volume-group">
+            <button id="btn-mute-music" title="Mute Música">
+                <i id="music-icon" class="fa-solid fa-music"></i>
+            </button>
+            <input type="range" id="volume-music" min="0" max="1" step="0.05" value="0.3">
+        </div>
+    </div>
+
     <video autoplay muted loop playsinline id="bg-video" class="background-video">
         <source src="../Game/video/background.mp4" type="video/mp4">
-        Tu navegador no soporta videos.
     </video>
+    
+    <audio id="bg-music" src="../Game/Music/fondo-memoria.mp3.mp3" loop preload="auto"></audio>
+    
+    <audio id="hover-sound" src="../Game/Sound/menu-text-sound.mp3" preload="auto"></audio>
 
     <div class="scanline"></div>
 
@@ -20,9 +39,7 @@
         <div class="info-container">
             <div class="database-wrapper">
                 <div class="db-header">
-                    <div class="status-bar">
-                        <span class="dot pulse"></span> ONLINE
-                    </div>
+                    <div class="status-bar"><span class="dot pulse"></span> ONLINE</div>
                     <span class="label">PROJECT_DOCUMENTATION_V1.5</span>
                     <h2>NÚCLEO DE MEMORIA CENTRAL</h2>
                 </div>
@@ -38,14 +55,10 @@
                     </aside>
 
                     <main class="db-viewer">
-                        <div id="db-display">
-                            <span class="label" id="db-category">SECCIÓN_DOC</span>
-                            <h3 id="db-title">Cargando...</h3>
-                            <hr>
-                            <div id="db-body-container">
-                                <p id="db-body">Inicializando protocolos...</p>
-                            </div>
-                        </div>
+                        <span class="label" id="db-category">SECCIÓN_DOC</span>
+                        <h3 id="db-title">Cargando...</h3>
+                        <hr>
+                        <p id="db-body">Inicializando protocolos...</p>
                     </main>
                 </div>
             </div>
