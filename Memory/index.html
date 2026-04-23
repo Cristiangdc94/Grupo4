@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaos Red - Memoria Avanzada</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <video autoplay muted loop playsinline id="bg-video" class="background-video">
+        <source src="../Game/video/background.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+
+    <div class="scanline"></div>
+
+    <div class="main-ui">
+        <div class="info-container">
+            <div class="database-wrapper">
+                <div class="db-header">
+                    <div class="status-bar">
+                        <span class="dot pulse"></span> ONLINE
+                    </div>
+                    <span class="label">PROJECT_DOCUMENTATION_V1.5</span>
+                    <h2>NÚCLEO DE MEMORIA CENTRAL</h2>
+                </div>
+
+                <div class="db-content">
+                    <aside class="db-sidebar">
+                        <div class="db-item active chaos-hover" onclick="showMemory('intro')">01_INTRODUCCIÓN</div>
+                        <div class="db-item chaos-hover" onclick="showMemory('concept')">02_CONCEPTO_ARTE</div>
+                        <div class="db-item chaos-hover" onclick="showMemory('tech')">03_STACK_TECNOLÓGICO</div>
+                        <div class="db-item chaos-hover" onclick="showMemory('mechanics')">04_MECÁNICAS</div>
+                        <div class="db-item chaos-hover" onclick="showMemory('stats')">05_ESTADÍSTICAS</div>
+                        <div class="db-item chaos-hover" onclick="showMemory('future')">06_ROADMAP</div>
+                    </aside>
+
+                    <main class="db-viewer">
+                        <div id="db-display">
+                            <span class="label" id="db-category">SECCIÓN_DOC</span>
+                            <h3 id="db-title">Cargando...</h3>
+                            <hr>
+                            <div id="db-body-container">
+                                <p id="db-body">Inicializando protocolos...</p>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-buttons">
+            <a href="../../index.html" class="game-option chaos-hover">SALIR AL SISTEMA</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
