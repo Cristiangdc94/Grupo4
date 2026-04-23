@@ -18,20 +18,14 @@ let nodoActual = "inicio";
 
 // Función unificada: Maneja tanto la interfaz como la secuencia de escritura
 function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
-    if (isTyping) return;
+    // 1. FORZAR desbloqueo: si está bloqueado por el error de sonido, lo reseteamos
+    isTyping = false; 
+    
+    console.log("Navegando forzadamente a:", nodoSiguiente);
 
-    // 1. Escritura en cascada (Secuencia de etiqueta -> título -> descripción)
-    typeWriter('choice-label', etiqueta, 60, () => {
-        typeWriter('choice-title', titulo, 60, () => {
-            typeWriter('choice-desc', textoDesc, 80, () => {
-                isTyping = false;
-            });
-        });
-    });
-
-    // 2. Registro en el log
+    // 2. Registro en el log (Tu código original)
     const log = document.getElementById('decision-log');
-    if (log) {
+    if (log && logDesc) {
         const empty = log.querySelector('.empty-msg');
         if (empty) empty.remove();
         const entry = document.createElement('div');
@@ -40,13 +34,19 @@ function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
         log.prepend(entry);
     }
 
-    // 3. Navegar
+    // 3. Cambiar nodo y actualizar
     nodoActual = nodoSiguiente;
     actualizarInterfaz();
 }
 
 function actualizarInterfaz() {
+    isTyping = false;
     const datos = historia[nodoActual];
+
+    if (!datos) {
+        console.error("¡ERROR! El nodo '" + nodoActual + "' no existe en el JSON.");
+        return;
+    }
     
     // Posicionamiento
     const infoBox = document.querySelector('.info-box');
