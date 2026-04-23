@@ -15,9 +15,9 @@ window.onload = () => {
 
     if (musicToggle) musicToggle.checked = true;
     
-    // MODIFICACIÓN: Ambos sonidos empiezan al 25%
-    if (bgMusic) bgMusic.volume = 0.25;
-    if (hoverSound) hoverSound.volume = 0.25;
+    // MODIFICACIÓN: Música al 50% y Hover muy sutil al 5% (0.5 * 0.1)
+    if (bgMusic) bgMusic.volume = 0.50;
+    if (hoverSound) hoverSound.volume = 0.05;
 
     // Inicializar sonidos de hover en los botones
     initHoverSounds();
@@ -50,10 +50,11 @@ function initHoverSounds() {
     botones.forEach(boton => {
         boton.addEventListener('mouseenter', () => {
             if (hoverSound) {
-                // Reiniciamos el sonido por si se pasa rápido entre botones
                 hoverSound.currentTime = 0; 
-                // MODIFICACIÓN: Aseguramos que use el volumen actual del slider al sonar
-                hoverSound.volume = volumeControl ? volumeControl.value : 0.25;
+                // MODIFICACIÓN: El hover suena a un 15% del valor del slider actual
+                let currentSliderVal = volumeControl ? volumeControl.value : 0.5;
+                hoverSound.volume = currentSliderVal * 0.15; 
+                
                 hoverSound.play().catch(e => console.log("Sonido hover bloqueado"));
             }
         });
@@ -74,9 +75,14 @@ function toggleMusic() {
 
 function updateVolume() {
     if (!bgMusic || !volumeControl) return;
-    // MODIFICACIÓN: El slider ahora controla ambos audios simultáneamente
+    
+    // La música sigue el slider 1:1
     bgMusic.volume = volumeControl.value;
-    if (hoverSound) hoverSound.volume = volumeControl.value; 
+    
+    // MODIFICACIÓN: El hover siempre se mantiene a un 15% del volumen general para no molestar
+    if (hoverSound) {
+        hoverSound.volume = volumeControl.value * 0.15;
+    }
 }
 
 // --- 5. GESTIÓN DE MODALES ---

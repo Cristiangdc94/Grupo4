@@ -27,8 +27,8 @@ function initHoverEffects() {
         el.addEventListener('mouseenter', () => {
             if (!masterMuted && hSound) {
                 const soundClone = hSound.cloneNode();
-                hoverSound.volume = 0.3;
-                soundClone.volume = currentMasterVol; // USA EL VOLUMEN MASTER
+                // APLICADO: El hover suena al 15% del volumen maestro para armonía
+                soundClone.volume = currentMasterVol * 0.15; 
                 soundClone.play().catch(() => {});
             }
         });
@@ -48,7 +48,7 @@ function typeWriter(elementId, text, speed) {
             let char = text.charAt(i);
             element.innerHTML += char;
 
-            // Sonido de teclas (afectado por volumen Master)
+            // Sonido de teclas (afectado por volumen Master al 100% del slider)
             if (char !== " " && char !== "\n" && !masterMuted) {
                 const soundClone = typeSound.cloneNode();
                 soundClone.volume = currentMasterVol;
@@ -71,7 +71,6 @@ function showMemory(id) {
     typeWriter('db-body', data.body, 15);
 
     document.querySelectorAll('.db-item').forEach(item => {
-        // Ajuste para marcar activo correctamente
         const itemText = item.innerText.toLowerCase();
         item.classList.toggle('active', itemText.includes(id.toLowerCase()));
     });
@@ -86,14 +85,15 @@ function setupAudio() {
     const masterIcon = document.getElementById('master-icon');
     const musicIcon = document.getElementById('music-icon');
 
-    // Control Slider Master (Teclas y Hover)
+    // Forzar volúmenes iniciales según variables
+    bgMusic.volume = currentMusicVol;
+
     sliderMaster.oninput = (e) => {
         currentMasterVol = parseFloat(e.target.value);
         masterMuted = (currentMasterVol === 0);
         masterIcon.className = masterMuted ? "fa-solid fa-volume-xmark" : "fa-solid fa-volume-high";
     };
 
-    // Control Slider Música
     sliderMusic.oninput = (e) => {
         currentMusicVol = parseFloat(e.target.value);
         bgMusic.volume = currentMusicVol;
@@ -101,14 +101,12 @@ function setupAudio() {
         musicIcon.className = musicMuted ? "fa-solid fa-music-slash" : "fa-solid fa-music";
     };
 
-    // Botón Mute Master
     btnMaster.onclick = () => {
         masterMuted = !masterMuted;
         btnMaster.classList.toggle('muted', masterMuted);
         masterIcon.className = masterMuted ? "fa-solid fa-volume-xmark" : "fa-solid fa-volume-high";
     };
 
-    // Botón Mute Música
     btnMusic.onclick = () => {
         musicMuted = !musicMuted;
         bgMusic.muted = musicMuted;
@@ -126,6 +124,6 @@ function setupAudio() {
 
 window.onload = () => {
     setupAudio();
-    initHoverEffects(); // Inicializa los sonidos hover
+    initHoverEffects(); 
     showMemory('intro');
 };

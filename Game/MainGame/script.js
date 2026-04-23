@@ -1,5 +1,5 @@
 // --- ESTADO DE AUDIO Y SISTEMA ---
-let masterVol = 0.25, musicVol = 0.25; // Inicializados al 25%
+let masterVol = 0.25, musicVol = 0.25; 
 let masterMuted = false, musicMuted = false;
 let prevMasterVol = 0.25, prevMusicVol = 0.25;
 let isTyping = false;
@@ -42,11 +42,9 @@ function actualizarInterfaz() {
     const datos = historia[nodoActual];
     if (!datos) return;
 
-    // Fondo
     const bg = document.querySelector('.background-image');
     if (bg && datos.fondo) bg.style.backgroundImage = `url('${datos.fondo}')`;
 
-    // Personajes
     const charContainer = document.getElementById('character-container');
     charContainer.innerHTML = ''; 
 
@@ -60,11 +58,9 @@ function actualizarInterfaz() {
         });
     }
 
-    // Título y contenido
     document.getElementById('choice-title').innerText = datos.titulo;
     typeWriter('choice-desc', datos.descripcion, 20);
 
-    // Generación de botones
     const contenedorBotones = document.getElementById('bottom-buttons');
     contenedorBotones.innerHTML = '';
     const centro = document.createElement('div');
@@ -83,18 +79,18 @@ function actualizarInterfaz() {
         (opcion.tipo === 'flecha') ? contenedorBotones.appendChild(btn) : centro.appendChild(btn);
     });
 
-    // Re-vincular sonidos hover a los nuevos botones
     initHoverSounds();
 }
 
-// --- SONIDOS HOVER ---
+// --- SONIDOS HOVER (CON REDUCCIÓN PARA ARMONÍA) ---
 function initHoverSounds() {
     const targets = document.querySelectorAll('.chaos-hover');
     targets.forEach(target => {
         target.onmouseenter = () => {
             if (!masterMuted && masterVol > 0 && hoverSound) {
                 const hSound = hoverSound.cloneNode();
-                hSound.volume = masterVol;
+                // APLICADO: El hover suena al 15% del slider master para no saturar
+                hSound.volume = masterVol * 0.15; 
                 hSound.play().catch(() => {});
             }
         };
@@ -124,10 +120,9 @@ function typeWriter(elementId, text, speed, callback = null) {
                 }
             } else {
                 element.innerHTML += char;
-                // Sonido de teclas sincronizado con Master
                 if (char !== " " && !masterMuted && masterVol > 0) {
                     const soundClone = typeSound.cloneNode();
-                    soundClone.volume = masterVol;
+                    soundClone.volume = masterVol; // Escritura al 100% del slider
                     soundClone.play().catch(() => {});
                 }
                 i++;
@@ -158,7 +153,6 @@ function updateMusicUI(val) {
     musicIcon.style.color = musicMuted ? "#555" : "#FF0000";
 }
 
-// Mutes
 document.getElementById('btn-mute-master').addEventListener('click', () => {
     if (!masterMuted) { prevMasterVol = masterVol; updateMasterUI(0); masterSlider.value = 0; }
     else { let r = prevMasterVol > 0 ? prevMasterVol : 0.25; updateMasterUI(r); masterSlider.value = r; }
@@ -169,7 +163,6 @@ document.getElementById('btn-mute-music').addEventListener('click', () => {
     else { let r = prevMusicVol > 0 ? prevMusicVol : 0.25; updateMusicUI(r); musicSlider.value = r; }
 });
 
-// --- SISTEMA DE ARRANQUE ---
 function iniciarAudio() {
     if (bgMusic) {
         bgMusic.volume = musicVol;
@@ -180,7 +173,6 @@ function iniciarAudio() {
 document.addEventListener('click', iniciarAudio);
 
 window.onload = () => {
-    // Forzar volúmenes iniciales en los objetos de audio
     if (bgMusic) bgMusic.volume = musicVol;
     actualizarInterfaz();
 };
