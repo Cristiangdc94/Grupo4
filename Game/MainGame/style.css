@@ -123,11 +123,13 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
 
 .bottom-buttons { 
     display: flex; 
-    justify-content: center; /* Centrados */
-    gap: 50px; /* Espacio entre los 3 botones */
+    justify-content: center; /* Centra los botones normales */
+    align-items: center;    /* Alinea todo verticalmente */
+    gap: 50px; 
     margin-top: auto; 
     padding-bottom: 20px; 
-    flex-wrap: wrap; /* Por si la pantalla es pequeña */
+    flex-wrap: wrap; 
+    position: relative; 
 }
 
 .game-option {
@@ -138,3 +140,23 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
     text-align: center;
 }
 .game-option:hover { background: rgba(255, 0, 0, 0.3); color: white; transform: translateY(-5px); }
+
+/* Estilo para la flecha de navegación de contexto */
+.flecha-contexto {
+    /* Eliminamos el absolute */
+    font-size: 3rem;
+    color: #FF0000;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s;
+    
+    /* Este truco mueve la flecha a la derecha del todo sin usar absolute */
+    margin-left: auto; 
+    margin-right: 50px; 
+}
+
+.flecha-contexto:hover {
+    transform: translateX(10px); /* Ajuste de movimiento suave */
+    text-shadow: 0 0 10px #FF0000;
+}
+

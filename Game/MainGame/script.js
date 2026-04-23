@@ -2,9 +2,8 @@
 let masterVol = 0.5, musicVol = 0.4;
 let masterMuted = false, musicMuted = false;
 let prevMasterVol = 0.5, prevMusicVol = 0.4;
-
 let isTyping = false;
-const typeSound = new Audio('../imagenes/mecanico.mp3'); // Ajustada la ruta si estás en subcarpeta
+const typeSound = new Audio('../imagenes/mecanico.mp3');
 
 // --- SELECTORES ---
 const masterSlider = document.getElementById('input-master');
@@ -14,78 +13,127 @@ const musicIcon = document.getElementById('music-icon');
 const menuControl = document.getElementById('menu-control');
 const menuOverlay = document.getElementById('menu-overlay');
 
-// --- MOTOR DE ESCRITURA CON CALLBACK ---
+// --- MOTOR DE HISTORIA ---
+let nodoActual = "inicio";
+
+// Función unificada: Maneja tanto la interfaz como la secuencia de escritura
+function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
+    if (isTyping) return;
+
+    // 1. Escritura en cascada (Secuencia de etiqueta -> título -> descripción)
+    typeWriter('choice-label', etiqueta, 60, () => {
+        typeWriter('choice-title', titulo, 60, () => {
+            typeWriter('choice-desc', textoDesc, 80, () => {
+                isTyping = false;
+            });
+        });
+    });
+
+    // 2. Registro en el log
+    const log = document.getElementById('decision-log');
+    if (log) {
+        const empty = log.querySelector('.empty-msg');
+        if (empty) empty.remove();
+        const entry = document.createElement('div');
+        entry.className = 'log-entry';
+        entry.innerHTML = `<strong>${titulo}</strong><p>${logDesc}</p>`;
+        log.prepend(entry);
+    }
+
+    // 3. Navegar
+    nodoActual = nodoSiguiente;
+    actualizarInterfaz();
+}
+
+function actualizarInterfaz() {
+    const datos = historia[nodoActual];
+    
+    // Posicionamiento
+    const infoBox = document.querySelector('.info-box');
+    if (infoBox) {
+        infoBox.className = 'info-box';
+        if (datos.posicion) infoBox.classList.add(datos.posicion);
+    }
+
+    // Fondo y Personaje (NUEVO)
+    const bg = document.querySelector('.background-image');
+    if (bg && datos.fondo) bg.style.backgroundImage = `url('${datos.fondo}')`;
+    
+    const charImg = document.getElementById('character-img');
+    if (charImg) {
+        if (datos.personaje) {
+            charImg.src = datos.personaje;
+            charImg.style.display = 'block';
+        } else {
+            charImg.style.display = 'none';
+        }
+    }
+
+    // Título y contenido
+    document.getElementById('choice-title').innerText = datos.titulo;
+    typeWriter('choice-desc', datos.descripcion, 20);
+
+    // Generación dinámica de botones
+    const contenedorBotones = document.getElementById('bottom-buttons');
+    if (contenedorBotones) {
+        contenedorBotones.innerHTML = '';
+        datos.opciones.forEach((opcion) => {
+            const btn = document.createElement('a');
+            btn.href = "#";
+            btn.innerText = opcion.texto;
+            btn.className = (opcion.tipo === 'flecha') ? 'flecha-contexto' : 'game-option chaos-hover';
+            btn.onclick = (e) => {
+                e.preventDefault();
+                console.log("Flecha pulsada, navegando a:", opcion.siguiente);
+                handleChoice(opcion.siguiente, opcion.etiqueta, opcion.titulo, opcion.descripcion, opcion.log);
+            };
+            contenedorBotones.appendChild(btn);
+        });
+    }
+}
+
+// --- MOTOR DE ESCRITURA CON CAMBIO DE IMAGEN MANUAL ---
 function typeWriter(elementId, text, speed, callback = null) {
     const element = document.getElementById(elementId);
+    const charImg = document.getElementById('character-img');
     if(!element) return;
+    
     element.innerHTML = ""; 
     let i = 0;
     isTyping = true;
 
     function typing() {
         if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            
-            if (text.charAt(i) !== " " && !masterMuted) {
-                const soundClone = typeSound.cloneNode();
-                soundClone.volume = masterVol; 
-                soundClone.play().catch(() => {}); 
-            }
+            let char = text.charAt(i);
 
-            i++;
+            // Detección de cambio manual: |ruta/imagen.png|
+            if (char === '|') {
+                let end = text.indexOf('|', i + 1);
+                if (end !== -1 && charImg) {
+                    let rutaImg = text.substring(i + 1, end);
+                    charImg.src = rutaImg;
+                    i = end + 1;
+                }
+            } else {
+                element.innerHTML += char;
+                if (char !== " " && !masterMuted) {
+                    const soundClone = typeSound.cloneNode();
+                    soundClone.volume = masterVol; 
+                    soundClone.play().catch(() => {}); 
+                }
+                i++;
+            }
             setTimeout(typing, speed);
         } else {
-            if (callback) {
-                callback(); 
-            } else {
-                isTyping = false; 
-            }
+            isTyping = false;
+            if (callback) callback();
         }
     }
     typing();
 }
 
-// --- SECUENCIA: ETIQUETA -> TÍTULO -> DESCRIPCIÓN ---
-function handleChoice(etiqueta, titulo, textoDesc, logDesc) {
-    if (isTyping) return; 
-
-    typeWriter('choice-label', etiqueta, 60, () => {
-        typeWriter('choice-title', titulo, 60, () => {
-            typeWriter('choice-desc', textoDesc, 80, () => {
-                isTyping = false; 
-            });
-        });
-    });
-
-    const log = document.getElementById('decision-log');
-    if(log){
-        const empty = log.querySelector('.empty-msg');
-        if (empty) empty.remove();
-        
-        const entry = document.createElement('div');
-        entry.className = 'log-entry';
-        entry.innerHTML = `<strong>${titulo}</strong><p>${logDesc}</p>`;
-        log.prepend(entry);
-    }
-}
-
-// --- CIERRE AUTOMÁTICO DE MENÚ ---
-menuOverlay.addEventListener('click', () => {
-    menuControl.checked = false;
-});
-
-// --- LÓGICA DE VOLUMEN ---
-function updateMasterUI(val) {
-    masterVol = parseFloat(val);
-    masterMuted = masterVol === 0;
-    masterIcon.className = masterVol === 0 ? "fa-solid fa-volume-xmark" : (masterVol < 0.5 ? "fa-solid fa-volume-low" : "fa-solid fa-volume-high");
-}
-
-function updateMusicUI(val) {
-    musicVol = parseFloat(val);
-    musicMuted = musicVol === 0;
-    musicIcon.style.color = musicMuted ? "#555" : "#FF0000";
-}
+// --- LÓGICA DE VOLUMEN Y MENÚ ---
+menuOverlay.addEventListener('click', () => menuControl.checked = false);
 
 masterSlider.addEventListener('input', (e) => updateMasterUI(e.target.value));
 musicSlider.addEventListener('input', (e) => updateMusicUI(e.target.value));
@@ -100,30 +148,23 @@ document.getElementById('btn-mute-music').addEventListener('click', () => {
     else { let r = prevMusicVol > 0 ? prevMusicVol : 0.4; musicSlider.value = r; updateMusicUI(r); }
 });
 
-// Eventos de botones (AHORA CON 3)
-document.getElementById('opt-1').addEventListener('click', (e) => {
-    e.preventDefault();
-    handleChoice('LOG_01', 'Fragmentación', 'Has decidido romper el tejido de la realidad.', 'Elegiste fragmentar.');
-});
-
-document.getElementById('opt-2').addEventListener('click', (e) => {
-    e.preventDefault();
-    handleChoice('LOG_02', 'Resistencia', 'Te mantienes firme ante el caos.', 'Elegiste resistir.');
-});
-
-document.getElementById('opt-3').addEventListener('click', (e) => {
-    e.preventDefault();
-    handleChoice('LOG_03', 'Neutralidad', 'Observas el vacío sin intervenir.', 'Elegiste observar.');
-});
-
-// Reset
 document.getElementById('btn-reset').addEventListener('click', (e) => {
     if(!confirm("¿Reiniciar el caos?")) e.preventDefault();
 });
 
-// Lanzar texto inicial
+function updateMasterUI(val) {
+    masterVol = parseFloat(val);
+    masterMuted = masterVol === 0;
+    masterIcon.className = masterVol === 0 ? "fa-solid fa-volume-xmark" : (masterVol < 0.5 ? "fa-solid fa-volume-low" : "fa-solid fa-volume-high");
+}
+
+function updateMusicUI(val) {
+    musicVol = parseFloat(val);
+    musicMuted = musicVol === 0;
+    musicIcon.style.color = musicMuted ? "#555" : "#FF0000";
+}
+
+// --- INICIALIZACIÓN ---
 window.onload = () => {
-    setTimeout(() => {
-        handleChoice('PROTOCOLO_INICIO', 'Punto Cero', 'La realidad se fragmenta ante ti. Elige tu camino.', 'Inicio.');
-    }, 500);
+    actualizarInterfaz();
 };
