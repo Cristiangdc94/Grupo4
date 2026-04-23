@@ -4,7 +4,7 @@ let masterMuted = false, musicMuted = false;
 let prevMasterVol = 0.5, prevMusicVol = 0.4;
 let isTyping = false;
 
-const typeSound = new Audio('../imagenes/mecanico.mp3');
+const typeSound = new Audio('../Sound/undertale-text.mp3');
 // Referencia al elemento audio del HTML
 const bgMusic = document.getElementById('bg-music');
 
