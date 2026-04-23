@@ -1,23 +1,55 @@
-// --- ESTADO DE AUDIO Y SISTEMA ---
-let masterVol = 0.5, musicVol = 0.4;
-let masterMuted = false, musicMuted = false;
-let prevMasterVol = 0.5, prevMusicVol = 0.4;
+// --- CLASE GESTORA DE SONIDO ---
+class SoundManager {
+    constructor() {
+        this.masterVolume = 0.5;
+        this.musicVolume = 0.4;
+        
+        // Efectos de sonido
+        this.sfx = {
+            typeWriter: new Audio('../Sounds/mecanico.mp3') 
+        };
 
+        // Vinculamos la música al elemento del HTML
+        this.music = document.getElementById('../Music/fondo-juego.mp3') || null;
+
+        this.init();
+    }
+
+    init() {
+        if (this.music) {
+            this.music.volume = this.musicVolume;
+        }
+    }
+
+    playSFX(name) {
+        if (this.masterVolume <= 0) return;
+        const sound = this.sfx[name].cloneNode();
+        sound.volume = this.masterVolume;
+        sound.play().catch(() => {}); 
+    }
+
+    updateMusicVolume(val) {
+        this.musicVolume = parseFloat(val);
+        if (this.music) {
+            this.music.volume = this.musicVolume;
+        }
+    }
+
+    updateMasterVolume(val) {
+        this.masterVolume = parseFloat(val);
+    }
+}
+
+const AudioManager = new SoundManager();
+
+// --- ESTADO ---
 let isTyping = false;
-const typeSound = new Audio('imagenes/mecanico.mp3'); 
 
-// --- SELECTORES ---
-const masterSlider = document.getElementById('input-master');
-const musicSlider = document.getElementById('input-music');
-const masterIcon = document.getElementById('volume-icon');
-const musicIcon = document.getElementById('music-icon');
-const menuControl = document.getElementById('menu-control');
-const menuOverlay = document.getElementById('menu-overlay');
-
-// --- MOTOR DE ESCRITURA CON CALLBACK ---
+// --- MOTOR DE ESCRITURA ---
 function typeWriter(elementId, text, speed, callback = null) {
     const element = document.getElementById(elementId);
     if(!element) return;
+    
     element.innerHTML = ""; 
     let i = 0;
     isTyping = true;
@@ -26,10 +58,9 @@ function typeWriter(elementId, text, speed, callback = null) {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
             
-            if (text.charAt(i) !== " " && !masterMuted) {
-                const soundClone = typeSound.cloneNode();
-                soundClone.volume = masterVol; 
-                soundClone.play().catch(() => {}); 
+            // Sonido de tecla
+            if (text.charAt(i) !== " ") {
+                AudioManager.playSFX('typeWriter');
             }
 
             i++;
@@ -45,18 +76,25 @@ function typeWriter(elementId, text, speed, callback = null) {
     typing();
 }
 
-// --- SECUENCIA: ETIQUETA -> TÍTULO -> DESCRIPCIÓN ---
+// --- LÓGICA DE INTERFAZ ---
 function handleChoice(etiqueta, titulo, textoDesc, logDesc) {
     if (isTyping) return; 
 
-    typeWriter('choice-label', etiqueta, 60, () => {
-        typeWriter('choice-title', titulo, 60, () => {
-            typeWriter('choice-desc', textoDesc, 80, () => {
+    // Desbloqueo de audio (si el navegador lo tenía pausado)
+    if (AudioManager.music && AudioManager.music.paused) {
+        AudioManager.music.play().catch(() => {});
+    }
+
+    // Secuencia encadenada
+    typeWriter('choice-label', etiqueta, 50, () => {
+        typeWriter('choice-title', titulo, 50, () => {
+            typeWriter('choice-desc', textoDesc, 30, () => {
                 isTyping = false; 
             });
         });
     });
 
+    // Actualizar historial
     const log = document.getElementById('decision-log');
     if(log){
         const empty = log.querySelector('.empty-msg');
@@ -69,57 +107,58 @@ function handleChoice(etiqueta, titulo, textoDesc, logDesc) {
     }
 }
 
-// --- CIERRE AUTOMÁTICO DE MENÚ ---
-// Escuchamos el clic en el overlay invisible
-menuOverlay.addEventListener('click', (e) => {
-    menuControl.checked = false;
+// --- SELECTORES Y EVENTOS ---
+const masterSlider = document.getElementById('input-master');
+const musicSlider = document.getElementById('input-music');
+const masterIcon = document.getElementById('volume-icon');
+
+masterSlider.addEventListener('input', (e) => {
+    const val = e.target.value;
+    AudioManager.updateMasterVolume(val);
+    masterIcon.className = val == 0 ? "fa-solid fa-volume-xmark" : (val < 0.5 ? "fa-solid fa-volume-low" : "fa-solid fa-volume-high");
 });
 
-// --- LÓGICA DE VOLUMEN ---
-function updateMasterUI(val) {
-    masterVol = parseFloat(val);
-    masterMuted = masterVol === 0;
-    masterIcon.className = masterVol === 0 ? "fa-solid fa-volume-xmark" : (masterVol < 0.5 ? "fa-solid fa-volume-low" : "fa-solid fa-volume-high");
-}
+musicSlider.addEventListener('input', (e) => {
+    AudioManager.updateMusicVolume(e.target.value);
+});
 
-function updateMusicUI(val) {
-    musicVol = parseFloat(val);
-    musicMuted = musicVol === 0;
-    musicIcon.style.color = musicMuted ? "#555" : "#FF0000";
-}
-
-masterSlider.addEventListener('input', (e) => updateMasterUI(e.target.value));
-musicSlider.addEventListener('input', (e) => updateMusicUI(e.target.value));
-
+// Botones de Mute
 document.getElementById('btn-mute-master').addEventListener('click', () => {
-    if (!masterMuted) { prevMasterVol = masterVol; masterSlider.value = 0; updateMasterUI(0); }
-    else { let r = prevMasterVol > 0 ? prevMasterVol : 0.5; masterSlider.value = r; updateMasterUI(r); }
+    const target = AudioManager.masterVolume > 0 ? 0 : 0.5;
+    masterSlider.value = target;
+    masterSlider.dispatchEvent(new Event('input'));
 });
 
 document.getElementById('btn-mute-music').addEventListener('click', () => {
-    if (!musicMuted) { prevMusicVol = musicVol; musicSlider.value = 0; updateMusicUI(0); }
-    else { let r = prevMusicVol > 0 ? prevMusicVol : 0.4; musicSlider.value = r; updateMusicUI(r); }
+    const target = AudioManager.musicVolume > 0 ? 0 : 0.4;
+    musicSlider.value = target;
+    musicSlider.dispatchEvent(new Event('input'));
 });
 
-// Eventos de botones
+// Eventos de opciones
 document.getElementById('opt-1').addEventListener('click', (e) => {
     e.preventDefault();
-    handleChoice('LOG_DATA_ERROR', 'Fragmentación', 'Has decidido romper el tejido de la realidad. Las chispas de datos saltan a tu alrededor.', 'Elegiste el camino del caos absoluto.');
+    handleChoice('LOG_DATA_ERROR', 'Fragmentación', 'Has decidido romper el tejido de la realidad.', 'Elegiste el camino del caos absoluto.');
 });
 
 document.getElementById('opt-2').addEventListener('click', (e) => {
     e.preventDefault();
-    handleChoice('SYSTEM_STABLE', 'Resistencia', 'Te mantienes firme. El código se estabiliza momentáneamente bajo tu voluntad.', 'Decidiste resistir la influencia del rojo.');
+    handleChoice('SYSTEM_STABLE', 'Resistencia', 'Te mantienes firme. El código se estabiliza.', 'Decidiste resistir la influencia del rojo.');
 });
 
-document.getElementById('btn-reset').addEventListener('click', (e) => {
-    e.preventDefault();
-    if(confirm("¿Reiniciar el caos?")) location.reload();
+// Overlay y Menú
+document.getElementById('menu-overlay').addEventListener('click', () => {
+    document.getElementById('menu-control').checked = false;
 });
 
-// Lanzar texto inicial
+// Inicialización
 window.onload = () => {
+    // Al primer clic en el body, activamos el audio por si el navegador lo bloqueó
+    document.body.addEventListener('click', () => {
+        if (AudioManager.music) AudioManager.music.play().catch(() => {});
+    }, { once: true });
+
     setTimeout(() => {
-        handleChoice('PROTOCOLO_INICIO', 'Punto Cero', 'La realidad se fragmenta ante ti. Elige tu camino o deja que el caos decida.', 'Inicio de la sesión.');
+        handleChoice('PROTOCOLO_INICIO', 'Punto Cero', 'La realidad se fragmenta ante ti.', 'Inicio de la sesión.');
     }, 500);
 };
