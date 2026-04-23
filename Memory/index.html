@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaos Red - Memoria Avanzada</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="audio-master-controls">
+        <div class="volume-group">
+            <button id="btn-mute-master" title="Mute Teclas y Efectos">
+                <i id="master-icon" class="fa-solid fa-volume-high"></i>
+            </button>
+            <input type="range" id="volume-master" min="0" max="1" step="0.05" value="0.4">
+        </div>
+
+        <div class="volume-group">
+            <button id="btn-mute-music" title="Mute Música">
+                <i id="music-icon" class="fa-solid fa-music"></i>
+            </button>
+            <input type="range" id="volume-music" min="0" max="1" step="0.05" value="0.3">
+        </div>
+    </div>
+
+    <video autoplay muted loop playsinline id="bg-video" class="background-video">
+        <source src="../Game/video/background.mp4" type="video/mp4">
+    </video>
+    
+    <audio id="bg-music" src="../Game/Music/fondo-memoria.mp3.mp3" loop preload="auto"></audio>
+    
+    <audio id="hover-sound" src="../Game/Sound/menu-text-sound.mp3" preload="auto"></audio>
+
+    <div class="scanline"></div>
+
+    <div class="main-ui">
+        <div class="info-container">
+            <div class="database-wrapper">
+                <div class="db-header">
+                    <div class="status-bar"><span class="dot pulse"></span> ONLINE</div>
+                    <span class="label">PROJECT_DOCUMENTATION_V1.5</span>
+                    <h2>NÚCLEO DE MEMORIA CENTRAL</h2>
+                </div>
+
+                <div class="db-content">
+                    <aside class="db-sidebar">
+                        <div class="db-item active chaos-hover" onclick="showMemory('intro')">01_INTRODUCCIÓN</div>
+                        <div class="db-item chaos-hover" onclick="showMemory('concept')">02_CONCEPTO_ARTE</div>
+                        <div class="db-item chaos-hover" onclick="showMemory('tech')">03_STACK_TECNOLÓGICO</div>
+                        <div class="db-item chaos-hover" onclick="showMemory('mechanics')">04_MECÁNICAS</div>
+                        <div class="db-item chaos-hover" onclick="showMemory('stats')">05_ESTADÍSTICAS</div>
+                        <div class="db-item chaos-hover" onclick="showMemory('future')">06_ROADMAP</div>
+                    </aside>
+
+                    <main class="db-viewer">
+                        <span class="label" id="db-category">SECCIÓN_DOC</span>
+                        <h3 id="db-title">Cargando...</h3>
+                        <hr>
+                        <p id="db-body">Inicializando protocolos...</p>
+                    </main>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-buttons">
+            <a href="../../index.html" class="game-option chaos-hover">SALIR AL SISTEMA</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

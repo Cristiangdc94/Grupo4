@@ -122,12 +122,21 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
 .info-box hr { border: 0; height: 1px; background: linear-gradient(to right, transparent, #FF0000, transparent); margin: 20px 0; }
 
 .bottom-buttons { 
-    display: flex; 
-    justify-content: center; /* Centrados */
-    gap: 50px; /* Espacio entre los 3 botones */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Izquierda, Centro, Derecha */
+    align-items: center; 
     margin-top: auto; 
     padding-bottom: 20px; 
-    flex-wrap: wrap; /* Por si la pantalla es pequeña */
+    width: 100%;
+    position: relative;
+}
+
+/* Para que los botones se centren en la columna central */
+.bottom-buttons-center {
+    grid-column: 2;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
 }
 
 .game-option {
@@ -138,3 +147,44 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
     text-align: center;
 }
 .game-option:hover { background: rgba(255, 0, 0, 0.3); color: white; transform: translateY(-5px); }
+
+.flecha-contexto {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh; /* De arriba abajo */
+    width: 100px;  /* Ancho de la franja */
+    z-index: 10;
+    color: #FF0000;
+    font-size: 3rem;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.1); /* Muy sutil al inicio */
+    border-left: 1px solid rgba(255, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+    transition: all 0.4s ease;
+}
+
+.flecha-contexto:hover {
+    opacity: 1;
+    background: rgba(255, 0, 0, 0.05);
+    border-left: 2px solid #FF0000;
+    box-shadow: -10px 0 30px rgba(255, 0, 0, 0.2);
+}
+
+.flecha-contexto i {
+    transition: transform 0.3s ease;
+}
+
+.flecha-contexto:hover i {
+    transform: translateX(10px); /* Pequeña animación de la flecha */
+}
+
+.character-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 2;
+    pointer-events: none; /* Muy importante para que no tape los clics */
+}
