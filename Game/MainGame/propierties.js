@@ -21,7 +21,7 @@ const historia = {
         "titulo": "Zona de Paso",
         "descripcion": "Observas los pasillos, el aire es denso.",
         "posicion": "pos-top",
-        "fondo": "images/fondo_pasillo.jpg",
+        "fondo": "../images/bunker.png",
         "personaje": "images/zack_base.png",
         "opciones": [
             {

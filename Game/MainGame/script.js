@@ -53,6 +53,10 @@ function actualizarInterfaz() {
         if (datos.posicion) infoBox.classList.add(datos.posicion);
     }
 
+<<<<<<< Updated upstream
+=======
+    // Fondo y Personaje
+>>>>>>> Stashed changes
     const bg = document.querySelector('.background-image');
     if (bg && datos.fondo) bg.style.backgroundImage = `url('${datos.fondo}')`;
     
@@ -71,17 +75,35 @@ function actualizarInterfaz() {
 
     const contenedorBotones = document.getElementById('bottom-buttons');
     if (contenedorBotones) {
-        contenedorBotones.innerHTML = '';
+        contenedorBotones.innerHTML = ''; // Limpiamos todo
+        
+        // 1. Creamos el sub-contenedor para centrar los botones normales
+        const centro = document.createElement('div');
+        centro.className = 'bottom-buttons-center';
+        contenedorBotones.appendChild(centro);
+
         datos.opciones.forEach((opcion) => {
             const btn = document.createElement('a');
             btn.href = "#";
             btn.innerText = opcion.texto;
-            btn.className = (opcion.tipo === 'flecha') ? 'flecha-contexto' : 'game-option chaos-hover';
+            
+            // Asignamos clase y destino según el tipo
+            if (opcion.tipo === 'flecha') {
+                btn.className = 'flecha-contexto';
+                contenedorBotones.appendChild(btn); // Va al contenedor principal (Grid col 3)
+            } else {
+                btn.className = 'game-option chaos-hover';
+                centro.appendChild(btn); // Va al sub-contenedor centrado (Grid col 2)
+            }
+
             btn.onclick = (e) => {
                 e.preventDefault();
+<<<<<<< Updated upstream
+=======
+                console.log("Navegando a:", opcion.siguiente);
+>>>>>>> Stashed changes
                 handleChoice(opcion.siguiente, opcion.etiqueta, opcion.titulo, opcion.descripcion, opcion.log);
             };
-            contenedorBotones.appendChild(btn);
         });
     }
 }
