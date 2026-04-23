@@ -41,98 +41,72 @@ function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
 function actualizarInterfaz() {
     isTyping = false;
     const datos = historia[nodoActual];
+    if (!datos) return;
 
-    if (!datos) {
-        console.error("¡ERROR! El nodo '" + nodoActual + "' no existe en el JSON.");
-        return;
-    }
-    
-    // Posicionamiento
-    const infoBox = document.querySelector('.info-box');
-    if (infoBox) {
-        infoBox.className = 'info-box';
-        if (datos.posicion) infoBox.classList.add(datos.posicion);
-    }
-
-    // Fondo y Personaje
+    // Fondo
     const bg = document.querySelector('.background-image');
     if (bg && datos.fondo) bg.style.backgroundImage = `url('${datos.fondo}')`;
-    
-    const charImg = document.getElementById('character-img');
-    if (charImg) {
-        if (datos.personaje) {
-            charImg.src = datos.personaje;
-            charImg.style.display = 'block';
-        } else {
-            charImg.style.display = 'none';
-        }
+
+    // Personajes
+    const charContainer = document.getElementById('character-container');
+    charContainer.innerHTML = ''; // Limpiamos escenario
+
+    if (datos.personajes) {
+        datos.personajes.forEach(p => {
+            const img = document.createElement('img');
+            img.src = p.src;
+            img.setAttribute('data-id', p.id); // Guardamos el ID aquí
+            img.style.cssText = `position: absolute; bottom: 0; ${p.pos} height: 85%; transition: left 0.5s ease;`;
+            charContainer.appendChild(img);
+        });
     }
 
     // Título y contenido
     document.getElementById('choice-title').innerText = datos.titulo;
     typeWriter('choice-desc', datos.descripcion, 20);
 
-    // Generación dinámica de botones
+    // Generación de botones (Grid)
     const contenedorBotones = document.getElementById('bottom-buttons');
-    if (contenedorBotones) {
-        contenedorBotones.innerHTML = ''; // Limpiamos todo
-        
-        // 1. Creamos el sub-contenedor para centrar los botones normales
-        const centro = document.createElement('div');
-        centro.className = 'bottom-buttons-center';
-        contenedorBotones.appendChild(centro);
+    contenedorBotones.innerHTML = '';
+    const centro = document.createElement('div');
+    centro.className = 'bottom-buttons-center';
+    contenedorBotones.appendChild(centro);
 
-        datos.opciones.forEach((opcion) => {
-            const btn = document.createElement('a');
-            btn.href = "#";
-            btn.innerText = opcion.texto;
-            
-            // Asignamos clase y destino según el tipo
-            if (opcion.tipo === 'flecha') {
-                btn.className = 'flecha-contexto';
-                contenedorBotones.appendChild(btn); // Va al contenedor principal (Grid col 3)
-            } else {
-                btn.className = 'game-option chaos-hover';
-                centro.appendChild(btn); // Va al sub-contenedor centrado (Grid col 2)
-            }
-
-            btn.onclick = (e) => {
-                e.preventDefault();
-                console.log("Navegando a:", opcion.siguiente);
-                handleChoice(opcion.siguiente, opcion.etiqueta, opcion.titulo, opcion.descripcion, opcion.log);
-            };
-        });
-    }
+    datos.opciones.forEach((opcion) => {
+        const btn = document.createElement('a');
+        btn.href = "#";
+        btn.innerText = opcion.texto;
+        btn.className = (opcion.tipo === 'flecha') ? 'flecha-contexto' : 'game-option chaos-hover';
+        btn.onclick = (e) => {
+            e.preventDefault();
+            handleChoice(opcion.siguiente, opcion.etiqueta, opcion.titulo, opcion.descripcion, opcion.log);
+        };
+        (opcion.tipo === 'flecha') ? contenedorBotones.appendChild(btn) : centro.appendChild(btn);
+    });
 }
 
 // --- MOTOR DE ESCRITURA ---
 function typeWriter(elementId, text, speed, callback = null) {
     const element = document.getElementById(elementId);
-    const charImg = document.getElementById('character-img');
-    if(!element) return;
-    
-    element.innerHTML = ""; 
+    if (!element) return;
+    element.innerHTML = "";
     let i = 0;
     isTyping = true;
 
     function typing() {
         if (i < text.length) {
             let char = text.charAt(i);
-
             if (char === '|') {
                 let end = text.indexOf('|', i + 1);
-                if (end !== -1 && charImg) {
-                    let rutaImg = text.substring(i + 1, end);
-                    charImg.src = rutaImg;
+                if (end !== -1) {
+                    let comando = text.substring(i + 1, end);
+                    let [id, ruta] = comando.split(':');
+                    const charImg = document.querySelector(`[data-id="${id}"]`);
+                    if (charImg) charImg.src = ruta;
                     i = end + 1;
                 }
             } else {
                 element.innerHTML += char;
-                if (char !== " " && !masterMuted) {
-                    const soundClone = typeSound.cloneNode();
-                    soundClone.volume = masterVol; 
-                    soundClone.play().catch(() => {}); 
-                }
                 i++;
             }
             setTimeout(typing, speed);

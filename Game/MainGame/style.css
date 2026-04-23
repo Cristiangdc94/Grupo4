@@ -181,3 +181,10 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
 .flecha-contexto:hover i {
     transform: translateX(10px); /* Pequeña animación de la flecha */
 }
+
+.character-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 2;
+    pointer-events: none; /* Muy importante para que no tape los clics */
+}

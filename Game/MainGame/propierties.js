@@ -4,7 +4,9 @@ const historia = {
         "descripcion": "El silencio es absoluto. |images/zack_serio.png| ¿Alguien me escucha?",
         "posicion": "pos-centro",
         "fondo": "../images/bunker.png",
-        "personaje": "images/zack_base.png",
+        "personajes": [
+            
+        ],
         "opciones": [
             {
                 "texto": "▶",
@@ -42,21 +44,14 @@ const historia = {
             }
         ]
     },
-    "sala_control": {
-        "titulo": "XTER",
-        "descripcion": "La IA ha despertado. |images/xter_feliz.png| Bienvenid@, Francisco.",
-        "posicion": "pos-top",
-        "fondo": "images/fondo_sala.jpg",
-        "personaje": "images/zack_base.png",
-        "opciones": [
-            {
-                "texto": "Hablar",
-                "siguiente": "inicio",
-                "etiqueta": "DIÁLOGO",
-                "titulo": "Comunicación",
-                "descripcion": "XTER responde con una voz metálica.",
-                "log": "Iniciaste diálogo."
-            }
-        ]
-    }
+    "nodo_ejemplo": {
+    "titulo": "Sala de Control",
+    "fondo": "../images/fondo_sala.png",
+    "personajes": [
+        { "id": "zack", "src": "../images/zack_base.png", "pos": "left: 10%;" },
+        { "id": "xter", "src": "../images/xter_serio.png", "pos": "left: 60%;" }
+    ],
+    "descripcion": "El silencio es absoluto. |zack:../images/zack_preocupado.png| Necesito salir de aquí. |xter:../images/xter_feliz.png| Vaya...",
+    "opciones": []
+}
 };
