@@ -3,6 +3,7 @@ let masterVol = 0.25, musicVol = 0.25;
 let masterMuted = false, musicMuted = false;
 let prevMasterVol = 0.25, prevMusicVol = 0.25;
 let isTyping = false;
+let playerName = "Invitado";
 
 const typeSound = new Audio('../Sound/undertale-text.mp3');
 const bgMusic = document.getElementById('bg-music');
@@ -19,21 +20,80 @@ const menuOverlay = document.getElementById('menu-overlay');
 // --- MOTOR DE HISTORIA ---
 let nodoActual = "inicio";
 
+// --- NUEVA LÓGICA DE NOMBRE ---
+function saveUserName() {
+    const input = document.getElementById('user-name-input');
+    if (input.value.trim() !== "") {
+        playerName = input.value.trim();
+        document.getElementById('display-player-name').innerText = playerName;
+        document.getElementById('name-modal').style.display = "none";
+        guardarProgreso();
+        actualizarInterfaz(); // Refrescar para aplicar el nombre
+    } else {
+        input.style.borderColor = "red";
+    }
+}
+
+function exitToMenu() {
+    window.location.href = "../../index.html";
+}
+
+// --- LÓGICA DE GUARDADO (LOCAL STORAGE) ---
+function guardarProgreso() {
+    const dataSave = {
+        nodo: nodoActual,
+        log: document.getElementById('decision-log').innerHTML,
+        volMaster: masterVol,
+        volMusic: musicVol,
+        nombre: playerName
+    };
+    localStorage.setItem('chaos_red_save', JSON.stringify(dataSave));
+}
+
+function cargarProgreso() {
+    const save = localStorage.getItem('chaos_red_save');
+    if (save) {
+        const data = JSON.parse(save);
+        nodoActual = data.nodo;
+        document.getElementById('decision-log').innerHTML = data.log;
+        masterVol = data.volMaster;
+        musicVol = data.volMusic;
+        playerName = data.nombre || "Invitado";
+        
+        // Sincronizar UI
+        masterSlider.value = masterVol;
+        musicSlider.value = musicVol;
+        document.getElementById('display-player-name').innerText = playerName;
+        document.getElementById('name-modal').style.display = "none";
+    } else {
+        // Si no hay partida, mostrar modal de nombre
+        document.getElementById('name-modal').style.display = "flex";
+    }
+}
+
+function borrarPartida() {
+    if(confirm("¿Eliminar todos los datos de sincronización?")) {
+        localStorage.removeItem('chaos_red_save');
+        location.reload();
+    }
+}
+
 function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
     isTyping = false; 
-    console.log("Navegando a:", nodoSiguiente);
-
     const log = document.getElementById('decision-log');
     if (log && logDesc) {
         const empty = log.querySelector('.empty-msg');
         if (empty) empty.remove();
         const entry = document.createElement('div');
         entry.className = 'log-entry';
-        entry.innerHTML = `<strong>${titulo}</strong><p>${logDesc}</p>`;
+        // Reemplazar nombre en el log
+        let formattedLog = logDesc.replace(/{PLAYER}/g, playerName);
+        entry.innerHTML = `<strong>${titulo}</strong><p>${formattedLog}</p>`;
         log.prepend(entry);
     }
 
     nodoActual = nodoSiguiente;
+    guardarProgreso(); // Guardar automáticamente en cada decisión
     actualizarInterfaz();
 }
 
@@ -59,7 +119,9 @@ function actualizarInterfaz() {
     }
 
     document.getElementById('choice-title').innerText = datos.titulo;
-    typeWriter('choice-desc', datos.descripcion, 20);
+    // REEMPLAZO DE NOMBRE EN DESCRIPCIÓN
+    let textoProcesado = datos.descripcion.replace(/{PLAYER}/g, playerName);
+    typeWriter('choice-desc', textoProcesado, 20);
 
     const contenedorBotones = document.getElementById('bottom-buttons');
     contenedorBotones.innerHTML = '';
@@ -82,14 +144,12 @@ function actualizarInterfaz() {
     initHoverSounds();
 }
 
-// --- SONIDOS HOVER (CON REDUCCIÓN PARA ARMONÍA) ---
 function initHoverSounds() {
     const targets = document.querySelectorAll('.chaos-hover');
     targets.forEach(target => {
         target.onmouseenter = () => {
             if (!masterMuted && masterVol > 0 && hoverSound) {
                 const hSound = hoverSound.cloneNode();
-                // APLICADO: El hover suena al 15% del slider master para no saturar
                 hSound.volume = masterVol * 0.15; 
                 hSound.play().catch(() => {});
             }
@@ -97,7 +157,6 @@ function initHoverSounds() {
     });
 }
 
-// --- MOTOR DE ESCRITURA ---
 function typeWriter(elementId, text, speed, callback = null) {
     const element = document.getElementById(elementId);
     if (!element) return;
@@ -122,7 +181,7 @@ function typeWriter(elementId, text, speed, callback = null) {
                 element.innerHTML += char;
                 if (char !== " " && !masterMuted && masterVol > 0) {
                     const soundClone = typeSound.cloneNode();
-                    soundClone.volume = masterVol; // Escritura al 100% del slider
+                    soundClone.volume = masterVol;
                     soundClone.play().catch(() => {});
                 }
                 i++;
@@ -144,6 +203,7 @@ function updateMasterUI(val) {
     masterVol = parseFloat(val);
     masterMuted = masterVol === 0;
     masterIcon.className = masterMuted ? "fa-solid fa-volume-xmark" : (masterVol < 0.5 ? "fa-solid fa-volume-low" : "fa-solid fa-volume-high");
+    guardarProgreso();
 }
 
 function updateMusicUI(val) {
@@ -151,6 +211,7 @@ function updateMusicUI(val) {
     musicMuted = musicVol === 0;
     if (bgMusic) bgMusic.volume = musicVol;
     musicIcon.style.color = musicMuted ? "#555" : "#FF0000";
+    guardarProgreso();
 }
 
 document.getElementById('btn-mute-master').addEventListener('click', () => {
@@ -173,6 +234,6 @@ function iniciarAudio() {
 document.addEventListener('click', iniciarAudio);
 
 window.onload = () => {
-    if (bgMusic) bgMusic.volume = musicVol;
+    cargarProgreso(); // Intentar cargar partida
     actualizarInterfaz();
 };

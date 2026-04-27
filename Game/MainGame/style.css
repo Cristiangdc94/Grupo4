@@ -188,3 +188,79 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
     z-index: 2;
     pointer-events: none; /* Muy importante para que no tape los clics */
 }
+/* MODAL DE NOMBRE */
+.name-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    display: none; /* Se controla por JS */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.name-modal-content {
+    background: rgba(20, 0, 0, 0.8);
+    border: 2px solid #FF0000;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.5);
+    max-width: 400px;
+}
+
+.name-modal-content h2 {
+    color: #FF0000;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.name-modal-content p {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.name-modal-content input {
+    background: black;
+    border: 1px solid #600;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.name-modal-content input:focus {
+    border-color: #FF0000;
+    box-shadow: 0 0 10px #FF0000;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.small-btn {
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
+}
+
+.user-display {
+    color: #fff;
+    padding: 15px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #333;
+    background: rgba(255,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.user-display span {
+    color: #FF0000;
+    font-weight: bold;
+    text-transform: uppercase;
+}

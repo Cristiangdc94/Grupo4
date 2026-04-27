@@ -9,14 +9,27 @@
 </head>
 <body>
 
+    <div id="name-modal" class="name-modal-overlay">
+        <div class="name-modal-content">
+            <h2 class="chaos-hover">REGISTRO DE UNIDAD</h2>
+            <p>Introduce tu identificador para sincronizar con el sistema:</p>
+            <input type="text" id="user-name-input" placeholder="Escribe tu nombre..." maxlength="15">
+            <div class="modal-buttons">
+                <button onclick="saveUserName()" class="game-option chaos-hover small-btn">ACEPTAR</button>
+                <button onclick="exitToMenu()" class="game-option chaos-hover small-btn">RECHAZAR</button>
+            </div>
+        </div>
+    </div>
+
     <input type="checkbox" id="menu-control" class="menu-checkbox">
 
     <div class="background-image"></div>
 
     <nav class="side-menu">
         <ul class="menu-items">
+            <li class="user-display"><i class="fa-solid fa-user"></i> <span id="display-player-name">Invitado</span></li>
             <li><a href="../../index.html" class="chaos-hover">Inicio</a></li>
-            <li><a href="Base.html" class="reset-link chaos-hover" id="btn-reset">Reiniciar Partida</a></li>
+            <li><a href="#" class="reset-link chaos-hover" id="btn-reset" onclick="borrarPartida()">Reiniciar Partida</a></li>
             
             <li class="volume-control-wrapper">
                 <div class="volume-container" id="container-master">
@@ -80,4 +93,4 @@
     <script src="propierties.js"></script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
