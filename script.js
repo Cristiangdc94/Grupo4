@@ -15,11 +15,9 @@ window.onload = () => {
 
     if (musicToggle) musicToggle.checked = true;
     
-    // MODIFICACIÓN: Música al 50% y Hover muy sutil al 5% (0.5 * 0.1)
     if (bgMusic) bgMusic.volume = 0.50;
     if (hoverSound) hoverSound.volume = 0.05;
 
-    // Inicializar sonidos de hover en los botones
     initHoverSounds();
 
     const intentarReproducir = () => {
@@ -51,7 +49,6 @@ function initHoverSounds() {
         boton.addEventListener('mouseenter', () => {
             if (hoverSound) {
                 hoverSound.currentTime = 0; 
-                // MODIFICACIÓN: El hover suena a un 15% del valor del slider actual
                 let currentSliderVal = volumeControl ? volumeControl.value : 0.5;
                 hoverSound.volume = currentSliderVal * 0.15; 
                 
@@ -76,10 +73,8 @@ function toggleMusic() {
 function updateVolume() {
     if (!bgMusic || !volumeControl) return;
     
-    // La música sigue el slider 1:1
     bgMusic.volume = volumeControl.value;
     
-    // MODIFICACIÓN: El hover siempre se mantiene a un 15% del volumen general para no molestar
     if (hoverSound) {
         hoverSound.volume = volumeControl.value * 0.15;
     }
@@ -119,7 +114,54 @@ function bucleDeCaos() {
     }
 }
 
-// --- 7. NAVEGACIÓN Y MENÚS EXTRA ---
+// --- 7. NAVEGACIÓN Y LÓGICA DE CARGA (NUEVO / ACTUALIZADO) ---
+
+function prepararNuevaPartida() {
+    // Limpia el LocalStorage antes de navegar a la base del juego
+    localStorage.removeItem('chaos_red_save');
+}
+
+function abrirInfoCarga() {
+    const save = localStorage.getItem('chaos_red_save');
+    if (save) {
+        try {
+            const data = JSON.parse(save);
+            
+            // Creamos un div temporal para contar las decisiones en el log guardado
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = data.log;
+            const numDecisiones = tempDiv.querySelectorAll('.log-entry').length;
+
+            // Rellenar datos en el modal de la interfaz
+            document.getElementById('load-name').innerText = data.nombre || "Desconocido";
+            document.getElementById('load-node').innerText = data.nodo ? data.nodo.toUpperCase() : "INICIO";
+            document.getElementById('load-decisions').innerText = numDecisiones;
+            
+            // Mostrar el modal
+            document.getElementById('load-info-modal').style.display = "flex";
+        } catch (e) {
+            console.error("Error al procesar el archivo de guardado.");
+        }
+    } else {
+        alert("SISTEMA: No se han encontrado registros de sincronización previos.");
+    }
+}
+
+function cerrarInfoCarga() {
+    const modal = document.getElementById('load-info-modal');
+    if (modal) {
+        modal.classList.add('modal-closing');
+        setTimeout(() => {
+            modal.style.display = "none";
+            modal.classList.remove('modal-closing');
+        }, 500);
+    }
+}
+
+function confirmarCarga() {
+    window.location.href = "Game/MainGame/Base.html";
+}
+
 function toggleMenu(event) {
     if (event) event.stopPropagation();
     const panel = document.getElementById('panel-quienes-somos');
@@ -182,5 +224,8 @@ document.addEventListener('keydown', (e) => {
         
         const config = document.getElementById('config-modal');
         if (config && config.style.display === "flex") closeConfig();
+
+        const loadModal = document.getElementById('load-info-modal');
+        if (loadModal && loadModal.style.display === "flex") cerrarInfoCarga();
     }
 });

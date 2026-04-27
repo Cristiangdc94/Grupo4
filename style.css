@@ -14,7 +14,7 @@ body, html {
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
     filter: brightness(30%);    
 }
 
@@ -34,7 +34,6 @@ body, html {
     position: relative;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    /* Damos una sombra más fuerte para que se separe del video colorido */
     text-shadow: 2px 2px 0px #000, 0 0 15px rgba(255, 0, 0, 0.8);
     user-select: none;
     z-index: 1;
@@ -55,7 +54,6 @@ body, html {
 .game-title::before { color: #ff0000; z-index: -1; text-shadow: 0 0 5px #ff0000; }
 .game-title::after { color: #00ffff; z-index: -2; opacity: 0.0; filter: blur(1px); }
 
-/* Clases activadas por JS para el Título */
 .visual-glitch::before {
     opacity: 1;
     animation: glitch-switch 0.1s infinite;
@@ -78,7 +76,6 @@ body, html {
 
 .menu-btn {
     position: relative;
-    /* Fondo oscuro semitransparente para que siempre se lea el texto */
     background: rgba(0, 0, 0, 0.4); 
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
@@ -91,18 +88,16 @@ body, html {
     border-radius: 50px;
     transition: all 0.3s ease;
     overflow: hidden;
-    /* Un desenfoque más fuerte para aislar el botón del video */
     backdrop-filter: blur(10px);
 }
 
 .menu-btn:hover {
-    background: rgba(255, 0, 0, 0.6); /* Rojo más opaco al pasar el ratón */
-    border-color: #fff;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    background: rgba(255, 0, 0, 0.15);
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
     transform: scale(1.05);
 }
 
-/* Efecto de glitch sutil al pasar el ratón */
 .menu-btn::before, .menu-btn::after {
     content: attr(data-text);
     position: absolute;
@@ -116,13 +111,6 @@ body, html {
     justify-content: center;
     opacity: 0;
     transition: all 0.2s;
-}
-
-.menu-btn:hover {
-    background: rgba(255, 0, 0, 0.15);
-    border-color: #ff0000;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
-    transform: scale(1.05);
 }
 
 .menu-btn:hover::before {
@@ -155,7 +143,6 @@ body, html {
     100% { transform: translate(0); }
 }
 
-/* Glitch sutil para botones */
 @keyframes btn-glitch-1 {
     0% { clip-path: inset(0 0 70% 0); }
     50% { clip-path: inset(30% 0 30% 0); }
@@ -170,7 +157,7 @@ body, html {
 
 /* --- MODAL DE CONFIGURACIÓN --- */
 .modal {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: fixed;
     z-index: 100;
     left: 0;
@@ -192,43 +179,21 @@ body, html {
     text-align: center;
     box-shadow: 0 0 50px rgba(255, 0, 0, 0.2);
     animation: slideIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    transition: opacity 0.3s ease;
+    position: relative;
 }
 
 .modal[style*="display: flex"] .modal-content {
     animation: menuIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
-.modal-closing {
-    opacity: 0 !important;
-    pointer-events: none;
-}
-
-.modal-closing .modal-content {
-    animation: menuOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards !important;
-}
-
 @keyframes slideIn {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-        filter: brightness(5);
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-        filter: brightness(1);
-    }
+    0% { transform: scale(0.5); opacity: 0; filter: brightness(5); }
+    100% { transform: scale(1); opacity: 1; filter: brightness(1); }
 }
 
 @keyframes menuIn {
     0% { transform: scale(0.7); opacity: 0; filter: brightness(3) blur(10px); }
     100% { transform: scale(1); opacity: 1; filter: brightness(1) blur(0); }
-}
-
-@keyframes menuOut {
-    0% { transform: scale(1); opacity: 1; filter: brightness(1); }
-    100% { transform: scale(1.2); opacity: 0; filter: brightness(0) blur(20px); }
 }
 
 .config-item {
@@ -240,7 +205,6 @@ body, html {
     letter-spacing: 1px;
 }
 
-/* El Switch (Toggle) */
 .switch {
     position: relative;
     display: inline-block;
@@ -272,7 +236,6 @@ body, html {
 input:checked + .slider { background-color: #ff0000; }
 input:checked + .slider:before { transform: translateX(26px); }
 
-/* Input Range (Volumen) */
 input[type=range] {
     cursor: pointer;
     accent-color: #ff0000;
@@ -297,70 +260,49 @@ input[type=range] {
     border-radius: 20px;
 }
 
-/* Contenedor para poner los botones uno al lado del otro */
+/* --- SOLUCIÓN AL DESCUADRE DE BOTONES --- */
 .exit-options {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
     margin-top: 30px;
+    width: 100%;
 }
 
-/* Caja de salida un poco más pequeña que la de configuración */
+.exit-options .menu-btn {
+    flex: 1; /* Hace que ambos botones midan lo mismo */
+    padding: 15px 10px; /* Reduce padding lateral para que quepan */
+    font-size: 0.9rem; /* Ajuste ligero de fuente para el espacio */
+    min-width: 0; /* Evita que el flex se rompa */
+}
+
+.load-box {
+    width: 450px; /* Un poco más de ancho para que los botones respiren */
+}
+
 .exit-box {
     max-width: 450px;
     border: 2px solid #ff0000;
     box-shadow: 0 0 40px rgba(255, 0, 0, 0.3);
 }
 
-/* Estilo para el botón de confirmar (Rojo) */
 .btn-confirm:hover {
     background: #ff0000 !important;
     color: black !important;
     box-shadow: 0 0 25px #ff0000;
 }
 
-/* Estilo para el botón de cancelar (Gris/Blanco) */
 .btn-cancel:hover {
     background: #ffffff !important;
     color: black !important;
     box-shadow: 0 0 20px #ffffff;
 }
 
-.video-container {
-    position: fixed; /* Lo fija en la pantalla, no se mueve al hacer scroll */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0; /* Lo envía detrás de todo el contenido */
-    overflow: hidden;
-}
-
 #bg-video {
     width: 100vw;
     height: 100vh;
-    object-fit: cover; /* Esto es CLAVE: hace que el video llene toda la pantalla sin deformarse, recortando los bordes si es necesario */
+    object-fit: cover;
 }
-
-/* Opcional: Una capa oscura extra para que el texto resalte mejor sobre el video */
-.video-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.0); /* Ajusta este valor (0.5) para más o menos oscuridad */
-    z-index: 1;
-}
-
-/* Asegura que los botones del menú hereden todo */
-.boton-juego {
-    /* Tu código actual de diseño y efecto glitch */
-    transition: all 0.3s ease;
-}
-
-/* Ajuste específico para el contenedor del menú para que no se vea "pegado" */
 
 #btn-info {
     position: fixed;
@@ -368,7 +310,6 @@ input[type=range] {
     right: 20px;
     padding: 10px 20px;
     cursor: pointer;
-    /* Usa aquí los mismos colores/bordes que tus otros botones */
 }
 
 #panel-quienes-somos {
@@ -376,16 +317,14 @@ input[type=range] {
     bottom: 80px;
     right: 20px;
     width: 400px;
-    background: rgba(0, 0, 0, 0.85); /* Fondo oscuro estilo sistema */
+    background: rgba(0, 0, 0, 0.85);
     border: 2px solid #ff0000;
     border-radius: 15px;
-     /* Borde estilo neón/glitch */
     padding: 15px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     z-index: 1000;
-
     box-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #FFFFFF;
     animation: panel-glitch 2s infinite alternate;
 }
@@ -398,93 +337,14 @@ input[type=range] {
     100% { transform: translate(0); border-color: #33ff00; }
 }
 
-#panel-quienes-somos h3 {
-    color: #fff;
-    font-family: monospace;
-    text-align: center;
-    margin-bottom: 10px;
-}
+#panel-quienes-somos.oculto { display: none; }
 
-#panel-quienes-somos.oculto {
-    display: none;
-}
-
-/* --- NUEVO SLIDER VERTICAL --- */
-#slider-lateral {
-    position: fixed;
-    top: -110%; /* Empieza fuera de la pantalla (arriba) */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 320px;
-    background: rgba(10, 10, 10, 0.95);
-    border: 2px solid #ff0000;
-    border-top: none;
-    border-radius: 0 0 30px 30px;
-    padding: 40px 20px;
-    z-index: 2000;
-    transition: top 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4), inset 0 0 15px rgba(255, 0, 0, 0.2);
-    backdrop-filter: blur(15px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Cuando el slider está activo */
-#slider-lateral.active {
-    top: 0;
-}
-
-/* Estética interna del slider */
-#slider-lateral h2 {
-    font-size: 1.5rem;
-    color: #ff0000;
-    text-shadow: 0 0 10px #ff0000;
-    margin-bottom: 10px;
-}
-
-#slider-lateral .slider-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Botón fijo para abrir el slider */
-.btn-open-slider {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1900;
-    padding: 10px 20px;
-    font-size: 0.8rem;
-    /* Reutiliza tu estética de menu-btn */
-}
-
-/* Overlay para detectar clic fuera */
-#slider-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.2);
-    z-index: 1999;
-    display: none;
-}
-
-#slider-overlay.active {
-    display: block;
-}
-
-/* --- NUEVO SLIDER VERTICAL INFORMATIVO --- */
 #slider-lateral {
     position: fixed;
     top: -110%; 
     left: 50%;
     transform: translateX(-50%);
-    width: 450px; /* Un poco más ancho para albergar texto e imágenes */
+    width: 450px;
     max-height: 85vh;
     background: rgba(10, 10, 10, 0.95);
     border: 2px solid #ff0000;
@@ -495,14 +355,11 @@ input[type=range] {
     transition: top 0.7s cubic-bezier(0.23, 1, 0.32, 1);
     box-shadow: 0 0 40px rgba(255, 0, 0, 0.5);
     backdrop-filter: blur(15px);
-    overflow-y: auto; /* Permite scroll si el texto es muy largo */
+    overflow-y: auto;
 }
 
-#slider-lateral.active {
-    top: 0;
-}
+#slider-lateral.active { top: 0; }
 
-/* Contenedor de Imágenes Redondas */
 .centro-imagenes {
     display: flex;
     justify-content: center;
@@ -520,15 +377,8 @@ input[type=range] {
     transition: transform 0.3s ease;
 }
 
-.img-centro:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-}
-
-/* Bloques de Texto Informativo */
 .info-section {
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
     margin-bottom: 20px;
 }
 
@@ -539,14 +389,6 @@ input[type=range] {
     letter-spacing: 2px;
     margin-bottom: 10px;
     border-bottom: 1px solid rgba(255, 0, 0, 0.3);
-    padding-bottom: 5px;
-}
-
-.info-section p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    text-align: justify;
 }
 
 .data-label {
@@ -554,28 +396,14 @@ input[type=range] {
     font-weight: bold;
 }
 
-/* Overlay para cerrar al hacer clic fuera */
 #slider-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.6);
     z-index: 1999;
     display: none;
     backdrop-filter: blur(2px);
 }
 
-#slider-overlay.active {
-    display: block;
-}
-
-/* Estilización de la barra de scroll del slider */
-#slider-lateral::-webkit-scrollbar {
-    width: 5px;
-}
-#slider-lateral::-webkit-scrollbar-thumb {
-    background: #ff0000;
-    border-radius: 10px;
-}
+#slider-overlay.active { display: block; }

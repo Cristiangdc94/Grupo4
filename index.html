@@ -21,12 +21,31 @@
         </div>
         
         <nav class="menu-options">
-            <a href="Game/MainGame/Base.html"><button class="menu-btn" data-text="INICIAR HISTORIA">INICIAR HISTORIA</button></a>
-            <button class="menu-btn" data-text="CARGAR PARTIDA">CARGAR PARTIDA</button>
+            <a href="Game/MainGame/Base.html" onclick="prepararNuevaPartida()" class="btn-link">
+                <button class="menu-btn" data-text="INICIAR HISTORIA">INICIAR HISTORIA</button>
+            </a>
+            
+            <button class="menu-btn" data-text="CARGAR PARTIDA" onclick="abrirInfoCarga()">CARGAR PARTIDA</button>
+
             <button class="menu-btn" data-text="CONFIGURACIÓN" onclick="openConfig()">CONFIGURACIÓN</button>
             <button class="menu-btn" data-text="SALIR" onclick="abrirModalSalida()">SALIR</button>
         </nav>
     </main>
+
+    <div id="load-info-modal" class="modal">
+        <div class="modal-content load-box">
+            <h2 class="glitch-text" data-text="EXPEDIENTE DE UNIDAD">EXPEDIENTE DE UNIDAD</h2>
+            <div class="load-details">
+                <p><span class="data-label">> ID_UNIDAD:</span> <span id="load-name">---</span></p>
+                <p><span class="data-label">> ESTADO_ACTUAL:</span> <span id="load-node">---</span></p>
+                <p><span class="data-label">> DECISIONES_TOMADAS:</span> <span id="load-decisions">0</span></p>
+            </div>
+            <div class="exit-options load-grid">
+                 <button class="menu-btn" onclick="confirmarCarga()">REANUDAR CONEXIÓN</button>
+                 <button class="menu-btn" onclick="cerrarInfoCarga()">ABORTAR</button>
+            </div>
+        </div>
+    </div>
 
     <audio id="bg-music" loop>
         <source src="Game/Music/fondo-main.mp3.mp3" type="audio/mpeg">
@@ -39,7 +58,6 @@
     <div id="config-modal" class="modal">
         <div class="modal-content">
             <h2 class="glitch-text" data-text="CONFIGURACIÓN">CONFIGURACIÓN</h2>
-            
             <div class="config-item">
                 <span>MÚSICA DE FONDO</span>
                 <label class="switch">
@@ -47,12 +65,10 @@
                     <span class="slider round"></span>
                 </label>
             </div>
-
             <div class="config-item">
                 <span>VOLUMEN GLOBAL</span>
                 <input type="range" min="0" max="1" step="0.1" value="0.5" id="volume-control" oninput="updateVolume()">
             </div>
-
             <button class="menu-btn close-btn" onclick="closeConfig()">VOLVER AL SISTEMA</button>
         </div>
     </div>
@@ -61,7 +77,6 @@
         <div class="modal-content exit-box">
             <h2 class="glitch-text" data-text="¿ABORTAR CONEXIÓN?">¿ABORTAR CONEXIÓN?</h2>
             <p style="color: rgba(255,255,255,0.5); margin: 20px 0;">Se perderá la sincronización con la unidad 404.</p>
-            
             <div class="exit-options">
                 <button class="menu-btn btn-confirm" onclick="confirmarSalida()">SÍ, SALIR</button>
                 <button class="menu-btn btn-cancel" onclick="cerrarModalSalida()">CANCELAR</button>
@@ -70,7 +85,6 @@
     </div>
 
     <button id="btn-info" class="menu-btn" data-text="¿Quienes somos?" onclick="toggleMenu(event)">¿Quiénes somos?</button>
-
     <div id="panel-quienes-somos" class="oculto">
         <h3>Créditos</h3>
         <button class="menu-btn" data-text="Francisco Angamarca" onclick="window.open('Somos/FrancisAnga/index.html', '_blank')">Francisco Angamarca</button>
@@ -79,49 +93,30 @@
     </div>
 
     <button class="menu-btn" id="btn-open-terminal" style="position: fixed; top: 20px; right: 20px; z-index: 1900; padding: 10px 25px;" data-text="INFO PROYECTO" onclick="toggleVerticalSlider()">INFO PROYECTO</button>
-
     <div id="slider-overlay" onclick="toggleVerticalSlider()"></div>
-
     <div id="slider-lateral">
         <div class="info-section">
             <h2 class="glitch-text" data-text="DATOS DEL PROYECTO">DATOS DEL PROYECTO</h2>
-            <p>
-                <span class="data-label">> NOMBRE:</span> Error 404: Humanity<br>
-                <span class="data-label">> VERSIÓN:</span> 1.0.2-Stable<br>
-                <span class="data-label">> ESTADO:</span> Sincronización activa
-            </p>
+            <p><span class="data-label">> NOMBRE:</span> Error 404: Humanity<br><span class="data-label">> VERSIÓN:</span> 1.0.2-Stable<br><span class="data-label">> ESTADO:</span> Sincronización activa</p>
         </div>
-
         <div class="info-section">
             <h2>CENTRO EDUCATIVO</h2>
             <div class="centro-imagenes">
                 <a href="https://cesjuanpablosegundo.es/" target="_blank"><img src="Game/images/tafad-ces-juan-pablo-ii-515050759.png" alt="Centro Educativo" class="img-centro"></a>
             </div>
-            <p style="text-align: center;">
-                Desarrollado como Proyecto Final para el Grado Superior de Desarrollo de Aplicaciones Multiplataforma (DAM).
-            </p>
+            <p style="text-align: center;">Desarrollado como Proyecto Final para el Grado Superior de DAM.</p>
         </div>
-
         <div class="info-section">
             <h2>SINOPSIS</h2>
-            <p>
-                En un futuro donde la línea entre la conciencia biológica y el código digital se ha difuminado, el sistema "Humanity" ha colapsado. Tu misión es navegar por los fragmentos de memoria de la Unidad 404 para restaurar la conexión o purgar el sistema para siempre.
-            </p>
+            <p>En un futuro donde la línea entre la conciencia biológica y el código digital se ha difuminado...</p>
         </div>
-
         <div class="info-section">
             <h2>MEMORIA</h2>
-            <p>
-                Memoria del proyecto: 
-                <div class="centro-imagenes">
+            <div class="centro-imagenes">
                 <a href="Memory/index.html" target="_blank"><img src="Game/images/png-clipart-adobe-acrobat-pdf-computer-icons-adobe-reader-edu-invest-adobe-pdf-text-logo-thumbnail.png" alt="Centro Educativo" class="img-centro"></a>
-            </div>    
-            </p>
+            </div>
         </div>
-        
-        <div style="text-align: center; color: #444; font-size: 0.7rem; margin-top: 10px;">
-            -- CLICK FUERA PARA CERRAR TERMINAL --
-        </div>
+        <div style="text-align: center; color: #444; font-size: 0.7rem; margin-top: 10px;">-- CLICK FUERA PARA CERRAR TERMINAL --</div>
     </div>
 
     <script src="script.js"></script>
