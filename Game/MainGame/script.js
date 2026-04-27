@@ -59,14 +59,11 @@ function cargarProgreso() {
         masterVol = data.volMaster;
         musicVol = data.volMusic;
         playerName = data.nombre || "Invitado";
-        
-        // Sincronizar UI
         masterSlider.value = masterVol;
         musicSlider.value = musicVol;
         document.getElementById('display-player-name').innerText = playerName;
         document.getElementById('name-modal').style.display = "none";
     } else {
-        // Si no hay partida, mostrar modal de nombre
         document.getElementById('name-modal').style.display = "flex";
     }
 }
