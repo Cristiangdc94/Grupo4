@@ -116,17 +116,30 @@ function actualizarInterfaz() {
     }
 
     document.getElementById('choice-title').innerText = datos.titulo;
-    // REEMPLAZO DE NOMBRE EN DESCRIPCIÓN
-    let textoProcesado = datos.descripcion.replace(/{PLAYER}/g, playerName);
-    typeWriter('choice-desc', textoProcesado, 20);
+    
+    indiceDialogoActual = 0;
+    
+    if (datos.secuenciaDialogo) {
+        document.getElementById('bottom-buttons').style.display = 'none';
+        mostrarSiguienteDialogo();
+    } else {
+        document.getElementById('bottom-buttons').style.display = 'grid';
+        let textoProcesado = datos.descripcion.replace(/{PLAYER}/g, playerName);
+        typeWriter('choice-desc', textoProcesado, 20);
+        generarBotones(datos.opciones);
+    }
 
+    initHoverSounds();
+}
+
+function generarBotones(opciones) {
     const contenedorBotones = document.getElementById('bottom-buttons');
     contenedorBotones.innerHTML = '';
     const centro = document.createElement('div');
     centro.className = 'bottom-buttons-center';
     contenedorBotones.appendChild(centro);
 
-    datos.opciones.forEach((opcion) => {
+    opciones.forEach((opcion) => {
         const btn = document.createElement('a');
         btn.href = "#";
         btn.innerText = opcion.texto;
@@ -137,8 +150,55 @@ function actualizarInterfaz() {
         };
         (opcion.tipo === 'flecha') ? contenedorBotones.appendChild(btn) : centro.appendChild(btn);
     });
+}
 
-    initHoverSounds();
+function mostrarSiguienteDialogo() {
+    const datos = historia[nodoActual];
+    if (!datos.secuenciaDialogo) return;
+
+    const secuencia = datos.secuenciaDialogo;
+    const speakerEl = document.getElementById('speaker-name');
+    const contenedorBotones = document.getElementById('bottom-buttons');
+    
+    console.log("Entrando a mostrarSiguienteDialogo. Índice:", indiceDialogoActual);
+
+    // 1. SI LLEGAMOS AL FINAL
+    if (indiceDialogoActual >= secuencia.length) {
+    console.log("Fin de la secuencia, activando botones.");
+    
+    // --- ESTO ES LO QUE FALTA ---
+    // Obtenemos los datos del nodo actual y dibujamos los botones
+    const datos = historia[nodoActual];
+    generarBotones(datos.opciones); 
+    
+    // Mostramos el contenedor
+    contenedorBotones.style.display = 'grid';
+    return; 
+}
+
+    // 2. LÓGICA DE DIÁLOGO
+    const d = secuencia[indiceDialogoActual];
+    contenedorBotones.style.display = 'none';
+
+    if (speakerEl) {
+        speakerEl.innerText = d.quien || "";
+        speakerEl.style.display = d.quien ? 'inline-block' : 'none';
+    }
+
+    let textoProcesado = d.texto.replace(/{PLAYER}/g, playerName);
+    
+    // Procesar expresión
+    if (d.expresion) {
+        let [id, ruta] = d.expresion.split(':');
+        const charImg = document.querySelector(`[data-id="${id}"]`);
+        if (charImg) charImg.src = ruta;
+    }
+
+    typeWriter('choice-desc', textoProcesado, 20);
+    
+    // Incrementar
+    indiceDialogoActual++; 
+    console.log("Índice incrementado a:", indiceDialogoActual);
 }
 
 function initHoverSounds() {
@@ -157,14 +217,19 @@ function initHoverSounds() {
 function typeWriter(elementId, text, speed, callback = null) {
     const element = document.getElementById(elementId);
     if (!element) return;
+    
+    // Limpiamos el contenido
     element.innerHTML = "";
     let i = 0;
     isTyping = true;
 
     function typing() {
+        // Si el usuario hizo clic (isTyping es false), salimos
         if (!isTyping) return;
+
         if (i < text.length) {
             let char = text.charAt(i);
+            // Procesar comando de imagen si existe
             if (char === '|') {
                 let end = text.indexOf('|', i + 1);
                 if (end !== -1) {
@@ -176,6 +241,7 @@ function typeWriter(elementId, text, speed, callback = null) {
                 }
             } else {
                 element.innerHTML += char;
+                // Sonido
                 if (char !== " " && !masterMuted && masterVol > 0) {
                     const soundClone = typeSound.cloneNode();
                     soundClone.volume = masterVol;
@@ -231,6 +297,28 @@ function iniciarAudio() {
 document.addEventListener('click', iniciarAudio);
 
 window.onload = () => {
-    cargarProgreso(); // Intentar cargar partida
+    cargarProgreso();
     actualizarInterfaz();
+
+    // ESTO ES LO QUE TE FALTABA
+    document.querySelector('.info-box').addEventListener('click', () => {
+    const descEl = document.getElementById('choice-desc');
+    const datos = historia[nodoActual];
+    
+    console.log("Clic detectado. isTyping:", isTyping, "Índice:", indiceDialogoActual);
+
+    if (isTyping) {
+        console.log("Saltando animación...");
+        isTyping = false;
+        // Mostramos texto completo
+        if (indiceDialogoActual > 0 && datos.secuenciaDialogo) {
+            let textoFinal = datos.secuenciaDialogo[indiceDialogoActual - 1].texto;
+            descEl.innerText = textoFinal.replace(/{PLAYER}/g, playerName);
+        }
+    } else if (datos.secuenciaDialogo) {
+        // FORZAMOS el avance sin importar el display de los botones
+        console.log("Intentando avanzar al siguiente diálogo...");
+        mostrarSiguienteDialogo();
+    }
+});
 };

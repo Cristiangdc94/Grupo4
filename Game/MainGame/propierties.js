@@ -1,11 +1,17 @@
 const historia = {
     "inicio": {
         "titulo": "El Despertar",
-        "descripcion": "El silencio es absoluto. Hola {PLAYER} |images/zack_serio.png| ¿Alguien me escucha?",
         "posicion": "pos-centro",
         "fondo": "../images/bunker.png",
         "personajes": [
             
+        ],
+        "secuenciaDialogo" : [
+        {
+            "quien": "Zack",
+            "expresion": "zack:../images/zack_preocupado.png", 
+            "texto": "Hola {PLAYER}, ¿cómo has llegado hasta aquí?"
+        }
         ],
         "opciones": [
             {
