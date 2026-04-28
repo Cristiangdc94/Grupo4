@@ -1,0 +1,73 @@
+Fondo: Imagen -> 1.jpeg
+Personajes: Narrativo
+Texto:
+Zack elige hacerlo por el método de Mira
+
+Personajes: Mira_Hablando.png
+Texto:
+Al menos tengo a otro listo conmigo
+
+Personajes: Kael_Enfadado.png
+Texto:
+sois unos cagaos… LOS 2
+
+Personajes: Zack_Hablando.png
+Texto:
+De nada servirá esto que hacemos si morimos antes de tiempo, asi que a callar y vamos por detrás
+
+Personajes: Kael_Enfadado.png
+Texto:
+Maldita democracia, ¿no esta claro porque no funciona?
+
+Personajes: Narrativo
+Texto:
+Van por detrás del laboratorio
+
+Personajes: Zack_Hablando.png
+Texto:
+Venga Mira hazlo
+
+Personajes: Mira_Hablando.png
+Texto:
+Vale
+
+Personajes: Narrativo
+Texto:
+Saca el ordenador y se abren la escotilla y entran a las instalaciones en total sigilo, pero las luces son tan claras y nítidas que serian vistos hasta sin querer
+
+
+Fondo: Imagen -> 2.jpeg
+Personajes: Kael_Asustado.png
+Texto:
+No me jodas, aquí hay demasiada luz, nos podrían ver hasta por las sombras
+
+Personajes: Mira_Sorprendido.png
+Texto:
+Mierda, no pensaba que fuese a tener luz en todas las instalaciones, si no hay nadie, ¿para que tanta luz?
+
+Personajes: Zack_Pensando.png
+Texto:
+Caprichos de la IA supongo, tenemos que hacer algo, no podemos simplemente ir
+
+Personajes: Kael_Gritando.png
+Texto:
+Y ENTONCES DE QUE HA SERVIDO COLARSE EN SIGILO SI NOS VAN A VER COMO OS DIJE
+
+Personajes: Mira_Asustado.png
+Texto:
+Calmaos… mi Flipper nos puede ayudar, puedo sabotear la energía para que no seamos vistos desde media distancia, o escanear la zona para que podamos evitar a los robots si obtengo sus rutas de patrullaje
+
+Personajes: Zack_Pensando.png
+Texto:
+mmmm…
+
+Elección Mira 1-> Sabotear la Energía
+Foto: Imagen -> Eleccion_Escanear la zona.png
+Texto:
+Apagas la luz para que no te vean los robots y puedas llegar a tu destino
+
+Elección Mira 2-> Escanear la zona
+Foto: Imagen -> Eleccion_Sabotear la Energía.png
+Texto:
+Mira sabe la ruta y puede avanzar evitando a los robots
+

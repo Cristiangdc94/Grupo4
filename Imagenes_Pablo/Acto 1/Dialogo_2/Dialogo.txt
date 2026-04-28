@@ -1,0 +1,95 @@
+Fondo: Imagen -> De_camino.jpeg
+Personajes: Narrativo
+Texto:
+Después de 5 Horas de viaje sin ninguna complicación con los pocos robots que había por el camino, encuentran la Central en el desierto.
+
+Fondo: Imagen -> Fondo.jpeg
+Personajes: Mira_Hablando.png
+Texto:
+Ya hemos llegado por fin
+
+Personajes: Kael_Hablando.png
+Texto:
+Por fin, menos mal no hemos muerto por el camino
+
+Personajes: Zack_Enfadado.png
+Texto:
+Casi…no morimos por el camino, eres tan brusco con los robots que hasta nos terminas haciendo daño
+
+Personajes: Kael_Pensando.png
+Texto:
+Sisi, lo que tu digas, ahora centrémonos en como encontrar a ese sitio
+
+Personajes: Zack_Sorprendido.png
+Texto:
+Usando a Mira, lo bueno de tener a la típica Hacker del grupo... ¿Puedes hackearlo no?
+
+Personajes: Mira_Pensando.png
+Texto:
+técnicamente no, solo puedo recabar información
+
+Personajes: Kael_Pensando.png
+Texto:
+¿Qué tipo de información?
+
+Personajes: Mira_Asustado.png
+Texto:
+Por ejemplo, ahora ya se donde esta el Doctor Vane, está en la sala central y se que camino tomar para llegar hasta el.
+
+Personajes: Zack_Hablando.png
+Texto:
+¿Cuántos robots hay dentro?
+
+Personajes: Mira_Sorprendido.png
+Texto:
+Demasiados como para contarlos con todas nuestras manos.
+
+Personajes: Kael_Asustado.png
+Texto:
+Más de 30, eso sí que será un problema
+
+Personajes: Mira_Confundido.png
+Texto:
+Y bien, ¿cómo lo hacemos? Yo propongo colarnos por el conducto de ventilación en sigilo hasta…
+
+Personajes: Kael_Gritando.png
+Texto:
+¡¡DEMASIADO LENTO!! Es mejor entrar con todo, el efecto sorpresa nos ayudará hasta que los robots reaccionen
+
+Personajes: Mira_Gritando.png
+Texto:
+¿He mencionado que hay más robots que neuronas en tu cabeza de tonto? Son demasiados, no podemos con 30 siendo solo 3
+
+Personajes: Kael_Gritando.png
+Texto:
+Tu lo has dicho, si hay 30 aunque vayamos por detrás nos verán
+
+Personajes: Mira_Gritando.png
+Texto:
+Claro que no si lo hacemos bien, tu plan es directamente cagarla y depender de la suerte
+
+Personajes: Kael_Gritando.png
+Texto:
+¿Y con ese método sigo vivo no?
+
+Personajes: Mira_Confundido.png
+Texto:
+bueno…casi…
+
+Personajes: Kael_Enfadado.png
+Texto:
+¡¿A QUE TE REFIERES CON CASI?!
+
+Personajes: Zack_Gritando.png
+Texto:
+Vale callaos, está claro que hay 2 planes, Sigilo de Mira y Asalto de Kael, dejadme elegir a mi.
+
+Elección Mira -> Sigilo
+Foto: Imagen -> Eleccion_Mira.jpeg
+Texto:
+Colarse en Sigilo por la parte trasera de las instalaciones
+
+Elección Kael -> Asalto
+Foto: Imagen -> Eleccion_Kael.jpeg
+Texto:
+Ir de frente por la puerta principal a por los robots
