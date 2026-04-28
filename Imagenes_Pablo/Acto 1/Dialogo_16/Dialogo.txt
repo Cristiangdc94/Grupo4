@@ -1,0 +1,30 @@
+Fondo: Imagen -> 1.jpeg
+Personajes: Narrativo
+Texto:
+Zack elige seguir el plan de Mira
+
+Personajes: Zack_Hablando.png
+Texto:
+Por hoy te hare caso, que no quiero correr riesgos
+
+Personajes: Kael_Gritando.png
+Texto:
+¿Porque es mujer verdad?
+
+Personajes: Mira_Gritando.png
+Texto:
+Porque no tengo tendencias suicidas
+
+Personajes: Zack_Hablando.png
+Texto:
+Exacto, en otra ocasion lo haremos a tu estilo okey?
+
+Personajes: Kael_Pensando.png
+Texto:
+Pfff, que remedio
+
+Fondo: Imagen -> 2.jpeg
+Personajes: Narrativo
+Texto:
+Avanzan poco a poco, y con la ayuda de Mira evita cualquier encontronazo con los robots
+
