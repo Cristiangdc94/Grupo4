@@ -2,7 +2,7 @@ const historia = {
     "inicio": {
         "titulo": "El Despertar",
         "posicion": "pos-centro",
-        "fondo": "../images/bunker.png",
+        "fondo": "../images/Acto_1/Dialogo_0/1.png",
         "personajes": [
             
         ],
@@ -10,7 +10,7 @@ const historia = {
         {
             "quien": "Zack",
             "expresion": "zack:../images/zack_preocupado.png", 
-            "texto": "Hola {PLAYER}, ¿cómo has llegado hasta aquí?"
+            "texto": "En el año 2026, un día cualquiera de Agosto, los humanos deciden empezar con las investigaciones y creaciones de los famosos robots de las peliculas o series de Hollywood para llevarlos a la vida real y que sean los nuevos esclavos del siglo 21."
         }
         ],
         "opciones": [

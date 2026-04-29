@@ -4,6 +4,7 @@ let masterMuted = false, musicMuted = false;
 let prevMasterVol = 0.25, prevMusicVol = 0.25;
 let isTyping = false;
 let playerName = "Invitado";
+let typewriterTimeout; // Variable para controlar el flujo del texto y evitar errores de encoding/visualización
 
 const typeSound = new Audio('../Sound/undertale-text.mp3');
 const bgMusic = document.getElementById('bg-music');
@@ -19,6 +20,7 @@ const menuOverlay = document.getElementById('menu-overlay');
 
 // --- MOTOR DE HISTORIA ---
 let nodoActual = "inicio";
+let indiceDialogoActual = 0;
 
 // --- NUEVA LÓGICA DE NOMBRE ---
 function saveUserName() {
@@ -28,7 +30,7 @@ function saveUserName() {
         document.getElementById('display-player-name').innerText = playerName;
         document.getElementById('name-modal').style.display = "none";
         guardarProgreso();
-        actualizarInterfaz(); // Refrescar para aplicar el nombre
+        actualizarInterfaz(); 
     } else {
         input.style.borderColor = "red";
     }
@@ -38,7 +40,7 @@ function exitToMenu() {
     window.location.href = "../../index.html";
 }
 
-// --- LÓGICA DE GUARDADO (LOCAL STORAGE) ---
+// --- LÓGICA DE GUARDADO ---
 function guardarProgreso() {
     const dataSave = {
         nodo: nodoActual,
@@ -98,22 +100,17 @@ function actualizarInterfaz() {
     const datos = historia[nodoActual];
     if (!datos) return;
 
-    // --- NUEVO: GESTIÓN DE POSICIÓN DEL TEXTO ---
     const infoBox = document.querySelector('.info-box');
     if (infoBox) {
-        // Eliminamos clases de posición previas para evitar conflictos
         infoBox.classList.remove('pos-centro', 'pos-top', 'pos-bottom'); 
-        // Aplicamos la nueva posición definida en el JSON
         if (datos.posicionTexto) {
             infoBox.classList.add(datos.posicionTexto);
         }
     }
 
-    // 1. Fondo
     const bg = document.querySelector('.background-image');
     if (bg && datos.fondo) bg.style.backgroundImage = `url('${datos.fondo}')`;
 
-    // 2. Personajes
     const charContainer = document.getElementById('character-container');
     charContainer.innerHTML = ''; 
 
@@ -127,10 +124,8 @@ function actualizarInterfaz() {
         });
     }
 
-    // 3. Título
     document.getElementById('choice-title').innerText = datos.titulo;
     
-    // 4. Diálogos
     indiceDialogoActual = 0;
     
     if (datos.secuenciaDialogo) {
@@ -218,18 +213,17 @@ function typeWriter(elementId, text, speed, callback = null) {
     const element = document.getElementById(elementId);
     if (!element) return;
     
-    // Limpiamos el contenido
+    // IMPORTANTE: Limpiar el timeout anterior para evitar solapamiento de letras
+    clearTimeout(typewriterTimeout);
     element.innerHTML = "";
     let i = 0;
     isTyping = true;
 
     function typing() {
-        // Si el usuario hizo clic (isTyping es false), salimos
         if (!isTyping) return;
 
         if (i < text.length) {
             let char = text.charAt(i);
-            // Procesar comando de imagen si existe
             if (char === '|') {
                 let end = text.indexOf('|', i + 1);
                 if (end !== -1) {
@@ -241,7 +235,6 @@ function typeWriter(elementId, text, speed, callback = null) {
                 }
             } else {
                 element.innerHTML += char;
-                // Sonido
                 if (char !== " " && !masterMuted && masterVol > 0) {
                     const soundClone = typeSound.cloneNode();
                     soundClone.volume = masterVol;
@@ -249,7 +242,7 @@ function typeWriter(elementId, text, speed, callback = null) {
                 }
                 i++;
             }
-            setTimeout(typing, speed);
+            typewriterTimeout = setTimeout(typing, speed);
         } else {
             isTyping = false;
             if (callback) callback();
@@ -258,7 +251,6 @@ function typeWriter(elementId, text, speed, callback = null) {
     typing();
 }
 
-// --- LÓGICA DE VOLUMEN ---
 masterSlider.addEventListener('input', (e) => updateMasterUI(e.target.value));
 musicSlider.addEventListener('input', (e) => updateMusicUI(e.target.value));
 
@@ -300,25 +292,29 @@ window.onload = () => {
     cargarProgreso();
     actualizarInterfaz();
 
-    // ESTO ES LO QUE TE FALTABA
+    // Avance de texto y diálogos
     document.querySelector('.info-box').addEventListener('click', () => {
-    const descEl = document.getElementById('choice-desc');
-    const datos = historia[nodoActual];
-    
-    console.log("Clic detectado. isTyping:", isTyping, "Índice:", indiceDialogoActual);
-
-    if (isTyping) {
-        console.log("Saltando animación...");
-        isTyping = false;
-        // Mostramos texto completo
-        if (indiceDialogoActual > 0 && datos.secuenciaDialogo) {
-            let textoFinal = datos.secuenciaDialogo[indiceDialogoActual - 1].texto;
-            descEl.innerText = textoFinal.replace(/{PLAYER}/g, playerName);
+        const descEl = document.getElementById('choice-desc');
+        const datos = historia[nodoActual];
+        
+        if (isTyping) {
+            // Saltamos la animación y mostramos el texto completo
+            isTyping = false;
+            clearTimeout(typewriterTimeout);
+            if (indiceDialogoActual > 0 && datos.secuenciaDialogo) {
+                let textoFinal = datos.secuenciaDialogo[indiceDialogoActual - 1].texto;
+                descEl.innerText = textoFinal.replace(/{PLAYER}/g, playerName);
+            } else if (datos.descripcion) {
+                descEl.innerText = datos.descripcion.replace(/{PLAYER}/g, playerName);
+            }
+        } else if (datos.secuenciaDialogo) {
+            mostrarSiguienteDialogo();
         }
-    } else if (datos.secuenciaDialogo) {
-        // FORZAMOS el avance sin importar el display de los botones
-        console.log("Intentando avanzar al siguiente diálogo...");
-        mostrarSiguienteDialogo();
+    });
+
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', () => {
+            menuControl.checked = false;
+        });
     }
-});
 };
