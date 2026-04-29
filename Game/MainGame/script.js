@@ -172,9 +172,6 @@ function mostrarSiguienteDialogo() {
     if (indiceDialogoActual >= secuencia.length) {
         generarBotones(datos.opciones); 
         contenedorBotones.style.display = 'grid'; // Forzamos que se vea
-        // Ocultamos el nombre del speaker si es necesario
-        //const speakerEl = document.getElementById('speaker-name');
-        //if (speakerEl) speakerEl.style.display = 'none';
         return; 
     }
 
