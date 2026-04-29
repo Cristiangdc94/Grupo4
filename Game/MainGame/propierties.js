@@ -59,5 +59,55 @@ const historia = {
     ],
     "descripcion": "El silencio es absoluto. |zack:../images/zack_preocupado.png| Necesito salir de aquí. |xter:../images/xter_feliz.png| Vaya...",
     "opciones": []
-}
+},
+"nombre_del_nodo": {
+        "titulo": "Título de la Escena",
+        "fondo": "../images/tu_imagen.png", //
+        "personajes": [ //
+            { 
+                "id": "zack", 
+                "src": "../images/zack_base.png", 
+                "pos": "left: 10%;" 
+            },
+            { 
+                "id": "xter", 
+                "src": "../images/xter_serio.png", 
+                "pos": "right: 10%;" 
+            }
+        ],
+        // Si hay diálogos secuenciales, usa esta estructura:
+        "secuenciaDialogo": [ //
+            { 
+                "quien": "Narrador", 
+                "texto": "El aire es pesado en este lugar." 
+            },
+            { 
+                "quien": "Zack", 
+                "expresion": "zack:../images/zack_sorprendido.png", 
+                "texto": "¡{PLAYER}! ¿Viste eso?" 
+            }
+        ],
+        // Si NO hay secuenciaDialogo, el motor usará esto por defecto:
+        "descripcion": "Texto que aparece si no hay secuencia. Hola {PLAYER}.", //
+        
+        "opciones": [ //
+            {
+                "texto": "Ir a la derecha",
+                "siguiente": "siguiente_nodo",
+                "etiqueta": "DECISIÓN",
+                "titulo": "Pasillo Este",
+                "descripcion": "Decides avanzar con cautela.",
+                "log": "Elegiste el camino de la derecha."
+            },
+            {
+                "texto": "▶",
+                "tipo": "flecha", // Esto activa la clase .flecha-contexto
+                "siguiente": "otro_nodo",
+                "etiqueta": "PROTOCOLO",
+                "titulo": "Continuar",
+                "descripcion": "Sigues adelante.",
+                "log": "Continuaste la marcha."
+            }
+        ]
+    }
 };

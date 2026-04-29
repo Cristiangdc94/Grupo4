@@ -1,0 +1,75 @@
+Fondo: Imagen -> 1.jpeg
+Personajes: Narrativo
+Texto:
+Zack decide escanear la zona
+
+Personajes: Zack_Hablando.png
+Texto:
+Será mejor que escanes la zona, asi podremos evitar que nos vean los robots
+
+Personajes: Kael_Pensando.png
+Texto:
+Supongo que… asi podré romper robots sin que me vean más
+
+Personajes: Mira_Hablando.png
+Texto:
+Eso, busca el lado bueno a mis planes de una vez
+
+Personajes: Kael_Enfadado.png
+Texto:
+mmmm
+
+Personajes: Zack_Hablando.png
+Texto:
+Pues venga, escanea y asi podremos evitar a los robots
+
+Personajes: Mira_Hablando.png
+Texto:
+Voy
+
+Personajes: Narrativo
+Texto:
+Usa tu pantalla del brazo para escanear el laboratorio y ya sabe el camino más seguro al laboratorio
+
+Personajes: Mira_Hablando.png
+Texto:
+¿Ya se donde está el laboratorio, quien irá primero?
+
+Personajes: Zack_Confundido.png
+Texto:
+¿No deberías ir tú primero? ¿Que te sabes el camino?
+
+Personajes: Mira_Pensando.png
+Texto:
+A ver si, pero estaré ocupada con el mapa, a ver si me voy a chocar con algo, que esta Tablet es muy frágil
+
+Personajes: Kael_Hablando.png
+Texto:
+¿Entonces iría yo no?
+
+Personajes: Mira_Pensando.png
+Texto:
+Algo me dice que no, ¿y si va Zack?
+
+Personajes: Zack_Pensando.png
+Texto:
+Puesssss, dejar que lo piense
+
+Personajes: Narrativo
+Texto:
+Zack va a elegir quien va delante
+
+Elección Zack 1 -> 1º Orden
+Foto: Imagen -> Eleccion_Orden 1.png
+Texto:
+Mira va delante, Zack iras en el medio ,y Kael irá detrás tuya
+
+Elección Zack 2 -> 2º Orden
+Foto: Imagen -> Eleccion_Orden 2.png
+Texto:
+Kael va delante, Mira ira en el medio, y Zack irá detrás
+
+Elección Zack 3 -> 3º Orden
+Foto: Imagen -> Eleccion_Orden 3.png
+Texto:
+Zack va delante, Mira ira en el medio, y Kael irá detrás
