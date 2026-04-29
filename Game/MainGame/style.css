@@ -112,7 +112,7 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
 
 .info-box {
     max-width: 850px; margin: 0 auto; 
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.5);
     padding: 40px; border: 1px solid #FF0000; border-radius: 25px;
     box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
     backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);

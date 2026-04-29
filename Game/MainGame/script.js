@@ -83,14 +83,13 @@ function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
         if (empty) empty.remove();
         const entry = document.createElement('div');
         entry.className = 'log-entry';
-        // Reemplazar nombre en el log
         let formattedLog = logDesc.replace(/{PLAYER}/g, playerName);
         entry.innerHTML = `<strong>${titulo}</strong><p>${formattedLog}</p>`;
         log.prepend(entry);
     }
 
     nodoActual = nodoSiguiente;
-    guardarProgreso(); // Guardar automáticamente en cada decisión
+    guardarProgreso(); 
     actualizarInterfaz();
 }
 
@@ -99,9 +98,22 @@ function actualizarInterfaz() {
     const datos = historia[nodoActual];
     if (!datos) return;
 
+    // --- NUEVO: GESTIÓN DE POSICIÓN DEL TEXTO ---
+    const infoBox = document.querySelector('.info-box');
+    if (infoBox) {
+        // Eliminamos clases de posición previas para evitar conflictos
+        infoBox.classList.remove('pos-centro', 'pos-top', 'pos-bottom'); 
+        // Aplicamos la nueva posición definida en el JSON
+        if (datos.posicionTexto) {
+            infoBox.classList.add(datos.posicionTexto);
+        }
+    }
+
+    // 1. Fondo
     const bg = document.querySelector('.background-image');
     if (bg && datos.fondo) bg.style.backgroundImage = `url('${datos.fondo}')`;
 
+    // 2. Personajes
     const charContainer = document.getElementById('character-container');
     charContainer.innerHTML = ''; 
 
@@ -115,8 +127,10 @@ function actualizarInterfaz() {
         });
     }
 
+    // 3. Título
     document.getElementById('choice-title').innerText = datos.titulo;
     
+    // 4. Diálogos
     indiceDialogoActual = 0;
     
     if (datos.secuenciaDialogo) {
@@ -160,23 +174,13 @@ function mostrarSiguienteDialogo() {
     const speakerEl = document.getElementById('speaker-name');
     const contenedorBotones = document.getElementById('bottom-buttons');
     
-    console.log("Entrando a mostrarSiguienteDialogo. Índice:", indiceDialogoActual);
-
-    // 1. SI LLEGAMOS AL FINAL
     if (indiceDialogoActual >= secuencia.length) {
-    console.log("Fin de la secuencia, activando botones.");
-    
-    // --- ESTO ES LO QUE FALTA ---
-    // Obtenemos los datos del nodo actual y dibujamos los botones
-    const datos = historia[nodoActual];
-    generarBotones(datos.opciones); 
-    
-    // Mostramos el contenedor
-    contenedorBotones.style.display = 'grid';
-    return; 
-}
+        const datosRef = historia[nodoActual];
+        generarBotones(datosRef.opciones); 
+        contenedorBotones.style.display = 'grid';
+        return; 
+    }
 
-    // 2. LÓGICA DE DIÁLOGO
     const d = secuencia[indiceDialogoActual];
     contenedorBotones.style.display = 'none';
 
@@ -187,7 +191,6 @@ function mostrarSiguienteDialogo() {
 
     let textoProcesado = d.texto.replace(/{PLAYER}/g, playerName);
     
-    // Procesar expresión
     if (d.expresion) {
         let [id, ruta] = d.expresion.split(':');
         const charImg = document.querySelector(`[data-id="${id}"]`);
@@ -195,10 +198,7 @@ function mostrarSiguienteDialogo() {
     }
 
     typeWriter('choice-desc', textoProcesado, 20);
-    
-    // Incrementar
     indiceDialogoActual++; 
-    console.log("Índice incrementado a:", indiceDialogoActual);
 }
 
 function initHoverSounds() {

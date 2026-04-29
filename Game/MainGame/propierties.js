@@ -62,7 +62,8 @@ const historia = {
 },
 "nombre_del_nodo": {
         "titulo": "Título de la Escena",
-        "fondo": "../images/tu_imagen.png", //
+        "fondo": "../images/tu_imagen.png",
+        "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
                 "id": "zack", 
