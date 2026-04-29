@@ -1,0 +1,146 @@
+Fondo: Imagen -> 1.png
+Personajes: Narrativo
+Texto:
+Zack decide confiar en Mira
+
+Personajes: Zack_Gritando.png
+Texto:
+MIRA HAZLO, CONFIAMOS EN TI
+
+Personajes: Mira_Gritando.png
+Texto:
+VOY VOY VOY
+
+Fondo: Imagen -> 2.png
+Personajes: Narrativo
+Texto:
+Mira consigue hackear las maquinas, pero revela su posición actual a la IA
+
+Fondo: Imagen -> 3.png
+Personajes: Narrativo
+Texto:
+Los robots la localizan y antes de eliminarlas Mira sale herida
+
+Personajes: Mira_Llorando.png
+Texto:
+AY AY AY
+
+Personajes: Kael_Asustado.png
+Texto:
+Me cago en todo, la han dado de lleno, tenemos que irnos
+
+Personajes: Zack_Asustado.png
+Texto:
+Mierda corre, corre y buscamos la forma de curarla
+
+Personajes: Kael_Enfadado.png
+Texto:
+La cargo, cubre delante
+
+Fondo: Imagen -> 4.png
+Personajes: Narrativo
+Texto:
+Kael corre con Mira muy herida en su espalda mientras Zack los cubre, logran mucha distancia entre los robots y llegan a la puerta
+
+Fondo: Imagen -> 5.png
+Personajes: Zack_Gritando.png
+Texto:
+Listo, Mira por favor ayúdanos a entrar y seguro que dentro hay algo
+
+Personajes: Zack_Gritando.png
+Texto:
+…
+
+Personajes: Zack_Confundido.png
+Texto:
+Mira…?
+
+Personajes: Kael_Llorando.png
+Texto:
+...Z-Zack...
+
+Fondo: Imagen -> 6.png
+Personajes: Narrativo
+Texto:
+… Mira a muerto por las heridas …
+
+Personajes: Zack_Llorando.png
+Texto:
+MI…MI…mira?
+
+Personajes: Kael_Llorando.png
+Texto:
+No… no puede ser… no esta muerta esta…, Mira despierta, no es gracioso, por favor despierta...
+
+Personajes: Zack_Llorando.png
+Texto:
+Kael…no va a…
+
+Personajes: Kael_Llorando.png
+Texto:
+NO NO NOOO, ESTA BIEN, YA DESPERTARA, AYUDAME A ABRIR LA PUERTA, NECESITA ALGO URGENTE
+
+Personajes: Zack_Llorando.png
+Texto:
+No… no puedo hacer nada… los robots vienen…
+
+Personajes: Kael_Llorando.png
+Texto:
+no…
+
+Fondo: Imagen -> 7.png
+Personajes: Kael_Gritando y Llorando.png
+Texto:
+NOOOOO, MALDITOS DESGRACIADOS, TODO POR CULPA DE ESTE PUTO LABORATORIO JODEEERRR AAAAAAAAHHHH
+
+Personajes: Narrativo
+Texto:
+Mientras grita golpea la puerta hasta que le sangran las manos y de repente...
+
+Fondo: Imagen -> 8.png
+Personajes: Narrativo
+Texto:
+La puerta se abre, ellos quedan en shock y entran con el cuerpo de Mira antes de que lleguen los robots, logran entrar.
+
+Fondo: Imagen -> 9.png
+Personajes: Kael_Llorando.png
+Texto:
+…
+
+Personajes: Zack_Llorando.png
+Texto:
+Kael… no quería que nada de esto…
+
+Personajes: Kael_Llorando.png
+Texto:
+Iba a pasar, o era ella o yo o tu, sabia que algo así pasaría pero…
+
+Personajes: Zack_Gritando y Llorando.png
+Texto:
+Lo siento Mira, siento haberte arrastrado a esto… perdóname por favor
+
+Personajes: Kael_Llorando.png
+Texto:
+Hay que seguir, no podemos parar justo ahora, acabemos esto y démosla un entierro digno
+
+Personajes: Zack_Llorando.png
+Texto:
+… Vale …
+
+Personajes: Dr.Vane_Pilar_Camuflado.png
+Texto:
+Mi mas sentido pésame por vuestra amiga, nadie merece un final así…
+
+Personajes: Kael_Gritando y Llorando.png
+Texto:
+¿Quién coño ha dicho eso?
+
+Personajes: Dr.Vane_Pilar_Hablando.png
+Texto:
+Yo…
+
+Personajes: Narrativo
+Texto:
+Aparece en escena una persona misteriosa
+
+Siguiente Dialogo -> Dialogo_33
