@@ -170,9 +170,11 @@ function mostrarSiguienteDialogo() {
     const contenedorBotones = document.getElementById('bottom-buttons');
     
     if (indiceDialogoActual >= secuencia.length) {
-        const datosRef = historia[nodoActual];
-        generarBotones(datosRef.opciones); 
-        contenedorBotones.style.display = 'grid';
+        generarBotones(datos.opciones); 
+        contenedorBotones.style.display = 'grid'; // Forzamos que se vea
+        // Ocultamos el nombre del speaker si es necesario
+        //const speakerEl = document.getElementById('speaker-name');
+        //if (speakerEl) speakerEl.style.display = 'none';
         return; 
     }
 
@@ -292,29 +294,54 @@ window.onload = () => {
     cargarProgreso();
     actualizarInterfaz();
 
-    // Avance de texto y diálogos
-    document.querySelector('.info-box').addEventListener('click', () => {
-        const descEl = document.getElementById('choice-desc');
+    const intentarAvanzar = () => {
         const datos = historia[nodoActual];
-        
+        if (!datos) return;
+        const descEl = document.getElementById('choice-desc');
+
+        // 1. SI ESTÁ ESCRIBIENDO: Solo completar el texto y DETENERSE
         if (isTyping) {
-            // Saltamos la animación y mostramos el texto completo
             isTyping = false;
             clearTimeout(typewriterTimeout);
-            if (indiceDialogoActual > 0 && datos.secuenciaDialogo) {
-                let textoFinal = datos.secuenciaDialogo[indiceDialogoActual - 1].texto;
-                descEl.innerText = textoFinal.replace(/{PLAYER}/g, playerName);
-            } else if (datos.descripcion) {
-                descEl.innerText = datos.descripcion.replace(/{PLAYER}/g, playerName);
+            
+            let textoCrudo = "";
+            if (datos.secuenciaDialogo && indiceDialogoActual > 0) {
+                textoCrudo = datos.secuenciaDialogo[indiceDialogoActual - 1].texto;
+            } else {
+                textoCrudo = datos.descripcion || "";
             }
-        } else if (datos.secuenciaDialogo) {
+            descEl.innerText = textoCrudo.replace(/{PLAYER}/g, playerName);
+            return; // CRÍTICO: No hace nada más hasta el próximo clic
+        }
+
+        // 2. SI NO ESTÁ ESCRIBIENDO: Avanzar frase o mostrar botones
+        if (datos.secuenciaDialogo) {
+            // mostrarSiguienteDialogo ya se encarga de ver si pone texto o botones
             mostrarSiguienteDialogo();
+        }
+    };
+
+    // Click Global
+    document.addEventListener('mousedown', (e) => {
+        // Ignorar si el menú está abierto o es un botón
+        if (e.target.closest('.game-option, .flecha-contexto, .chaos-hover, #menu-overlay, #menu-control')) {
+            return; 
+        }
+        intentarAvanzar();
+    });
+
+    // Espacio
+    document.addEventListener('keydown', (e) => {
+        if (e.code === "Space") {
+            e.preventDefault();
+            intentarAvanzar();
         }
     });
 
+    // Menú
     if (menuOverlay) {
-        menuOverlay.addEventListener('click', () => {
-            menuControl.checked = false;
+        menuOverlay.addEventListener('click', (e) => {
+            if (e.target === menuOverlay) menuControl.checked = false;
         });
     }
 };
