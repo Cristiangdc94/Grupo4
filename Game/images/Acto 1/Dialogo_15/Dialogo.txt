@@ -1,0 +1,32 @@
+Fondo: Imagen -> 1.jpeg
+Personajes: Narrativo
+Texto:
+Zack elige que el ira delante
+
+Personajes: Kael_Gritando.png
+Texto:
+¿Que dices? ¿Reventamos unos cuantos robots los 2?
+
+Personajes: Mira_Asustado.png
+Texto:
+Nono, es mejor que vayamos en completo sigilo que sino ya sabemos que pasará
+
+Personajes: Kael_Hablando.png
+Texto:
+que coñazo eres
+
+Personajes: Zack_Confundido.png
+Texto:
+Puesssss…
+
+Elección Mira -> Sigilo
+Foto: Imagen -> Mira.jpeg
+Texto:
+Ireis en sigilo para no alertar a ningún robot
+Siguiente Dialogo -> Dialogo_16
+
+Elección Kael -> A saco
+Foto: Imagen -> Kael.jpeg
+Texto:
+Ireis en sigilo pero rompiendo robots despistados por el camino
+Siguiente Dialogo -> Dialogo_17
