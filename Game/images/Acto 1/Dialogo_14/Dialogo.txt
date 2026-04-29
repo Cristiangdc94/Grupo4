@@ -1,0 +1,31 @@
+Fondo: Imagen -> 1.jpeg
+Personajes: Narrativo
+Texto:
+Zack elige que ira delante Kael
+
+Personajes: Kael_Enfadado.png
+Texto:
+Vale, os prometo que hare lo que pueda para no matar a robots
+
+Personajes: Mira_Hablando.png
+Texto:
+Hombre tampoco asi, los indispensables pero no los que sean por capricho
+
+Personajes: Zack_Hablando.png
+Texto:
+Exacto
+
+Personajes: Kael_Gritando.png
+Texto:
+PUES VENGA, SEGUIRME LOS 2, DETRAS DE MIS MUSCULOSOS GLUTEOS
+
+Personajes: Mira_Enfadado.png
+Texto:
+Ve tu detras de el que a este paso lo empujo a un robot
+
+Fondo: Imagen -> 2.jpeg
+Personajes: Narrativo
+Texto:
+Kael va delante y no puede reprimir sus ganas de romper robots, así que elimina a los robots que ve por el camino, dejando el ejercito de robots a la mitad
+
+Siguiente Dialogo -> Dialogo_11

@@ -1,0 +1,160 @@
+Fondo: Imagen -> 1.jpeg
+Personajes: Narrativo
+Texto:
+Zack elige hacerlo por el método de Kael
+
+Personajes: Zack_Gritando.png
+Texto:
+Venga a por todas, pon esa bomba en la puerta
+
+Personajes: Kael_Hablando.png
+Texto:
+Me vas cayendo cada vez mejor eh
+
+Personajes: Mira_Enfadado.png
+Texto:
+A mi todo lo contrario, no me hacéis ni caso
+
+Personajes: Zack_Hablando.png
+Texto:
+No es nada personal, es Kael que me contagia tu locura
+
+Personajes: Mira_Pensando.png
+Texto:
+Entre locos os entendeis supongo, ojala a ver venido con alguien mas listo
+
+Fondo: Imagen -> 2.jpeg
+Personajes: Narrativo
+Texto:
+Hackean la puerta y como sospechaba Mira, la puerta hace un ruido para nada sutil de que se ha abierto la puerta, deciden pelear y correr todo lo que puedan con los robots restantes
+
+Fondo: Imagen -> 3.jpeg
+Personajes: Narrativo
+Texto:
+Pero lastimosamente en el contraataque Kael resulta muy herido, Zack y Mira arrastran a Kael a una cobertura segura mientras los disparos siguen
+
+Personajes: Zack_Asustado.png
+Texto:
+No me jodas Kael nono
+
+Personajes: Mira_Asustado.png
+Texto:
+Mierda, esto no pinta nada bien, si no nos movemos se acercaran aun más
+
+Personajes: Kael_Llorando.png
+Texto:
+Ahhh, chicos lo siento, mi locura a jodido el plan, lo siento muchisimo
+
+Personajes: Mira_Asustado.png
+Texto:
+Nono no digas eso, habra una forma de conseguirlo
+
+Personajes: Zack_Asustado.png
+Texto:
+Eh mirar, ahi esta el laboratorio, falta muy poco para la puerta
+
+Personajes: Mira_Asustado.png
+Texto:
+Es imposible, me tomaria un tiempo en abrirla y ya no tenemos el apoyo de Kael, vayamonos, no quiero que nadie muera por…
+
+Personajes: Kael_Gritando y Llorando.png
+Texto:
+Y … UNA… MIERDAAAA
+
+Fondo: Imagen -> 4.jpeg
+Personajes: Narrativo
+Texto:
+Kael se levanta y se prepara para su ultimo movimiento, pero antes...
+
+Personajes: Kael_Enfadado.png
+Texto:
+Zack, cuida de Mira con la locura que te he contagiado, NO LLOREIS POR MI, PORFIN PODRE VER A MI HIJO OTRA VEZ, GRACIAS …
+
+Personajes: Mira_Gritando y Llorando.png
+Texto:
+NOOOO KAEL
+
+Fondo: Imagen -> 5.jpeg
+Personajes: Narrativo
+Texto:
+Kael se sacrifica para darles el tiempo necesario, embistiendo a los robots
+
+Fondo: Imagen -> 6.jpeg
+Personajes: Narrativo
+Texto:
+Mira intenta ir hacia Kael pero Zack la sujeta y la apoya contra la puerta
+
+Personajes: Zack_Gritando.png
+Texto:
+Mira hazlo, abre la puerta ahora
+
+Personajes: Mira_Llorando.png
+Texto:
+Pero Kael…
+
+Personajes: Zack_Gritando y Llorando.png
+Texto:
+NO HAGAS QUE SU MUERTE SEA EN VANO, EL SE SACRIFICO PARA QUE VIVAMOS NOSOTROS 2, NO PIENSO MORIR AHORA QUE SIGO VIVO GRACIAS A EL
+
+Fondo: Imagen -> 7.png
+Personajes: Narrativo
+Texto:
+Abre la puerta mientras Zack mira impotente a Kael
+
+Fondo: Imagen -> 8.png
+Personajes: Narrativo
+Texto:
+Logran abrir la puerta y entran pero ven desde lejos...
+
+Fondo: Imagen -> 9.png
+Personajes: Narrativo
+Texto:
+...Kael muere...
+
+Fondo: Imagen -> 10.png
+Personajes: Narrativo
+Texto:
+Mira intenta ayudar pero Zack la retiene se terminan salvando los 2
+
+Fondo: Imagen -> 11.png
+Personajes: Mira_Llorando.png
+Texto:
+No puede ser…
+
+Personajes: Zack_Llorando.png
+Texto:
+Lo ha hecho por nosotros, ha dado su vida por nosotros
+
+Personajes: Mira_Llorando.png
+Texto:
+No sabia de su hijo… NO NOS DIJO NADA
+
+Personajes: Zack_Llorando.png
+Texto:
+al final nos dio todo, su apoyo, su confianza, sus secretos … su vida …
+
+Personajes: Mira_Llorando.png
+Texto:
+No era tan malo, solo quería volver a ver a su hijo
+
+Personajes: Zack_Llorando.png
+Texto:
+… Vamos, acabemos su ultima voluntad y venguemos a el y a su hijo
+
+Personajes: Mira_Llorando.png
+Texto:
+Vale…
+
+Personajes: Narrativo
+Texto:
+Se limpian las lagrimas y siguen por el laboratorio hasta que ven a alguien escondido...
+
+Personajes: Mira_Asustado.png
+Texto:
+Hay alguien ahí... ¿Quién eres?
+
+Personajes: Dr.Vane_Pilar_Camuflado.png
+Texto:
+Perdon, es que os vi llorando y no queria meterme donde no me llamaban
+
+Siguiente Dialogo -> Dialogo_34

@@ -1,0 +1,31 @@
+Fondo: Imagen -> 1.jpeg
+Personajes: Narrativo
+Texto:
+Decides hacer caso a Kael y pelear
+
+Personajes: Zack_Confundido.png
+Texto:
+Que remedio...
+
+Personajes: Zack_Gritando.png
+Texto:
+KAEL… USA DESTROZA MANDIBULAS
+
+Personajes: Kael_Gritando.png
+Texto:
+No me hables como si fuera un pokemon, desgraciado
+
+Personajes: Narrativo
+Texto:
+Lo destruye de un golpe pero llama la atencion de los robots
+
+Personajes: Mira_Gritando.png
+Texto:
+Que idiotas sois, Vamos seguirme esta por aqui el laboratorio
+
+Fondo: Imagen -> 2.png
+Personajes: Narrativo
+Texto:
+Siguen a Mira hasta el laboratorio donde entran pero estan los robots alerta
+
+Siguiente Dialogo -> Dialogo_10
