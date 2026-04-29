@@ -121,6 +121,8 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
 
 .info-box hr { border: 0; height: 1px; background: linear-gradient(to right, transparent, #FF0000, transparent); margin: 20px 0; }
 
+
+.info-box.pos-arriba { text-align: top; }
 .bottom-buttons { 
     display: grid;
     grid-template-columns: 1fr auto 1fr; /* Izquierda, Centro, Derecha */
