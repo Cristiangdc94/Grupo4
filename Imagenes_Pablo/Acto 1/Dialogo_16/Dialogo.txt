@@ -28,3 +28,4 @@ Personajes: Narrativo
 Texto:
 Avanzan poco a poco, y con la ayuda de Mira evita cualquier encontronazo con los robots
 
+Siguiente Dialogo -> Dialogo_11

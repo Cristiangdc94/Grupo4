@@ -58,8 +58,10 @@ Elección Mira -> Huir
 Foto: Imagen -> Mira.jpeg
 Texto:
 Huiras de los robots
+Siguiente Dialogo -> Dialogo_8
 
 Elección Mira 2-> Contraatacar
 Foto: Imagen -> Kael.jpeg
 Texto:
 Peleas contra los robots
+Siguiente Dialogo -> Dialogo_9

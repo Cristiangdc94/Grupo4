@@ -1,0 +1,92 @@
+Fondo: Imagen -> 1.png
+Personajes: Narrativo
+Texto:
+Zack elige hacerlo por el método de Mira
+
+Personajes: Zack_Hablando.png
+Texto:
+Pues adelante, ayudarme a subir y yo mismo quito los tornillos
+
+Personajes: Kael_Hablando.png
+Texto:
+¿Que animada esta no?
+
+Personajes: Zack_Pensando.png
+Texto:
+supongo que esta feliz de que su plan se haya impuesto al tuyo
+
+Personajes: Narrativo
+Texto:
+Kael ayuda a Mira a quitar los tornillos y entran en los conductos, pero debido a un error de la ventilacion el aire esta intoxicado
+
+Fondo: Imagen -> 2.png
+Personajes: Kael_Hablando.png
+Texto:
+Me encuentro raro, ¿no hay algo raro en este aire?
+
+Personajes: Mira_Pensando.png
+Texto:
+Espera que lo revise...
+
+Personajes: Zack_Pensando.png
+Texto:
+Tiene razón, este aire se siente raro
+
+Personajes: Mira_Asustado.png
+Texto:
+No me jodas, este aire no es del todo aire
+
+Personajes: Zack_Asustado.png
+Texto:
+¿Esta intoxicado?
+
+Personajes: Mira_Asustado.png
+Texto:
+En pocas palabras si, TENEMOS QUE DARNOS PRISA
+
+Personajes: Kael_Asustado.png
+Texto:
+Ay ay, necesito aire CORRER JODER
+
+Fondo: Imagen -> 1.png
+Personajes: Narrativo
+Texto:
+Van mas rapido y logran salir y entrar en el laboratorio pero muy debilitados
+
+Personajes: Mira_Llorando.png
+Texto:
+Hay por dios, no puedo ni moverme
+
+Personajes: Zack_Confundido.png
+Texto:
+Yo no tengo fuerza para nada, si nos atacan me entrego
+
+Personajes: Kael_Gritando.png
+Texto:
+NO DIGAIS ESO, TENEIS QUE…
+
+Personajes: Kael_Confundido.png
+Texto:
+ni de coña, no tengo fuerzas, me dejo matar
+
+Personajes: Mira_Asustado.png
+Texto:
+Lo mejor será que descansemos un rato antes de entrar, relajaos que no vienen robots y recuperemos las fuerzas
+
+Personajes: Narrativo
+Texto:
+Descansan hasta recuperar las fuerzas
+
+Personajes: Zack_Hablando.png
+Texto:
+Suficiente descanso, abramos esto ya
+
+Personajes: Mira_Pensando.png
+Texto:
+Puffff venga va
+
+Personajes: Narrativo
+Texto:
+Abren la puerta y entran
+
+Siguiente Dialogo -> Dialogo_11

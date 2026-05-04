@@ -15,3 +15,5 @@ Fondo: Imagen -> 2.jpeg
 Personajes: Narrativo
 Texto:
 Van los 3 corriendo hasta el laboratorio y entran a duras penas, alertando a los robots
+
+Siguiente Dialogo -> Dialogo_10

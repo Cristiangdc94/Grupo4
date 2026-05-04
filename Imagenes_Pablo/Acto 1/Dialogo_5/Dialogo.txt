@@ -41,3 +41,5 @@ Personajes: Narrativo
 Texto:
 El grupo consigue llegar donde el doctor Vane sin ser visto por ningún robot
 
+Siguiente Dialogo -> Dialogo_11
+

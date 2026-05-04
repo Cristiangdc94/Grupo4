@@ -28,3 +28,5 @@ Fondo: Imagen -> 2.jpeg
 Personajes: Narrativo
 Texto:
 Mira sabe el camino y actúa con extremo sigilo, esto hace que lleguemos al final, pero sin eliminar a ningún robot
+
+Siguiente Dialogo -> Dialogo_11

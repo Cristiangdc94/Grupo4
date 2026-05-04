@@ -68,8 +68,10 @@ Elección Mira -> Por la ventilación
 Foto: Imagen -> Mira.jpeg
 Texto:
 Colarse por el conducto de ventilación para ir en sigilo saltando a los robots
+Siguiente Dialogo -> Dialogo_21
 
 Elección Kael -> Romper la puerta
 Foto: Imagen -> Kael.jpeg
 Texto:
 Usar el hacking para abrir la ultima puerta e ir de frente
+Siguiente Dialogo -> Dialogo_20
