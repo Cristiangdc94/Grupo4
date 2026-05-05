@@ -181,14 +181,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
                 "texto": "Preparaos que dentro de nada saldremos.." 
             }
@@ -274,7 +274,7 @@ const historia = {
             { 
                 "quien": "Mira", 
                 "expresion": "../images/Perfil_Personajes/Mira_Confundido.png",
-                "texto": "Tu no le has estado escuchando a Zack no?" 
+                "texto": "Tu no le has estado escuchando a {PLAYER} no?" 
             }
         ],
         
@@ -321,7 +321,7 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
                 "pos": "left: 1%;" 
             },
@@ -350,14 +350,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Kael_Pensando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Kael_Pensando.png",
                 "texto": "¿Y porque iban a encontrarnos? si estamos como a 100 metros bajo tierra" 
             }
@@ -378,14 +378,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Zack_Pensando.png", 
                 "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Zack_Pensando.png",
                 "texto": "Pues no se, si viese una puerta metalica en medio de un desierto yo lo abriria, y ellos tambien lo harán" 
             }
@@ -462,14 +462,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
                 "texto": "Más o menos, vi un papel de una de las centrales donde se creo GEXTER que esta como a 5 Horas de aquí, si vamos igual encontramos algo, o si tenemos suerte a alguien que nos ayude o diga como hacerlo, igual queda alguien mas vivo allí" 
             }
@@ -575,14 +575,14 @@ const historia = {
         "posicionTexto": "pos-centro", 
         "personajes": [ 
             { 
-                "id": "Zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
                 "texto": "Venga chicos… que os pasa?... no queréis que esto acabe de una vez, que podamos volver a subir a la superficie sin miedo, que podamos arreglar nuestras vidas, que en lugar de sobrevivir… podamos vivir?" 
             }
@@ -659,14 +659,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Zack_Gritando.png", 
                 "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Zack_Gritando.png",
                 "texto": "Yo quiero intentarlo, y si tengo que ir solo, pues moriré solo, no creo que seamos de esos que llaman los elegidos de dios para sobrevivir, así que SI VOY A MORIR, MORIRE CUANDO YO QUIERA E INTENTANDO SALVAR EL MUNDO" 
             }
@@ -771,14 +771,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
                 "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
                 "texto": "Mira… Que dices, ¿vienes?" 
             }
@@ -828,14 +828,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
                 "pos": "Left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
                 "texto": "Vale, trato, pues venga, salgamos de aqui con lo mejor y vayamos directos a la Central" 
             }
@@ -972,14 +972,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Zack_Enfadado.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Zack_Enfadado.png",
                 "texto": "Casi…no morimos por el camino, eres tan brusco con los robots que hasta nos terminas haciendo daño" 
             }
@@ -1028,14 +1028,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Zack_Sorprendido.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Zack_Sorprendido.png",
                 "texto": "Usando a Mira, lo bueno de tener a la típica Hacker del grupo... ¿Puedes hackearlo no?" 
             }
@@ -1141,14 +1141,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
                 "texto": "¿Cuántos robots hay dentro?" 
             }
@@ -1450,14 +1450,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Zack", 
+                "id": "{PLAYER}", 
                 "src": "../images/Perfil_Personajes/Zack_Gritando.png", 
                 "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Zack_Gritando.png ",
                 "texto": "Vale callaos, está claro que hay 2 planes, Sigilo de Mira y Asalto de Kael, dejadme elegir a mi." 
             }
@@ -1512,7 +1512,7 @@ const historia = {
         ],
         "secuenciaDialogo": [
         ],
-        "descripcion": "Zack elige hacerlo por el método de Mira",
+        "descripcion": "{PLAYER} elige hacerlo por el método de Mira",
         "opciones": [
             {
                 "texto": "▶",
@@ -1542,7 +1542,7 @@ const historia = {
             "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:right: 10%| Sois unos cagaos… LOS 2"
             },
         ],
-        "descripcion": "Zack elige hacerlo por el método de Mira",
+        "descripcion": "{PLAYER} elige hacerlo por el método de Mira",
         "opciones": [
             {
                 "texto": "▶",
@@ -1567,8 +1567,8 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "zack", 
-                "src": "../images/zack_base.png", 
+                "id": "{PLAYER}", 
+                "src": "../images/Zack_base.png", 
                 "pos": "left: 10%;" 
             },
             { 
@@ -1584,8 +1584,8 @@ const historia = {
                 "texto": "El aire es pesado en este lugar." 
             },
             { 
-                "quien": "Zack", 
-                "expresion": "zack:../images/zack_sorprendido.png", 
+                "quien": "{PLAYER}", 
+                "expresion": "{PLAYER}:../images/Zack_sorprendido.png", 
                 "texto": "¡{PLAYER}! ¿Viste eso?" 
             }
         ],
