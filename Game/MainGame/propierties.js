@@ -211,7 +211,7 @@ const historia = {
             { 
                 "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Pensando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
@@ -267,7 +267,7 @@ const historia = {
             { 
                 "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Confundido.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
@@ -323,7 +323,7 @@ const historia = {
             { 
                 "id": "Zack", 
                 "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
@@ -380,7 +380,7 @@ const historia = {
             { 
                 "id": "Zack", 
                 "src": "../images/Perfil_Personajes/Zack_Pensando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
@@ -436,7 +436,7 @@ const historia = {
             { 
                 "id": "Kael", 
                 "src": "../images/Perfil_Personajes/Kael_Confundido.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
@@ -493,7 +493,7 @@ const historia = {
             { 
                 "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Hablando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
@@ -549,7 +549,7 @@ const historia = {
             { 
                 "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Gritando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
@@ -605,7 +605,7 @@ const historia = {
             { 
                 "id": "Kael", 
                 "src": "../images/Perfil_Personajes/Kael_Confundido.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
@@ -661,7 +661,7 @@ const historia = {
             { 
                 "id": "Zack", 
                 "src": "../images/Perfil_Personajes/Zack_Gritando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
@@ -717,7 +717,7 @@ const historia = {
             { 
                 "id": "Kael", 
                 "src": "../images/Perfil_Personajes/Kael_Gritando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
@@ -773,7 +773,7 @@ const historia = {
             { 
                 "id": "Zack", 
                 "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
@@ -830,7 +830,7 @@ const historia = {
             { 
                 "id": "Zack", 
                 "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
-                "pos": "right: 1%;" 
+                "pos": "Left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
@@ -946,7 +946,7 @@ const historia = {
             { 
                 "id": "Kael", 
                 "src": "../images/Perfil_Personajes/Kael_Hablando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
@@ -1002,7 +1002,7 @@ const historia = {
             { 
                 "id": "Kael", 
                 "src": "../images/Perfil_Personajes/Kael_Pensando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
@@ -1058,7 +1058,7 @@ const historia = {
             { 
                 "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Pensando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
@@ -1115,7 +1115,7 @@ const historia = {
             { 
                 "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Asustado.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
@@ -1171,7 +1171,7 @@ const historia = {
             { 
                 "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Sorprendido.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
@@ -1228,7 +1228,7 @@ const historia = {
             { 
                 "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Confundido.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
@@ -1284,7 +1284,7 @@ const historia = {
             { 
                 "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Gritando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
@@ -1340,7 +1340,7 @@ const historia = {
             { 
                 "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Gritando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
@@ -1396,7 +1396,7 @@ const historia = {
             { 
                 "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Confundido.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
@@ -1452,7 +1452,7 @@ const historia = {
             { 
                 "id": "Zack", 
                 "src": "../images/Perfil_Personajes/Zack_Gritando.png", 
-                "pos": "right: 1%;" 
+                "pos": "left: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
@@ -1504,7 +1504,7 @@ const historia = {
 
 // ACTO 1 - IZQUIERDA
     
-    "Dialogo_30": {
+    "Dialogo_3": {
         "titulo": "",
         "fondo": "../images/Acto_1/Dialogo_3/1.jpeg",
         "posicionTexto": "pos-arriba",
@@ -1521,7 +1521,7 @@ const historia = {
             }
         ]
     },
-    "Dialogo_3": {
+    "Dialogo_31": {
         "titulo": "",
         "fondo": "../images/Acto_1/Dialogo_3/1.jpeg",
         "posicionTexto": "pos-arriba",

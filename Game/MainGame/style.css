@@ -335,3 +335,7 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
     border-left: 2px solid #FF0000;
     display: inline-block;
 }
+
+#character-container img[style*="left"] {
+    transform: scaleX(-1);
+}
