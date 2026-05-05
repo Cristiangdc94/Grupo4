@@ -1521,7 +1521,7 @@ const historia = {
             }
         ]
     },
-    "Dialogo_31": {
+    "Dialogo_3": {
         "titulo": "",
         "fondo": "../images/Acto_1/Dialogo_3/1.jpeg",
         "posicionTexto": "pos-arriba",
