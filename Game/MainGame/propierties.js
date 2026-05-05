@@ -1483,7 +1483,7 @@ const historia = {
     {
         "texto": "Elección Mira -> Sigilo",
         "imagen": "../images/Acto_1/Dialogo_2/Eleccion_Mira-removebg-preview.png", 
-        "siguiente": "Dialogo_3",
+        "siguiente": "Dialogo_30",
         "etiqueta": "Colarse en Sigilo...",
         "titulo": "Sigilo",
         "descripcion": "Decides avanzar con cautela.",
