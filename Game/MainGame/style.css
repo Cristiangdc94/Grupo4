@@ -1,4 +1,26 @@
 /* RESET GENERAL */
+
+/* Bloqueo total de selección de texto */
+* {
+    -webkit-tap-highlight-color: transparent; /* Elimina el recuadro azul en móviles al tocar */
+}
+
+html, body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+/Edge */
+    user-select: none;         /* Estándar */
+    outline: none;             /* Elimina bordes de enfoque en algunos navegadores */
+}
+
+/* Permitir selección solo en inputs (para que el usuario pueda escribir su nombre) */
+input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
 * {
     margin: 0; padding: 0; box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;

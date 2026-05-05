@@ -194,7 +194,7 @@ function mostrarSiguienteDialogo() {
     
     if (indiceDialogoActual >= secuencia.length) {
         generarBotones(datos.opciones); 
-        contenedorBotones.style.display = 'grid'; // Forzamos que se vea
+        contenedorBotones.style.display = 'grid';
         return; 
     }
 
@@ -202,12 +202,16 @@ function mostrarSiguienteDialogo() {
     contenedorBotones.style.display = 'none';
 
     if (speakerEl) {
-        speakerEl.innerText = d.quien || "";
+        // --- CAMBIO AQUÍ: Procesamos también el nombre del hablante ---
+        let nombreProcesado = (d.quien || "").replace(/{PLAYER}/g, playerName);
+        speakerEl.innerText = nombreProcesado;
         speakerEl.style.display = d.quien ? 'inline-block' : 'none';
+        // -------------------------------------------------------------
     }
 
     let textoProcesado = d.texto.replace(/{PLAYER}/g, playerName);
     
+    // ... resto de tu código (expresiones, typeWriter, etc.)
     if (d.expresion) {
         let [id, ruta] = d.expresion.split(':');
         const charImg = document.querySelector(`[data-id="${id}"]`);
