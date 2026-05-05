@@ -1539,7 +1539,7 @@ const historia = {
             },
             {
             "quien": "Kael",
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:right: 10%| Sois unos cagaos… LOS 2"
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 10%| Sois unos cagaos… LOS 2"
             },
         ],
         "descripcion": "{PLAYER} elige hacerlo por el método de Mira",

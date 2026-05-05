@@ -114,15 +114,36 @@ function actualizarInterfaz() {
     const charContainer = document.getElementById('character-container');
     charContainer.innerHTML = ''; 
 
-    if (datos.personajes) {
-        datos.personajes.forEach(p => {
-            const img = document.createElement('img');
-            img.src = p.src;
-            img.setAttribute('data-id', p.id);
-            img.style.cssText = `position: absolute; bottom: 0; ${p.pos} height: 85%; transition: left 0.5s ease;`;
-            charContainer.appendChild(img);
-        });
-    }
+    // --- DENTRO DE actualizarInterfaz ---
+if (datos.personajes) {
+    datos.personajes.forEach(p => {
+        const img = document.createElement('img');
+        img.src = p.src;
+        img.setAttribute('data-id', p.id);
+
+        // Lógica de espejo automática para carga inicial
+        let esIzquierda = p.pos && p.pos.toLowerCase().includes('left');
+        let flip = esIzquierda ? 'scaleX(-1)' : 'scaleX(1)';
+        
+        // Combinar con centrado si es necesario
+        let transformFinal = flip;
+        if (p.pos && p.pos.includes('left: 50%')) {
+            transformFinal = `translateX(-50%) ${flip}`;
+        }
+
+        img.style.cssText = `
+            position: absolute; 
+            bottom: 0; 
+            ${p.pos}; 
+            height: 85%; 
+            width: auto;
+            object-fit: contain;
+            transform: ${transformFinal};
+            transition: left 0.5s ease, opacity 0.5s ease;
+        `;
+        charContainer.appendChild(img);
+    });
+}
 
     document.getElementById('choice-title').innerText = datos.titulo;
     
@@ -265,37 +286,47 @@ function typeWriter(elementId, text, speed, callback = null) {
                             // Esperamos a que termine la animación para borrarlo del HTML
                             setTimeout(() => charImg.remove(), 500); 
                         }
-                    } else {
-                        if (charImg) {
-                            // --- SI YA EXISTE: Cambiar expresión ---
-                            charImg.src = ruta;
-                            charImg.style.opacity = "1";
-                        } else {
-    // --- SI NO EXISTE: Crear personaje nuevo ---
-    const charContainer = document.getElementById('character-container');
-    const newImg = document.createElement('img');
-    newImg.src = ruta;
-    newImg.setAttribute('data-id', id);
-    
-    // Posición por defecto si no se envía: centro
-    let posicionFinal = pos || "left: 50%; transform: translateX(-50%);";
-    
-    // IMPORTANTE: Añadimos object-fit y height para que no se deformen
-    newImg.style.cssText = `
-        position: absolute; 
-        bottom: 0; 
-        ${posicionFinal} 
-        height: 85%; 
-        width: auto; 
-        object-fit: contain; 
-        transition: opacity 0.5s ease; 
-        opacity: 0;
-    `;
-    
-    charContainer.appendChild(newImg);
-    setTimeout(() => { newImg.style.opacity = "1"; }, 50);
+                    // --- DENTRO DE typeWriter, en la sección del comando '|' ---
+} else {
+    // Lógica automática de espejo basada en la posición
+    let esIzquierda = pos && pos.toLowerCase().includes('left');
+    let flip = esIzquierda ? 'scaleX(-1)' : 'scaleX(1)';
+
+    if (charImg) {
+        // Si ya existe: cambiar imagen y rotación
+        charImg.src = ruta;
+        charImg.style.opacity = "1";
+        charImg.style.transform = flip; 
+    } else {
+        // SI NO EXISTE: Crear personaje nuevo
+        const charContainer = document.getElementById('character-container');
+        const newImg = document.createElement('img');
+        newImg.src = ruta;
+        newImg.setAttribute('data-id', id);
+        
+        let posicionFinal = pos || "left: 50%; transform: translateX(-50%);";
+        
+        let transformFinal = flip;
+        if (posicionFinal.includes('translateX')) {
+            transformFinal = `translateX(-50%) ${flip}`;
+        }
+
+        newImg.style.cssText = `
+            position: absolute; 
+            bottom: 0; 
+            ${posicionFinal}; 
+            height: 85%; 
+            width: auto; 
+            object-fit: contain; 
+            transition: opacity 0.5s ease; 
+            opacity: 0;
+            transform: ${transformFinal};
+        `;
+        
+        charContainer.appendChild(newImg);
+        setTimeout(() => { newImg.style.opacity = "1"; }, 50);
+    }
 }
-                    }
                     i = end + 1;
                 }
             } else {
