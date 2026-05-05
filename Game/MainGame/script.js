@@ -235,7 +235,6 @@ function typeWriter(elementId, text, speed, callback = null) {
     const element = document.getElementById(elementId);
     if (!element) return;
     
-    // IMPORTANTE: Limpiar el timeout anterior para evitar solapamiento de letras
     clearTimeout(typewriterTimeout);
     element.innerHTML = "";
     let i = 0;
@@ -250,9 +249,49 @@ function typeWriter(elementId, text, speed, callback = null) {
                 let end = text.indexOf('|', i + 1);
                 if (end !== -1) {
                     let comando = text.substring(i + 1, end);
-                    let [id, ruta] = comando.split(':');
-                    const charImg = document.querySelector(`[data-id="${id}"]`);
-                    if (charImg) charImg.src = ruta;
+                    // Dividimos el comando en ID, RUTA y POSICIÓN (opcional)
+                    let [id, ruta, pos] = comando.split(':'); 
+                    
+                    let charImg = document.querySelector(`[data-id="${id}"]`);
+                    
+                    if (ruta === 'REMOVE') {
+                        // --- LÓGICA PARA DESAPARECER ---
+                        if (charImg) {
+                            charImg.style.opacity = "0";
+                            // Esperamos a que termine la animación para borrarlo del HTML
+                            setTimeout(() => charImg.remove(), 500); 
+                        }
+                    } else {
+                        if (charImg) {
+                            // --- SI YA EXISTE: Cambiar expresión ---
+                            charImg.src = ruta;
+                            charImg.style.opacity = "1";
+                        } else {
+    // --- SI NO EXISTE: Crear personaje nuevo ---
+    const charContainer = document.getElementById('character-container');
+    const newImg = document.createElement('img');
+    newImg.src = ruta;
+    newImg.setAttribute('data-id', id);
+    
+    // Posición por defecto si no se envía: centro
+    let posicionFinal = pos || "left: 50%; transform: translateX(-50%);";
+    
+    // IMPORTANTE: Añadimos object-fit y height para que no se deformen
+    newImg.style.cssText = `
+        position: absolute; 
+        bottom: 0; 
+        ${posicionFinal} 
+        height: 85%; 
+        width: auto; 
+        object-fit: contain; 
+        transition: opacity 0.5s ease; 
+        opacity: 0;
+    `;
+    
+    charContainer.appendChild(newImg);
+    setTimeout(() => { newImg.style.opacity = "1"; }, 50);
+}
+                    }
                     i = end + 1;
                 }
             } else {
