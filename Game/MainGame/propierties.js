@@ -209,14 +209,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "zack", 
+                "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Pensando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
             { 
-                "quien": "Zack", 
+                "quien": "Mira", 
                 "expresion": "../images/Perfil_Personajes/Mira_Pensando.png",
                 "texto": "¿Me imagino que a por comida no?" 
             }
@@ -547,14 +547,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Kael", 
+                "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Gritando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
             { 
-                "quien": "Kael", 
+                "quien": "Mira", 
                 "expresion": "../images/Perfil_Personajes/Mira_Gritando.png",
                 "texto": "Si te gusta comerte un ordenador en lugar de una jugosa lata de frijoles… adelante ir… yo os esperare aquí" 
             }
@@ -799,14 +799,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Zack", 
+                "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Hablando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
             { 
-                "quien": "Zack", 
+                "quien": "Mira", 
                 "expresion": "../images/Perfil_Personajes/Mira_Hablando.png",
                 "texto": "… Si no hay nada que nos sirva contra los robots, nos volvemos, si arriesgo mi vida es porque hay una posibilidad, si no la hay no arriesgare mi vida okey?" 
             }
@@ -972,14 +972,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Kael", 
+                "id": "Zack", 
                 "src": "../images/Perfil_Personajes/Zack_Enfadado.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Kael", 
+                "quien": "Zack", 
                 "expresion": "../images/Perfil_Personajes/Zack_Enfadado.png",
                 "texto": "Casi…no morimos por el camino, eres tan brusco con los robots que hasta nos terminas haciendo daño" 
             }
@@ -1028,14 +1028,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Kael", 
+                "id": "Zack", 
                 "src": "../images/Perfil_Personajes/Zack_Sorprendido.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Kael", 
+                "quien": "Zack", 
                 "expresion": "../images/Perfil_Personajes/Zack_Sorprendido.png",
                 "texto": "Usando a Mira, lo bueno de tener a la típica Hacker del grupo... ¿Puedes hackearlo no?" 
             }
@@ -1056,14 +1056,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Kael", 
+                "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Pensando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Kael", 
+                "quien": "Mira", 
                 "expresion": "../images/Perfil_Personajes/Mira_Pensando.png",
                 "texto": "técnicamente no, solo puedo recabar información" 
             }
@@ -1092,7 +1092,7 @@ const historia = {
         "secuenciaDialogo": [ 
             { 
                 "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Mira_Pensando.pngKael_Pensando.png",
+                "expresion": "../images/Perfil_Personajes/Kael_Pensando.png",
                 "texto": "¿Qué tipo de información?" 
             }
         ],
@@ -1226,14 +1226,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Kael", 
+                "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Confundido.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Kael", 
+                "quien": "Mira", 
                 "expresion": "../images/Perfil_Personajes/Mira_Confundido.png",
                 "texto": "Y bien, ¿cómo lo hacemos? Yo propongo colarnos por el conducto de ventilación en sigilo hasta…" 
             }
@@ -1282,14 +1282,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Kael", 
+                "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Gritando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Kael", 
+                "quien": "Mira", 
                 "expresion": "../images/Perfil_Personajes/Mira_Gritando.png",
                 "texto": "¿He mencionado que hay más robots que neuronas en tu cabeza de tonto? Son demasiados, no podemos con 30 siendo solo 3" 
             }
@@ -1338,14 +1338,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Kael", 
+                "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Gritando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Kael", 
+                "quien": "Mira", 
                 "expresion": "../images/Perfil_Personajes/Mira_Gritando.png",
                 "texto": "Claro que no si lo hacemos bien, tu plan es directamente cagarla y depender de la suerte" 
             }
@@ -1394,14 +1394,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Kael", 
+                "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Confundido.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Kael", 
+                "quien": "Mira", 
                 "expresion": "../images/Perfil_Personajes/Mira_Confundido.png",
                 "texto": "Bueno... Casi." 
             }
@@ -1450,14 +1450,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "Kael", 
+                "id": "Zack", 
                 "src": "../images/Perfil_Personajes/Zack_Gritando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ 
             { 
-                "quien": "Kael", 
+                "quien": "Zack", 
                 "expresion": "../images/Perfil_Personajes/Zack_Gritando.png ",
                 "texto": "Vale callaos, está claro que hay 2 planes, Sigilo de Mira y Asalto de Kael, dejadme elegir a mi." 
             }
