@@ -957,9 +957,90 @@ const historia = {
 
 // ACTO 1 - DERECHA
 
+"Dialogo_18": {
+        "titulo": "La DECISIÓN.",
+        "fondo": "../images/Acto_1/Dialogo_18/1.jpeg",
+        "posicionTexto": "pos-arriba", //
+        "personajes": [
+        ],
+        "descripcion": "{PLAYER} elige hacerlo por el método de Kael",
+        "opciones": [
+            {
+                "texto": "▶",
+                "tipo": "flecha", 
+                "siguiente": "Dialogo_18_01",
+            }
+        ]
+    },
 
-
-
+    "Dialogo_18_01": {
+        "titulo": "",
+        "fondo": "../images/Acto_1/Dialogo_18/1.jpeg",
+        "posicionTexto": "pos-arriba",  
+        "personajes": [
+            { 
+                "id": "Zack", 
+                "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
+                "pos": "right: 1%;" 
+            }
+        ],
+        "secuenciaDialogo": [
+            { 
+                "quien": "{PLAYER}", 
+                "texto": "Vamos a por todas, no se esperaran un ataque sorpresa" 
+            },
+            {
+            "quien": "Kael",
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Gritando.png:left: 1%| ESA EEESSSS LA ACTITUD, VAMOS A POR ELLOS"
+            },
+            {
+            "quien": "Mira",
+            "texto": "|Zack:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Confundido.png:right: 1%| Ay dios, para que abre venido con estos 2 locos"
+            },
+            {
+            "quien": "Kael",
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Pensando.png:left: 1%| Venga a ver, ¿como lo hacemos?"
+            },
+            {
+            "quien": "Mira",
+            "texto": "|Mira:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Gritando.png:right: 1%| Ay ya que, de perdidos al rio..."
+            },
+            {
+            "quien": "Mira",
+            "texto": "|Mira:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Gritando.png:right: 1%| Con las bombas podemos romper las puertas y si tenemos suerte nos cargamos a algunos solo con la caída de la puerta"
+            },
+            {
+            "quien": "Kael",
+            "texto": "|Kael:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Hablando.png:left: 1%| Buena idea, si metemos una de humo podríamos aparte pasar desapercibidos por si acaso"
+            },
+            {
+            "quien": "Mira",
+            "texto": "|Mira:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Hablando.png:right: 1%| Pues venga, {PLAYER} ayúdame a poner esto aqui"
+            },
+        ],
+        "opciones": [
+            {
+                "texto": "▶",
+                "tipo": "flecha", 
+                "siguiente": "Dialogo_18_02",
+            }
+        ]
+    },
+    "Dialogo_18_02": {
+        "titulo": "La DECISIÓN.",
+        "fondo": "../images/Acto_1/Dialogo_18/2.png",
+        "posicionTexto": "pos-arriba", //
+        "personajes": [
+        ],
+        "descripcion": "{PLAYER} y Mira ponen las bombas en la puerta, mientras Kael se prepara para la accion",
+        "opciones": [
+            {
+                "texto": "▶",
+                "tipo": "flecha", 
+                "siguiente": "Dialogo_18_01",
+            }
+        ]
+    },
 
 
 
