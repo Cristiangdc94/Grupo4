@@ -1529,7 +1529,7 @@ const historia = {
             { 
                 "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Hablando.png", 
-                "pos": "left: 10%;" 
+                "pos": "right: 1%;" 
             }
         ],
         "secuenciaDialogo": [
@@ -1539,7 +1539,7 @@ const historia = {
             },
             {
             "quien": "Kael",
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 85%| Sois unos cagaos… LOS 2"
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:right: 10%| Sois unos cagaos… LOS 2"
             },
         ],
         "descripcion": "Zack elige hacerlo por el método de Mira",
