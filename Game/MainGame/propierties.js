@@ -269,7 +269,7 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Mira:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Gritando.png:left: 1%| Venga vale, ¡SI POR INTENTARLO!" 
+            "texto": "|Mira:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Gritando.png:right: 1%| Venga vale, ¡SI POR INTENTARLO!" 
         },
         { 
             "quien": "Mira", 
