@@ -176,723 +176,126 @@ const historia = {
         ]
     },
     "Dialogo_1": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
-                "texto": "Preparaos que dentro de nada saldremos.." 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha",
-                "siguiente": "Dialogo_1_01",
-            }
-        ]
-    },
-
-    "Dialogo_1_01": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Pensando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Pensando.png",
-                "texto": "¿Me imagino que a por comida no?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", // Esto activa la clase .flecha-contexto
-                "siguiente": "Dialogo_1_02",
-            }
-        ]
-    },
-
-     "Dialogo_1_02": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Hablando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Hablando.png",
-                "texto": "Si, porque ya no tenemos de nada" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", // Esto activa la clase .flecha-contexto
-                "siguiente": "Dialogo_1_03",
-            }
-        ]
-    },
-
-    "Dialogo_1_03": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Confundido.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Confundido.png",
-                "texto": "Tu no le has estado escuchando a {PLAYER} no?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", // Esto activa la clase .flecha-contexto
-                "siguiente": "Dialogo_1_04",
-            }
-        ]
-    },
-
-    "Dialogo_1_04": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Hablando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Hablando.png",
-                "texto": "¿Por? ¿que quiere hacer?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", // Esto activa la clase .flecha-contexto
-                "siguiente": "Dialogo_1_05",
-            }
-        ]
-    },
-
-    "Dialogo_1_05": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
-                "texto": "Quiero acabar con esto ya… Los robots no van a parar hasta exterminarnos." 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", // Esto activa la clase .flecha-contexto
-                "siguiente": "Dialogo_1_06",
-                "etiqueta": "PROTOCOLO",
-            }
-        ]
-    },
-
-    "Dialogo_1_06": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Kael_Pensando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Kael_Pensando.png",
-                "texto": "¿Y porque iban a encontrarnos? si estamos como a 100 metros bajo tierra" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", // Esto activa la clase .flecha-contexto
-                "siguiente": "Dialogo_1_07",
-            }
-        ]
-    },
-
-    "Dialogo_1_07": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Zack_Pensando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Zack_Pensando.png",
-                "texto": "Pues no se, si viese una puerta metalica en medio de un desierto yo lo abriria, y ellos tambien lo harán" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", // Esto activa la clase .flecha-contexto
-                "siguiente": "Dialogo_1_08",
-            }
-        ]
-    },
-
-    "Dialogo_1_08": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Confundido.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Confundido.png",
-                "texto": "Pues que quieres que te diga, prefiero que la muerte venga a mi que yo ir a por el, es más cansado" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", // Esto activa la clase .flecha-contexto
-                "siguiente": "Dialogo_1_09",
-            }
-        ]
-    },
-
-    "Dialogo_1_09": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Confundido.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Confundido.png",
-                "texto": "Si tanto quieres ir a por robots, ¿al menos sabes como destruirlos?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_10",
-            }
-        ]
-    },
-
-    "Dialogo_1_10": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
-                "texto": "Más o menos, vi un papel de una de las centrales donde se creo GEXTER que esta como a 5 Horas de aquí, si vamos igual encontramos algo, o si tenemos suerte a alguien que nos ayude o diga como hacerlo, igual queda alguien mas vivo allí" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", // Esto activa la clase .flecha-contexto
-                "siguiente": "Dialogo_1_11",
-            }
-        ]
-    },
-
-    
-    "Dialogo_1_11": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", 
-        "personajes": [ 
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Hablando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Hablando.png",
-                "texto": "Si con suerte quedamos nosotros, seria mucha potra que quedara alguien más tan cerca" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_12",
-            }
-        ]
-    },
-
-    "Dialogo_1_12": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Hablando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Hablando.png",
-                "texto": "O igual encontramos comida." 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_13",
-            }
-        ]
-    },
-
-     "Dialogo_1_13": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Gritando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Gritando.png",
-                "texto": "Si te gusta comerte un ordenador en lugar de una jugosa lata de frijoles… adelante ir… yo os esperare aquí" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_14",
-            }
-        ]
-    },
-
-    "Dialogo_1_14": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", 
-        "personajes": [ 
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
-                "texto": "Venga chicos… que os pasa?... no queréis que esto acabe de una vez, que podamos volver a subir a la superficie sin miedo, que podamos arreglar nuestras vidas, que en lugar de sobrevivir… podamos vivir?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_15",
-            }
-        ]
-    },
-
-     "Dialogo_1_15": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", 
-        "personajes": [ 
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Confundido.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Confundido.png",
-                "texto": "... ?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_16",
-            }
-        ]
-    },
-
-    "Dialogo_1_16": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", 
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Confundido.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Confundido.png",
-                "texto": "... ?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_17",
-            }
-        ]
-    },
-
-    "Dialogo_1_17": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Zack_Gritando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Zack_Gritando.png",
-                "texto": "Yo quiero intentarlo, y si tengo que ir solo, pues moriré solo, no creo que seamos de esos que llaman los elegidos de dios para sobrevivir, así que SI VOY A MORIR, MORIRE CUANDO YO QUIERA E INTENTANDO SALVAR EL MUNDO" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_18",
-            }
-        ]
-    },
-
-    "Dialogo_1_18": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Pensando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Pensando.png",
-                "texto": "..." 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_19",
-            }
-        ]
-    },
-
-      "Dialogo_1_19": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Gritando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Gritando.png",
-                "texto": "Venga vale, SI POR INTENTARLO" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", // Esto activa la clase .flecha-contexto
-                "siguiente": "Dialogo_1_20",
-            }
-        ]
-    },
-
-    "Dialogo_1_20": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Confundido.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Confundido.png",
-                "texto": "..." 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", // Esto activa la clase .flecha-contexto
-                "siguiente": "Dialogo_1_21",
-            }
-        ]
-    },
-
-     "Dialogo_1_21": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
-                "texto": "Mira… Que dices, ¿vienes?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_22",
-            }
-        ]
-    },
-
-    "Dialogo_1_22": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Hablando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Hablando.png",
-                "texto": "… Si no hay nada que nos sirva contra los robots, nos volvemos, si arriesgo mi vida es porque hay una posibilidad, si no la hay no arriesgare mi vida okey?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_23",
-            }
-        ]
-    },
-
-
-    "Dialogo_1_23": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
-                "pos": "Left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ //
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
-                "texto": "Vale, trato, pues venga, salgamos de aqui con lo mejor y vayamos directos a la Central" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_24",
-            }
-        ]
-    },
-
-    "Dialogo_1_24": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Gritando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Gritando.png",
-                "texto": "VENGA VAMOS" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_1_25",
-            }
-        ]
-    },
-
-    "Dialogo_1_25": {
-        "titulo": "La hoguera",
-        "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
-        "posicionTexto": "pos-arriba", 
-        "personajes": [
-        ],
-        "descripcion": "Asi deciden salir de camino a la central",
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2",
-            }
-        ]
-    },
+    "titulo": "La hoguera",
+    "fondo": "../images/Acto_1/Dialogo_1/Fondo.png",
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        // Usamos "Zack" como ID técnico para el motor de juego
+        { 
+            "id": "Zack", 
+            "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
+            "pos": "right: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "Preparaos que dentro de nada saldremos.." 
+        },
+        { 
+            "quien": "Mira", 
+            // Mira entra a la izquierda (el script le hará espejo automáticamente)
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Pensando.png:left: 1%| ¿Me imagino que a por comida no?" 
+        },
+        { 
+            "quien": "Kael", 
+            // Eliminamos a Zack con su ID técnico y entra Kael a la derecha
+            "texto": "|Zack:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| Si, porque ya no tenemos de nada" 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Confundido.png",
+            "texto": "Tu no le has estado escuchando a {PLAYER} no?" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "¿Por? ¿que quiere hacer?" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            // Zack vuelve a entrar por la izquierda para confrontar
+            "texto": "|Mira:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Hablando.png:left: 1%| Quiero acabar con esto ya… Los robots no van a parar hasta exterminarnos." 
+        },
+        { 
+            "quien": "Kael", 
+            "expresion": "Kael:../images/Perfil_Personajes/Kael_Pensando.png",
+            "texto": "¿Y porque iban a encontrarnos? si estamos como a 100 metros bajo tierra" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "expresion": "Zack:../images/Perfil_Personajes/Zack_Pensando.png",
+            "texto": "Pues no se, si viese una puerta metalica en medio de un desierto yo lo abriria, y ellos tambien lo harán" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Kael:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Confundido.png:right: 1%| Pues que quieres que te diga, prefiero que la muerte venga a mi que yo ir a por el, es más cansado" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Zack:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 1%| Si tanto quieres ir a por robots, ¿al menos sabes como destruirlos?" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Mira:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Hablando.png:right: 1%| Más o menos, vi un papel de una de las centrales..." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Kael:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Hablando.png:left: 1%| Si con suerte quedamos nosotros, seria mucha potra que quedara alguien más tan cerca" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Zack:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| O igual encontramos comida." 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Gritando.png",
+            "texto": "Si te gusta comerte un ordenador en lugar de una jugosa lata de frijoles… adelante ir…" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Hablando.png:right: 1%| Venga chicos… ¿que os pasa?... ¿no queréis que esto acabe de una vez?" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Mira:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 1%| ... ?" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Zack:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Confundido.png:right: 1%| ... ?" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Gritando.png:left: 1%| ¡SI VOY A MORIR, MORIRE CUANDO YO QUIERA E INTENTANDO SALVAR EL MUNDO!" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Mira:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Gritando.png:left: 1%| Venga vale, ¡SI POR INTENTARLO!" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Zack:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Hablando.png:right: 1%| … Si no hay nada que nos sirva contra los robots, nos volvemos, ¿okey?" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Hablando.png:left: 1%| Vale, trato. Salgamos de aquí y vayamos directos a la Central." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Mira:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Gritando.png:right: 1%| ¡VENGA VAMOS!" 
+        },
+        {
+            "quien": "Narrador",
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| Así deciden salir de camino a la central."
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "▶",
+            "tipo": "flecha",
+            "siguiente": "Dialogo_2"
+        }
+    ]
+},
 
      "Dialogo_2": {
         "titulo": "El camino",

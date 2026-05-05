@@ -77,6 +77,11 @@ function borrarPartida() {
     }
 }
 
+function limpiarComandos(texto) {
+    // Esta expresión regular busca cualquier cosa entre barras y la elimina
+    return texto.replace(/\|.*?\|/g, '');
+}
+
 function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
     isTyping = false; 
     const log = document.getElementById('decision-log');
@@ -270,66 +275,86 @@ function typeWriter(elementId, text, speed, callback = null) {
 
         if (i < text.length) {
             let char = text.charAt(i);
+            
             if (char === '|') {
                 let end = text.indexOf('|', i + 1);
                 if (end !== -1) {
-                    let comando = text.substring(i + 1, end);
-                    // Dividimos el comando en ID, RUTA y POSICIÓN (opcional)
-                    let [id, ruta, pos] = comando.split(':'); 
+                    let comandoCompleto = text.substring(i + 1, end);
                     
+                    // Separamos el comando. Usamos LIMIT 3 para que no rompa rutas con ":" si las hubiera
+                    let partes = comandoCompleto.split(':');
+                    let id = partes[0] ? partes[0].trim() : null;
+                    let ruta = partes[1] ? partes[1].trim() : null;
+                    // El resto (posicion) puede contener ":" (ej: right: 5%), así que lo reconstruimos
+                    let pos = partes.slice(2).join(':').trim(); 
+
                     let charImg = document.querySelector(`[data-id="${id}"]`);
                     
                     if (ruta === 'REMOVE') {
-                        // --- LÓGICA PARA DESAPARECER ---
                         if (charImg) {
                             charImg.style.opacity = "0";
-                            // Esperamos a que termine la animación para borrarlo del HTML
-                            setTimeout(() => charImg.remove(), 500); 
+                            setTimeout(() => { if (charImg.parentNode) charImg.remove(); }, 500);
                         }
-                    // --- DENTRO DE typeWriter, en la sección del comando '|' ---
-} else {
-    // Lógica automática de espejo basada en la posición
-    let esIzquierda = pos && pos.toLowerCase().includes('left');
-    let flip = esIzquierda ? 'scaleX(-1)' : 'scaleX(1)';
+                    } else {
+                        // Lógica automática de espejo basada en la posición
+                        let esIzquierda = pos && pos.toLowerCase().includes('left');
+                        let flip = esIzquierda ? 'scaleX(-1)' : 'scaleX(1)';
 
-    if (charImg) {
-        // Si ya existe: cambiar imagen y rotación
-        charImg.src = ruta;
-        charImg.style.opacity = "1";
-        charImg.style.transform = flip; 
-    } else {
-        // SI NO EXISTE: Crear personaje nuevo
-        const charContainer = document.getElementById('character-container');
-        const newImg = document.createElement('img');
-        newImg.src = ruta;
-        newImg.setAttribute('data-id', id);
-        
-        let posicionFinal = pos || "left: 50%; transform: translateX(-50%);";
-        
-        let transformFinal = flip;
-        if (posicionFinal.includes('translateX')) {
-            transformFinal = `translateX(-50%) ${flip}`;
-        }
+                        if (charImg) {
+                            // --- ACTUALIZACIÓN DE PERSONAJE EXISTENTE ---
+                            charImg.src = ruta;
+                            charImg.style.opacity = "1";
+                            
+                            // Limpieza crítica para evitar sobreposición
+                            charImg.style.left = "auto";
+                            charImg.style.right = "auto";
+                            
+                            if (pos) {
+                                // Si el pos es "right: 5%", aplicamos directamente al estilo
+                                let [prop, valor] = pos.split(':');
+                                if (prop && valor) charImg.style[prop.trim()] = valor.trim();
+                            }
+                            
+                            charImg.style.transform = flip; 
+                        } else {
+                            // --- CREACIÓN DE PERSONAJE NUEVO ---
+                            const charContainer = document.getElementById('character-container');
+                            const newImg = document.createElement('img');
+                            newImg.src = ruta;
+                            newImg.setAttribute('data-id', id);
+                            
+                            // Si no hay pos, centramos por defecto
+                            let posicionEstilo = pos || "left: 50%; transform: translateX(-50%)";
+                            
+                            let transformFinal = flip;
+                            if (posicionEstilo.includes('translateX')) {
+                                transformFinal = `translateX(-50%) ${flip}`;
+                            }
 
-        newImg.style.cssText = `
-            position: absolute; 
-            bottom: 0; 
-            ${posicionFinal}; 
-            height: 85%; 
-            width: auto; 
-            object-fit: contain; 
-            transition: opacity 0.5s ease; 
-            opacity: 0;
-            transform: ${transformFinal};
-        `;
-        
-        charContainer.appendChild(newImg);
-        setTimeout(() => { newImg.style.opacity = "1"; }, 50);
-    }
-}
+                            newImg.style.cssText = `
+                                position: absolute; 
+                                bottom: 0; 
+                                ${posicionEstilo}; 
+                                height: 85%; 
+                                width: auto; 
+                                object-fit: contain; 
+                                transition: opacity 0.5s ease; 
+                                opacity: 0;
+                                transform: ${transformFinal};
+                            `;
+                            
+                            charContainer.appendChild(newImg);
+                            setTimeout(() => { newImg.style.opacity = "1"; }, 50);
+                        }
+                    }
+                    
+                    // Saltamos el comando y continuamos SIN esperar el speed del typewriter
                     i = end + 1;
+                    typing(); 
+                    return; 
                 }
             } else {
+                // Escritura normal
                 element.innerHTML += char;
                 if (char !== " " && !masterMuted && masterVol > 0) {
                     const soundClone = typeSound.cloneNode();
@@ -337,8 +362,8 @@ function typeWriter(elementId, text, speed, callback = null) {
                     soundClone.play().catch(() => {});
                 }
                 i++;
+                typewriterTimeout = setTimeout(typing, speed);
             }
-            typewriterTimeout = setTimeout(typing, speed);
         } else {
             isTyping = false;
             if (callback) callback();
@@ -393,7 +418,7 @@ window.onload = () => {
         if (!datos) return;
         const descEl = document.getElementById('choice-desc');
 
-        // 1. SI ESTÁ ESCRIBIENDO: Solo completar el texto y DETENERSE
+        // 1. SI ESTÁ ESCRIBIENDO: Completar el texto limpio y DETENERSE
         if (isTyping) {
             isTyping = false;
             clearTimeout(typewriterTimeout);
@@ -404,13 +429,18 @@ window.onload = () => {
             } else {
                 textoCrudo = datos.descripcion || "";
             }
-            descEl.innerText = textoCrudo.replace(/{PLAYER}/g, playerName);
-            return; // CRÍTICO: No hace nada más hasta el próximo clic
+            
+            // --- AQUÍ ESTÁ EL CAMBIO CRÍTICO ---
+            // Limpiamos los comandos y reemplazamos el nombre del jugador
+            let textoLimpio = limpiarComandos(textoCrudo);
+            descEl.innerText = textoLimpio.replace(/{PLAYER}/g, playerName);
+            // ----------------------------------
+            
+            return; 
         }
 
         // 2. SI NO ESTÁ ESCRIBIENDO: Avanzar frase o mostrar botones
         if (datos.secuenciaDialogo) {
-            // mostrarSiguienteDialogo ya se encarga de ver si pone texto o botones
             mostrarSiguienteDialogo();
         }
     };
