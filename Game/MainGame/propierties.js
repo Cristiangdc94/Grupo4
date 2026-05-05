@@ -328,7 +328,7 @@ const historia = {
         ],
         "secuenciaDialogo": [ //
             { 
-                "quien": "Zack", 
+                "quien": "{PLAYER}", 
                 "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
                 "texto": "Quiero acabar con esto ya… Los robots no van a parar hasta exterminarnos." 
             }
