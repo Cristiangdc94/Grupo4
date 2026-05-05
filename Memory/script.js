@@ -4,21 +4,28 @@ let musicMuted = false;
 let currentMasterVol = 0.2;
 let currentMusicVol = 0.2;
 
-// Archivos de sonido
 const typeSound = new Audio('../Game/Sound/undertale-text.mp3');
 const hoverSound = document.getElementById('hover-sound'); 
 let bgMusic; 
 
 const projectDoc = {
-    "intro": { cat: "01_DATOS_GENERALES", title: "INTRODUCCIÓN", body: "Chaos Red es un entorno experimental de narrativa interactiva.\n\nDiseñado como una interfaz de búnker post-apocalíptico." },
-    "concept": { cat: "02_DISEÑO_VISUAL", title: "CONCEPTO Y ARTE", body: "Inspiración: Minimalismo brutalista y estética 'Terminal Retro'." },
-    "tech": { cat: "03_INFRAESTRUCTURA", title: "STACK TECNOLÓGICO", body: "El proyecto se ha construido bajo estándares modernos de optimización." },
-    "mechanics": { cat: "04_MOTOR_LÓGICO", title: "MECÁNICAS", body: "1. Motor Typewriter progresivo.\n2. Audio Reactivo.\n3. UI Dinámica." },
-    "stats": { cat: "05_ANALÍTICA", title: "ESTADÍSTICAS", body: "Recuento de activos: Líneas de CSS: 250+, Assets de Video: 1." },
-    "future": { cat: "06_OBJETIVOS", title: "DESARROLLO FUTURO", body: "Implementación de LocalStorage y sistema de inventario." }
+    "grafico": { 
+        cat: "01_DISEÑO_Y_NARRATIVA", 
+        title: "APARTADO GRÁFICO", 
+        body: "DISEÑO VISUAL:\nLas imágenes han sido generadas mediante IA y editadas manualmente para mantener una atmósfera coherente. Se ha buscado una estética 'Cyber-Noir' con alto contraste.\n\nHISTORIA:\nLa narrativa se desarrolla a través de un guion ramificado gestionado por JSON, donde cada decisión visual se apoya en fondos que refuerzan la inmersión del búnker." 
+    },
+    "tecnico": { 
+        cat: "02_ARQUITECTURA_MOTOR", 
+        title: "APARTADO TÉCNICO", 
+        body: "MOTOR DE JUEGO:\nDesarrollado en JavaScript puro (Vanilla JS). El motor interpreta un objeto JSON que dicta personajes, expresiones, sonidos y rutas.\n\nSISTEMAS:\nSe ha implementado un sistema de mirroring automático para personajes a la izquierda, gestión de LocalStorage para el progreso y un motor Typewriter dinámico con soporte para comandos en tiempo real." 
+    },
+    "web": { 
+        cat: "03_ENTORNO_FRONTEND", 
+        title: "APARTADO WEB", 
+        body: "FRONT-END:\nLa web utiliza HTML5 y CSS3 avanzado. Se han aplicado filtros de Scanlines y animaciones de 'Chaos' para simular una terminal antigua dañada.\n\nESTRUCTURA:\nDiseño SPA (Single Page Application) que permite transiciones instantáneas entre el menú de inicio y la base del juego, optimizando la carga de recursos multimedia." 
+    }
 };
 
-// Función para inicializar sonidos hover en elementos con clase .chaos-hover
 function initHoverEffects() {
     const interactiveElements = document.querySelectorAll('.chaos-hover');
     const hSound = document.getElementById('hover-sound');
@@ -27,7 +34,6 @@ function initHoverEffects() {
         el.addEventListener('mouseenter', () => {
             if (!masterMuted && hSound) {
                 const soundClone = hSound.cloneNode();
-                // APLICADO: El hover suena al 15% del volumen maestro para armonía
                 soundClone.volume = currentMasterVol * 0.15; 
                 soundClone.play().catch(() => {});
             }
@@ -48,7 +54,6 @@ function typeWriter(elementId, text, speed) {
             let char = text.charAt(i);
             element.innerHTML += char;
 
-            // Sonido de teclas (afectado por volumen Master al 100% del slider)
             if (char !== " " && char !== "\n" && !masterMuted) {
                 const soundClone = typeSound.cloneNode();
                 soundClone.volume = currentMasterVol;
@@ -71,8 +76,8 @@ function showMemory(id) {
     typeWriter('db-body', data.body, 15);
 
     document.querySelectorAll('.db-item').forEach(item => {
-        const itemText = item.innerText.toLowerCase();
-        item.classList.toggle('active', itemText.includes(id.toLowerCase()));
+        const clickAttr = item.getAttribute('onclick') || "";
+        item.classList.toggle('active', clickAttr.includes(id));
     });
 }
 
@@ -85,7 +90,6 @@ function setupAudio() {
     const masterIcon = document.getElementById('master-icon');
     const musicIcon = document.getElementById('music-icon');
 
-    // Forzar volúmenes iniciales según variables
     bgMusic.volume = currentMusicVol;
 
     sliderMaster.oninput = (e) => {
@@ -103,14 +107,12 @@ function setupAudio() {
 
     btnMaster.onclick = () => {
         masterMuted = !masterMuted;
-        btnMaster.classList.toggle('muted', masterMuted);
         masterIcon.className = masterMuted ? "fa-solid fa-volume-xmark" : "fa-solid fa-volume-high";
     };
 
     btnMusic.onclick = () => {
         musicMuted = !musicMuted;
         bgMusic.muted = musicMuted;
-        btnMusic.classList.toggle('muted', musicMuted);
         musicIcon.className = musicMuted ? "fa-solid fa-music-slash" : "fa-solid fa-music";
     };
 
@@ -125,5 +127,5 @@ function setupAudio() {
 window.onload = () => {
     setupAudio();
     initHoverEffects(); 
-    showMemory('intro');
+    showMemory('grafico');
 };
