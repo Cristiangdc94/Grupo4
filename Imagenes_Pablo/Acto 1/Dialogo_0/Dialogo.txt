@@ -56,3 +56,5 @@ Fondo: Imagen -> 12.jpeg
 Personaje: Narrativa.
 Texto:
 El mundo va recuperándose de los humanos, pero estos son masacrados todos los días, tras 2 meses quedan aproximadamente menos de 1 Billon de humanos en la tierra, todos han perdido la fe y se esconden para tener la suerte de ser esos "Elegidos por dios" para seguir vivos después de la masacre para levantar a la humanidad, solo quedaba un cachito de fe en salvarse y se encuentra a 100 metros bajo la tierra, en una sucia puerta metálica y polvorienta... 
+
+Siguiente Dialogo -> Dialogo_1

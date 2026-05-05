@@ -102,3 +102,5 @@ VENGA VAMOS
 Personajes: Narrativo
 Texto:
 Asi deciden salir de camino a la central
+
+Siguiente Dialogo -> Dialogo_2

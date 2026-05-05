@@ -88,8 +88,10 @@ Elección Mira -> Sigilo
 Foto: Imagen -> Eleccion_Mira.jpeg
 Texto:
 Colarse en Sigilo por la parte trasera de las instalaciones
+Siguiente Dialogo -> Dialogo_3
 
 Elección Kael -> Asalto
 Foto: Imagen -> Eleccion_Kael.jpeg
 Texto:
 Ir de frente por la puerta principal a por los robots
+Siguiente Dialogo -> Dialogo_18

@@ -28,3 +28,4 @@ Personajes: Narrativo
 Texto:
 Kael va delante y no puede reprimir sus ganas de romper robots, así que elimina a los robots que ve por el camino, dejando el ejercito de robots a la mitad
 
+Siguiente Dialogo -> Dialogo_11

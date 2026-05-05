@@ -23,8 +23,10 @@ Elección Mira -> Sigilo
 Foto: Imagen -> Mira.jpeg
 Texto:
 Ireis en sigilo para no alertar a ningún robot
+Siguiente Dialogo -> Dialogo_16
 
 Elección Kael -> A saco
 Foto: Imagen -> Kael.jpeg
 Texto:
 Ireis en sigilo pero rompiendo robots despistados por el camino
+Siguiente Dialogo -> Dialogo_17

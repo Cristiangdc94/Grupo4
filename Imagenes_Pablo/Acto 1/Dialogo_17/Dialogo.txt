@@ -28,3 +28,5 @@ Fondo: Imagen -> 3.png
 Personajes: Narrativo
 Texto:
 les toca correr y huir hacia el laboratorio a toda prisa
+
+Siguiente Dialogo -> Dialogo_10

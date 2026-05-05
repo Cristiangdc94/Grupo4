@@ -14,3 +14,5 @@ encima, para una cosa buena que os digo
 Personajes: Zack_Confundido.png
 Texto:
 Joder, sois como la noche y el dia
+
+Siguiente Dialogo -> Dialogo_23

@@ -24,14 +24,17 @@ Elección Zack 1 -> 1º Orden
 Foto: Imagen -> Eleccion_Orden 1.png
 Texto:
 Mira va delante, Zack iras en el medio ,y Kael irá detrás tuya
+Siguiente Dialogo -> Dialogo_5
 
 Elección Zack 2 -> 2º Orden
 Foto: Imagen -> Eleccion_Orden 2.png
 Texto:
 Kael va delante, Mira ira en el medio, y Zack irá detrás
+Siguiente Dialogo -> Dialogo_6
 
 Elección Zack 3 -> 3º Orden
 Foto: Imagen -> Eleccion_Orden 3.png
 Texto:
 Zack va delante, Mira ira en el medio, y Kael irá detrás
+Siguiente Dialogo -> Dialogo_7
 

@@ -27,3 +27,5 @@ Fondo: Imagen -> 2.png
 Personajes: Narrativo
 Texto:
 Siguen a Mira hasta el laboratorio donde entran pero estan los robots alerta
+
+Siguiente Dialogo -> Dialogo_10

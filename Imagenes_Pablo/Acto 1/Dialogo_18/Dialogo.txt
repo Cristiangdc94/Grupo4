@@ -13,7 +13,7 @@ ESA EEESSS
 
 Personajes: Mira_Confundido.png
 Texto:
-Ay, para que habre venido con 2 locos
+Ay, para que abre venido con 2 locos
 
 Personajes: Kael_Pensando.png
 Texto:
@@ -118,8 +118,10 @@ Elección Mira -> Hackeo
 Foto: Imagen -> Mira.jpeg
 Texto:
 Mira necesita que la subran un rato para hackear a los robots y las torretas
+Siguiente Dialogo -> Dialogo_22
 
 Elección Zack -> Granada
 Foto: Imagen -> Zack.jpeg
 Texto:
 Lanzaras una Granada EMP, al cual puede funcionar o no
+Siguiente Dialogo -> Dialogo_19

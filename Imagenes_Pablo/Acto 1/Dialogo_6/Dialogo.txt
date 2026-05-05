@@ -70,3 +70,5 @@ Fondo: Imagen -> 4.jpeg
 Personajes: Narrativo
 Texto:
 ...pero llegan hasta donde el doctor
+
+Siguiente Dialogo -> Dialogo_10

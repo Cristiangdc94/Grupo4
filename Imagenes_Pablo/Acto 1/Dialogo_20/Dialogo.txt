@@ -153,3 +153,8 @@ Personajes: Mira_Asustado.png
 Texto:
 Hay alguien ahí... ¿Quién eres?
 
+Personajes: Dr.Vane_Pilar_Camuflado.png
+Texto:
+Perdon, es que os vi llorando y no queria meterme donde no me llamaban
+
+Siguiente Dialogo -> Dialogo_34
