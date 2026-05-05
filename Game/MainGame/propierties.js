@@ -1483,7 +1483,7 @@ const historia = {
     {
         "texto": "Elección Mira -> Sigilo",
         "imagen": "../images/Acto_1/Dialogo_2/Eleccion_Mira-removebg-preview.png", 
-        "siguiente": "Dialogo_30",
+        "siguiente": "Dialogo_3",
         "etiqueta": "Colarse en Sigilo...",
         "titulo": "Sigilo",
         "descripcion": "Decides avanzar con cautela.",
@@ -1492,7 +1492,7 @@ const historia = {
     {
         "texto": "Elección Mira -> Asalto",
         "imagen": "../images/Acto_1/Dialogo_2/Eleccion_Kael-removebg-preview.png",
-        "siguiente": "Dialogo_3",
+        "siguiente": "Dialogo_18",
         "etiqueta": "Ir de frente...",
         "titulo": "Asalto",
         "descripcion": "Decides entrar con todo",
