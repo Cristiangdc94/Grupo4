@@ -1499,22 +1499,58 @@ const historia = {
         "log": "Elegiste el camino del Asalto"
     }
     ]
-    }
-
-
-
-
-    
-
-
-
-
-
-
-
+    },
 
 
 // ACTO 1 - IZQUIERDA
+    
+    "Dialogo_30": {
+        "titulo": "",
+        "fondo": "../images/Acto_1/Dialogo_3/1.jpeg",
+        "posicionTexto": "pos-arriba",
+        "personajes": [
+        ],
+        "secuenciaDialogo": [
+        ],
+        "descripcion": "Zack elige hacerlo por el método de Mira",
+        "opciones": [
+            {
+                "texto": "▶",
+                "tipo": "flecha", 
+                "siguiente": "Dialogo_31",
+            }
+        ]
+    },
+    "Dialogo_31": {
+        "titulo": "",
+        "fondo": "../images/Acto_1/Dialogo_3/1.jpeg",
+        "posicionTexto": "pos-arriba",
+        "personajes": [
+            { 
+                "id": "Mira", 
+                "src": "../images/Perfil_Personajes/Mira_Hablando.png", 
+                "pos": "left: 10%;" 
+            }
+        ],
+        "secuenciaDialogo": [
+            { 
+                "quien": "Mira", 
+                "texto": "Al menos tengo a otro listo conmigo" 
+            },
+            {
+            "quien": "Kael",
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 85%| Sois unos cagaos… LOS 2"
+            },
+        ],
+        "descripcion": "Zack elige hacerlo por el método de Mira",
+        "opciones": [
+            {
+                "texto": "▶",
+                "tipo": "flecha", 
+                "siguiente": "Dialogo_001",
+            }
+        ]
+    },
 
 // ACTO 1 - DERECHA
 
