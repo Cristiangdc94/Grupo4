@@ -144,6 +144,8 @@ function actualizarInterfaz() {
 function generarBotones(opciones) {
     const contenedorBotones = document.getElementById('bottom-buttons');
     contenedorBotones.innerHTML = '';
+    
+    // Creamos el contenedor central para las opciones estándar
     const centro = document.createElement('div');
     centro.className = 'bottom-buttons-center';
     contenedorBotones.appendChild(centro);
@@ -151,14 +153,35 @@ function generarBotones(opciones) {
     opciones.forEach((opcion) => {
         const btn = document.createElement('a');
         btn.href = "#";
-        btn.innerText = opcion.texto;
         btn.className = (opcion.tipo === 'flecha') ? 'flecha-contexto chaos-hover' : 'game-option chaos-hover';
+        
+        // --- LÓGICA DE IMAGEN ---
+        // Si la opción tiene una imagen definida en el JSON, creamos la etiqueta img
+        const htmlImagen = opcion.imagen ? `<img src="${opcion.imagen}" alt="${opcion.titulo || 'opcion'}" class="option-image">` : '';
+        
+        // Inyectamos la imagen y el texto dentro del botón
+        // Usamos un span para el texto para poder controlarlo mejor con CSS si fuera necesario
+        btn.innerHTML = `
+            ${htmlImagen}
+            <span>${opcion.texto}</span>
+        `;
+        // ------------------------
+
         btn.onclick = (e) => {
             e.preventDefault();
             handleChoice(opcion.siguiente, opcion.etiqueta, opcion.titulo, opcion.descripcion, opcion.log);
         };
-        (opcion.tipo === 'flecha') ? contenedorBotones.appendChild(btn) : centro.appendChild(btn);
+
+        // Si es tipo flecha va al contenedor principal, si no, al contenedor central
+        if (opcion.tipo === 'flecha') {
+            contenedorBotones.appendChild(btn);
+        } else {
+            centro.appendChild(btn);
+        }
     });
+
+    // Re-inicializamos los sonidos de hover para los nuevos botones
+    initHoverSounds();
 }
 
 function mostrarSiguienteDialogo() {

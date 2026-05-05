@@ -142,11 +142,32 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
 }
 
 .game-option {
-    border: 2px solid #FF0000; color: #FF0000; padding: 25px 60px;
-    border-radius: 25px; background: rgba(0, 0, 0, 0.5); 
-    text-decoration: none; font-weight: bold; font-size: 1.3rem;
-    text-transform: uppercase; transition: 0.3s;
+    /* Mantenemos tus estilos y añadimos/cambiamos estos: */
+    display: flex;
+    flex-direction: column; /* Alinea los elementos (img y texto) verticalmente */
+    align-items: center;    /* Centra horizontalmente */
+    gap: 15px;              /* Espacio entre imagen y texto */
+    
+    border: 2px solid #FF0000; 
+    color: #FF0000; 
+    padding: 20px 40px;     /* Ajustado para que quepa la imagen */
+    border-radius: 25px; 
+    background: rgba(0, 0, 0, 0.5); 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 1.1rem;      /* Bajamos un poco el tamaño si la imagen es grande */
+    text-transform: uppercase; 
+    transition: 0.3s;
     text-align: center;
+    cursor: pointer;
+}
+
+/* Estilo para la imagen dentro del botón */
+.game-option img {
+    width: 80px;            /* Ajusta el tamaño según tus necesidades */
+    height: 80px;
+    object-fit: contain;    /* Evita que la imagen se deforme */
+    filter: drop-shadow(0 0 5px #FF0000); /* Efecto de brillo rojo */
 }
 .game-option:hover { background: rgba(255, 0, 0, 0.3); color: white; transform: translateY(-5px); }
 
