@@ -209,14 +209,14 @@ const historia = {
         "posicionTexto": "pos-centro", //
         "personajes": [ //
             { 
-                "id": "zack", 
+                "id": "Mira", 
                 "src": "../images/Perfil_Personajes/Mira_Pensando.png", 
                 "pos": "right: 1%;" 
             },
         ],
         "secuenciaDialogo": [ //
             { 
-                "quien": "Zack", 
+                "quien": "Mira", 
                 "expresion": "../images/Perfil_Personajes/Mira_Pensando.png",
                 "texto": "¿Me imagino que a por comida no?" 
             }
