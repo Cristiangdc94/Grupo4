@@ -957,7 +957,7 @@ const historia = {
     ]
     },
     "Dialogo_10": {
-    "titulo": "El Laboratorio Central",
+    "titulo": "El Encuentro en el Laboratorio",
     "fondo": "../images/Acto_1/Dialogo_10/1.jpeg",
     "posicionTexto": "pos-centro",
     "personajes": [
@@ -981,25 +981,70 @@ const historia = {
             "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:right: 1%| Ufff... al menos estamos vivos." 
         },
         { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Pensando.png",
+            "texto": "Y ahora... ¿Qué buscamos?" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "Supongo que-" 
+        },
+        { 
+            "quien": "???", 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 50%; transform: translateX(-50%)| ¿Y vosotros quiénes sois?" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| |Dr.Vane:REMOVE| |Kael:REMOVE| ¡¿QUEEEE?!" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| ¡AAAHHH!" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 10%| |Zack:REMOVE| ¿QUÉ COÑO? ¿HAY ALGUIEN MÁS AQUÍ?" 
+        },
+        { 
+            "quien": "Voz misteriosa", 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%| Sois vosotros los que habéis entrado, yo ya estaba aquí. Venid, anda..." 
+        },
+        { 
             "quien": "Narrador", 
-            "texto": "|Mira:REMOVE| |Kael:REMOVE| El grupo se detiene un momento para recuperar el aliento antes de avanzar hacia la sala principal." 
+            "texto": "|Mira:REMOVE| |Kael:REMOVE| |Dr.Vane:REMOVE| Caminan un poco y, detrás de un mueble, encuentran a..." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| Ostia..." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| ¡AAAHHH!" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 10%| |Zack:REMOVE| Ehhh... ¿tú eres?..." 
+        },
+        { 
+            "quien": "Dr. Vane", 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Soy Vane, un gusto conoceros." 
         }
     ],
     "opciones": [
         {
             "texto": "▶",
             "tipo": "flecha",
-            "siguiente": "Dialogo_23",
-            "etiqueta": "Sala principal...",
-            "titulo": "Infiltrados",
-            "descripcion": "El laboratorio se extiende ante vosotros.",
-            "log": "Entraste finalmente en el laboratorio central."
+            "siguiente": "FINAL",
+            "etiqueta": "Hablar con Vane...",
+            "titulo": "El Doctor",
+            "descripcion": "Has encontrado al objetivo principal.",
+            "log": "Entraste al laboratorio y encontraste al Dr. Vane escondido."
         }
     ]
     },
     "Dialogo_11": {
     "titulo": "Infiltración Exitosa",
-    "fondo": "../images/Acto_1/Dialogo_11/1.png",
+    "fondo": "../images/Acto_1/Dialogo_11/1.jpeg",
     "posicionTexto": "pos-centro",
     "personajes": [
         { 
@@ -1023,22 +1068,68 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Mira:Remove||Zack:../images/Perfil_Personajes/Zack_Confundido.png:left: 1%| Joder, sois como la noche y el día." 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Confundido.png:right: 1%| Joder, sois como la noche y el día…" 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Pensando.png",
+            "texto": "Y ahora... ¿Qué buscamos?" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "Supongo que-" 
+        },
+        { 
+            "quien": "???", 
+            // El Dr. Vane aparece camuflado en el centro para dar el susto inicial
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:left: 50%; transform: translateX(-50%)| ¿Y vosotros quiénes sois?" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| |Dr.Vane:REMOVE| |Kael:REMOVE| ¡¿QUEEEE?!" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| ¡AAAHHH!" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 10%| |Zack:REMOVE| ¿QUÉ COÑO? ¿HAY ALGUIEN MÁS AQUÍ?" 
+        },
+        { 
+            "quien": "Voz misteriosa", 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%| Sois vosotros los que habéis entrado, yo ya estaba aquí. Venid, anda..." 
         },
         { 
             "quien": "Narrador", 
-            "texto": "|Mira:REMOVE| |Kael:REMOVE| |Zack:REMOVE| El equipo se adentra finalmente en las profundidades del laboratorio." 
+            "texto": "|Mira:REMOVE| |Kael:REMOVE| |Dr.Vane:REMOVE| Caminan un poco y, detrás de un mueble, encuentran a una persona oculta." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| Ostia..." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| ¡AAAHHH!" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 10%| |Zack:REMOVE| Ehhh... ¿tú eres?..." 
+        },
+        { 
+            "quien": "Dr. Vane", 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Soy Vane, un gusto conoceros." 
         }
     ],
     "opciones": [
         {
             "texto": "▶",
             "tipo": "flecha",
-            "siguiente": "Dialogo_23",
-            "etiqueta": "Avanzar...",
-            "titulo": "El Corazón del Laboratorio",
-            "descripcion": "Os movéis hacia la zona principal.",
-            "log": "Lograste infiltrarte sin ser detectado."
+            "siguiente": "FINAL",
+            "etiqueta": "Conversar...",
+            "titulo": "El Doctor Vane",
+            "descripcion": "Has localizado al objetivo principal.",
+            "log": "{PLAYER} y el equipo han encontrado al Dr. Vane tras infiltrarse con éxito."
         }
     ]
     },
@@ -1585,12 +1676,12 @@ const historia = {
             {
                 "texto": "▶",
                 "tipo": "flecha", 
-                "siguiente": "Dialogo_18_03",
+                "siguiente": "Dialogo_18_05",
             }
         ]
     },
 
-     "Dialogo_18_03": {
+     "Dialogo_18_05": {
         "titulo": "",
         "fondo": "../images/Acto_1/Dialogo_18/3.png",
         "posicionTexto": "pos-arriba",  
@@ -1750,7 +1841,7 @@ const historia = {
     ]
     },
     "Dialogo_20": {
-    "titulo": "El Sacrificio de un Loco",
+    "titulo": "El Último Regalo de un Loco",
     "fondo": "../images/Acto_1/Dialogo_20/1.jpeg",
     "posicionTexto": "pos-centro",
     "personajes": [
@@ -1775,19 +1866,19 @@ const historia = {
         },
         { 
             "quien": "Mira", 
-            "texto": "|Mira:../images/Perfil_Personajes/Mira_Enfadado.png:left: 1%| |Zack:REMOVE| A mí todo lo contrario, no me hacéis ni caso." 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Enfadado.png:left: 10%| |Zack:REMOVE| A mí todo lo contrario, no me hacéis ni caso." 
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Hablando.png:left: 1%| |Mira:REMOVE| No es nada personal, es Kael, que me contagia su locura." 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Hablando.png:left: 1%| |Mira:REMOVE| No es nada personal, es Kael que me contagia su locura." 
         },
         { 
             "quien": "Mira", 
-            "texto": "|Kael:REMOVE||Mira:../images/Perfil_Personajes/Mira_Pensando.png:right: 1%| Entre locos os entendéis supongo. Ojalá haber venido con alguien más listo." 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Pensando.png:right: 1%| Entre locos os entendéis, supongo. Ojalá haber venido con alguien más listo." 
         },
         { 
             "quien": "Narrador", 
-            "texto": "|Zack:REMOVE| |Kael:REMOVE| |Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_20/2.jpeg| Hackean la puerta y, como sospechaba Mira, el ruido no es nada sutil. Los robots restantes se alertan y comienza una carrera desesperada bajo fuego enemigo." 
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| |Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_20/2.jpeg| Hackean la puerta y, como sospechaba Mira, el ruido no es nada sutil. Deben pelear y correr todo lo que puedan para esquivar a los robots restantes." 
         },
         { 
             "quien": "Narrador", 
@@ -1803,7 +1894,7 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Llorando.png:left: 1%| |Zack:REMOVE| Ahhh... chicos, lo siento. Mi locura ha jodido el plan, lo siento muchísimo." 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Llorando.png:left: 10%| |Zack:REMOVE| Ahhh... chicos, lo siento. Mi locura ha jodido el plan, lo siento muchísimo." 
         },
         { 
             "quien": "Mira", 
@@ -1811,7 +1902,7 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Kael:REMOVE||Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| ¡Eh, mirad! Ahí está el laboratorio, falta muy poco para la puerta." 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| ¡Eh, mirad! Ahí está el laboratorio, falta muy poco para la puerta." 
         },
         { 
             "quien": "Mira", 
@@ -1835,11 +1926,11 @@ const historia = {
         },
         { 
             "quien": "Narrador", 
-            "texto": "|Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_20/5.jpeg| Kael se sacrifica para darles el tiempo necesario, embistiendo a los robots en un acto final de valor." 
+            "texto": "|Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_20/5.jpeg| Kael se sacrifica para darles el tiempo necesario, embistiendo a los robots." 
         },
         { 
             "quien": "Narrador", 
-            "texto": "|FONDO:../images/Acto_1/Dialogo_20/6.jpeg| Mira intenta correr hacia él, pero {PLAYER} la sujeta con fuerza contra la puerta." 
+            "texto": "|FONDO:../images/Acto_1/Dialogo_20/6.jpeg| Mira intenta ir hacia él, pero {PLAYER} la sujeta y la apoya contra la puerta." 
         },
         { 
             "quien": "{PLAYER}", 
@@ -1851,23 +1942,23 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Gritando y Llorando.png:left: 1%| ¡NO HAGAS QUE SU MUERTE SEA EN VANO! Se sacrificó para que vivamos nosotros dos. ¡No pienso morir ahora que sigo vivo gracias a él!" 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Gritando y Llorando.png:left: 1%| ¡NO HAGAS QUE SU MUERTE SEA EN VANO! Él se sacrificó para que vivamos nosotros dos. ¡No pienso morir ahora que sigo vivo gracias a él!" 
         },
         { 
             "quien": "Narrador", 
-            "texto": "|Zack:Remove||Mira:Remove||FONDO:../images/Acto_1/Dialogo_20/7.png| Mira abre la puerta mientras {PLAYER} mira impotente cómo Kael se desvanece entre los robots." 
+            "texto": "|FONDO:../images/Acto_1/Dialogo_20/7.png| Mira abre la puerta mientras {PLAYER} observa impotente el destino de Kael." 
         },
         { 
             "quien": "Narrador", 
-            "texto": "|FONDO:../images/Acto_1/Dialogo_20/8.png| Logran cruzar el umbral. Al entrar, ven desde lejos la caída final..." 
+            "texto": "|FONDO:../images/Acto_1/Dialogo_20/8.png| Logran cruzar el umbral justo antes de que lleguen los robots." 
         },
         { 
             "quien": "Narrador", 
-            "texto": "|FONDO:../images/Acto_1/Dialogo_20/9.png| ...Kael muere." 
+            "texto": "|FONDO:../images/Acto_1/Dialogo_20/9.png| A lo lejos... Kael muere." 
         },
         { 
             "quien": "Narrador", 
-            "texto": "|FONDO:../images/Acto_1/Dialogo_20/10.png| Mira intenta ayudar desesperadamente, pero {PLAYER} la retiene. Al final, solo quedan ellos dos." 
+            "texto": "|FONDO:../images/Acto_1/Dialogo_20/10.png| Mira intenta ayudar, pero {PLAYER} la retiene. Se han salvado, pero a un coste devastador." 
         },
         { 
             "quien": "Mira", 
@@ -1883,7 +1974,7 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "Al final nos dio todo: su apoyo, su confianza, sus secretos… su vida." 
+            "texto": "Al final nos lo dio todo: su apoyo, su confianza, sus secretos… su vida." 
         },
         { 
             "quien": "Mira", 
@@ -1899,26 +1990,42 @@ const historia = {
         },
         { 
             "quien": "Narrador", 
-            "texto": "|Zack:REMOVE| |Mira:REMOVE| Se limpian las lágrimas y avanzan por el laboratorio hasta que distinguen a alguien escondido." 
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| Se limpian las lágrimas y siguen por el laboratorio hasta que distinguen a alguien escondido." 
         },
         { 
             "quien": "Mira", 
             "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:left: 1%| Hay alguien ahí... ¿Quién eres?" 
         },
         { 
+            "quien": "???", 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%| Perdón... es que os vi llorando y no quería meterme donde no me llamaban. Estoy aquí detrás, asomaros." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Mira:REMOVE| |Dr.Vane:REMOVE| Se acercan hacia el origen de la voz." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| ¡AAAAHHHH!" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| ¡OSTIA! Pero..." 
+        },
+        { 
             "quien": "Dr. Vane", 
-            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%| Perdón... es que os vi llorando y no quería meterme donde no me llamaban." 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Mi más sentido pésame por vuestra pérdida... Soy Vane." 
         }
     ],
     "opciones": [
         {
-            "texto": "▶",
+            "texto": "Finalizar Acto",
             "tipo": "flecha",
             "siguiente": "Dialogo_34",
-            "etiqueta": "El encuentro...",
-            "titulo": "Última voluntad",
-            "descripcion": "El Doctor Vane te espera.",
-            "log": "Kael se sacrificó para que {PLAYER} y Mira llegaran al laboratorio."
+            "etiqueta": "El Laboratorio...",
+            "titulo": "Encuentro",
+            "descripcion": "Habéis encontrado al Doctor Vane tras un duro sacrificio.",
+            "log": "Kael se sacrificó para que {PLAYER} y Mira pudieran entrar al laboratorio central."
         }
     ]
     },
@@ -2036,7 +2143,7 @@ const historia = {
     ]
     },
     "Dialogo_22": {
-    "titulo": "El Precio de la Confianza",
+    "titulo": "El Trágico Destino de Mira",
     "fondo": "../images/Acto_1/Dialogo_22/1.png",
     "posicionTexto": "pos-centro",
     "personajes": [
@@ -2065,7 +2172,7 @@ const historia = {
         },
         { 
             "quien": "Narrador", 
-            "texto": "|Zack:REMOVE| |Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_22/3.png| Los robots la localizan de inmediato. Antes de poder escapar, Mira cae gravemente herida por el fuego enemigo." 
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_22/3.png| Los robots la localizan de inmediato. Antes de poder ponerse a salvo, Mira cae herida por el fuego enemigo." 
         },
         { 
             "quien": "Mira", 
@@ -2077,11 +2184,11 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Kael:REMOVE||Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| ¡Mierda, corre! ¡Corre y buscamos la forma de curarla!" 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%; transform: translateX(20%)| ¡Mierda, corre! ¡Corre y buscamos la forma de curarla!" 
         },
         { 
             "quien": "Kael", 
-            "texto": "|Zack:REMOVE||Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 1%| La cargo yo. ¡Cubre delante!" 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 1%| La cargo yo. ¡Cubre delante!" 
         },
         { 
             "quien": "Narrador", 
@@ -2089,7 +2196,7 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Gritando.png:left: 1%| |FONDO:../images/Acto_1/Dialogo_22/5.png| Listo... Mira, por favor, ayúdanos a entrar. Seguro que dentro hay algo para curarte." 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Gritando.png:left: 1%| |FONDO:../images/Acto_1/Dialogo_22/5.png| Listo... Mira, por favor, ayúdanos a entrar. Seguro que dentro hay algo." 
         },
         { 
             "quien": "{PLAYER}", 
@@ -2177,22 +2284,18 @@ const historia = {
         },
         { 
             "quien": "Dr. Vane", 
-            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Yo…" 
-        },
-        { 
-            "quien": "Narrador", 
-            "texto": "Una figura misteriosa aparece finalmente en escena." 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Yo… Me llamo Vane..." 
         }
     ],
     "opciones": [
         {
-            "texto": "▶",
+            "texto": "Finalizar Acto",
             "tipo": "flecha",
             "siguiente": "Dialogo_33",
-            "etiqueta": "El misterio...",
+            "etiqueta": "El Laboratorio...",
             "titulo": "Encuentro",
-            "descripcion": "El Doctor Vane se revela ante vosotros.",
-            "log": "Mira murió tras el hackeo, dejando a {PLAYER} y Kael devastados ante el Dr. Vane."
+            "descripcion": "Os encontráis con el Doctor Vane tras la pérdida de Mira.",
+            "log": "Mira murió tras el hackeo, dejando a {PLAYER} y Kael ante el Doctor Vane."
         }
     ]
     },
