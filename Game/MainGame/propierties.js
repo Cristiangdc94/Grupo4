@@ -999,7 +999,7 @@ const historia = {
     },
     "Dialogo_11": {
     "titulo": "Infiltración Exitosa",
-    "fondo": "../images/Acto_1/Dialogo_11/1.jpeg",
+    "fondo": "../images/Acto_1/Dialogo_11/1.png",
     "posicionTexto": "pos-centro",
     "personajes": [
         { 
@@ -1023,7 +1023,7 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Confundido.png:right: 50%; transform: translateX(-50%)| Joder, sois como la noche y el día." 
+            "texto": "|Mira:Remove||Zack:../images/Perfil_Personajes/Zack_Confundido.png:left: 1%| Joder, sois como la noche y el día." 
         },
         { 
             "quien": "Narrador", 
@@ -1683,7 +1683,7 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Hablando.png:right: 1%| |Kael:REMOVE| Venga, id corriendo hacia… mierda." 
+            "texto": "|Mira:REMOVE||Zack:../images/Perfil_Personajes/Zack_Hablando.png:right: 1%| Venga, id corriendo hacia… ¡Mierda!." 
         },
         { 
             "quien": "Kael", 
@@ -1696,7 +1696,7 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Confundido.png:right: 1%| Joder... ¿y ahora qué hacemos?" 
+            "texto": "|Mira:Remove||Zack:../images/Perfil_Personajes/Zack_Confundido.png:right: 1%| Joder... ¿y ahora qué hacemos?" 
         },
         { 
             "quien": "Mira", 
@@ -1704,7 +1704,7 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| Pero tienes el hacking, puedes abrir la puerta, aunque sea esta." 
+            "texto": "|Zack:REMOVE||Kael:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| Pero tienes el hacking, puedes abrir la puerta, aunque sea esta." 
         },
         { 
             "quien": "Mira", 
@@ -1731,7 +1731,7 @@ const historia = {
     "opciones": [
         {
             "texto": "Por la ventilación",
-            "imagen": "../images/Acto_1/Dialogo_19/Mira.jpeg",
+            "imagen": "../images/Acto_1/Dialogo_19/Mira.png",
             "siguiente": "Dialogo_21",
             "etiqueta": "Plan de Mira...",
             "titulo": "Infiltración Aérea",
@@ -1740,7 +1740,7 @@ const historia = {
         },
         {
             "texto": "Romper la puerta",
-            "imagen": "../images/Acto_1/Dialogo_19/Kael.jpeg",
+            "imagen": "../images/Acto_1/Dialogo_19/Kael.png",
             "siguiente": "Dialogo_20",
             "etiqueta": "Plan de Kael...",
             "titulo": "Fuerza Bruta",
@@ -1775,7 +1775,7 @@ const historia = {
         },
         { 
             "quien": "Mira", 
-            "texto": "|Mira:../images/Perfil_Personajes/Mira_Enfadado.png:left: 10%| |Zack:REMOVE| A mí todo lo contrario, no me hacéis ni caso." 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Enfadado.png:left: 1%| |Zack:REMOVE| A mí todo lo contrario, no me hacéis ni caso." 
         },
         { 
             "quien": "{PLAYER}", 
@@ -1783,7 +1783,7 @@ const historia = {
         },
         { 
             "quien": "Mira", 
-            "texto": "|Mira:../images/Perfil_Personajes/Mira_Pensando.png:right: 1%| Entre locos os entendéis supongo. Ojalá haber venido con alguien más listo." 
+            "texto": "|Kael:REMOVE||Mira:../images/Perfil_Personajes/Mira_Pensando.png:right: 1%| Entre locos os entendéis supongo. Ojalá haber venido con alguien más listo." 
         },
         { 
             "quien": "Narrador", 
@@ -1803,7 +1803,7 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Llorando.png:left: 10%| |Zack:REMOVE| Ahhh... chicos, lo siento. Mi locura ha jodido el plan, lo siento muchísimo." 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Llorando.png:left: 1%| |Zack:REMOVE| Ahhh... chicos, lo siento. Mi locura ha jodido el plan, lo siento muchísimo." 
         },
         { 
             "quien": "Mira", 
@@ -1811,7 +1811,7 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| ¡Eh, mirad! Ahí está el laboratorio, falta muy poco para la puerta." 
+            "texto": "|Kael:REMOVE||Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| ¡Eh, mirad! Ahí está el laboratorio, falta muy poco para la puerta." 
         },
         { 
             "quien": "Mira", 
@@ -1855,7 +1855,7 @@ const historia = {
         },
         { 
             "quien": "Narrador", 
-            "texto": "|FONDO:../images/Acto_1/Dialogo_20/7.png| Mira abre la puerta mientras {PLAYER} mira impotente cómo Kael se desvanece entre los robots." 
+            "texto": "|Zack:Remove||Mira:Remove||FONDO:../images/Acto_1/Dialogo_20/7.png| Mira abre la puerta mientras {PLAYER} mira impotente cómo Kael se desvanece entre los robots." 
         },
         { 
             "quien": "Narrador", 
@@ -1964,7 +1964,7 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Pensando.png:right: 5%| Tiene razón, este aire se siente pesado." 
+            "texto": "|Kael:REMOVE||Zack:../images/Perfil_Personajes/Zack_Pensando.png:right: 1%| Tiene razón, este aire se siente pesado." 
         },
         { 
             "quien": "Mira", 
@@ -1980,7 +1980,7 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Asustado.png:right: 1%| ¡Ay, ay! Necesito aire... ¡CORRED, JODER!" 
+            "texto": "|Zack:REMOVE||Kael:../images/Perfil_Personajes/Kael_Asustado.png:right: 1%| ¡Ay, ay! Necesito aire... ¡CORRED, JODER!" 
         },
         { 
             "quien": "Narrador", 
@@ -1996,15 +1996,15 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Gritando.png:left: 10%| ¡NO DIGÁIS ESO! TENÉIS QUE…" 
+            "texto": "|Mira:Remove||Kael:../images/Perfil_Personajes/Kael_Gritando.png:left: 1%| ¡NO DIGÁIS ESO! TENÉIS QUE…" 
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 10%| Ni de coña... no tengo fuerzas. Me dejo matar." 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 1%| Ni de coña... no tengo fuerzas. Me dejo matar." 
         },
         { 
             "quien": "Mira", 
-            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| Lo mejor será que descansemos un rato antes de seguir. Relajaos, parece que no vienen robots. Recuperemos las fuerzas." 
+            "texto": "|Zack:REMOVE||Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| Lo mejor será que descansemos un rato antes de seguir. Relajaos, parece que no vienen robots. Recuperemos las fuerzas." 
         },
         { 
             "quien": "Narrador", 
@@ -2077,11 +2077,11 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%; transform: translateX(20%)| ¡Mierda, corre! ¡Corre y buscamos la forma de curarla!" 
+            "texto": "|Kael:REMOVE||Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| ¡Mierda, corre! ¡Corre y buscamos la forma de curarla!" 
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 1%| La cargo yo. ¡Cubre delante!" 
+            "texto": "|Zack:REMOVE||Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 1%| La cargo yo. ¡Cubre delante!" 
         },
         { 
             "quien": "Narrador", 
@@ -2105,7 +2105,7 @@ const historia = {
         },
         { 
             "quien": "Narrador", 
-            "texto": "|Zack:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_2/6.png| … Mira ha muerto por las heridas …" 
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_22/6.png| … Mira ha muerto por las heridas …" 
         },
         { 
             "quien": "{PLAYER}", 
