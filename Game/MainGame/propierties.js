@@ -1034,7 +1034,7 @@ const historia = {
         {
             "texto": "▶",
             "tipo": "flecha",
-            "siguiente": "FINAL",
+            "siguiente": "Fin_Acto_1",
             "etiqueta": "Hablar con Vane...",
             "titulo": "El Doctor",
             "descripcion": "Has encontrado al objetivo principal.",
@@ -1125,7 +1125,7 @@ const historia = {
         {
             "texto": "▶",
             "tipo": "flecha",
-            "siguiente": "FINAL",
+            "siguiente": "Fin_Acto_1",
             "etiqueta": "Conversar...",
             "titulo": "El Doctor Vane",
             "descripcion": "Has localizado al objetivo principal.",
@@ -2021,7 +2021,7 @@ const historia = {
         {
             "texto": "Finalizar Acto",
             "tipo": "flecha",
-            "siguiente": "Dialogo_34",
+            "siguiente": "Fin_Acto_1",
             "etiqueta": "El Laboratorio...",
             "titulo": "Encuentro",
             "descripcion": "Habéis encontrado al Doctor Vane tras un duro sacrificio.",
@@ -2291,7 +2291,7 @@ const historia = {
         {
             "texto": "Finalizar Acto",
             "tipo": "flecha",
-            "siguiente": "Dialogo_33",
+            "siguiente": "Fin_Acto_1",
             "etiqueta": "El Laboratorio...",
             "titulo": "Encuentro",
             "descripcion": "Os encontráis con el Doctor Vane tras la pérdida de Mira.",

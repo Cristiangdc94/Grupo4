@@ -340,3 +340,41 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
     transform: scaleX(-1);
 }
 
+/* Botón especial de fin de acto */
+.boton-desconexion {
+    grid-column: 2; /* Centrado en tu grid */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 60px;
+    background: rgba(20, 0, 0, 0.9);
+    border: 3px solid #FF0000;
+    color: #FF0000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    cursor: pointer;
+    transition: 0.3s;
+    animation: chaos-loop 0.2s infinite; /* Tu animación existente */
+}
+
+.boton-desconexion:hover {
+    background: #FF0000;
+    color: white;
+    box-shadow: 0 0 50px #FF0000;
+    transform: scale(1.1);
+}
+
+/* Ajuste para la caja de texto pequeña de debajo */
+.desc-final {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
