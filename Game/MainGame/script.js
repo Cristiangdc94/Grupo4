@@ -40,12 +40,6 @@ function exitToMenu() {
     window.location.href = "../../index.html";
 }
 
-// --- FUNCIÓN DE DESCONEXIÓN IMPLEMENTADA ---
-function desconectarSistema() {
-    localStorage.removeItem('chaos_red_save');
-    window.location.href = "../../index.html";
-}
-
 // --- LÓGICA DE GUARDADO ---
 function guardarProgreso() {
     const dataSave = {
@@ -89,12 +83,6 @@ function limpiarComandos(texto) {
 }
 
 function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
-    // Implementación de redirección y borrado si el destino es RESET
-    if (nodoSiguiente === "RESET") {
-        desconectarSistema();
-        return;
-    }
-
     isTyping = false; 
     const log = document.getElementById('decision-log');
     if (log && logDesc) {

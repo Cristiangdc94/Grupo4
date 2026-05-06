@@ -2300,24 +2300,6 @@ const historia = {
     ]
     },
 
-    
-    "Fin_Acto_1": {
-        "titulo": "SISTEMA COMPROMETIDO",
-        "fondo": "../images/Acto_1/Final/Background_System.png",
-        "posicionTexto": "pos-centro",
-        "personajes": [], 
-        "descripcion": "Fin del primer acto.",
-        "opciones": [
-            {
-                "texto": "Desconexión del sistema",
-                "tipo": "boton-desconexion",
-                "siguiente": "RESET",
-                "titulo": "TERMINAL",
-                "log": "Acto 1 finalizado correctamente."
-            }
-        ]
-    }
-
     /*
     "nombre_del_nodo": {
         "titulo": "Título de la Escena",
