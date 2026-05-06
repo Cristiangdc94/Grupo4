@@ -95,6 +95,11 @@ function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
         return;
     }
 
+    if (nodoSiguiente.startsWith('http') || nodoSiguiente.startsWith('www') || nodoSiguiente.endsWith('.html')) {
+        window.location.href = nodoSiguiente;
+        return;
+    }
+
     isTyping = false; 
     const log = document.getElementById('decision-log');
     if (log && logDesc) {
