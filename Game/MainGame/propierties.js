@@ -1044,7 +1044,7 @@ const historia = {
     },
     "Dialogo_11": {
     "titulo": "Infiltración Exitosa",
-    "fondo": "../images/Acto_1/Dialogo_11/1.jpeg",
+    "fondo": "../images/Acto_1/Dialogo_11/1.png",
     "posicionTexto": "pos-centro",
     "personajes": [
         { 
@@ -1068,7 +1068,7 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Confundido.png:right: 1%| Joder, sois como la noche y el día…" 
+            "texto": "|Kael:REMOVE||Zack:../images/Perfil_Personajes/Zack_Confundido.png:right: 1%| Joder, sois como la noche y el día…" 
         },
         { 
             "quien": "Mira", 
@@ -1082,7 +1082,7 @@ const historia = {
         { 
             "quien": "???", 
             // El Dr. Vane aparece camuflado en el centro para dar el susto inicial
-            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:left: 50%; transform: translateX(-50%)| ¿Y vosotros quiénes sois?" 
+            "texto": "|Mira:REMOVE||Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:left: 1%;| ¿Y vosotros quiénes sois?" 
         },
         { 
             "quien": "{PLAYER}", 
@@ -1094,11 +1094,11 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 10%| |Zack:REMOVE| ¿QUÉ COÑO? ¿HAY ALGUIEN MÁS AQUÍ?" 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 1%| |Zack:REMOVE| ¿QUÉ COÑO? ¿HAY ALGUIEN MÁS AQUÍ?" 
         },
         { 
             "quien": "Voz misteriosa", 
-            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%| Sois vosotros los que habéis entrado, yo ya estaba aquí. Venid, anda..." 
+            "texto": "|Mira:REMOVE||Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%| Sois vosotros los que habéis entrado, yo ya estaba aquí. Venid, anda..." 
         },
         { 
             "quien": "Narrador", 
@@ -1114,11 +1114,11 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 10%| |Zack:REMOVE| Ehhh... ¿tú eres?..." 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 1%| |Zack:REMOVE| Ehhh... ¿tú eres?..." 
         },
         { 
             "quien": "Dr. Vane", 
-            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Soy Vane, un gusto conoceros." 
+            "texto": "|Mira:REMOVE||Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Soy Vane, un gusto conoceros." 
         }
     ],
     "opciones": [
@@ -1866,7 +1866,7 @@ const historia = {
         },
         { 
             "quien": "Mira", 
-            "texto": "|Mira:../images/Perfil_Personajes/Mira_Enfadado.png:left: 10%| |Zack:REMOVE| A mí todo lo contrario, no me hacéis ni caso." 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Enfadado.png:left: 1%| |Zack:REMOVE| A mí todo lo contrario, no me hacéis ni caso." 
         },
         { 
             "quien": "{PLAYER}", 
@@ -1874,7 +1874,7 @@ const historia = {
         },
         { 
             "quien": "Mira", 
-            "texto": "|Mira:../images/Perfil_Personajes/Mira_Pensando.png:right: 1%| Entre locos os entendéis, supongo. Ojalá haber venido con alguien más listo." 
+            "texto": " |Kael:Remove||Mira:../images/Perfil_Personajes/Mira_Pensando.png:right: 1%| Entre locos os entendéis, supongo. Ojalá haber venido con alguien más listo." 
         },
         { 
             "quien": "Narrador", 
@@ -1894,7 +1894,7 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Llorando.png:left: 10%| |Zack:REMOVE| Ahhh... chicos, lo siento. Mi locura ha jodido el plan, lo siento muchísimo." 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Llorando.png:left: 1%| |Zack:REMOVE| Ahhh... chicos, lo siento. Mi locura ha jodido el plan, lo siento muchísimo." 
         },
         { 
             "quien": "Mira", 
@@ -1902,15 +1902,15 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| ¡Eh, mirad! Ahí está el laboratorio, falta muy poco para la puerta." 
+            "texto": "|Kael:Remove||Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| ¡Eh, mirad! Ahí está el laboratorio, falta muy poco para la puerta." 
         },
         { 
             "quien": "Mira", 
-            "texto": "Es imposible. Me tomaría un tiempo abrirla y ya no tenemos el apoyo de Kael. Vayámonos, no quiero que nadie muera por..." 
+            "texto": "|Kael:REMOVE|Es imposible. Me tomaría un tiempo abrirla y ya no tenemos el apoyo de Kael. Vayámonos, no quiero que nadie muera por..." 
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Gritando y Llorando.png:right: 1%| ¡Y… UNA… MIERDAAAA!" 
+            "texto": "|Mira:Remove||Kael:../images/Perfil_Personajes/Kael_Gritando y Llorando.png:right: 1%| ¡Y… UNA… MIERDAAAA!" 
         },
         { 
             "quien": "Narrador", 
@@ -1918,7 +1918,7 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 50%; transform: translateX(-50%)| {PLAYER}, cuida de Mira con la locura que te he contagiado. ¡NO LLORÉIS POR MÍ! Por fin podré ver a mi hijo otra vez. Gracias…" 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 1%;| {PLAYER}, cuida de Mira con la locura que te he contagiado. ¡NO LLORÉIS POR MÍ! Por fin podré ver a mi hijo otra vez. Gracias…" 
         },
         { 
             "quien": "Mira", 
@@ -1930,7 +1930,7 @@ const historia = {
         },
         { 
             "quien": "Narrador", 
-            "texto": "|FONDO:../images/Acto_1/Dialogo_20/6.jpeg| Mira intenta ir hacia él, pero {PLAYER} la sujeta y la apoya contra la puerta." 
+            "texto": "|Mira:REMOVE||FONDO:../images/Acto_1/Dialogo_20/6.jpeg| Mira intenta ir hacia él, pero {PLAYER} la sujeta y la apoya contra la puerta." 
         },
         { 
             "quien": "{PLAYER}", 
@@ -1946,7 +1946,7 @@ const historia = {
         },
         { 
             "quien": "Narrador", 
-            "texto": "|FONDO:../images/Acto_1/Dialogo_20/7.png| Mira abre la puerta mientras {PLAYER} observa impotente el destino de Kael." 
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_20/7.png| Mira abre la puerta mientras {PLAYER} observa impotente el destino de Kael." 
         },
         { 
             "quien": "Narrador", 
@@ -2014,12 +2014,12 @@ const historia = {
         },
         { 
             "quien": "Dr. Vane", 
-            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Mi más sentido pésame por vuestra pérdida... Soy Vane." 
+            "texto": "|Mira:Remove||Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Mi más sentido pésame por vuestra pérdida... Soy Vane." 
         }
     ],
     "opciones": [
         {
-            "texto": "Finalizar Acto",
+            "texto": "▶",
             "tipo": "flecha",
             "siguiente": "Fin_Acto_1",
             "etiqueta": "El Laboratorio...",
@@ -2079,7 +2079,7 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:right: 5%| ¿Está intoxicado?" 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:right: 1%| ¿Está intoxicado?" 
         },
         { 
             "quien": "Mira", 
@@ -2184,11 +2184,11 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%; transform: translateX(20%)| ¡Mierda, corre! ¡Corre y buscamos la forma de curarla!" 
+            "texto": "|Kael:REMOVE||Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| ¡Mierda, corre! ¡Corre y buscamos la forma de curarla!" 
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 1%| La cargo yo. ¡Cubre delante!" 
+            "texto": "|Zack:REMOVE||Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 1%| La cargo yo. ¡Cubre delante!" 
         },
         { 
             "quien": "Narrador", 
@@ -2208,11 +2208,11 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Llorando.png:right: 1%| ...Z-Zack..." 
+            "texto": "|Mira:REMOVE||Kael:../images/Perfil_Personajes/Kael_Llorando.png:right: 1%| ...Z-Zack..." 
         },
         { 
             "quien": "Narrador", 
-            "texto": "|Zack:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_22/6.png| … Mira ha muerto por las heridas …" 
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| |Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_22/6.png| … Mira ha muerto por las heridas …" 
         },
         { 
             "quien": "{PLAYER}", 
@@ -2276,7 +2276,7 @@ const historia = {
         },
         { 
             "quien": "Dr. Vane", 
-            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%| Mi más sentido pésame por vuestra amiga. Nadie merece un final así…" 
+            "texto": "|Kael:REMOVE||Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%| Mi más sentido pésame por vuestra amiga. Nadie merece un final así…" 
         },
         { 
             "quien": "Kael", 
@@ -2284,7 +2284,7 @@ const historia = {
         },
         { 
             "quien": "Dr. Vane", 
-            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Yo… Me llamo Vane..." 
+            "texto": "|Kael:REMOVE||Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Yo… Me llamo Vane..." 
         }
     ],
     "opciones": [
