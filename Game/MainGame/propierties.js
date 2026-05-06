@@ -542,7 +542,8 @@ const historia = {
             "log": "Decidiste escanear las rutas de patrullaje."
         }
     ]
-},
+    },
+    "Dialogo_4":{},
 
 // ACTO 1 - DERECHA
 

@@ -150,7 +150,8 @@ if (datos.personajes) {
     });
 }
 
-    document.getElementById('choice-title').innerText = datos.titulo;
+    let tituloProcesado = datos.titulo.replace(/{PLAYER}/g, playerName);
+    document.getElementById('choice-title').innerText = tituloProcesado;
     
     indiceDialogoActual = 0;
     
@@ -186,6 +187,9 @@ function generarBotones(opciones) {
         const htmlImagen = opcion.imagen ? `<img src="${opcion.imagen}" alt="${opcion.titulo || 'opcion'}" class="option-image">` : '';
         
         // Inyectamos la imagen y el texto dentro del botón
+        // --- CAMBIO AQUÍ: Procesar el nombre en el texto de las opciones ---
+        let textoBotonProcesado = opcion.texto.replace(/{PLAYER}/g, playerName);
+
         // Usamos un span para el texto para poder controlarlo mejor con CSS si fuera necesario
         btn.innerHTML = `
             ${htmlImagen}
