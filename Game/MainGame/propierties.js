@@ -314,595 +314,123 @@ const historia = {
     },
 
     "Dialogo_2_01": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Hablando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Hablando.png",
-                "texto": "Ya hemos llegado por fin" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_02",
-            }
-        ]
-    },
-
-    "Dialogo_2_02": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Hablando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Hablando.png",
-                "texto": "Por fin, menos mal no hemos muerto por el camino" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_03",
-            }
-        ]
-    },
-
-    "Dialogo_2_03": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Zack_Enfadado.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Zack_Enfadado.png",
-                "texto": "Casi…no morimos por el camino, eres tan brusco con los robots que hasta nos terminas haciendo daño" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_04",
-            }
-        ]
-    },
-
-    "Dialogo_2_04": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Pensando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Pensando.png",
-                "texto": "Sisi, lo que tu digas, ahora centrémonos en como encontrar a ese sitio" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_05",
-            }
-        ]
-    },
-
-     "Dialogo_2_05": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Zack_Sorprendido.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Zack_Sorprendido.png",
-                "texto": "Usando a Mira, lo bueno de tener a la típica Hacker del grupo... ¿Puedes hackearlo no?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_06",
-            }
-        ]
-    },
-
-     "Dialogo_2_06": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Pensando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Pensando.png",
-                "texto": "técnicamente no, solo puedo recabar información" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_07",
-            }
-        ]
-    },
-
-      "Dialogo_2_07": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Pensando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Pensando.png",
-                "texto": "¿Qué tipo de información?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_08",
-            }
-        ]
-    },
-    
-    
-    "Dialogo_2_08": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Asustado.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Asustado.png",
-                "texto": "Por ejemplo, ahora ya se donde esta el Doctor Vane, está en la sala central y se que camino tomar para llegar hasta el." 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_09",
-            }
-        ]
-    },
-
-    "Dialogo_2_09": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Zack_Hablando.png",
-                "texto": "¿Cuántos robots hay dentro?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_10",
-            }
-        ]
-    },
-
-    "Dialogo_2_10": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Sorprendido.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Sorprendido.png",
-                "texto": "Demasiados como para contarlos con todas nuestras manos." 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_11",
-            }
-        ]
-    },
-
-
- "Dialogo_2_11": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Asustado.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Asustado.png",
-                "texto": "Más de 30, eso sí que será un problema" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_12",
-            }
-        ]
-    },
-
-    "Dialogo_2_12": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Confundido.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Confundido.png",
-                "texto": "Y bien, ¿cómo lo hacemos? Yo propongo colarnos por el conducto de ventilación en sigilo hasta…" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_13",
-            }
-        ]
-    },
-
-    "Dialogo_2_13": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Gritando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Gritando.png",
-                "texto": "¡¡DEMASIADO LENTO!! Es mejor entrar con todo, el efecto sorpresa nos ayudará hasta que los robots reaccionen" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_14",
-            }
-        ]
-    },
-
-    "Dialogo_2_14": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Gritando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Gritando.png",
-                "texto": "¿He mencionado que hay más robots que neuronas en tu cabeza de tonto? Son demasiados, no podemos con 30 siendo solo 3" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_15",
-            }
-        ]
-    },
-
-    "Dialogo_2_15": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Gritando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Gritando.png",
-                "texto": "Tu lo has dicho, si hay 30 aunque vayamos por detrás nos verán" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_16",
-            }
-        ]
-    },
-
-    "Dialogo_2_16": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Gritando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Gritando.png",
-                "texto": "Claro que no si lo hacemos bien, tu plan es directamente cagarla y depender de la suerte" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_17",
-            }
-        ]
-    },
-
-    "Dialogo_2_17": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Gritando.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Gritando.png",
-                "texto": "¿Y con ese método sigo vivo no?" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_18",
-            }
-        ]
-    },
-
-    "Dialogo_2_18": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Confundido.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Mira", 
-                "expresion": "../images/Perfil_Personajes/Mira_Confundido.png",
-                "texto": "Bueno... Casi." 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_19",
-            }
-        ]
-    },
-
-    "Dialogo_2_18": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "Kael", 
-                "src": "../images/Perfil_Personajes/Kael_Enfadado.png", 
-                "pos": "right: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "Kael", 
-                "expresion": "../images/Perfil_Personajes/Kael_Enfadado.png",
-                "texto": "¡¿A QUE TE REFIERES CON CASI?!" 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_19",
-            }
-        ]
-    },
-
-      "Dialogo_2_19": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro", //
-        "personajes": [ //
-            { 
-                "id": "{PLAYER}", 
-                "src": "../images/Perfil_Personajes/Zack_Gritando.png", 
-                "pos": "left: 1%;" 
-            },
-        ],
-        "secuenciaDialogo": [ 
-            { 
-                "quien": "{PLAYER}", 
-                "expresion": "../images/Perfil_Personajes/Zack_Gritando.png ",
-                "texto": "Vale callaos, está claro que hay 2 planes, Sigilo de Mira y Asalto de Kael, dejadme elegir a mi." 
-            }
-        ],
-        
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_2_20",
-            }
-        ]
-    },
-
-
-    "Dialogo_2_20": {
-        "titulo": "El camino",
-        "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
-        "posicionTexto": "pos-centro",
-        "descripcion": "¡Elige con cuidado {PLAYER}!.", //
-        
-        "opciones": [
-    {
-        "texto": "Elección Mira -> Sigilo",
-        "imagen": "../images/Acto_1/Dialogo_2/Eleccion_Mira-removebg-preview.png", 
-        "siguiente": "Dialogo_3",
-        "etiqueta": "Colarse en Sigilo...",
-        "titulo": "Sigilo",
-        "descripcion": "Decides avanzar con cautela.",
-        "log": "Elegiste el camino del Sigilo"
-    },
-    {
-        "texto": "Elección Mira -> Asalto",
-        "imagen": "../images/Acto_1/Dialogo_2/Eleccion_Kael-removebg-preview.png",
-        "siguiente": "Dialogo_18",
-        "etiqueta": "Ir de frente...",
-        "titulo": "Asalto",
-        "descripcion": "Decides entrar con todo",
-        "log": "Elegiste el camino del Asalto"
-    }
+    "titulo": "El camino",
+    "fondo": "../images/Acto_1/Dialogo_2/Fondo.jpeg",
+    "posicionTexto": "pos-arriba",
+    "descripcion": "Después de 5 Horas de viaje sin ninguna complicación con los pocos robots que había por el camino, encuentran la Central en el desierto.",
+    "secuenciaDialogo": [
+        { 
+            "quien": "Mira", 
+            // Cambiamos al fondo de la Central y aparece Mira
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Hablando.png:right: 1%| Ya hemos llegado por fin" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Hablando.png:left: 1%| Por fin, menos mal no hemos muerto por el camino" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Mira:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Enfadado.png:right: 1%| Casi… no morimos por el camino, eres tan brusco con los robots que hasta nos terminas haciendo daño" 
+        },
+        { 
+            "quien": "Kael", 
+            "expresion": "Kael:../images/Perfil_Personajes/Kael_Pensando.png",
+            "texto": "Sisi, lo que tu digas, ahora centrémonos en como encontrar ese sitio" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "expresion": "Zack:../images/Perfil_Personajes/Zack_Sorprendido.png",
+            "texto": "Usando a Mira, lo bueno de tener a la típica Hacker del grupo... ¿Puedes hackearlo no?" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Zack:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Pensando.png:right: 1%| Técnicamente no, solo puedo recabar información" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Pensando.png:left: 1%| ¿Qué tipo de información?" 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Asustado.png",
+            "texto": "Por ejemplo, ahora ya se donde esta el Doctor Vane, está en la sala central y se qué camino tomar para llegar hasta él." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Hablando.png:left: 1%| ¿Cuántos robots hay dentro?" 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Sorprendido.png",
+            "texto": "Demasiados como para contarlos con todas nuestras manos." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Zack:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Asustado.png:left: 1%| Más de 30, eso sí que será un problema" 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Confundido.png",
+            "texto": "Y bien, ¿cómo lo hacemos? Yo propongo colarnos por el conducto de ventilación en sigilo hasta…" 
+        },
+        { 
+            "quien": "Kael", 
+            "expresion": "Kael:../images/Perfil_Personajes/Kael_Gritando.png",
+            "texto": "¡¡DEMASIADO LENTO!! Es mejor entrar con todo, el efecto sorpresa nos ayudará" 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Gritando.png",
+            "texto": "¿He mencionado que hay más robots que neuronas en tu cabeza de tonto? No podemos con 30 siendo solo 3" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "Tu lo has dicho, si hay 30 aunque vayamos por detrás nos verán" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "Claro que no si lo hacemos bien, tu plan es directamente cagarla y depender de la suerte" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "¿Y con ese método sigo vivo no?" 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Confundido.png",
+            "texto": "Bueno... Casi." 
+        },
+        { 
+            "quien": "Kael", 
+            "expresion": "Kael:../images/Perfil_Personajes/Kael_Enfadado.png",
+            "texto": "¡¿A QUE TE REFIERES CON CASI?!" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Mira:REMOVE| |Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Gritando.png:left: 1%| Vale callaos, está claro que hay 2 planes, Sigilo de Mira y Asalto de Kael, dejadme elegir a mi." 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "Elección Mira -> Sigilo",
+            "imagen": "../images/Acto_1/Dialogo_2/Eleccion_Mira-removebg-preview.png", 
+            "siguiente": "Dialogo_3",
+            "etiqueta": "Colarse en Sigilo...",
+            "titulo": "Sigilo",
+            "descripcion": "Decides avanzar con cautela.",
+            "log": "Elegiste el camino del Sigilo"
+        },
+        {
+            "texto": "Elección Kael -> Asalto",
+            "imagen": "../images/Acto_1/Dialogo_2/Eleccion_Kael-removebg-preview.png",
+            "siguiente": "Dialogo_18",
+            "etiqueta": "Ir de frente...",
+            "titulo": "Asalto",
+            "descripcion": "Decides entrar con todo",
+            "log": "Elegiste el camino del Asalto"
+        }
     ]
-    },
+},
 
 
 // ACTO 1 - IZQUIERDA
@@ -912,8 +440,6 @@ const historia = {
         "fondo": "../images/Acto_1/Dialogo_3/1.jpeg",
         "posicionTexto": "pos-arriba",
         "personajes": [
-        ],
-        "secuenciaDialogo": [
         ],
         "descripcion": "{PLAYER} elige hacerlo por el método de Mira",
         "opciones": [
