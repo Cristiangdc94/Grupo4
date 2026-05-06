@@ -1649,8 +1649,553 @@ const historia = {
         ]
     },
 
-
-
+    "Dialogo_19": {
+    "titulo": "Pulso Electromagnético",
+    "fondo": "../images/Acto_1/Dialogo_19/1.png",
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        { 
+            "id": "Zack", 
+            "src": "../images/Perfil_Personajes/Zack_Gritando.png", 
+            "pos": "left: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Narrador", 
+            "texto": "{PLAYER} decide usar su Granada EMP." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "¡DEJADMELO A MÍ! ¡TOMAD, ROBOTS DEL DIABLO!" 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| Les lanza la granada y deja noqueados a todos los robots de la zona instantáneamente." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| |FONDO:../images/Acto_1/Dialogo_19/2.jpeg| Uff, menos mal... Qué mal se me da improvisar." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Pensando.png:left: 1%| Pues yo me estaba divirtiendo." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Hablando.png:right: 1%| |Kael:REMOVE| Venga, id corriendo hacia… mierda." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 1%| ¿Qué pasa?" 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Asustado.png",
+            "texto": "Mierda, la puerta... Has roto los cables con el pulso mientras la puerta estaba cerrada, ¡cacho tonto!" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Confundido.png:right: 1%| Joder... ¿y ahora qué hacemos?" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Pensando.png:left: 1%| |Kael:REMOVE| Por lo que veo, creo que podemos ir por los conductos de ahí arriba." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| Pero tienes el hacking, puedes abrir la puerta, aunque sea esta." 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Pensando.png",
+            "texto": "Pues sí, pero igual alertamos a los robots. No sé si la puerta hará ruido al abrirse." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "Yo diría que abramos la puerta." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Hablando.png:left: 1%| El conducto para mí es la mejor opción." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Gritando.png:right: 1%| ¡Que nooooo! Es mejor ir de frente. Ya que hemos empezado así, terminemos así también." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Hablando.png:left: 1%| ¿Tú qué dices, {PLAYER}?" 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "Por la ventilación",
+            "imagen": "../images/Acto_1/Dialogo_19/Mira.jpeg",
+            "siguiente": "Dialogo_21",
+            "etiqueta": "Plan de Mira...",
+            "titulo": "Infiltración Aérea",
+            "descripcion": "Colarse por el conducto de ventilación para ir en sigilo saltando a los robots.",
+            "log": "Elegiste el conducto de ventilación tras el fallo de la puerta."
+        },
+        {
+            "texto": "Romper la puerta",
+            "imagen": "../images/Acto_1/Dialogo_19/Kael.jpeg",
+            "siguiente": "Dialogo_20",
+            "etiqueta": "Plan de Kael...",
+            "titulo": "Fuerza Bruta",
+            "descripcion": "Usar el hacking para abrir la última puerta e ir de frente.",
+            "log": "Elegiste forzar la puerta dañada para avanzar directamente."
+        }
+    ]
+    },
+    "Dialogo_20": {
+    "titulo": "El Sacrificio de un Loco",
+    "fondo": "../images/Acto_1/Dialogo_20/1.jpeg",
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        { 
+            "id": "Zack", 
+            "src": "../images/Perfil_Personajes/Zack_Gritando.png", 
+            "pos": "left: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Narrador", 
+            "texto": "{PLAYER} elige hacerlo por el método de Kael." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "¡Venga, a por todas! Pon esa bomba en la puerta." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| Me vas cayendo cada vez mejor, ¿eh?" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Enfadado.png:left: 10%| |Zack:REMOVE| A mí todo lo contrario, no me hacéis ni caso." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Hablando.png:left: 1%| |Mira:REMOVE| No es nada personal, es Kael, que me contagia su locura." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Pensando.png:right: 1%| Entre locos os entendéis supongo. Ojalá haber venido con alguien más listo." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| |Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_20/2.jpeg| Hackean la puerta y, como sospechaba Mira, el ruido no es nada sutil. Los robots restantes se alertan y comienza una carrera desesperada bajo fuego enemigo." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|FONDO:../images/Acto_1/Dialogo_20/3.jpeg| En el contraataque, Kael resulta gravemente herido. {PLAYER} y Mira lo arrastran a una cobertura segura mientras los disparos no cesan." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| No me jodas, Kael... no, no..." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| Mierda, esto no pinta nada bien. Si no nos movemos, se acercarán aún más." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Llorando.png:left: 10%| |Zack:REMOVE| Ahhh... chicos, lo siento. Mi locura ha jodido el plan, lo siento muchísimo." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "No, no digas eso. Habrá una forma de conseguirlo." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| ¡Eh, mirad! Ahí está el laboratorio, falta muy poco para la puerta." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "Es imposible. Me tomaría un tiempo abrirla y ya no tenemos el apoyo de Kael. Vayámonos, no quiero que nadie muera por..." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Gritando y Llorando.png:right: 1%| ¡Y… UNA… MIERDAAAA!" 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_20/4.jpeg| Kael se levanta y se prepara para su último movimiento." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 50%; transform: translateX(-50%)| {PLAYER}, cuida de Mira con la locura que te he contagiado. ¡NO LLORÉIS POR MÍ! Por fin podré ver a mi hijo otra vez. Gracias…" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Gritando y Llorando.png:right: 1%| ¡NOOOO, KAEL!" 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_20/5.jpeg| Kael se sacrifica para darles el tiempo necesario, embistiendo a los robots en un acto final de valor." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|FONDO:../images/Acto_1/Dialogo_20/6.jpeg| Mira intenta correr hacia él, pero {PLAYER} la sujeta con fuerza contra la puerta." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Gritando.png:left: 1%| ¡Mira, hazlo! Abre la puerta ahora." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Llorando.png:right: 1%| Pero Kael…" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Gritando y Llorando.png:left: 1%| ¡NO HAGAS QUE SU MUERTE SEA EN VANO! Se sacrificó para que vivamos nosotros dos. ¡No pienso morir ahora que sigo vivo gracias a él!" 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|FONDO:../images/Acto_1/Dialogo_20/7.png| Mira abre la puerta mientras {PLAYER} mira impotente cómo Kael se desvanece entre los robots." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|FONDO:../images/Acto_1/Dialogo_20/8.png| Logran cruzar el umbral. Al entrar, ven desde lejos la caída final..." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|FONDO:../images/Acto_1/Dialogo_20/9.png| ...Kael muere." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|FONDO:../images/Acto_1/Dialogo_20/10.png| Mira intenta ayudar desesperadamente, pero {PLAYER} la retiene. Al final, solo quedan ellos dos." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Llorando.png:right: 1%| |FONDO:../images/Acto_1/Dialogo_20/11.png| No puede ser…" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Llorando.png:left: 1%| Lo ha hecho por nosotros... ha dado su vida por nosotros." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "No sabía lo de su hijo… ¡No nos dijo nada!" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "Al final nos dio todo: su apoyo, su confianza, sus secretos… su vida." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "No era tan malo... solo quería volver a ver a su hijo." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "… Vamos. Acabemos su última voluntad y venguémosle a él y a su hijo." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "Vale…" 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| Se limpian las lágrimas y avanzan por el laboratorio hasta que distinguen a alguien escondido." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:left: 1%| Hay alguien ahí... ¿Quién eres?" 
+        },
+        { 
+            "quien": "Dr. Vane", 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%| Perdón... es que os vi llorando y no quería meterme donde no me llamaban." 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "▶",
+            "tipo": "flecha",
+            "siguiente": "Dialogo_34",
+            "etiqueta": "El encuentro...",
+            "titulo": "Última voluntad",
+            "descripcion": "El Doctor Vane te espera.",
+            "log": "Kael se sacrificó para que {PLAYER} y Mira llegaran al laboratorio."
+        }
+    ]
+    },
+    "Dialogo_21": {
+    "titulo": "Infiltración por Ventilación",
+    "fondo": "../images/Acto_1/Dialogo_21/1.png",
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        { 
+            "id": "Zack", 
+            "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
+            "pos": "left: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Narrador", 
+            "texto": "{PLAYER} elige hacerlo por el método de Mira." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "Pues adelante. Ayudadme a subir y yo mismo quito los tornillos." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| ¿Qué animada está, no?" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Pensando.png:left: 1%| Supongo que está feliz de que su plan se haya impuesto al tuyo." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| Kael ayuda a Mira a quitar los tornillos y entran en los conductos. Sin embargo, debido a un fallo en el sistema, el aire de la ventilación está intoxicado." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| |FONDO:../images/Acto_1/Dialogo_21/2.png| Me encuentro raro... ¿no hay algo extraño en este aire?" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Pensando.png:left: 1%| Espera que lo revise..." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Pensando.png:right: 5%| Tiene razón, este aire se siente pesado." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:left: 1%| No me jodas... este aire no es del todo aire." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:right: 5%| ¿Está intoxicado?" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "En pocas palabras, sí. ¡TENEMOS QUE DARNOS PRISA!" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Asustado.png:right: 1%| ¡Ay, ay! Necesito aire... ¡CORRED, JODER!" 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_21/1.png| Avanzan a toda velocidad y logran salir de los conductos, entrando en el laboratorio pero extremadamente debilitados." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Llorando.png:left: 1%| Ay por Dios... no puedo ni moverme." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Confundido.png:right: 1%| Yo no tengo fuerzas para nada. Si nos atacan, me entrego." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Gritando.png:left: 10%| ¡NO DIGÁIS ESO! TENÉIS QUE…" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 10%| Ni de coña... no tengo fuerzas. Me dejo matar." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| Lo mejor será que descansemos un rato antes de seguir. Relajaos, parece que no vienen robots. Recuperemos las fuerzas." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Kael:REMOVE| |Mira:REMOVE| |Zack:REMOVE| El equipo descansa en las sombras del laboratorio hasta que recuperan el aliento." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Hablando.png:left: 1%| Suficiente descanso. Abramos esto ya." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Pensando.png:right: 1%| Puffff... venga, va." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| Abren la última puerta y se adentran en el corazón del complejo." 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "▶",
+            "tipo": "flecha",
+            "siguiente": "Dialogo_11",
+            "etiqueta": "Avanzar...",
+            "titulo": "Zona Segura",
+            "descripcion": "Tras recuperaros, estáis listos para continuar.",
+            "log": "Elegiste la ruta de ventilación, lo que os dejó debilitados por el gas."
+        }
+    ]
+    },
+    "Dialogo_22": {
+    "titulo": "El Precio de la Confianza",
+    "fondo": "../images/Acto_1/Dialogo_22/1.png",
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        { 
+            "id": "Zack", 
+            "src": "../images/Perfil_Personajes/Zack_Gritando.png", 
+            "pos": "left: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Narrador", 
+            "texto": "{PLAYER} decide confiar en Mira." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "¡MIRA HAZLO, CONFIAMOS EN TI!" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Gritando.png:right: 1%| ¡VOY VOY VOY!" 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|FONDO:../images/Acto_1/Dialogo_22/2.png| Mira consigue hackear las máquinas, pero la operación revela su posición actual a la IA del complejo." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_22/3.png| Los robots la localizan de inmediato. Antes de poder escapar, Mira cae gravemente herida por el fuego enemigo." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Llorando.png:right: 1%| ¡AY AY AY!" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Asustado.png:left: 1%| Me cago en todo, la han dado de lleno... ¡Tenemos que irnos!" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%; transform: translateX(20%)| ¡Mierda, corre! ¡Corre y buscamos la forma de curarla!" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 1%| La cargo yo. ¡Cubre delante!" 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| |Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_22/4.png| Kael corre con Mira herida a su espalda mientras {PLAYER} los cubre. Logran poner distancia con los robots y llegan a la puerta." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Gritando.png:left: 1%| |FONDO:../images/Acto_1/Dialogo_22/5.png| Listo... Mira, por favor, ayúdanos a entrar. Seguro que dentro hay algo para curarte." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "…" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Confundido.png:left: 1%| ¿Mira…?" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Llorando.png:right: 1%| ...Z-Zack..." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_2/6.png| … Mira ha muerto por las heridas …" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Llorando.png:left: 1%| ¿Mi… Mi… Mira?" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Llorando.png:right: 1%| No… no puede ser… No está muerta, está… Mira, despierta, no es gracioso. Por favor, despierta..." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "Kael… no va a…" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "¡NO NO NOOO! Está bien, ya despertará. Ayúdame a abrir la puerta, ¡necesita algo urgente!" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "No… no puedo hacer nada… los robots vienen…" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "No…" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Gritando y Llorando.png:right: 1%| |FONDO:../images/Acto_1/Dialogo_22/7.png| ¡NOOOOO! ¡MALDITOS DESGRACIADOS! ¡TODO POR CULPA DE ESTE PUTO LABORATORIO! ¡JODEEERRR AAAAAAAAHHHH!" 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "Mientras grita, Kael golpea la puerta hasta que le sangran las manos. De repente..." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_22/8.png| La puerta se abre. En shock, entran con el cuerpo de Mira justo antes de que las patrullas los alcancen." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Llorando.png:right: 1%| |FONDO:../images/Acto_1/Dialogo_22/9.png| …" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Llorando.png:left: 1%| Kael… no quería que nada de esto…" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "Iba a pasar. O era ella, o yo, o tú. Sabía que algo así pasaría pero…" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Gritando y Llorando.png:left: 1%| Lo siento, Mira. Siento haberte arrastrado a esto… perdóname, por favor." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "Hay que seguir. No podemos parar justo ahora. Acabemos esto y démosle un entierro digno." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "… Vale …" 
+        },
+        { 
+            "quien": "Dr. Vane", 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%| Mi más sentido pésame por vuestra amiga. Nadie merece un final así…" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Gritando y Llorando.png:left: 1%| ¿Quién coño ha dicho eso?" 
+        },
+        { 
+            "quien": "Dr. Vane", 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Yo…" 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "Una figura misteriosa aparece finalmente en escena." 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "▶",
+            "tipo": "flecha",
+            "siguiente": "Dialogo_33",
+            "etiqueta": "El misterio...",
+            "titulo": "Encuentro",
+            "descripcion": "El Doctor Vane se revela ante vosotros.",
+            "log": "Mira murió tras el hackeo, dejando a {PLAYER} y Kael devastados ante el Dr. Vane."
+        }
+    ]
+    },
 
     /*
     "nombre_del_nodo": {
