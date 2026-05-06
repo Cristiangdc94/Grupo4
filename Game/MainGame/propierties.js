@@ -759,7 +759,7 @@ const historia = {
             {
             "texto": "Elección Mira -> Hackeo",
             "imagen": "../images/Acto_1/Dialogo_18/Mira.png", 
-            "siguiente": "Dialogo_22",
+            "siguiente": "Dialogo_18_03",
             "etiqueta": "Colarse en Sigilo...",
             "titulo": "Sigilo",
             "descripcion": "Decides avanzar con cautela.",
@@ -768,7 +768,7 @@ const historia = {
         {
             "texto": "Elección del {PLAYER} -> Granada",
             "imagen": "../images/Acto_1/Dialogo_18/Zack.png",
-            "siguiente": "Dialogo_19",
+            "siguiente": "Dialogo_18_03",
             "etiqueta": "Ir de frente...",
             "titulo": "Asalto",
             "descripcion": "Decides entrar con todo",
