@@ -1037,7 +1037,77 @@ const historia = {
             {
                 "texto": "▶",
                 "tipo": "flecha", 
-                "siguiente": "Dialogo_18_01",
+                "siguiente": "Dialogo_18_03",
+            }
+        ]
+    },
+
+    "Dialogo_18_03": {
+        "titulo": "",
+        "fondo": "../images/Acto_1/Dialogo_18/2.png",
+        "posicionTexto": "pos-arriba",  
+        "personajes": [
+            { 
+                "id": "Zack", 
+                "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
+                "pos": "right: 1%;" 
+            }
+        ],
+        "secuenciaDialogo": [
+            { 
+                "quien": "{PLAYER}", 
+                "texto": "Bien bien, pues ya lo tenemos, vamos a por todas entonces" 
+            },
+            {
+            "quien": "Mira",
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Confundido.png:left: 1%| Espera, ¿no deberíamos pensarlo mejor?"
+            },
+            {
+            "quien": "Kael",
+            "texto": "|Zack:REMOVE||Kael:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| Mejor no planeemos que sino si falla algo no sabemos que hacer, mejor improvisamos desde el principio y lo que salga"
+            },
+            {
+            "quien": "Mira",
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Confundido.png:left: 1%| ¿{PLAYER}?..."
+            },
+            {
+            "quien": "{PLAYER}",
+            "texto": "|Kael:REMOVE||Zack:../images/Perfil_Personajes/Zack_Hablando.png:right: 1%| Llegados a este punto me da igual morir la verdad"
+            },
+            {
+            "quien": "Mira",
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Pensando.png:left: 1%| pues hoy en vez de morir 1 millon de personas moriran 1 millon y 2"
+            },
+            {
+            "quien": "Kael",
+            "texto": "|Zack:REMOVE||Kael:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| ¿No serian 3?"
+            },
+            {
+            "quien": "Mira",
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Hablando.png:left: 1%| No porque yo estoy segura que sobreviviré..."
+            },
+            {
+            "quien": "{PLAYER}",
+            "texto": "|Kael:REMOVE||Zack:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| Ja, que optimista, pues adelante..."
+            },
+            {
+            "quien": "{PLAYER}",
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Gritando.png:right: 1%| A POR TODAS!!"
+            },
+            {
+            "quien": "Kael",
+            "texto": "|Zack:REMOVE||Kael:../images/Perfil_Personajes/Kael_Gritando.png:right: 1%| . . . ¡¡SI!!"
+            },
+            {
+            "quien": "Mira",
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Gritando.png:left: 1%| SIIIIIIIIIIUUU!!"
+            },
+        ],
+        "opciones": [
+            {
+                "texto": "▶",
+                "tipo": "flecha", 
+                "siguiente": "Dialogo_18_03",
             }
         ]
     },
