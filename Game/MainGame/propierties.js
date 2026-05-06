@@ -991,7 +991,7 @@ const historia = {
         },
         { 
             "quien": "???", 
-            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 50%; transform: translateX(-50%)| ¿Y vosotros quiénes sois?" 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%;| ¿Y vosotros quiénes sois?" 
         },
         { 
             "quien": "{PLAYER}", 
@@ -1027,12 +1027,12 @@ const historia = {
         },
         { 
             "quien": "Dr. Vane", 
-            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Soy Vane, un gusto conoceros." 
+            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| |Kael:Remove| Soy Vane, un gusto conoceros." 
         }
     ],
     "opciones": [
         {
-            "texto": "▶",
+            "texto": "Final Acto",
             "tipo": "flecha",
             "siguiente": "Fin_Acto_1",
             "etiqueta": "Hablar con Vane...",
@@ -1081,8 +1081,7 @@ const historia = {
         },
         { 
             "quien": "???", 
-            // El Dr. Vane aparece camuflado en el centro para dar el susto inicial
-            "texto": "|Mira:REMOVE||Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:left: 1%;| ¿Y vosotros quiénes sois?" 
+            "texto": "|Zack:Remove||Mira:REMOVE||Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%;| ¿Y vosotros quiénes sois?" 
         },
         { 
             "quien": "{PLAYER}", 
@@ -1123,7 +1122,7 @@ const historia = {
     ],
     "opciones": [
         {
-            "texto": "▶",
+            "texto": "Final Acto",
             "tipo": "flecha",
             "siguiente": "Fin_Acto_1",
             "etiqueta": "Conversar...",
@@ -2014,12 +2013,12 @@ const historia = {
         },
         { 
             "quien": "Dr. Vane", 
-            "texto": "|Mira:Remove||Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Mi más sentido pésame por vuestra pérdida... Soy Vane." 
+            "texto": "|Zack:REMOVE||Mira:REMOVE||Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| Mi más sentido pésame por vuestra pérdida... Soy Vane." 
         }
     ],
     "opciones": [
         {
-            "texto": "▶",
+            "texto": "Final Acto",
             "tipo": "flecha",
             "siguiente": "Fin_Acto_1",
             "etiqueta": "El Laboratorio...",
@@ -2289,7 +2288,7 @@ const historia = {
     ],
     "opciones": [
         {
-            "texto": "Finalizar Acto",
+            "texto": "Final Acto",
             "tipo": "flecha",
             "siguiente": "Fin_Acto_1",
             "etiqueta": "El Laboratorio...",
