@@ -155,6 +155,22 @@ Hay alguien ahí... ¿Quién eres?
 
 Personajes: Dr.Vane_Pilar_Camuflado.png
 Texto:
-Perdon, es que os vi llorando y no queria meterme donde no me llamaban
+Perdon, es que os vi llorando y no queria meterme donde no me llamaban, estoy aquí detrás, asomaros
 
-Siguiente Dialogo -> Dialogo_34
+Personajes: Narrativo
+Texto:
+Se acercan hacia la voz que suena
+
+Personajes: Mira_Asustado.png
+Texto:
+AAAAHHHH
+
+Personajes: Zack_Asustado.png
+Texto:
+OSTIA, PERO...
+
+Personajes: Dr.Vane_Pilar_Hablando.png
+Texto:
+Mi más sentido pésame por vuestra perdida... Soy Vane...
+
+FINAL

@@ -13,6 +13,54 @@ encima, para una cosa buena que os digo
 
 Personajes: Zack_Confundido.png
 Texto:
-Joder, sois como la noche y el dia
+Joder, sois como la noche y el dia…
 
-Siguiente Dialogo -> Dialogo_23
+Personajes: Mira_Pensando.png
+Texto:
+Y ahora...¿Qué buscamos?
+
+Personajes: Kael_Confundido.png
+Texto:
+Supongo que-
+
+Personajes: Dr.Vane_Pilar_Camuflado.png
+Texto:
+¿Y vosotros quienes sois?
+
+Personajes: Zack_Asustado.png
+Texto:
+¿QUEEEE?
+
+Personajes: Mira_Asustado.png
+Texto:
+AAAHHH
+
+Personajes: Kael_Confundido.png
+Texto:
+¿QUE COÑO? ¿HAY ALGUIEN MÁS AQUI?
+
+Personajes: Dr.Vane_Pilar_Camuflado.png
+Texto:
+Sois vosotros los que habéis entrado, yo ya estaba aquí, venir anda...
+
+Personajes: Narrativo
+Texto:
+Caminan un poco detrás de un mueble encuentran a...
+
+Personajes: Zack_Asustado.png
+Texto:
+ostia...
+
+Personajes: Mira_Asustado.png
+Texto:
+AAAHHH
+
+Personajes: Kael_Confundido.png
+Texto:
+Ehhh, ¿tu eres?...
+
+Personajes: Dr.Vane_Pilar_Hablando.png
+Texto:
+Soy Vane, un gusto conoceros
+
+FINAL

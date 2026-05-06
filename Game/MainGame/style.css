@@ -339,3 +339,4 @@ input[type="range"] { accent-color: #FF0000; cursor: pointer; }
 #character-container img[style*="left"] {
     transform: scaleX(-1);
 }
+

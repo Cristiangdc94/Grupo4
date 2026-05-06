@@ -137,10 +137,6 @@ Texto:
 
 Personajes: Dr.Vane_Pilar_Hablando.png
 Texto:
-Yo…
+Yo… Me llamo Vane...
 
-Personajes: Narrativo
-Texto:
-Aparece en escena una persona misteriosa
-
-Siguiente Dialogo -> Dialogo_33
+FINAL
