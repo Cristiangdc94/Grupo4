@@ -193,7 +193,7 @@ function generarBotones(opciones) {
         // Usamos un span para el texto para poder controlarlo mejor con CSS si fuera necesario
         btn.innerHTML = `
             ${htmlImagen}
-            <span>${opcion.texto}</span>
+            <span>${textoBotonProcesado}</span>
         `;
         // ------------------------
 
