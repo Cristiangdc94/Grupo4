@@ -295,7 +295,17 @@ function typeWriter(elementId, text, speed, callback = null) {
                             charImg.style.opacity = "0";
                             setTimeout(() => { if (charImg.parentNode) charImg.remove(); }, 500);
                         }
-                    } else {
+                    } 
+                    // >>> AÑADE ESTE BLOQUE AQUÍ <<<
+                    else if (id === 'FONDO') {
+                        const bg = document.querySelector('.background-image');
+                        if (bg) {
+                        // Aplicamos una pequeña transición para que no sea un golpe seco
+                        bg.style.transition = "background-image 0.5s ease-in-out";
+                        bg.style.backgroundImage = `url('${ruta}')`;
+                        }
+                    }
+                    else {
                         // Lógica automática de espejo basada en la posición
                         let esIzquierda = pos && pos.toLowerCase().includes('left');
                         let flip = esIzquierda ? 'scaleX(-1)' : 'scaleX(1)';

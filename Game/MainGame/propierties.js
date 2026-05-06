@@ -451,35 +451,98 @@ const historia = {
         ]
     },
     "Dialogo_31": {
-        "titulo": "",
-        "fondo": "../images/Acto_1/Dialogo_3/1.jpeg",
-        "posicionTexto": "pos-arriba",
-        "personajes": [
-            { 
-                "id": "Mira", 
-                "src": "../images/Perfil_Personajes/Mira_Hablando.png", 
-                "pos": "right: 1%;" 
-            }
-        ],
-        "secuenciaDialogo": [
-            { 
-                "quien": "Mira", 
-                "texto": "Al menos tengo a otro listo conmigo" 
-            },
-            {
-            "quien": "Kael",
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 10%| Sois unos cagaos… LOS 2"
-            },
-        ],
-        "descripcion": "{PLAYER} elige hacerlo por el método de Mira",
-        "opciones": [
-            {
-                "texto": "▶",
-                "tipo": "flecha", 
-                "siguiente": "Dialogo_001",
-            }
-        ]
-    },
+    "titulo": "Infiltración en Sigilo",
+    "fondo": "../images/Acto_1/Dialogo_3/1.jpeg", // Fondo inicial
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        // Empieza Mira que fue la que propuso el plan
+        { 
+            "id": "Mira", 
+            "src": "../images/Perfil_Personajes/Mira_Hablando.png", 
+            "pos": "right: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Mira", 
+            "texto": "Al menos tengo a otro listo conmigo." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Zack:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Enfadado.png:left: 1%| Sois unos cagaos… LOS 2." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Mira:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Hablando.png:right: 1%| De nada servirá esto si morimos antes de tiempo, así que a callar y vamos por detrás." 
+        },
+        { 
+            "quien": "Kael", 
+            "expresion": "Kael:../images/Perfil_Personajes/Kael_Enfadado.png",
+            "texto": "Maldita democracia, ¿no está claro por qué no funciona?" 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| Van por detrás del laboratorio." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Hablando.png:left: 1%| Venga Mira, hazlo." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Hablando.png:right: 1%| Vale." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| Saca el ordenador y se abre la escotilla. Entran a las instalaciones en total sigilo, pero las luces son tan claras que podrían ser vistos." 
+        },
+        { 
+            "quien": "Kael", 
+            // Cambio de fondo a la escena interior (2.jpeg)
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Asustado.png:left: 1%| |FONDO:../images/Acto_1/Dialogo_3/2.jpeg| No me jodas, aquí hay demasiada luz, nos podrían ver hasta por las sombras." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Sorprendido.png:right: 1%| Mierda, no pensaba que fuese a tener luz en todas las instalaciones. Si no hay nadie, ¿para qué tanta luz?" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Pensando.png:left: 1%| Caprichos de la IA supongo. Tenemos que hacer algo, no podemos simplemente ir." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Mira:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Gritando.png:right: 1%| ¡Y ENTONCES DE QUÉ HA SERVIDO COLARSE EN SIGILO SI NOS VAN A VER!" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Zack:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Asustado.png:left: 1%| Calmaos… mi Flipper nos puede ayudar. Puedo sabotear la energía o escanear la zona para obtener las rutas de patrullaje." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Pensando.png:right: 1%;)| mmmm…" 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "Sabotear la Energía",
+            "imagen": "../images/Acto_1/Dialogo_3/Eleccion_Sabotear la Energía.png",
+            "siguiente": "Dialogo_4",
+            "etiqueta": "Cortar la luz...",
+            "titulo": "Apagón",
+            "descripcion": "Apagas la luz para que no te vean los robots y puedas llegar a tu destino.",
+            "log": "Decidiste sabotear la energía del complejo."
+        },
+        {
+            "texto": "Escanear la zona",
+            "imagen": "../images/Acto_1/Dialogo_3/Eleccion_Escanear la zona.png",
+            "siguiente": "Dialogo_12",
+            "etiqueta": "Rastrear patrullas...",
+            "titulo": "Escaneo",
+            "descripcion": "Mira obtiene las rutas y pueden avanzar evitando a los robots.",
+            "log": "Decidiste escanear las rutas de patrullaje."
+        }
+    ]
+},
 
 // ACTO 1 - DERECHA
 
