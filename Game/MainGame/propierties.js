@@ -997,6 +997,51 @@ const historia = {
         }
     ]
     },
+    "Dialogo_11": {
+    "titulo": "Infiltración Exitosa",
+    "fondo": "../images/Acto_1/Dialogo_11/1.jpeg",
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        { 
+            "id": "Mira", 
+            "src": "../images/Perfil_Personajes/Mira_Hablando.png", 
+            "pos": "left: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Mira", 
+            "texto": "Cuando lo hacemos todos bien sí que logramos lo que sea, ¿eh?" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| Qué cursi suena eso, cállate anda." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Enfadado.png:left: 1%| ¡Encima! Para una cosa buena que os digo..." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Confundido.png:right: 50%; transform: translateX(-50%)| Joder, sois como la noche y el día." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Mira:REMOVE| |Kael:REMOVE| |Zack:REMOVE| El equipo se adentra finalmente en las profundidades del laboratorio." 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "▶",
+            "tipo": "flecha",
+            "siguiente": "Dialogo_23",
+            "etiqueta": "Avanzar...",
+            "titulo": "El Corazón del Laboratorio",
+            "descripcion": "Os movéis hacia la zona principal.",
+            "log": "Lograste infiltrarte sin ser detectado."
+        }
+    ]
+    },
 // ACTO 1 - DERECHA
 
 "Dialogo_18": {
