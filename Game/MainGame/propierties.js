@@ -543,8 +543,460 @@ const historia = {
         }
     ]
     },
-    "Dialogo_4":{},
-
+    "Dialogo_4": {
+    "titulo": "Sabotaje",
+    "fondo": "../images/Acto_1/Dialogo_4/1.jpeg",
+    "posicionTexto": "pos-centro",
+    "personajes": [],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Narrador", 
+            "texto": "{PLAYER} decide sabotear la energía." 
+        },
+        { 
+            "quien": "Kael", 
+            // Cambio de fondo a 2.jpeg y entrada de Kael a la izquierda (con espejo automático)
+            "texto": "|FONDO:../images/Acto_1/Dialogo_4/2.jpeg| |Kael:../images/Perfil_Personajes/Kael_Hablando.png:left: 1%| Me da cosa lo precavido que sois, aquí falta acción." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Hablando.png:right: 1%| Habrá cuando lleguemos hasta donde los robots." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Kael:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Pensando.png:left: 1%| ¿Quién va delante?" 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| Todos quedan en silencio esperando una respuesta, ante esto {PLAYER} decide decidirlo él mismo." 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "1º Orden",
+            "imagen": "../images/Acto_1/Dialogo_4/Eleccion_Orden 1.png",
+            "siguiente": "Dialogo_5",
+            "etiqueta": "Mira delante...",
+            "titulo": "Orden de marcha",
+            "descripcion": "Mira va delante, {PLAYER} irás en el medio, y Kael irá detrás tuya.",
+            "log": "Elegiste el primer orden de formación."
+        },
+        {
+            "texto": "2º Orden",
+            "imagen": "../images/Acto_1/Dialogo_4/Eleccion_Orden 2.png",
+            "siguiente": "Dialogo_6",
+            "etiqueta": "Kael delante...",
+            "titulo": "Orden de marcha",
+            "descripcion": "Kael va delante, Mira irá en el medio, y {PLAYER} irá detrás.",
+            "log": "Elegiste el segundo orden de formación."
+        },
+        {
+            "texto": "3º Orden",
+            "imagen": "../images/Acto_1/Dialogo_4/Eleccion_Orden 3.png",
+            "siguiente": "Dialogo_7",
+            "etiqueta": "{PLAYER} delante...",
+            "titulo": "Orden de marcha",
+            "descripcion": "{PLAYER} va delante, Mira irá en el medio, y Kael irá detrás.",
+            "log": "Elegiste el tercer orden de formación."
+        }
+    ]
+    },
+    "Dialogo_5": {
+    "titulo": "Infiltración: Orden de Mira",
+    "fondo": "../images/Acto_1/Dialogo_5/1.jpeg",
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        { 
+            "id": "Zack", 
+            "src": "../images/Perfil_Personajes/Zack_Confundido.png", 
+            "pos": "left: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Narrador", 
+            "texto": "{PLAYER} decide que Mira vaya delante." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| Me da miedo..." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "Pero eres la que tiene más sigilo, si dejo a este delante seguro que la caga." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Zack:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 1%| ¿Quién es este?" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Confundido.png:left: 1%| …" 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Confundido.png",
+            "texto": "…" 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Hablando.png",
+            "texto": "Vale entonces voy yo, seguidme." 
+        },
+        { 
+            "quien": "Narrador", 
+            // Cambio de fondo a 2.jpeg mientras avanzan
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_5/2.jpeg| Continúan con sigilo y se encuentran a un grupo de robots." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Hablando.png:right: 1%| …seguidme…" 
+        },
+        { 
+            "quien": "Narrador", 
+            // Cambio de fondo final a 3.jpeg al llegar al Doctor Vane
+            "texto": "|Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_5/3.jpeg| El grupo consigue llegar donde el doctor Vane sin ser visto por ningún robot." 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "▶",
+            "tipo": "flecha",
+            "siguiente": "Dialogo_11",
+            "etiqueta": "El encuentro...",
+            "titulo": "Doctor Vane",
+            "descripcion": "Has llegado al corazón de las instalaciones.",
+            "log": "Llegaste ante el Doctor Vane mediante sigilo."
+        }
+    ]
+    },
+    "Dialogo_6": {
+    "titulo": "Infiltración: Orden de Kael",
+    "fondo": "../images/Acto_1/Dialogo_6/1.jpeg",
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        { 
+            "id": "Kael", 
+            "src": "../images/Perfil_Personajes/Kael_Hablando.png", 
+            "pos": "left: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Narrador", 
+            "texto": "{PLAYER} decide que Kael vaya delante." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Gritando.png:left: 1%| ¡PERFECTO!" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:right: 1%| No, pero contrólate. Intenta que no te vean por Dios, no podemos fallar justo ahora." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Hablando.png:left: 1%| Haré lo que pueda ;)" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Pensando.png:right: 5%| ¿Por qué me da que algo va a salir mal?" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "No seas gafe, venga seguidme." 
+        },
+        { 
+            "quien": "Narrador", 
+            // Cambio de fondo y limpieza de pantalla para la transición
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_6/2.jpeg| Siguen de camino hasta el laboratorio pero…" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| Chicos, chicos... hay robots viniendo desde atrás." 
+        },
+        { 
+            "quien": "Kael y {PLAYER}", 
+            // Aparecen ambos asustados en sus posiciones
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| |Kael:../images/Perfil_Personajes/Kael_Asustado.png:right: 1%| No jodas..." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "Kael habla mientras estaba caminando y se choca con un carrito, haciendo muchísimo ruido." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| Me cago en…" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Kael:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Enfadado.png:right: 1%| Torpe de mier-" 
+        },
+        { 
+            "quien": "Mira", 
+            "expresion": "Mira:../images/Perfil_Personajes/Mira_Asustado.png",
+            "texto": "¡Ostia, que vienen más rápido los de atrás!" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "expresion": "Zack:../images/Perfil_Personajes/Zack_Asustado.png",
+            "texto": "Y se acercan por los lados..." 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Mira:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Gritando.png:right: 1%| ¡CORRAN PERRAS, CORRAN!" 
+        },
+        { 
+            "quien": "Narrador", 
+            // Transición a la carrera frenética
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_6/3.jpeg| Corren esquivando los disparos de los robots y eso hace que toda la central esté en alerta..." 
+        },
+        { 
+            "quien": "Narrador", 
+            // Llegada al doctor
+            "texto": "|FONDO:../images/Acto_1/Dialogo_6/4.jpeg| ...pero finalmente llegan hasta donde el doctor." 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "▶",
+            "tipo": "flecha",
+            "siguiente": "Dialogo_10",
+            "etiqueta": "El doctor Vane...",
+            "titulo": "Encuentro",
+            "descripcion": "Lograste llegar, aunque haciendo un escándalo.",
+            "log": "Llegaste ante el Doctor Vane huyendo de las patrullas."
+        }
+    ]
+    },
+    "Dialogo_7": {
+    "titulo": "Infiltración: Orden de {PLAYER}",
+    "fondo": "../images/Acto_1/Dialogo_7/1.jpeg",
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        { 
+            "id": "Zack", 
+            "src": "../images/Perfil_Personajes/Zack_Hablando.png", 
+            "pos": "left: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Narrador", 
+            "texto": "{PLAYER} decide ir delante." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "Entonces iré yo delante, ya que nadie se ofrece." 
+        },
+        { 
+            "quien": "Kael", 
+            // Aparecen ambos: Zack a la izquierda y Kael a la derecha
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Hablando.png:right: 1%| ¡BIEN!" 
+        },
+        { 
+            "quien": "Narrador", 
+            // Cambio de fondo al pasillo/cruce
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_7/2.jpeg| Van con sigilo hasta un cruce donde, por la voz baja de Mira, ocurre lo siguiente..." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Confundido.png:left: 1%| ¿Qué?" 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Hablando.png:right: 1%| feusdfndskfjvsa..." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "expresion": "Zack:../images/Perfil_Personajes/Zack_Confundido.png",
+            "texto": "Dilo más alto, que no oigo." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Gritando.png:right: 1%| ¡FDdfhdjfjdsHDFSjf!" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Gritando.png:left: 1%| ¡QUE NO…!" 
+        },
+        { 
+            "quien": "Narrador", 
+            // Cambio de fondo al momento del choque (oscuridad)
+            "texto": "|Zack:REMOVE| |Mira:REMOVE| |FONDO:../images/Acto_1/Dialogo_7/3.png| El muy torpe se choca haciendo demasiado ruido. Un robot se queda analizando el sonido en la oscuridad..." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Asustado.png:right: 1%| Mierda, que vienen... ¡Vámonos corriendo!" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Gritando.png:left: 1%| Eso será más difícil. ¡Hay que pelear!" 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            // Posicionamiento centrado para la duda final antes de elegir
+            "texto": "|Mira:REMOVE| |Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Confundido.png:left: 50%; transform: translateX(-50%)| ¡AY AY AY…! A ver, dejadme pensar." 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "Huir",
+            "imagen": "../images/Acto_1/Dialogo_2/Mira.jpeg",
+            "siguiente": "Dialogo_8",
+            "etiqueta": "Escapar...",
+            "titulo": "Huida",
+            "descripcion": "Decides evitar el enfrentamiento directo.",
+            "log": "Elegiste huir de los robots."
+        },
+        {
+            "texto": "Contraatacar",
+            "imagen": "../images/Acto_1/Dialogo_2/Kael.jpeg",
+            "siguiente": "Dialogo_9",
+            "etiqueta": "Luchar...",
+            "titulo": "Combate",
+            "descripcion": "Decides pelear contra los robots.",
+            "log": "Elegiste contraatacar a los robots."
+        }
+    ]
+    },
+    "Dialogo_8": {
+    "titulo": "Huida hacia el Laboratorio",
+    "fondo": "../images/Acto_1/Dialogo_8/1.jpeg",
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        { 
+            "id": "Zack", 
+            "src": "../images/Perfil_Personajes/Zack_Gritando.png", 
+            "pos": "left: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Narrador", 
+            "texto": "Decides hacer caso a Mira e huir."
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "No peleéis, ¡correr y punto!"
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:right: 1%| Joe."
+        },
+        { 
+            "quien": "Narrador", 
+            // Cambio de fondo dinámico al entrar en carrera al laboratorio
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_8/2.jpeg| Van los tres corriendo hasta el laboratorio y entran a duras penas, alertando a los robots en el proceso."
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "▶",
+            "tipo": "flecha",
+            "siguiente": "Dialogo_10",
+            "etiqueta": "El laboratorio...",
+            "titulo": "Llegada",
+            "descripcion": "Lograste entrar al laboratorio, pero la seguridad está en camino.",
+            "log": "Elegiste huir en lugar de enfrentarte a las patrullas."
+        }
+    ]
+    },
+    "Dialogo_9": {
+    "titulo": "Combate en las Instalaciones",
+    "fondo": "../images/Acto_1/Dialogo_9/1.jpeg",
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        { 
+            "id": "Zack", 
+            "src": "../images/Perfil_Personajes/Zack_Confundido.png", 
+            "pos": "left: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Narrador", 
+            "texto": "Decides hacer caso a Kael y pelear." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "Qué remedio..." 
+        },
+        { 
+            "quien": "{PLAYER}", 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Gritando.png:left: 1%| ¡KAEL… USA DESTROZA MANDÍBULAS!" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Gritando.png:right: 1%| No me hables como si fuera un pokemon, desgraciado." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "Lo destruye de un golpe, pero la conmoción llama la atención de los robots cercanos." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "|Zack:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Gritando.png:left: 1%| ¡Qué idiotas sois! Vamos, seguidme, el laboratorio está por aquí." 
+        },
+        { 
+            "quien": "Narrador", 
+            // Cambio de fondo dinámico al entrar al laboratorio
+            "texto": "|Mira:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_9/2.png| Siguen a Mira hasta el laboratorio. Consiguen entrar, pero los robots ya están en estado de alerta." 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "▶",
+            "tipo": "flecha",
+            "siguiente": "Dialogo_10",
+            "etiqueta": "El laboratorio...",
+            "titulo": "Zona de Alerta",
+            "descripcion": "Estás dentro, pero no estás solo.",
+            "log": "Elegiste el enfrentamiento directo antes de entrar al laboratorio."
+        }
+    ]
+    },
+    "Dialogo_10": {
+    "titulo": "El Laboratorio Central",
+    "fondo": "../images/Acto_1/Dialogo_10/1.jpeg",
+    "posicionTexto": "pos-centro",
+    "personajes": [
+        { 
+            "id": "Mira", 
+            "src": "../images/Perfil_Personajes/Mira_Gritando.png", 
+            "pos": "left: 1%;" 
+        }
+    ],
+    "secuenciaDialogo": [
+        { 
+            "quien": "Narrador", 
+            "texto": "Logran entrar al laboratorio a duras penas." 
+        },
+        { 
+            "quien": "Mira", 
+            "texto": "Sabía que la iba a cagar alguno de vosotros dos, ¡por Dios!" 
+        },
+        { 
+            "quien": "Kael", 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:right: 1%| Ufff... al menos estamos vivos." 
+        },
+        { 
+            "quien": "Narrador", 
+            "texto": "|Mira:REMOVE| |Kael:REMOVE| El grupo se detiene un momento para recuperar el aliento antes de avanzar hacia la sala principal." 
+        }
+    ],
+    "opciones": [
+        {
+            "texto": "▶",
+            "tipo": "flecha",
+            "siguiente": "Dialogo_23",
+            "etiqueta": "Sala principal...",
+            "titulo": "Infiltrados",
+            "descripcion": "El laboratorio se extiende ante vosotros.",
+            "log": "Entraste finalmente en el laboratorio central."
+        }
+    ]
+    },
 // ACTO 1 - DERECHA
 
 "Dialogo_18": {
