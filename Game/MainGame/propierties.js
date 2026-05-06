@@ -593,19 +593,19 @@ const historia = {
             },
             {
             "quien": "Mira",
-            "texto": "|Mira:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Gritando.png:right: 1%| Ay ya que, de perdidos al rio..."
+            "texto": " |Mira:../images/Perfil_Personajes/Mira_Gritando.png:right: 1%| Ay ya que, de perdidos al rio..."
             },
             {
             "quien": "Mira",
-            "texto": "|Mira:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Gritando.png:right: 1%| Con las bombas podemos romper las puertas y si tenemos suerte nos cargamos a algunos solo con la caída de la puerta"
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Gritando.png:right: 1%| Con las bombas podemos romper las puertas y si tenemos suerte nos cargamos a algunos solo con la caída de la puerta"
             },
             {
             "quien": "Kael",
-            "texto": "|Kael:REMOVE| |Kael:../images/Perfil_Personajes/Kael_Hablando.png:left: 1%| Buena idea, si metemos una de humo podríamos aparte pasar desapercibidos por si acaso"
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Hablando.png:left: 1%| Buena idea, si metemos una de humo podríamos aparte pasar desapercibidos por si acaso"
             },
             {
             "quien": "Mira",
-            "texto": "|Mira:REMOVE| |Mira:../images/Perfil_Personajes/Mira_Hablando.png:right: 1%| Pues venga, {PLAYER} ayúdame a poner esto aqui"
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Hablando.png:right: 1%| Pues venga, {PLAYER} ayúdame a poner esto aqui"
             },
         ],
         "opciones": [
@@ -697,10 +697,86 @@ const historia = {
             {
                 "texto": "▶",
                 "tipo": "flecha", 
+                "siguiente": "Dialogo_18_04",
+            }
+        ]
+    },
+
+    "Dialogo_18_04": {
+        "titulo": "La DECISIÓN.",
+        "fondo": "../images/Acto_1/Dialogo_18/3.png",
+        "posicionTexto": "pos-arriba", //
+        "personajes": [
+        ],
+        "descripcion": "{PLAYER} y sus compañeros lanzan 1 granada para romper la puerta y al caer tiran una de humo para distraer mientras piensan su siguiente movimiento...",
+        "opciones": [
+            {
+                "texto": "▶",
+                "tipo": "flecha", 
                 "siguiente": "Dialogo_18_03",
             }
         ]
     },
+
+     "Dialogo_18_03": {
+        "titulo": "",
+        "fondo": "../images/Acto_1/Dialogo_18/3.png",
+        "posicionTexto": "pos-arriba",  
+        "personajes": [
+            { 
+                "id": "Kael", 
+                "src": "../images/Perfil_Personajes/Kael_Asustado.png", 
+                "pos": "right: 1%;" 
+            }
+        ],
+        "secuenciaDialogo": [
+            { 
+                "quien": "Kael", 
+                "texto": "¿QUE HACEMOS AHORA?" 
+            },
+            { 
+                "quien": "{PLAYER}", 
+                "texto": "|Zack:../images/Perfil_Personajes/Zack_Gritando.png:left: 1%| ¿QUE TENEMOS?" 
+            },
+            { 
+                "quien": "Kael", 
+                "texto": "|Kael:../images/Perfil_Personajes/Kael_Asustado.png:right: 1%| ¡SOLO MIS PUÑOS!" 
+            },
+            { 
+                "quien": "Mira", 
+                "texto": "|Zack:REMOVE||Mira:../images/Perfil_Personajes/Mira_Gritando.png:left: 1%| MI LAPTOP PUEDE PIRATEAR LAS TORRETAS DE AHI, PERO TENEIS QUE DEFENDERME HASTA CONSEGUIRLO" 
+            },
+            { 
+                "quien": "{PLAYER}", 
+                "texto": "|Kael:REMOVE||Zack:../images/Perfil_Personajes/Zack_Gritando.png:right: 1%| MIRAD, EN EL SUELO HAY UNA GRANADA EMP, CON ESTO LOS ROBOTS SE ROMPERÁN PERO NO SE SI ROMPERAN ALGO MÁS A SU PASO" 
+            },
+            { 
+                "quien": "Kael", 
+                "texto": "|Mira:REMOVE||Kael:../images/Perfil_Personajes/Kael_Asustado.png:left: 1%| ¡¿Y QUE HACEMOS?!" 
+            },
+        ],
+        "opciones": [
+            {
+            "texto": "Elección Mira -> Hackeo",
+            "imagen": "../images/Acto_1/Dialogo_18/Mira.png", 
+            "siguiente": "Dialogo_22",
+            "etiqueta": "Colarse en Sigilo...",
+            "titulo": "Sigilo",
+            "descripcion": "Decides avanzar con cautela.",
+            "log": "Elegiste el camino del Sigilo"
+        },
+        {
+            "texto": "Elección del {PLAYER} -> Granada",
+            "imagen": "../images/Acto_1/Dialogo_18/Zack.png",
+            "siguiente": "Dialogo_19",
+            "etiqueta": "Ir de frente...",
+            "titulo": "Asalto",
+            "descripcion": "Decides entrar con todo",
+            "log": "Elegiste el camino del Asalto"
+        }
+        ]
+    },
+
 
 
 
