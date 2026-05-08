@@ -12,17 +12,17 @@ const projectDoc = {
     "grafico": { 
         cat: "01_DISEÑO_Y_NARRATIVA", 
         title: "APARTADO GRÁFICO", 
-        body: "DISEÑO VISUAL:\nLas imágenes han sido generadas mediante IA y editadas manualmente para mantener una atmósfera coherente. Se ha buscado una estética 'Cyber-Noir' con alto contraste.\n\nHISTORIA:\nLa narrativa se desarrolla a través de un guion ramificado gestionado por JSON, donde cada decisión visual se apoya en fondos que refuerzan la inmersión del búnker." 
+        body: "DISEÑO VISUAL:\nLas imágenes de los fondos y personajes han sido generadas mediante IA y editadas manualmente con PHOTOSHOP para mantener una atmósfera coherente. Se ha buscado una estética al puro estilo del Anime Japones y una representacion como los juegos antiguos de FINAL FANTASY, tanto en los escenarios como en los personajes\n\nHISTORIA:\nLa narrativa es totalmente creada sin IA, saliendo de nuestras ideas, improvisaciones y corazon..., nos inspiramos en juegos con diferentes finales y caminos para acabar la historia como DETROIT: BECOME HUMAN." 
     },
     "tecnico": { 
         cat: "02_ARQUITECTURA_MOTOR", 
         title: "APARTADO TÉCNICO", 
-        body: "MOTOR DE JUEGO:\nDesarrollado en JavaScript puro (Vanilla JS). El motor interpreta un objeto JSON que dicta personajes, expresiones, sonidos y rutas.\n\nSISTEMAS:\nSe ha implementado un sistema de mirroring automático para personajes a la izquierda, gestión de LocalStorage para el progreso y un motor Typewriter dinámico con soporte para comandos en tiempo real." 
+        body: "MOTOR DE JUEGO:\nDesarrollado en JavaScript puro (Vanilla JS). El motor interpreta un objeto JSON que dicta personajes, expresiones, sonidos y el camino que tomará la historia en base a tus decisiones.\n\nSISTEMAS:\nSe ha implementado un sistema de mirroring automático para personajes a la izquierda, gestión de LocalStorage para el progreso y un motor Typewriter dinámico con soporte para comandos en tiempo real." 
     },
     "web": { 
         cat: "03_ENTORNO_FRONTEND", 
         title: "APARTADO WEB", 
-        body: "FRONT-END:\nLa web utiliza HTML5 y CSS3 avanzado. Se han aplicado filtros de Scanlines y animaciones de 'Chaos' para simular una terminal antigua dañada.\n\nESTRUCTURA:\nDiseño SPA (Single Page Application) que permite transiciones instantáneas entre el menú de inicio y la base del juego, optimizando la carga de recursos multimedia." 
+        body: "FRONT-END:\nLa web utiliza HTML y CSS avanzado junto a animaciones hechas en JS para una mejor presentacion a la portada de nuestra web. Se han aplicado animaciones gracias a un TypeWriter que hace que el texto sea más inmersivo y bonito de leer.\n\nESTRUCTURA:\nDiseño SPA (Single Page Application) que permite transiciones instantáneas entre el menú de inicio y la base del juego, optimizando la carga de recursos multimedia." 
     }
 };
 
