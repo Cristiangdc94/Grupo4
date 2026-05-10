@@ -2020,7 +2020,7 @@ const historia = {
         {
             "texto": "Final Acto",
             "tipo": "flecha",
-            "siguiente": "Fin_Acto_1",
+            "siguiente": "final.html",
             "etiqueta": "El Laboratorio...",
             "titulo": "Encuentro",
             "descripcion": "Habéis encontrado al Doctor Vane tras un duro sacrificio.",
@@ -2290,7 +2290,7 @@ const historia = {
         {
             "texto": "Final Acto",
             "tipo": "flecha",
-            "siguiente": "Fin_Acto_1",
+            "siguiente": "final.html",
             "etiqueta": "El Laboratorio...",
             "titulo": "Encuentro",
             "descripcion": "Os encontráis con el Doctor Vane tras la pérdida de Mira.",
