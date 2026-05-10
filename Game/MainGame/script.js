@@ -89,17 +89,24 @@ function limpiarComandos(texto) {
 }
 
 function handleChoice(nodoSiguiente, etiqueta, titulo, textoDesc, logDesc) {
-    // Implementación de redirección y borrado si el destino es RESET
+    // 1. Caso especial: RESET
     if (nodoSiguiente === "RESET") {
         desconectarSistema();
         return;
     }
 
-    if (nodoSiguiente.startsWith('http') || nodoSiguiente.startsWith('www') || nodoSiguiente.endsWith('.html')) {
+    // 2. CASO ESPECIAL: REDIRECCIÓN HTML O URL (CORREGIDO)
+    // Comprobamos si contiene .html o si empieza por http/www
+    if (nodoSiguiente.toLowerCase().includes('.html') || 
+        nodoSiguiente.startsWith('http') || 
+        nodoSiguiente.startsWith('www')) {
+        
+        console.log("Redirigiendo a:", nodoSiguiente);
         window.location.href = nodoSiguiente;
-        return;
+        return; // Detenemos la ejecución aquí para que no busque en 'historia'
     }
 
+    // 3. Lógica normal de nodos de historia
     isTyping = false; 
     const log = document.getElementById('decision-log');
     if (log && logDesc) {

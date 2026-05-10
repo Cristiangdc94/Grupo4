@@ -1,0 +1,102 @@
+/* Configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Contenedor del video a pantalla completa */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+/* Pantalla final */
+#end-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.content {
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+/* Botón de inicio */
+.btn-inicio {
+    display: inline-block;
+    padding: 15px 30px;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #ff0000;
+    background: transparent;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-inicio:hover {
+    background: #ff0000;
+    box-shadow: 0 0 20px #ff0000;
+    transform: scale(1.1);
+}
+
+/* Animaciones */
+.fade-in-bg {
+    animation: fadeInBackground 2s forwards;
+}
+
+.fade-in {
+    animation: fadeInText 3s forwards;
+}
+
+@keyframes fadeInBackground {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

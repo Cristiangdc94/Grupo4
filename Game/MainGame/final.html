@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaos Red - Final</title>
+    <link rel="stylesheet" href="final.css">
+</head>
+<body>
+
+    <div class="video-container">
+        <video id="final-video" autoplay muted playsinline>
+            <source src="../video/videoFinal.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+    </div>
+
+    <div id="end-screen" class="hidden">
+        <div class="content">
+            <h1 class="fade-in">FIN DE LA TRANSMISIÓN</h1>
+            <a href="../../index.html" class="btn-inicio">VOLVER A LA PANTALLA DE INICIO</a>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('final-video');
+        const endScreen = document.getElementById('end-screen');
+
+        // Detectar cuando el video termina
+        video.onended = function() {
+            // Quitamos el video para liberar memoria
+            video.parentElement.remove();
+            
+            // Mostramos la pantalla negra con el botón
+            endScreen.classList.remove('hidden');
+            endScreen.classList.add('fade-in-bg');
+        };
+
+        // OPCIONAL: Permitir saltar el video con un click
+        document.body.addEventListener('keypress', (e) => {
+            if(e.code === "Space") video.currentTime = video.duration;
+        });
+    </script>
+</body>
+</html>

@@ -700,7 +700,7 @@ const historia = {
         },
         { 
             "quien": "Mira", 
-            "texto": "|Mira:../images/Perfil_Personajes/Mira_Pensando.png:right: 5%| ¿Por qué me da que algo va a salir mal?" 
+            "texto": "|Zack:REMOVE||Mira:../images/Perfil_Personajes/Mira_Pensando.png:right: 1%| ¿Por qué me da que algo va a salir mal?" 
         },
         { 
             "quien": "Kael", 
@@ -709,7 +709,7 @@ const historia = {
         { 
             "quien": "Narrador", 
             // Cambio de fondo y limpieza de pantalla para la transición
-            "texto": "|Zack:REMOVE| |Mira:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_6/2.jpeg| Siguen de camino hasta el laboratorio pero…" 
+            "texto": "|Mira:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_6/2.jpeg| Siguen de camino hasta el laboratorio pero…" 
         },
         { 
             "quien": "Mira", 
@@ -718,7 +718,7 @@ const historia = {
         { 
             "quien": "Kael y {PLAYER}", 
             // Aparecen ambos asustados en sus posiciones
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| |Kael:../images/Perfil_Personajes/Kael_Asustado.png:right: 1%| No jodas..." 
+            "texto": "|Mira:REMOVE||Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| |Kael:../images/Perfil_Personajes/Kael_Asustado.png:right: 1%| No jodas..." 
         },
         { 
             "quien": "Narrador", 
@@ -836,13 +836,13 @@ const historia = {
         { 
             "quien": "{PLAYER}", 
             // Posicionamiento centrado para la duda final antes de elegir
-            "texto": "|Mira:REMOVE| |Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Confundido.png:left: 50%; transform: translateX(-50%)| ¡AY AY AY…! A ver, dejadme pensar." 
+            "texto": "|Mira:REMOVE| |Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Confundido.png:right: 1%| ¡AY AY AY…! A ver, dejadme pensar." 
         }
     ],
     "opciones": [
         {
             "texto": "Huir",
-            "imagen": "../images/Acto_1/Dialogo_2/Mira.jpeg",
+            "imagen": "../images/Acto_1/Dialogo_7/Mira.jpeg",
             "siguiente": "Dialogo_8",
             "etiqueta": "Escapar...",
             "titulo": "Huida",
@@ -851,7 +851,7 @@ const historia = {
         },
         {
             "texto": "Contraatacar",
-            "imagen": "../images/Acto_1/Dialogo_2/Kael.jpeg",
+            "imagen": "../images/Acto_1/Dialogo_7/Kael.jpeg",
             "siguiente": "Dialogo_9",
             "etiqueta": "Luchar...",
             "titulo": "Combate",
@@ -862,7 +862,7 @@ const historia = {
     },
     "Dialogo_8": {
     "titulo": "Huida hacia el Laboratorio",
-    "fondo": "../images/Acto_1/Dialogo_8/1.jpeg",
+    "fondo": "../images/Acto_1/Dialogo_8/1.png",
     "posicionTexto": "pos-centro",
     "personajes": [
         { 
@@ -887,7 +887,7 @@ const historia = {
         { 
             "quien": "Narrador", 
             // Cambio de fondo dinámico al entrar en carrera al laboratorio
-            "texto": "|Zack:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_8/2.jpeg| Van los tres corriendo hasta el laboratorio y entran a duras penas, alertando a los robots en el proceso."
+            "texto": "|Zack:REMOVE| |Kael:REMOVE| |FONDO:../images/Acto_1/Dialogo_8/2.png| Van los tres corriendo hasta el laboratorio y entran a duras penas, alertando a los robots en el proceso."
         }
     ],
     "opciones": [
@@ -904,7 +904,7 @@ const historia = {
     },
     "Dialogo_9": {
     "titulo": "Combate en las Instalaciones",
-    "fondo": "../images/Acto_1/Dialogo_9/1.jpeg",
+    "fondo": "../images/Acto_1/Dialogo_9/1.png",
     "posicionTexto": "pos-centro",
     "personajes": [
         { 
@@ -958,7 +958,7 @@ const historia = {
     },
     "Dialogo_10": {
     "titulo": "El Encuentro en el Laboratorio",
-    "fondo": "../images/Acto_1/Dialogo_10/1.jpeg",
+    "fondo": "../images/Acto_1/Dialogo_10/1.png",
     "posicionTexto": "pos-centro",
     "personajes": [
         { 
@@ -991,11 +991,11 @@ const historia = {
         },
         { 
             "quien": "???", 
-            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%;| ¿Y vosotros quiénes sois?" 
+            "texto": "|Kael:REMOVE||Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Camuflado.png:right: 1%;| ¿Y vosotros quiénes sois?" 
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| |Dr.Vane:REMOVE| |Kael:REMOVE| ¡¿QUEEEE?!" 
+            "texto": "|Mira:REMOVE||Zack:../images/Perfil_Personajes/Zack_Asustado.png:left: 1%| |Dr.Vane:REMOVE| |Kael:REMOVE| ¡¿QUEEEE?!" 
         },
         { 
             "quien": "Mira", 
@@ -1003,7 +1003,7 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 10%| |Zack:REMOVE| ¿QUÉ COÑO? ¿HAY ALGUIEN MÁS AQUÍ?" 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 1%| |Zack:REMOVE| ¿QUÉ COÑO? ¿HAY ALGUIEN MÁS AQUÍ?" 
         },
         { 
             "quien": "Voz misteriosa", 
@@ -1023,18 +1023,18 @@ const historia = {
         },
         { 
             "quien": "Kael", 
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 10%| |Zack:REMOVE| Ehhh... ¿tú eres?..." 
+            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:left: 1%| |Zack:REMOVE| Ehhh... ¿tú eres?..." 
         },
         { 
             "quien": "Dr. Vane", 
-            "texto": "|Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| |Kael:Remove| Soy Vane, un gusto conoceros." 
+            "texto": "|Mira:REMOVE||Dr.Vane:../images/Perfil_Personajes/Dr.Vane_Pilar_Hablando.png:right: 1%| |Kael:Remove| Soy Vane, un gusto conoceros." 
         }
     ],
     "opciones": [
         {
             "texto": "Final Acto",
             "tipo": "flecha",
-            "siguiente": "Fin_Acto_1",
+            "siguiente": "final.html",
             "etiqueta": "Hablar con Vane...",
             "titulo": "El Doctor",
             "descripcion": "Has encontrado al objetivo principal.",
@@ -1124,7 +1124,7 @@ const historia = {
         {
             "texto": "Final Acto",
             "tipo": "flecha",
-            "siguiente": "Fin_Acto_1",
+            "siguiente": "final.html",
             "etiqueta": "Conversar...",
             "titulo": "El Doctor Vane",
             "descripcion": "Has localizado al objetivo principal.",
@@ -1171,7 +1171,7 @@ const historia = {
         },
         { 
             "quien": "Mira", 
-            "texto": "|Mira:../images/Perfil_Personajes/Mira_Hablando.png:right: 1%| Voy." 
+            "texto": "|Kael:REMOVE||Mira:../images/Perfil_Personajes/Mira_Hablando.png:right: 1%| Voy." 
         },
         { 
             "quien": "Narrador", 
@@ -1199,7 +1199,7 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Pensando.png:left: 50%; transform: translateX(-50%)| Puesssss, dejad que lo piense." 
+            "texto": "|Kael:REMOVE| |Zack:../images/Perfil_Personajes/Zack_Pensando.png:right: 1%| Puesssss, dejad que lo piense." 
         },
         { 
             "quien": "Narrador", 
@@ -1218,7 +1218,7 @@ const historia = {
         },
         {
             "texto": "2º Orden",
-            "imagen": "../images/Acto_1/Dialogo_2/Eleccion_Orden 2.png",
+            "imagen": "../images/Acto_1/Dialogo_12/Eleccion_Orden 2.png",
             "siguiente": "Dialogo_14",
             "etiqueta": "Kael delante...",
             "titulo": "Formación",
@@ -1227,7 +1227,7 @@ const historia = {
         },
         {
             "texto": "3º Orden",
-            "imagen": "../images/Acto_1/Dialogo_2/Eleccion_Orden 3.png",
+            "imagen": "../images/Acto_1/Dialogo_12/Eleccion_Orden 3.png",
             "siguiente": "Dialogo_15",
             "etiqueta": "{PLAYER} delante...",
             "titulo": "Formación",
@@ -1271,7 +1271,7 @@ const historia = {
         { 
             "quien": "Kael y {PLAYER}", 
             // Aparecen Kael a la derecha y Zack a la izquierda para el grito al unísono
-            "texto": "|Kael:../images/Perfil_Personajes/Kael_Confundido.png:right: 1%| |Zack:../images/Perfil_Personajes/Zack_Sorprendido.png:left: 1%| ¡VAAAALEEEE!" 
+            "texto": "|Mira:REMOVE||Kael:../images/Perfil_Personajes/Kael_Confundido.png:right: 1%| |Zack:../images/Perfil_Personajes/Zack_Sorprendido.png:left: 1%| ¡VAAAALEEEE!" 
         },
         { 
             "quien": "Narrador", 
@@ -1325,7 +1325,7 @@ const historia = {
         },
         { 
             "quien": "Mira", 
-            "texto": "|Mira:../images/Perfil_Personajes/Mira_Enfadado.png:left: 1%| Ve tú detrás de él, que a este paso lo empujo a un robot." 
+            "texto": "|Zack:REMOVE||Mira:../images/Perfil_Personajes/Mira_Enfadado.png:left: 1%| Ve tú detrás de él, que a este paso lo empujo a un robot." 
         },
         { 
             "quien": "Narrador", 
@@ -1374,7 +1374,7 @@ const historia = {
         },
         { 
             "quien": "{PLAYER}", 
-            "texto": "|Zack:../images/Perfil_Personajes/Zack_Confundido.png:left: 50%; transform: translateX(-50%)| |Mira:REMOVE| Puesssss…" 
+            "texto": "|Zack:../images/Perfil_Personajes/Zack_Confundido.png:left: 1%||Mira:REMOVE| Puesssss…" 
         }
     ],
     "opciones": [
@@ -1424,7 +1424,7 @@ const historia = {
         },
         { 
             "quien": "Mira", 
-            "texto": "|Mira:../images/Perfil_Personajes/Mira_Gritando.png:left: 10%;| |Zack:REMOVE| Porque no tengo tendencias suicidas." 
+            "texto": "|Mira:../images/Perfil_Personajes/Mira_Gritando.png:left: 1%;| |Zack:REMOVE| Porque no tengo tendencias suicidas." 
         },
         { 
             "quien": "{PLAYER}", 
