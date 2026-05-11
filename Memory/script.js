@@ -12,7 +12,7 @@ const projectDoc = {
     "grafico": { 
         cat: "01_DISEÑO_Y_NARRATIVA", 
         title: "APARTADO GRÁFICO", 
-        body: "DISEÑO VISUAL:\nLos escenarios y personajes han sido generados mediante IA, pero refinados y editados manualmente con ADOBE PHOTOSHOP para asegurar una estética coherente inspirada en el Anime Clásico y el estilo visual de los Final Fantasy antiguos.\n\nHISTORIA:\nNarrativa 100% original. Se ha diseñado un guion ramificado sin intervención de IA, basándonos en la improvisación y la pasión por los juegos de toma de decisiones como DETROIT: BECOME HUMAN. Cada línea de diálogo busca conectar emocionalmente con el usuario." 
+        body: "DISEÑO VISUAL:\nLos escenarios y personajes han sido generados mediante IA, pero refinados y editados manualmente con ADOBE PHOTOSHOP para asegurar una estética coherente inspirada en el Anime Clásico y la representación visual de las escenas son inspiracion de los Final Fantasy antiguos.\n\nHISTORIA:\nNarrativa 100% original. Se ha diseñado un guion ramificado sin intervención de IA, basándonos en la improvisación y la pasión por los juegos de toma de decisiones como DETROIT: BECOME HUMAN. Cada línea de diálogo busca conectar emocionalmente con el usuario y mostrar de la forma adecuada las consecuencias de tus actos, la historia cambia si haces las cosas bien o sin pensar pensando que no pasara nada." 
     },
     "tecnico": { 
         cat: "02_ARQUITECTURA_MOTOR", 
