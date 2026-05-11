@@ -16,7 +16,7 @@ input[type=range] { width: 70px; accent-color: #FF0000; cursor: pointer; }
 .main-ui { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 40px; z-index: 10; }
 .info-container { flex: 1; display: flex; align-items: center; justify-content: center; }
 
-.database-wrapper { width: 100%; max-width: 1050px; height: 72vh; background: rgba(0, 0, 0, 0.75); border: 1px solid #FF0000; border-radius: 20px; backdrop-filter: blur(10px); display: flex; flex-direction: column; }
+.database-wrapper { width: 100%; max-width: 1050px; height: 72vh; background: rgba(0, 0, 0, 0.85); border: 2px solid #FF0000; border-radius: 20px; backdrop-filter: blur(10px); display: flex; flex-direction: column; box-shadow: 0 0 30px rgba(255, 0, 0, 0.2); }
 .db-header { padding: 20px; border-bottom: 1px solid #FF0000; text-align: center; position: relative; }
 .status-bar { position: absolute; left: 20px; top: 20px; color: #FF0000; font-size: 0.7rem; }
 .dot { height: 8px; width: 8px; background: #FF0000; border-radius: 50%; display: inline-block; margin-right: 5px; }
@@ -24,19 +24,20 @@ input[type=range] { width: 70px; accent-color: #FF0000; cursor: pointer; }
 @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
 .db-content { display: flex; flex: 1; overflow: hidden; }
-.db-sidebar { width: 260px; border-right: 1px solid rgba(255, 0, 0, 0.3); padding: 15px; overflow-y: auto; }
-.db-item { padding: 12px; margin-bottom: 10px; border: 1px solid #FF0000; border-radius: 10px; cursor: pointer; font-size: 0.8rem; background: rgba(255, 0, 0, 0.05); color: #FF0000; }
-.db-item:hover, .db-item.active { background: #FF0000; color: black; }
+.db-sidebar { width: 280px; border-right: 1px solid rgba(255, 0, 0, 0.3); padding: 15px; overflow-y: auto; }
+.db-item { padding: 15px; margin-bottom: 10px; border: 1px solid rgba(255, 0, 0, 0.5); border-radius: 10px; cursor: pointer; font-size: 0.8rem; background: rgba(255, 0, 0, 0.05); color: #FF0000; transition: all 0.3s ease; }
+.db-item:hover, .db-item.active { background: #FF0000; color: black; box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
 
-.db-viewer { flex: 1; padding: 35px; overflow-y: auto; }
-.db-viewer h3 { color: #FF0000; font-size: 1.6rem; margin-bottom: 10px; }
-.db-viewer hr { border: 0; height: 1px; background: #FF0000; margin: 15px 0; }
+.db-viewer { flex: 1; padding: 40px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #ff0000 transparent; }
+.db-viewer h3 { color: #FF0000; font-size: 1.8rem; margin-bottom: 10px; letter-spacing: 2px; }
+.db-viewer hr { border: 0; height: 1px; background: #FF0000; margin: 15px 0; opacity: 0.5; }
+.db-viewer p { line-height: 1.6; font-size: 1rem; white-space: pre-wrap; color: rgba(255,255,255,0.9); }
 .label { color: #FF0000; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
 
 /* BOTÓN INFERIOR */
 .bottom-buttons { display: flex; justify-content: center; padding: 15px; }
-.game-option { border: 2px solid #FF0000; color: #FF0000; padding: 12px 50px; border-radius: 20px; text-decoration: none; font-weight: bold; background: rgba(0,0,0,0.8); transition: 0.3s; }
-.game-option:hover { background: #FF0000; color: black; }
+.game-option { border: 2px solid #FF0000; color: #FF0000; padding: 12px 50px; border-radius: 50px; text-decoration: none; font-weight: bold; background: rgba(0,0,0,0.8); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.game-option:hover { background: #FF0000; color: black; transform: scale(1.1); box-shadow: 0 0 20px #ff0000; }
 
 .chaos-hover:hover { animation: chaos 0.1s infinite; }
 @keyframes chaos { 0% { transform: translate(0,0); } 50% { transform: translate(-1px, 1px); } 100% { transform: translate(1px, -1px); } }

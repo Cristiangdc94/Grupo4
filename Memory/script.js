@@ -12,17 +12,17 @@ const projectDoc = {
     "grafico": { 
         cat: "01_DISEÑO_Y_NARRATIVA", 
         title: "APARTADO GRÁFICO", 
-        body: "DISEÑO VISUAL:\nLas imágenes de los fondos y personajes han sido generadas mediante IA y editadas manualmente con PHOTOSHOP para mantener una atmósfera coherente. Se ha buscado una estética al puro estilo del Anime Japones y una representacion como los juegos antiguos de FINAL FANTASY, tanto en los escenarios como en los personajes\n\nHISTORIA:\nLa narrativa es totalmente creada sin IA, saliendo de nuestras ideas, improvisaciones y corazon..., nos inspiramos en juegos con diferentes finales y caminos para acabar la historia como DETROIT: BECOME HUMAN." 
+        body: "DISEÑO VISUAL:\nLos escenarios y personajes han sido generados mediante IA, pero refinados y editados manualmente con ADOBE PHOTOSHOP para asegurar una estética coherente inspirada en el Anime Clásico y el estilo visual de los Final Fantasy antiguos.\n\nHISTORIA:\nNarrativa 100% original. Se ha diseñado un guion ramificado sin intervención de IA, basándonos en la improvisación y la pasión por los juegos de toma de decisiones como DETROIT: BECOME HUMAN. Cada línea de diálogo busca conectar emocionalmente con el usuario." 
     },
     "tecnico": { 
         cat: "02_ARQUITECTURA_MOTOR", 
         title: "APARTADO TÉCNICO", 
-        body: "MOTOR DE JUEGO:\nDesarrollado en JavaScript puro (Vanilla JS). El motor interpreta un objeto JSON que dicta personajes, expresiones, sonidos y el camino que tomará la historia en base a tus decisiones.\n\nSISTEMAS:\nSe ha implementado un sistema de mirroring automático para personajes a la izquierda, gestión de LocalStorage para el progreso y un motor Typewriter dinámico con soporte para comandos en tiempo real." 
+        body: "MOTOR DE JUEGO (VANILLA JS):\nEl sistema funciona mediante un intérprete de objetos JSON que gestiona nodos de historia, expresiones de personajes y rutas dinámicas. No se han utilizado librerías externas para la lógica central.\n\nSISTEMAS AVANZADOS:\n1. PERSISTENCIA: Uso de LocalStorage para guardar nombre, decisiones y volumen.\n2. DINÁMICA: Sistema de mirroring automático (espejo) para personajes según su posición (left/right).\n3. TYPEWRITER: Motor de texto progresivo con soporte para comandos en tiempo real (pipes |) que cambian el estado visual del juego mientras se escribe." 
     },
     "web": { 
-        cat: "03_ENTORNO_FRONTEND", 
-        title: "APARTADO WEB", 
-        body: "FRONT-END:\nLa web utiliza HTML y CSS avanzado junto a animaciones hechas en JS para una mejor presentacion a la portada de nuestra web. Se han aplicado animaciones gracias a un TypeWriter que hace que el texto sea más inmersivo y bonito de leer.\n\nESTRUCTURA:\nDiseño SPA (Single Page Application) que permite transiciones instantáneas entre el menú de inicio y la base del juego, optimizando la carga de recursos multimedia." 
+    cat: "03_ENTORNO_FRONTEND", 
+    title: "APARTADO WEB", 
+    body: "SISTEMA DE AUDIO DINÁMICO:\nGestión multicanal (BGM/SFX) mediante objetos de audio asíncronos. Se utiliza la técnica de 'Audio Cloning' para permitir la superposición de efectos sonoros en las teclas y botones, garantizando una latencia cero durante la interacción.\n\nMOTOR DE TEXTO (TYPEWRITER):\nAlgoritmo de renderizado carácter a carácter basado en temporizadores de JS. El motor procesa el texto en tiempo real, sincronizando cada pulsación visual con un evento acústico y permitiendo la inserción de comandos lógicos entre líneas.\n\nPOST-PROCESADO VISUAL (FX):\nUso intensivo de CSS3 avanzado para simular hardware antiguo: capas de 'Scanlines' con gradientes lineales, aberración cromática mediante sombras y filtros de ruido. Las sacudidas y glitches se controlan con animaciones aleatorias disparadas por el motor lógico.\n\nARQUITECTURA Y PERSISTENCIA:\nDiseño SPA (Single Page Application) que gestiona modales y menús mediante manipulación del DOM. Incluye un sistema de persistencia basado en LocalStorage que sincroniza el volumen global, el progreso de la narrativa y el expediente del usuario entre sesiones." 
     }
 };
 
