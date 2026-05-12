@@ -143,7 +143,6 @@ function actualizarInterfaz() {
     const charContainer = document.getElementById('character-container');
     charContainer.innerHTML = ''; 
 
-    // --- DENTRO DE actualizarInterfaz ---
 if (datos.personajes) {
     datos.personajes.forEach(p => {
         const img = document.createElement('img');
@@ -211,7 +210,6 @@ function generarBotones(opciones) {
         const htmlImagen = opcion.imagen ? `<img src="${opcion.imagen}" alt="${opcion.titulo || 'opcion'}" class="option-image">` : '';
         
         // Inyectamos la imagen y el texto dentro del botón
-        // --- CAMBIO AQUÍ: Procesar el nombre en el texto de las opciones ---
         let textoBotonProcesado = opcion.texto.replace(/{PLAYER}/g, playerName);
 
         // Usamos un span para el texto para poder controlarlo mejor con CSS si fuera necesario
@@ -256,7 +254,6 @@ function mostrarSiguienteDialogo() {
     contenedorBotones.style.display = 'none';
 
     if (speakerEl) {
-        // --- CAMBIO AQUÍ: Procesamos también el nombre del hablante ---
         let nombreProcesado = (d.quien || "").replace(/{PLAYER}/g, playerName);
         speakerEl.innerText = nombreProcesado;
         speakerEl.style.display = d.quien ? 'inline-block' : 'none';
@@ -265,7 +262,6 @@ function mostrarSiguienteDialogo() {
 
     let textoProcesado = d.texto.replace(/{PLAYER}/g, playerName);
     
-    // ... resto de tu código (expresiones, typeWriter, etc.)
     if (d.expresion) {
         let [id, ruta] = d.expresion.split(':');
         const charImg = document.querySelector(`[data-id="${id}"]`);
@@ -467,8 +463,7 @@ window.onload = () => {
             } else {
                 textoCrudo = datos.descripcion || "";
             }
-            
-            // --- AQUÍ ESTÁ EL CAMBIO CRÍTICO ---
+
             // Limpiamos los comandos y reemplazamos el nombre del jugador
             let textoLimpio = limpiarComandos(textoCrudo);
             descEl.innerText = textoLimpio.replace(/{PLAYER}/g, playerName);
